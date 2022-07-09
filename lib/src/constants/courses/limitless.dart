@@ -185,7 +185,7 @@ Objetivo refiere al qué; propósito al por qué.
 
 ### Ejemplos Mau
 
-##### Quién soy
+#### Quién soy
 
 Me considero super inteligente con inteligencias desarrolladas de todos los tipos, aunque con tendencias a perder el foco y no saber priorizar. Soy talentoso, comunicativo, bueno y quiero el bien para todas las personas. También soy hiper sensible y tiendo a ir a los extremos. A veces me cuesta explicarme sin dar tantas vueltas aunque me gusta ir al fondo de las cosas.
 

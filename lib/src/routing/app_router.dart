@@ -8,7 +8,6 @@ import 'not_found_screen.dart';
 enum AppRoute {
   home,
   article,
-  test,
 }
 
 final goRouterProvider = Provider<GoRouter>((ref) {
@@ -29,16 +28,6 @@ final goRouterProvider = Provider<GoRouter>((ref) {
               return Article(
                 data: data,
               );
-            },
-          ),
-          GoRoute(
-            path: 'test',
-            name: AppRoute.test.name,
-            builder: (context, state) {
-              // final data = state.params['data']!;
-              return Test(
-                  // data: data,
-                  );
             },
           ),
         ],

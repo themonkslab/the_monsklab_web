@@ -22,7 +22,7 @@ class ArticleBody extends StatelessWidget {
         ),
         h1Padding: const EdgeInsets.only(bottom: 28.0),
         h2: const TextStyle(
-          fontSize: 22.0,
+          fontSize: 26.0,
           fontWeight: FontWeight.bold,
           height: 1.2,
         ),
@@ -33,6 +33,12 @@ class ArticleBody extends StatelessWidget {
           height: 1.2,
         ),
         h3Padding: const EdgeInsets.only(top: 28.0),
+        h4: const TextStyle(
+          fontSize: 18.0,
+          fontWeight: FontWeight.bold,
+          height: 1.2,
+        ),
+        h4Padding: const EdgeInsets.only(top: 28.0),
         p: const TextStyle(
           fontSize: 18.0,
           height: 1.55,

@@ -25,12 +25,6 @@ class SectionItem extends StatelessWidget {
                     onPressed: () => context.goNamed(AppRoute.article.name,
                         params: {'data': chapter.data}),
                     child: Text(chapter.title)),
-                // ElevatedButton(
-                //     onPressed: () => context.goNamed(
-                //           AppRoute.article.name,
-                //           params: {'data': chapter.data},
-                //         ),
-                //     child: Text(chapter.title)),
                 gapH12,
               ],
             ),
