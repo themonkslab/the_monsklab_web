@@ -26,7 +26,7 @@ class Home extends StatelessWidget {
       );
     } else {
       return Scaffold(
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.red[400],
         body: Center(
           child: Container(
             color: Colors.white,

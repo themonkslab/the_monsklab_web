@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:the_monkslab_web/src/constants/index.dart';
+import 'package:the_monkslab_web/src/routing/app_router.dart';
 import 'package:the_monkslab_web/src/ui/index.dart';
 
 class SectionItem extends StatelessWidget {
@@ -20,15 +22,15 @@ class SectionItem extends StatelessWidget {
             Column(
               children: [
                 ElevatedButton(
-                    onPressed: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: ((context) {
-                              return Text(chapter.description);
-                            }),
-                          ),
-                        ),
+                    onPressed: () => context.goNamed(AppRoute.article.name,
+                        params: {'data': chapter.data}),
                     child: Text(chapter.title)),
+                // ElevatedButton(
+                //     onPressed: () => context.goNamed(
+                //           AppRoute.article.name,
+                //           params: {'data': chapter.data},
+                //         ),
+                //     child: Text(chapter.title)),
                 gapH12,
               ],
             ),

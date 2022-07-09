@@ -1,13 +1,15 @@
-// enum AppSocialsType {
-//   facebook(AppAssets.facebookLogo),
-//   instagram(AppAssets.instagramLogo),
-//   linkedin(AppAssets.linkedinLogo),
-//   google(AppAssets.googleLogo),
-//   twitter(AppAssets.twitterLogo);
+import 'package:the_monkslab_web/src/constants/index.dart';
 
-//   final String socialAsset;
-//   const AppSocialsType(this.socialAsset);
-// }
+enum AppSocialsType {
+  facebook(AppAssets.facebookLogo),
+  instagram(AppAssets.instagramLogo),
+  linkedin(AppAssets.linkedinLogo),
+  google(AppAssets.googleLogo),
+  twitter(AppAssets.twitterLogo);
+
+  final String socialAsset;
+  const AppSocialsType(this.socialAsset);
+}
 
 class AppAuthor {
   final String picture;
