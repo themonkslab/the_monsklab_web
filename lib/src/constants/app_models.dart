@@ -23,7 +23,7 @@ class AppCourse {
     required this.title,
     required this.description,
     required this.authors,
-    required this.structure,
+    required this.content,
     this.subTitle,
     this.materialsAuthor,
   });
@@ -33,7 +33,7 @@ class AppCourse {
   final String description;
   final List<AppAuthor> authors;
   final String? materialsAuthor;
-  final List<CourseSection> structure;
+  final List<CourseSection> content;
 }
 
 class CourseSection {

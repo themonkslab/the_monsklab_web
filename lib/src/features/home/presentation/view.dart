@@ -1,57 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:the_monkslab_web/src/constants/index.dart';
-import 'package:the_monkslab_web/src/ui/sizes.dart';
+import 'package:the_monkslab_web/src/features/home/presentation/index.dart';
+import 'package:the_monkslab_web/src/ui/index.dart';
+import 'package:the_monkslab_web/src/utils/index.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final courseSections = limitless.structure;
+    final courseSections = limitless.content;
+    final screenType = context.getScreenType();
+    final isDesktopOrLarge =
+        screenType == ScreenType.desktop || screenType == ScreenType.large;
 
-    return Scaffold(
+    if (screenType == ScreenType.phone) {
+      return Scaffold(
         body: ListView.builder(
-      itemCount: courseSections.length,
-      itemBuilder: ((context, index) {
-        final section = courseSections[index];
-        return CourseItem(section: section);
-      }),
-    ));
-  }
-}
-
-class CourseItem extends StatelessWidget {
-  const CourseItem({
-    Key? key,
-    required this.section,
-  }) : super(key: key);
-  final CourseSection section;
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(section.title),
-          gapH12,
-          for (var chapter in section.chapters)
-            Column(
-              children: [
-                ElevatedButton(
-                    onPressed: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: ((context) {
-                              return Text(chapter.description);
-                            }),
-                          ),
-                        ),
-                    child: Text(chapter.title)),
-                gapH12,
+          itemCount: courseSections.length,
+          itemBuilder: ((context, index) {
+            final section = courseSections[index];
+            return SectionItem(section: section);
+          }),
+        ),
+      );
+    } else {
+      return Scaffold(
+        backgroundColor: Colors.grey,
+        body: Center(
+          child: Container(
+            color: Colors.white,
+            width: isDesktopOrLarge ? 960.0 : 760.0,
+            child: ListView(
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
+              children: <Widget>[
+                gapH24,
+                for (var section in courseSections)
+                  SectionItem(section: section)
               ],
             ),
-        ],
-      ),
-    );
+          ),
+        ),
+      );
+    }
   }
 }
