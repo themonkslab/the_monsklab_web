@@ -8,7 +8,6 @@ class AppAssets {
   static const twitterLogo = 'images/twitter_logo.svg';
 
   // * // authors
-  static const hardcodedProfilePicture = 'images/profile_picture_hardcoded.png';
   static const mauPicture = 'images/mau_photo.jpg';
   static const tinPicture = 'images/tin_photo.jpeg';
   static const monkPicture = 'images/monk_photo.jpg';
