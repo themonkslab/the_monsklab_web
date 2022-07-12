@@ -12,6 +12,7 @@ class Article extends StatelessWidget {
     required this.data,
   }) : super(key: key);
   final String data;
+
   @override
   Widget build(BuildContext context) {
     final screenType = context.getScreenType();
@@ -20,6 +21,7 @@ class Article extends StatelessWidget {
 
     if (screenType == ScreenType.phone) {
       return Scaffold(
+        appBar: const AppAppBar(),
         body: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           children: <Widget>[
@@ -38,6 +40,7 @@ class Article extends StatelessWidget {
       );
     } else {
       return Scaffold(
+        appBar: const AppAppBar(),
         backgroundColor: Colors.red[400],
         body: Center(
           child: Container(

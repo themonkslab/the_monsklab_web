@@ -16,14 +16,18 @@ class SectionItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          gapH24,
           Text(section.title),
           gapH12,
           for (var chapter in section.chapters)
             Column(
               children: [
                 ElevatedButton(
-                    onPressed: () => context.goNamed(AppRoute.article.name,
-                        params: {'data': chapter.data}),
+                    onPressed: () =>
+                        context.goNamed(AppRoute.article.name, params: {
+                          'data': chapter.data,
+                          'chapter_title': chapter.title,
+                        }),
                     child: Text(chapter.title)),
                 gapH12,
               ],

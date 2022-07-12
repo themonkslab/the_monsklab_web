@@ -16,6 +16,9 @@ class Home extends StatelessWidget {
 
     if (screenType == ScreenType.phone) {
       return Scaffold(
+        appBar: const AppAppBar(
+          title: AppAssets.appName,
+        ),
         body: ListView.builder(
           itemCount: courseSections.length,
           itemBuilder: ((context, index) {
@@ -26,6 +29,9 @@ class Home extends StatelessWidget {
       );
     } else {
       return Scaffold(
+        appBar: const AppAppBar(
+          title: AppAssets.appName,
+        ),
         backgroundColor: Colors.red[400],
         body: Center(
           child: Container(
