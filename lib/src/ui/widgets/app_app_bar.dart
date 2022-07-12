@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:the_monkslab_web/src/constants/index.dart';
 import 'package:the_monkslab_web/src/routing/index.dart';
+import 'package:the_monkslab_web/src/ui/widgets/components/app_on_hover.dart';
 
 class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   const AppAppBar({
@@ -21,11 +22,12 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: backgroundColor ?? Colors.white,
-      // TODO Continue: add animation and hover effect
-      leading: GestureDetector(
-        onTap: () => context.goNamed(AppRoute.home.name),
-        child: const Image(
-          image: AssetImage(AppAssets.monkslabNoBackground),
+      leading: AppOnHover(
+        child: GestureDetector(
+          onTap: () => context.goNamed(AppRoute.home.name),
+          child: const Image(
+            image: AssetImage(AppAssets.monkslabNoBackground),
+          ),
         ),
       ),
       title: title != null
