@@ -17,19 +17,29 @@ class SectionItem extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           gapH24,
-          Text(section.title),
+          Container(
+            padding: const EdgeInsets.all(16.0),
+            width: double.infinity,
+            color: Colors.yellow,
+            child: Text(
+              section.title,
+              style: AppTextStyles.h3.copyWith(color: Colors.black87),
+            ),
+          ),
           gapH12,
           for (var chapter in section.chapters)
             Column(
               children: [
-                ElevatedButton(
+                OutlinedButton(
                     onPressed: () =>
                         context.goNamed(AppRoute.article.name, params: {
                           'data': chapter.data,
-                          'chapter_title': chapter.title,
                         }),
-                    child: Text(chapter.title)),
-                gapH12,
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(chapter.title),
+                    )),
+                gapH8,
               ],
             ),
         ],

@@ -35,13 +35,13 @@ class Article extends StatelessWidget {
             const AppSocials(),
             gapH24,
             ArticleBody(data: data),
+            gapH48,
           ],
         ),
       );
     } else {
       return Scaffold(
         appBar: const AppAppBar(),
-        backgroundColor: Colors.red[400],
         body: Center(
           child: Container(
             color: Colors.white,
@@ -63,6 +63,7 @@ class Article extends StatelessWidget {
                 ),
                 gapH24,
                 ArticleBody(data: data),
+                gapH48,
               ],
             ),
           ),

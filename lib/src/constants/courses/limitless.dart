@@ -15,7 +15,8 @@ final limitless = AppCourse(
         title: '🏁 Utiliza el método más rápido (p84)',
         description: 'Cómo enfrentar cada proceso de aprendizaje',
         author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
-        data: '''# 🏁 Utiliza el método más rápido (p84)
+        data: '''
+# 🏁 Utiliza el método más rápido (p84)
 
 ## Cómo enfrentar cada proceso de aprendizaje
 
@@ -51,6 +52,7 @@ final limitless = AppCourse(
 1. Estudiar por ciclos (pomodoro: 25/5, otro: 52/17).
 2. Al final de cada ciclo, hacer un cierre de lo estudiado y qué está por venir.
 3. Al volver al ciclo siguiente, revisar lo aprendido explicándolo.
+
 ''',
       ),
       CourseChapter(
@@ -86,11 +88,9 @@ Hay preguntas que nos hacemos todo el tiempo, dominan nuestro comportamiento. Qu
 
 # 🪐 Mentalidad sin límites (p105)
 
+Mentalidad es la **disposición mental que limita o expande las posibilidades de lo que uno puede hacer**. Cuando asumimos la responsabilidad de algo nos imbuimos de un gran poder para mejorar las cosas.
+
 > "No es lo que no sabes lo que te mete en problemas. Es lo que sabes con certeza que simplemente no es así". Mark Twain
-
-Mentalidad es la **disposición mental que limita o expande las posibilidades de lo que uno puede hacer**.
-
-Cuando asumimos la responsabilidad de algo nos imbuimos de un gran poder para mejorar las cosas.
 
 ## Cuatro formas de genialidad
 
@@ -127,7 +127,7 @@ El individuo es más importante que cualquier sistema.
 La ignición es la motivación, el combustible para hacer lo que haces.
 El genio no nace, se hace a través de una práctica profunda.
 
-## [4 claves para la genialidad]((https://www.jimkwik.com/podcast/kwik-brain-032-4-keys-to-genius))
+## [4 claves para la genialidad](https://www.jimkwik.com/podcast/kwik-brain-032-4-keys-to-genius)
 
 > "Lo que no está agendado, no va a suceder".
 
@@ -154,6 +154,7 @@ El genio no nace, se hace a través de una práctica profunda.
 - Desarrollar la resiliencia para superar las dificultades.
 - Perservar y ver los problemas como desafíos o rompecabezas.
 - Esta habilidad es como cualquier otra, un músculo que solo necesita entrenarse.
+
 '''),
     ]),
     CourseSection(title: 'Parte III', chapters: [

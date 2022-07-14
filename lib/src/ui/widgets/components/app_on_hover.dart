@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class AppOnHover extends StatefulWidget {
-  const AppOnHover({Key? key, required this.child}) : super(key: key);
+  const AppOnHover({
+    Key? key,
+    required this.child,
+  }) : super(key: key);
   final Widget child;
 
   @override
