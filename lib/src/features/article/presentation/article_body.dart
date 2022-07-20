@@ -26,6 +26,7 @@ class ArticleBody extends StatelessWidget {
         h4Padding: const EdgeInsets.only(top: 28.0),
         p: AppTextStyles.p,
         pPadding: const EdgeInsets.only(bottom: 28.0),
+        listBullet: AppTextStyles.li,
         code: const TextStyle(fontSize: 16.0),
         horizontalRuleDecoration: BoxDecoration(
           border: Border.all(

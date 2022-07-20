@@ -14,7 +14,6 @@ class AppTheme {
             color: Colors.black,
           )),
       //* Texts
-      //TODO Continue: copy Jim Kwik text styles
       textTheme: GoogleFonts.interTextTheme(),
     );
   }

@@ -20,10 +20,9 @@ class SectionItem extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(16.0),
             width: double.infinity,
-            color: Colors.yellow,
             child: Text(
-              section.title,
-              style: AppTextStyles.h3.copyWith(color: Colors.black87),
+              section.title.toUpperCase(),
+              style: AppTextStyles.h2.copyWith(color: Colors.black),
             ),
           ),
           gapH12,

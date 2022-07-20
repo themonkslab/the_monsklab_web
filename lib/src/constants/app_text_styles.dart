@@ -1,31 +1,44 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
+//TODO Continue with correction of course original and styles
 class AppTextStyles {
-  static const h1 = TextStyle(
-    fontSize: 32.0,
-    height: 1.5,
+  static final h1 = GoogleFonts.sarabun(
+      textStyle: const TextStyle(
+    fontSize: 80.0,
     fontWeight: FontWeight.bold,
+    letterSpacing: -6,
+  ));
+
+  static final h2 = GoogleFonts.sarabun(
+    textStyle: const TextStyle(
+      fontSize: 30.0,
+      fontWeight: FontWeight.w700,
+      letterSpacing: -1,
+      color: Colors.black,
+    ),
   );
 
-  static const h2 = TextStyle(
-    fontSize: 26.0,
-    height: 1.2,
-    fontWeight: FontWeight.bold,
-  );
+  static final h3 = GoogleFonts.sarabun(
+      textStyle: const TextStyle(
+    fontSize: 30.0,
+  ));
 
-  static const h3 = TextStyle(
-    fontSize: 26.0,
-    height: 1.2,
-  );
-
-  static const h4 = TextStyle(
+  static final h4 = GoogleFonts.sarabun(
+      textStyle: const TextStyle(
     fontSize: 22.0,
-    height: 1.2,
-  );
+  ));
 
-  static const p = TextStyle(
-    fontSize: 18.0,
+  static final p = GoogleFonts.montserrat(
+      textStyle: const TextStyle(
+    fontSize: 20.0,
     height: 1.2,
-    fontWeight: FontWeight.bold,
-  );
+    fontWeight: FontWeight.w400,
+  ));
+
+  static final li = GoogleFonts.montserrat(
+      textStyle: const TextStyle(
+    fontSize: 16.0,
+    fontWeight: FontWeight.w700,
+  ));
 }

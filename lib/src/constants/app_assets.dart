@@ -14,5 +14,5 @@ class AppAssets {
   static const monkPicture = 'images/monk_photo.jpg';
 
   // * String
-  static const appName = 'The Monkslab Web';
+  static const appName = 'The Monkslab';
 }

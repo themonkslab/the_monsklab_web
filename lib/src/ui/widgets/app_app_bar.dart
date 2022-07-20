@@ -7,13 +7,13 @@ import 'package:the_monkslab_web/src/ui/widgets/components/app_on_hover.dart';
 class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   const AppAppBar({
     Key? key,
-    this.title,
+    required this.title,
     this.actions,
     this.backgroundColor,
     this.titleColor,
   }) : super(key: key);
 
-  final String? title;
+  final String title;
   final List<Widget>? actions;
   final Color? backgroundColor;
   final Color? titleColor;
@@ -21,6 +21,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: 0,
       backgroundColor: backgroundColor ?? Colors.white,
       leading: AppOnHover(
         child: GestureDetector(
@@ -30,12 +31,18 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ),
-      title: title != null
-          ? Text(
-              title!,
-              style: TextStyle(color: titleColor ?? AppColors.darkText),
-            )
-          : const SizedBox.shrink(),
+      title: SizedBox(
+        width: double.infinity,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Text(
+              title,
+              style: AppTextStyles.h2,
+            ),
+          ],
+        ),
+      ),
       actions: actions ?? [],
     );
   }

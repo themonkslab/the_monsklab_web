@@ -17,7 +17,7 @@ class Home extends StatelessWidget {
 
     return Scaffold(
       appBar: const AppAppBar(
-        title: AppAssets.appName,
+        title: 'THE MONKSLAB',
       ),
       body: Center(
         child: SizedBox(
@@ -31,11 +31,12 @@ class Home extends StatelessWidget {
               gapH24,
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Text(limitless.title, style: AppTextStyles.h1),
+                child: Text(limitless.title.toUpperCase(),
+                    style: AppTextStyles.h1),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Text(limitless.description, style: AppTextStyles.h3),
+                child: Text(limitless.description, style: AppTextStyles.p),
               ),
               gapH24,
               for (var section in courseSections) SectionItem(section: section)

@@ -21,7 +21,9 @@ class Article extends StatelessWidget {
 
     if (screenType == ScreenType.phone) {
       return Scaffold(
-        appBar: const AppAppBar(),
+        appBar: const AppAppBar(
+          title: '',
+        ),
         body: ListView(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           children: <Widget>[
@@ -41,7 +43,7 @@ class Article extends StatelessWidget {
       );
     } else {
       return Scaffold(
-        appBar: const AppAppBar(),
+        appBar: const AppAppBar(title: ''),
         body: Center(
           child: Container(
             color: Colors.white,
