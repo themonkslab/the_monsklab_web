@@ -15,9 +15,10 @@ class ArticleHeader extends StatelessWidget {
 
     return Row(
       children: [
-        AppProfilePhoto(
-          author: author,
-        ),
+        // removed for minimalistic purposes
+        // AppProfilePhoto(
+        //   author: author,
+        // ),
         gapW16,
         Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:the_monkslab_web/src/constants/index.dart';
 import 'package:the_monkslab_web/src/routing/index.dart';
-import 'package:the_monkslab_web/src/ui/widgets/components/app_on_hover.dart';
+import 'package:the_monkslab_web/src/ui/widgets/index.dart';
 
 class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   const AppAppBar({
@@ -11,26 +11,32 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.actions,
     this.backgroundColor,
     this.titleColor,
+    this.leading,
+    this.showSocials = false,
   }) : super(key: key);
 
   final String title;
   final List<Widget>? actions;
   final Color? backgroundColor;
   final Color? titleColor;
+  final bool showSocials;
+  final Widget? leading;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      elevation: 0,
       backgroundColor: backgroundColor ?? Colors.white,
-      leading: AppOnHover(
-        child: GestureDetector(
-          onTap: () => context.goNamed(AppRoute.home.name),
-          child: const Image(
-            image: AssetImage(AppAssets.monkslabNoBackground),
+      leading: leading ??
+          AppOnHover(
+            child: GestureDetector(
+              onTap: () => context.goNamed(AppRoute.home.name),
+              child: const Image(
+                width: 16,
+                height: 16,
+                image: AssetImage(AppAssets.monkslabNoBackground),
+              ),
+            ),
           ),
-        ),
-      ),
       title: SizedBox(
         width: double.infinity,
         child: Row(
@@ -43,7 +49,10 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
           ],
         ),
       ),
-      actions: actions ?? [],
+      actions: [
+        ...?actions,
+        if (showSocials) const AppSocials(),
+      ],
     );
   }
 

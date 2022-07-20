@@ -6,7 +6,12 @@ import 'package:the_monkslab_web/src/utils/index.dart';
 import 'article_body.dart';
 import 'article_header.dart';
 
-class Article extends StatelessWidget {
+//TODO Continue with Mark Manson approach
+// 1. Get height
+// 2. Get position of scrolling
+// 3. Display different app bars / headers
+// 4. Change styles
+class Article extends StatefulWidget {
   const Article({
     Key? key,
     required this.data,
@@ -14,7 +19,23 @@ class Article extends StatelessWidget {
   final String data;
 
   @override
+  State<Article> createState() => _ArticleState();
+}
+
+class _ArticleState extends State<Article> {
+  final scrollController = ScrollController();
+  @override
+  void initState() {
+    super.initState();
+    scrollController.addListener(() {
+      print('offset: ${scrollController.offset}');
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final deviceHeight = MediaQuery.of(context).size.height;
+
     final screenType = context.getScreenType();
     final isDesktopOrLarge =
         screenType == ScreenType.desktop || screenType == ScreenType.large;
@@ -23,8 +44,10 @@ class Article extends StatelessWidget {
       return Scaffold(
         appBar: const AppAppBar(
           title: '',
+          showSocials: true,
         ),
         body: ListView(
+          controller: scrollController,
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           children: <Widget>[
             gapH24,
@@ -33,10 +56,8 @@ class Article extends StatelessWidget {
               name: 'Mau Di Bert',
               picture: AppAssets.mauPicture,
             )),
-            gapH8,
-            const AppSocials(),
             gapH24,
-            ArticleBody(data: data),
+            ArticleBody(data: widget.data),
             gapH48,
           ],
         ),
@@ -60,11 +81,10 @@ class Article extends StatelessWidget {
                       name: 'Mau Di Bert',
                       picture: AppAssets.mauPicture,
                     )),
-                    AppSocials(),
                   ],
                 ),
                 gapH24,
-                ArticleBody(data: data),
+                ArticleBody(data: widget.data),
                 gapH48,
               ],
             ),

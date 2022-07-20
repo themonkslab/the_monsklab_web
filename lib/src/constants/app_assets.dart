@@ -1,12 +1,12 @@
 class AppAssets {
   // * Images
   // * // logos
-  static const facebookLogo = 'images/facebook_logo.svg';
-  static const instagramLogo = 'images/instragram_logo.svg';
-  static const linkedinLogo = 'images/linkedin_logo.svg';
-  static const googleLogo = 'images/google_logo.svg';
-  static const twitterLogo = 'images/twitter_logo.svg';
-  static const monkslabNoBackground = 'images/monkslab_logo_no_background.png';
+  static const facebookLogo = 'images/logos/facebook_logo_minimal.svg';
+  static const instagramLogo = 'images/logos/instagram_logo_minimal.svg';
+  static const linkedinLogo = 'images/logos/linkedin_logo_minimal.svg';
+  static const twitterLogo = 'images/logos/twitter_logo_minimal.svg';
+  static const monkslabNoBackground =
+      'images/logos/monkslab_logo_no_background.png';
 
   // * // authors
   static const mauPicture = 'images/mau_photo.jpg';

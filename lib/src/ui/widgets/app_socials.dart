@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:the_monkslab_web/src/constants/index.dart';
-import 'package:the_monkslab_web/src/ui/index.dart';
+import 'package:the_monkslab_web/src/constants/app_models.dart';
+import 'package:the_monkslab_web/src/ui/sizes.dart';
+
+import 'index.dart';
 
 class AppSocials extends StatelessWidget {
   const AppSocials({Key? key}) : super(key: key);
@@ -12,16 +14,35 @@ class AppSocials extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.start,
-        children: const [
-          AppSocialIcon(socialsName: AppSocialsType.twitter),
-          gapW16,
-          AppSocialIcon(socialsName: AppSocialsType.instagram),
-          gapW16,
-          AppSocialIcon(socialsName: AppSocialsType.linkedin),
-          gapW16,
-          AppSocialIcon(socialsName: AppSocialsType.facebook),
-          gapW16,
-          AppSocialIcon(socialsName: AppSocialsType.google),
+        children: [
+          AppOnHover(
+            child: AppSocialIcon(
+              socialsName: AppSocialsType.twitter,
+              onTap: () {},
+            ),
+          ),
+          gapW20,
+          AppOnHover(
+            child: AppSocialIcon(
+              socialsName: AppSocialsType.instagram,
+              onTap: () {},
+            ),
+          ),
+          gapW20,
+          AppOnHover(
+            child: AppSocialIcon(
+              socialsName: AppSocialsType.linkedin,
+              onTap: () {},
+            ),
+          ),
+          gapW12,
+          AppOnHover(
+            child: AppSocialIcon(
+              socialsName: AppSocialsType.facebook,
+              onTap: () {},
+            ),
+          ),
+          gapW20,
         ],
       ),
     );

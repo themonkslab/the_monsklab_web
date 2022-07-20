@@ -4,7 +4,6 @@ enum AppSocialsType {
   facebook(AppAssets.facebookLogo),
   instagram(AppAssets.instagramLogo),
   linkedin(AppAssets.linkedinLogo),
-  google(AppAssets.googleLogo),
   twitter(AppAssets.twitterLogo);
 
   final String socialAsset;
