@@ -1,4 +1,6 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
+import 'package:the_monkslab_web/src/app.dart';
 import 'package:the_monkslab_web/src/constants/index.dart';
 import 'package:the_monkslab_web/src/ui/index.dart';
 
@@ -20,24 +22,35 @@ class SectionItem extends StatelessWidget {
             width: double.infinity,
             child: Text(
               section.title.toUpperCase(),
-              style: AppTextStyles.h2.copyWith(color: Colors.black),
+              style: AppTextStyles.h2.copyWith(color: AppColors.black),
             ),
           ),
           gapH12,
           for (var chapter in section.chapters)
             Column(
               children: [
-                OutlinedButton(
-                    onPressed: () {},
-                    // onPressed: () =>
-                    //     context.goNamed(AppRoute.article.name, params: {
-                    //       'data': chapter.data,
-                    //     }),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Text(chapter.title),
-                    )),
-                gapH8,
+                SizedBox(
+                  width: double.infinity,
+                  child: OutlinedButton(
+                      style: ButtonStyle(
+                        shape: MaterialStateProperty.all<
+                            ContinuousRectangleBorder>(
+                          const ContinuousRectangleBorder(),
+                        ),
+                      ),
+                      onPressed: () => context.beamToNamed(
+                            '${AppRoute.article.name}/:chapter',
+                            data: chapter,
+                          ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Row(
+                          children: [
+                            Text(chapter.title),
+                          ],
+                        ),
+                      )),
+                ),
               ],
             ),
         ],

@@ -14,9 +14,10 @@ import 'article_header.dart';
 class Article extends StatefulWidget {
   const Article({
     Key? key,
-    required this.data,
+    required this.chapter,
   }) : super(key: key);
-  final String data;
+
+  final CourseChapter chapter;
 
   @override
   State<Article> createState() => _ArticleState();
@@ -28,7 +29,7 @@ class _ArticleState extends State<Article> {
   void initState() {
     super.initState();
     scrollController.addListener(() {
-      print('offset: ${scrollController.offset}');
+      debugPrint('offset: ${scrollController.offset}');
     });
   }
 
@@ -47,20 +48,9 @@ class _ArticleState extends State<Article> {
         body: ListView(
           controller: scrollController,
           children: <Widget>[
-            ArticleHeader(
-              chapter: CourseChapter(
-                author: const AppAuthor(
-                  name: 'Mau Di Bert',
-                  picture: AppAssets.mauPicture,
-                ),
-                data: '',
-                description:
-                    'Mentalidad es la disposición mental que limita o expande las posibilidades de lo que uno puede hacer. Cuando asumimos la responsabilidad de algo, nos imbuimos de un gran poder para mejorar las cosas',
-                title: 'Mentalidad sin límites',
-              ),
-            ),
+            ArticleHeader(chapter: widget.chapter),
             gapH24,
-            ArticleBody(data: widget.data),
+            ArticleBody(data: widget.chapter.data),
             gapH48,
           ],
         ),
@@ -79,22 +69,11 @@ class _ArticleState extends State<Article> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    ArticleHeader(
-                      chapter: CourseChapter(
-                        author: const AppAuthor(
-                          name: 'Mau Di Bert',
-                          picture: AppAssets.mauPicture,
-                        ),
-                        data: '',
-                        description:
-                            'Mentalidad es la disposición mental que limita o expande las posibilidades de lo que uno puede hacer. Cuando asumimos la responsabilidad de algo, nos imbuimos de un gran poder para mejorar las cosas',
-                        title: 'Mentalidad sin límites',
-                      ),
-                    ),
+                    ArticleHeader(chapter: widget.chapter),
                   ],
                 ),
                 gapH24,
-                ArticleBody(data: widget.data),
+                ArticleBody(data: widget.chapter.data),
                 gapH48,
               ],
             ),

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:the_monkslab_web/src/constants/index.dart';
 import 'package:the_monkslab_web/src/ui/sizes.dart';
+import 'package:the_monkslab_web/src/utils/extensions.dart';
 
 class ArticleHeader extends StatelessWidget {
   const ArticleHeader({
@@ -26,19 +27,20 @@ class ArticleHeader extends StatelessWidget {
           children: [
             Text(
               chapter.title,
-              style: AppTextStyles.h2.copyWith(color: AppColors.white),
+              style: AppTextStyles.h1Header.copyWith(color: AppColors.white),
             ),
-            gapH20,
-            Text(
-              chapter.description,
-              style: AppTextStyles.h4.copyWith(
-                color: AppColors.white,
+            if (chapter.description != '') gapH20,
+            if (chapter.description != '')
+              Text(
+                chapter.description,
+                style: AppTextStyles.descriptionHeader.copyWith(
+                  color: AppColors.white,
+                ),
               ),
-            ),
             gapH20,
             Text(
-              'June 27 · 3 min read',
-              style: AppTextStyles.p.copyWith(
+              'June 27 · 3 min read'.hardcoded,
+              style: AppTextStyles.caption.copyWith(
                 color: AppColors.white,
               ),
             ),
