@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:the_monkslab_web/src/constants/index.dart';
-import 'package:the_monkslab_web/src/routing/index.dart';
 import 'package:the_monkslab_web/src/ui/widgets/index.dart';
 
 class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -29,7 +27,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: leading ??
           AppOnHover(
             child: GestureDetector(
-              onTap: () => context.goNamed(AppRoute.home.name),
+              // onTap: () => context.goNamed(AppRoute.home.name),
               child: const Image(
                 width: 16,
                 height: 16,

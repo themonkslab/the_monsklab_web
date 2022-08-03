@@ -41,4 +41,11 @@ class AppTextStyles {
     fontSize: 16.0,
     fontWeight: FontWeight.w700,
   ));
+
+  static final caption = GoogleFonts.montserrat(
+      textStyle: const TextStyle(
+    fontSize: 16.0,
+    height: 1.2,
+    fontWeight: FontWeight.w400,
+  ));
 }
