@@ -1,19 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:the_monkslab_web/src/constants/app_colors.dart';
+import 'package:the_monkslab_web/src/ui/colors.dart';
 
 //TODO Continue with correction of course original and styles
 class AppTextStyles {
-  //* Article Headers
-  static final h1Header = GoogleFonts.montserrat(
+  //* Article Headers Phone
+  static final h1HeaderPhone = GoogleFonts.montserrat(
       textStyle: const TextStyle(
     fontSize: 32.0,
     fontWeight: FontWeight.w800,
   ));
 
-  static final descriptionHeader = GoogleFonts.montserrat(
+  static final descriptionHeaderPhone = GoogleFonts.montserrat(
       textStyle: const TextStyle(
     fontSize: 19.0,
+    height: 1.55,
+  ));
+
+  //   //* Article Headers Tablet, Desktop or Large
+  static final h1Header = GoogleFonts.montserrat(
+      textStyle: const TextStyle(
+    fontSize: 72.0,
+    fontWeight: FontWeight.w800,
+  ));
+
+  static final descriptionHeader = GoogleFonts.montserrat(
+      textStyle: const TextStyle(
+    fontSize: 20.0,
     height: 1.55,
   ));
 

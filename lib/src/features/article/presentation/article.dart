@@ -41,10 +41,7 @@ class _ArticleState extends State<Article> {
 
     if (screenType == ScreenType.phone) {
       return Scaffold(
-        appBar: const AppAppBar(
-          title: '',
-          showSocials: true,
-        ),
+        appBar: const AppAppBar(showSocials: true),
         body: ListView(
           controller: scrollController,
           children: <Widget>[
@@ -57,28 +54,23 @@ class _ArticleState extends State<Article> {
       );
     } else {
       return Scaffold(
-        appBar: const AppAppBar(title: ''),
-        body: Center(
-          child: Container(
-            color: Colors.white,
-            width: isDesktopOrLarge ? 960.0 : 760.0,
-            child: ListView(
-              padding: const EdgeInsets.symmetric(horizontal: 36.0),
-              children: <Widget>[
-                gapH24,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    ArticleHeader(chapter: widget.chapter),
-                  ],
-                ),
-                gapH24,
-                ArticleBody(data: widget.chapter.data),
-                gapH48,
-              ],
+        appBar: const AppAppBar(),
+        body: SingleChildScrollView(
+            child: Column(
+          children: [
+            ArticleHeader(
+              chapter: widget.chapter,
             ),
-          ),
-        ),
+            gapH24,
+            Container(
+                color: Colors.white,
+                width: isDesktopOrLarge
+                    ? AppSizes.largeContentContainer
+                    : AppSizes.desktopContentContainer,
+                child: ArticleBody(data: widget.chapter.data)),
+            gapH48,
+          ],
+        )),
       );
     }
   }

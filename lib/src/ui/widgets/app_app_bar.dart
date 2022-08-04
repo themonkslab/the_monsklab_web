@@ -6,7 +6,7 @@ import 'package:the_monkslab_web/src/ui/widgets/index.dart';
 class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   const AppAppBar({
     Key? key,
-    required this.title,
+    this.title,
     this.actions,
     this.backgroundColor,
     this.titleColor,
@@ -14,7 +14,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.showSocials = false,
   }) : super(key: key);
 
-  final String title;
+  final String? title;
   final List<Widget>? actions;
   final Color? backgroundColor;
   final Color? titleColor;
@@ -36,18 +36,20 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
               ),
             ),
           ),
-      title: SizedBox(
-        width: double.infinity,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Text(
-              title,
-              style: AppTextStyles.h2,
-            ),
-          ],
-        ),
-      ),
+      title: title != null
+          ? SizedBox(
+              width: double.infinity,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    title!,
+                    style: AppTextStyles.h2,
+                  ),
+                ],
+              ),
+            )
+          : const SizedBox.shrink(),
       actions: [
         ...?actions,
         if (showSocials) const AppSocials(),

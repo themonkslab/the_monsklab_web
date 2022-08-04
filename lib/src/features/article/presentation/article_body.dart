@@ -20,7 +20,7 @@ class ArticleBody extends StatelessWidget {
         styleSheet: MarkdownStyleSheet(
           h1: AppTextStyles.h1,
           h1Align: WrapAlignment.center,
-          h1Padding: const EdgeInsets.only(bottom: 28.0),
+          h1Padding: const EdgeInsets.all(28.0),
           h2: AppTextStyles.h2,
           h2Padding: const EdgeInsets.only(top: 28.0),
           h3: AppTextStyles.h3,
@@ -29,6 +29,7 @@ class ArticleBody extends StatelessWidget {
           h4Padding: const EdgeInsets.only(top: 28.0),
           p: AppTextStyles.p,
           pPadding: const EdgeInsets.only(bottom: 28.0),
+          blockquotePadding: const EdgeInsets.all(32.0),
           listBullet: AppTextStyles.li,
           code: const TextStyle(fontSize: 16.0),
           horizontalRuleDecoration: BoxDecoration(
