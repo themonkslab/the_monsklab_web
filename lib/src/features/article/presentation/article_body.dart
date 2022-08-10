@@ -19,8 +19,10 @@ class ArticleBody extends StatelessWidget {
         data: data,
         styleSheet: MarkdownStyleSheet(
           h1: AppTextStyles.h1,
-          h1Align: WrapAlignment.center,
-          h1Padding: const EdgeInsets.all(28.0),
+          h1Padding: const EdgeInsets.symmetric(vertical: 28.0),
+
+          /// alignment does not work
+          // h1Align: WrapAlignment.center,
           h2: AppTextStyles.h2,
           h2Padding: const EdgeInsets.only(top: 28.0),
           h3: AppTextStyles.h3,

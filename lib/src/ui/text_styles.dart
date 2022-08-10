@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:the_monkslab_web/src/ui/colors.dart';
 
-//TODO Continue with correction of course original and styles
 class AppTextStyles {
   //* Article Headers Phone
   static final h1HeaderPhone = GoogleFonts.montserrat(

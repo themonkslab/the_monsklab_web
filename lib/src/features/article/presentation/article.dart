@@ -6,11 +6,6 @@ import 'package:the_monkslab_web/src/utils/index.dart';
 import 'article_body.dart';
 import 'article_header.dart';
 
-//TODO Continue with Mark Manson approach
-// 1. Get height
-// 2. Get position of scrolling
-// 3. Display different app bars / headers
-// 4. Change styles
 class Article extends StatefulWidget {
   const Article({
     Key? key,
@@ -25,23 +20,41 @@ class Article extends StatefulWidget {
 
 class _ArticleState extends State<Article> {
   final scrollController = ScrollController();
+  late bool isHeaderOnScreen;
+  late double screenHeight;
+
   @override
   void initState() {
     super.initState();
+    isHeaderOnScreen = true;
+
     scrollController.addListener(() {
-      debugPrint('offset: ${scrollController.offset}');
+      if (scrollController.offset > screenHeight) {
+        isHeaderOnScreen = false;
+        setState(() {});
+      } else {
+        isHeaderOnScreen = true;
+        setState(() {});
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    screenHeight = MediaQuery.of(context).size.height;
     final screenType = context.getScreenType();
     final isDesktopOrLarge =
         screenType == ScreenType.desktop || screenType == ScreenType.large;
 
     if (screenType == ScreenType.phone) {
       return Scaffold(
-        appBar: const AppAppBar(showSocials: true),
+        appBar: isHeaderOnScreen
+            ? const AppAppBar(
+                elevation: 0,
+                showSocials: false,
+                backgroundColor: AppColors.black,
+              )
+            : const AppAppBar(showSocials: true),
         body: ListView(
           controller: scrollController,
           children: <Widget>[
@@ -54,23 +67,30 @@ class _ArticleState extends State<Article> {
       );
     } else {
       return Scaffold(
-        appBar: const AppAppBar(),
+        appBar: isHeaderOnScreen
+            ? const AppAppBar(
+                elevation: 0,
+                showSocials: false,
+                backgroundColor: AppColors.black,
+              )
+            : const AppAppBar(showSocials: true),
         body: SingleChildScrollView(
+            controller: scrollController,
             child: Column(
-          children: [
-            ArticleHeader(
-              chapter: widget.chapter,
-            ),
-            gapH24,
-            Container(
-                color: Colors.white,
-                width: isDesktopOrLarge
-                    ? AppSizes.largeContentContainer
-                    : AppSizes.desktopContentContainer,
-                child: ArticleBody(data: widget.chapter.data)),
-            gapH48,
-          ],
-        )),
+              children: [
+                ArticleHeader(
+                  chapter: widget.chapter,
+                ),
+                gapH24,
+                Container(
+                    color: Colors.white,
+                    width: isDesktopOrLarge
+                        ? AppSizes.largeContentContainer
+                        : AppSizes.desktopContentContainer,
+                    child: ArticleBody(data: widget.chapter.data)),
+                gapH48,
+              ],
+            )),
       );
     }
   }

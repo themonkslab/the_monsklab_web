@@ -9,8 +9,9 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.title,
     this.actions,
     this.backgroundColor,
-    this.titleColor,
     this.leading,
+    this.elevation,
+    this.titleColor = AppColors.black,
     this.showSocials = false,
   }) : super(key: key);
 
@@ -20,11 +21,13 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Color? titleColor;
   final bool showSocials;
   final Widget? leading;
+  final double? elevation;
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: backgroundColor ?? Colors.white,
+      elevation: elevation,
       leading: leading ??
           AppOnHover(
             child: GestureDetector(
@@ -44,7 +47,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
                 children: [
                   Text(
                     title!,
-                    style: AppTextStyles.h2,
+                    style: AppTextStyles.h2.copyWith(color: titleColor),
                   ),
                 ],
               ),
