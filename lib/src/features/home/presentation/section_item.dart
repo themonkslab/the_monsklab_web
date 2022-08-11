@@ -1,7 +1,7 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:the_monkslab_web/src/app.dart';
 import 'package:the_monkslab_web/src/constants/index.dart';
-import 'package:the_monkslab_web/src/routing/app_router.dart';
 import 'package:the_monkslab_web/src/ui/index.dart';
 
 class SectionItem extends StatelessWidget {
@@ -16,16 +16,41 @@ class SectionItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(section.title),
+          gapH24,
+          Container(
+            padding: const EdgeInsets.all(16.0),
+            width: double.infinity,
+            child: Text(
+              section.title.toUpperCase(),
+              style: AppTextStyles.h2.copyWith(color: AppColors.black),
+            ),
+          ),
           gapH12,
           for (var chapter in section.chapters)
             Column(
               children: [
-                ElevatedButton(
-                    onPressed: () => context.goNamed(AppRoute.article.name,
-                        params: {'data': chapter.data}),
-                    child: Text(chapter.title)),
-                gapH12,
+                SizedBox(
+                  width: double.infinity,
+                  child: OutlinedButton(
+                      style: ButtonStyle(
+                        shape: MaterialStateProperty.all<
+                            ContinuousRectangleBorder>(
+                          const ContinuousRectangleBorder(),
+                        ),
+                      ),
+                      onPressed: () => context.beamToNamed(
+                            '${AppRoute.article.name}/:chapter',
+                            data: chapter,
+                          ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Row(
+                          children: [
+                            Text(chapter.title),
+                          ],
+                        ),
+                      )),
+                ),
               ],
             ),
         ],

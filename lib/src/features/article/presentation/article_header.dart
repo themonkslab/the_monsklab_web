@@ -1,33 +1,95 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:the_monkslab_web/src/constants/index.dart';
 import 'package:the_monkslab_web/src/ui/index.dart';
+import 'package:the_monkslab_web/src/utils/extensions.dart';
 
 class ArticleHeader extends StatelessWidget {
   const ArticleHeader({
-    required this.author,
+    required this.chapter,
     Key? key,
   }) : super(key: key);
-  final AppAuthor author;
+
+  final CourseChapter chapter;
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
+    final deviceHeight = MediaQuery.of(context).size.height;
+    final screenType = context.getScreenType();
 
-    return Row(
-      children: [
-        AppProfilePhoto(
-          author: author,
+    if (screenType == ScreenType.phone || screenType == ScreenType.tablet) {
+      return Container(
+        height: deviceHeight,
+        width: double.infinity,
+        color: AppColors.black,
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  chapter.title,
+                  style: AppTextStyles.h1HeaderPhone
+                      .copyWith(color: AppColors.white),
+                ),
+                if (chapter.description != '') gapH20,
+                if (chapter.description != '')
+                  Text(
+                    chapter.description,
+                    style: AppTextStyles.descriptionHeaderPhone
+                        .copyWith(color: AppColors.white),
+                  ),
+                gapH20,
+                Text(
+                  'June 27 · 3 min read'.hardcoded,
+                  style: AppTextStyles.caption.copyWith(
+                    color: AppColors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
         ),
-        gapW16,
-        Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(author.name, style: textTheme.titleSmall),
-            Text('June 27 · 3 min read', style: textTheme.bodyMedium),
-          ],
-        )
-      ],
-    );
+      );
+    } else {
+      return Container(
+        height: deviceHeight,
+        width: double.infinity,
+        color: AppColors.black,
+        child: Center(
+          child: SizedBox(
+            height: deviceHeight,
+            width: AppSizes.desktopContentContainer,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  chapter.title,
+                  style:
+                      AppTextStyles.h1Header.copyWith(color: AppColors.white),
+                ),
+                if (chapter.description != '') gapH20,
+                if (chapter.description != '')
+                  Text(
+                    chapter.description,
+                    style: AppTextStyles.descriptionHeader
+                        .copyWith(color: AppColors.white),
+                  ),
+                gapH20,
+                Text(
+                  'June 27 · 3 min read'.hardcoded,
+                  style: AppTextStyles.caption.copyWith(
+                    color: AppColors.white,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
   }
 }

@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:the_monkslab_web/src/app.dart';
 
 void main() async {
   runApp(
-    const ProviderScope(
-      child: App(),
-    ),
+    App(),
   );
 }

@@ -14,19 +14,7 @@ class AppTheme {
             color: Colors.black,
           )),
       //* Texts
-      textTheme: GoogleFonts.interTextTheme(
-        const TextTheme(
-          titleSmall: TextStyle(
-            fontSize: 16.0,
-            height: 1.5,
-          ),
-          labelSmall: TextStyle(
-            fontSize: 14.0,
-            height: 1.5,
-            color: Colors.grey,
-          ),
-        ),
-      ),
+      textTheme: GoogleFonts.interTextTheme(),
     );
   }
 

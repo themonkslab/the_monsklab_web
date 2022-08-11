@@ -4,7 +4,7 @@ _made with love by [Mau](https://github.com/maurodibert) and [Martin](https://gi
 
 ## 📲 Get MAIN code, and align
 
-- [ ] 1. run all the test: flutter test --coverage and remove unnecessary files with: lcov --remove coverage/lcov.info '**/*.g.dart' '**/*.freezed.dart' -o coverage/lcov.info
+- [x] 1. run all the test: flutter test --coverage and remove unnecessary files with: lcov --remove coverage/lcov.info '**/*.g.dart' '**/*.freezed.dart' -o coverage/lcov.info
 - [ ] 2. test in iOS, android and web
 - [ ] 3. solve conflicts - relay on team mates when necessary
 - [ ] 4. check if imports are correctly sorted.

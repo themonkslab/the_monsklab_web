@@ -13,35 +13,37 @@ class Home extends StatelessWidget {
     final screenType = context.getScreenType();
     final isDesktopOrLarge =
         screenType == ScreenType.desktop || screenType == ScreenType.large;
+    final isTablet = screenType == ScreenType.tablet;
 
-    if (screenType == ScreenType.phone) {
-      return Scaffold(
-        body: ListView.builder(
-          itemCount: courseSections.length,
-          itemBuilder: ((context, index) {
-            final section = courseSections[index];
-            return SectionItem(section: section);
-          }),
-        ),
-      );
-    } else {
-      return Scaffold(
-        backgroundColor: Colors.red[400],
-        body: Center(
-          child: Container(
-            color: Colors.white,
-            width: isDesktopOrLarge ? 960.0 : 760.0,
-            child: ListView(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0),
-              children: <Widget>[
-                gapH24,
-                for (var section in courseSections)
-                  SectionItem(section: section)
-              ],
-            ),
+    return Scaffold(
+      appBar: const AppAppBar(
+        title: 'THE MONKSLAB',
+      ),
+      body: Center(
+        child: SizedBox(
+          width: isDesktopOrLarge
+              ? 960.0
+              : isTablet
+                  ? 760.0
+                  : double.infinity,
+          child: ListView(
+            children: <Widget>[
+              gapH24,
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Text(limitless.title.toUpperCase(),
+                    style: AppTextStyles.h1),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 24),
+                child: Text(limitless.description, style: AppTextStyles.p),
+              ),
+              gapH24,
+              for (var section in courseSections) SectionItem(section: section)
+            ],
           ),
         ),
-      );
-    }
+      ),
+    );
   }
 }

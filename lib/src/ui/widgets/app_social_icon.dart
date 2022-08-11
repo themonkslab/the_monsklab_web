@@ -6,28 +6,36 @@ class AppSocialIcon extends StatelessWidget {
   const AppSocialIcon({
     Key? key,
     required this.socialsName,
-    this.newColor,
-    this.newMargin,
-    this.newPadding,
-    this.newWidth,
-    this.newHeight,
+    required this.onTap,
+    this.color,
+    this.margin,
+    this.padding,
+    this.width,
+    this.height,
   }) : super(key: key);
 
   final AppSocialsType socialsName;
-  final Color? newColor;
-  final EdgeInsets? newMargin;
-  final EdgeInsets? newPadding;
-  final double? newWidth;
-  final double? newHeight;
+  final void Function()? onTap;
+  final Color? color;
+  final EdgeInsets? margin;
+  final EdgeInsets? padding;
+  final double? width;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: newWidth ?? 24.0,
-      height: newHeight ?? 24.0,
-      child: SvgPicture.asset(
-        socialsName.socialAsset,
-        color: newColor ?? AppColors.grey,
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: onTap,
+        child: SizedBox(
+          width: width ?? 16.0,
+          height: height ?? 16.0,
+          child: SvgPicture.asset(
+            socialsName.socialAsset,
+            color: color ?? AppColors.black,
+          ),
+        ),
       ),
     );
   }

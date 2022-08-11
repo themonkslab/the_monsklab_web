@@ -15,6 +15,10 @@ class AppSizes {
   // * widgets
   static const appProfilePhotoHeight = 48.0;
   static const appProfilePhotoWidth = 48.0;
+
+  // * contentContainers
+  static const desktopContentContainer = 760.0;
+  static const largeContentContainer = 960.0;
 }
 
 /// Constant gap widths

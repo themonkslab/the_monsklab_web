@@ -6,64 +6,91 @@ import 'package:the_monkslab_web/src/utils/index.dart';
 import 'article_body.dart';
 import 'article_header.dart';
 
-class Article extends StatelessWidget {
+class Article extends StatefulWidget {
   const Article({
     Key? key,
-    required this.data,
+    required this.chapter,
   }) : super(key: key);
-  final String data;
+
+  final CourseChapter chapter;
+
+  @override
+  State<Article> createState() => _ArticleState();
+}
+
+class _ArticleState extends State<Article> {
+  final scrollController = ScrollController();
+  late bool isHeaderOnScreen;
+  late double screenHeight;
+
+  @override
+  void initState() {
+    super.initState();
+    isHeaderOnScreen = true;
+
+    scrollController.addListener(() {
+      if (scrollController.offset > screenHeight) {
+        isHeaderOnScreen = false;
+        setState(() {});
+      } else {
+        isHeaderOnScreen = true;
+        setState(() {});
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    screenHeight = MediaQuery.of(context).size.height;
     final screenType = context.getScreenType();
     final isDesktopOrLarge =
         screenType == ScreenType.desktop || screenType == ScreenType.large;
 
     if (screenType == ScreenType.phone) {
       return Scaffold(
+        appBar: isHeaderOnScreen
+            ? const AppAppBar(
+                elevation: 0,
+                showSocials: false,
+                backgroundColor: AppColors.black,
+              )
+            : const AppAppBar(showSocials: true),
         body: ListView(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          controller: scrollController,
           children: <Widget>[
+            ArticleHeader(chapter: widget.chapter),
             gapH24,
-            const ArticleHeader(
-                author: AppAuthor(
-              name: 'Mau Di Bert',
-              picture: AppAssets.mauPicture,
-            )),
-            gapH8,
-            const AppSocials(),
-            gapH24,
-            ArticleBody(data: data),
+            ArticleBody(data: widget.chapter.data),
+            gapH48,
           ],
         ),
       );
     } else {
       return Scaffold(
-        backgroundColor: Colors.red[400],
-        body: Center(
-          child: Container(
-            color: Colors.white,
-            width: isDesktopOrLarge ? 960.0 : 760.0,
-            child: ListView(
-              padding: const EdgeInsets.symmetric(horizontal: 36.0),
-              children: <Widget>[
-                gapH24,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    ArticleHeader(
-                        author: AppAuthor(
-                      name: 'Mau Di Bert',
-                      picture: AppAssets.mauPicture,
-                    )),
-                    AppSocials(),
-                  ],
+        appBar: isHeaderOnScreen
+            ? const AppAppBar(
+                elevation: 0,
+                showSocials: false,
+                backgroundColor: AppColors.black,
+              )
+            : const AppAppBar(showSocials: true),
+        body: SingleChildScrollView(
+            controller: scrollController,
+            child: Column(
+              children: [
+                ArticleHeader(
+                  chapter: widget.chapter,
                 ),
                 gapH24,
-                ArticleBody(data: data),
+                Container(
+                    color: Colors.white,
+                    width: isDesktopOrLarge
+                        ? AppSizes.largeContentContainer
+                        : AppSizes.desktopContentContainer,
+                    child: ArticleBody(data: widget.chapter.data)),
+                gapH48,
               ],
-            ),
-          ),
-        ),
+            )),
       );
     }
   }
