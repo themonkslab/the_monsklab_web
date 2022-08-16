@@ -1,7 +1,7 @@
 
 # :blue_book: Learnings
 
-_made with love by [Mau](https://github.com/maurodibert) and [Martin](https://github.com/mal2tin)  for the_ **Monkslab Team** ❤️
+_Made with love by the_ **Monkslab** ❤️
 
 Generally, the best way to produce quality at fast peace is to fail fast and fix faster. So, is usual to leave tech debt for other times, best practices, or even cool awesome ideas. Something happens with the way we work.
 

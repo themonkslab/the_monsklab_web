@@ -2,7 +2,7 @@ name: the_monkslab_web
 description: A web platform to learn, teach and connect
 publish_to: 'none'
 
-version: 0.0.0+3
+version: 0.0.0+4
 
 environment:
   sdk: ">=2.17.1 <3.0.0"

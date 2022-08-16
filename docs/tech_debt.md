@@ -1,7 +1,8 @@
 # ☺️ Tech debt
 
 A place for you to put good ideas, error to avoid or anything interesting for this and next projects to tackle.
-_made with love by [Mau](https://github.com/maurodibert) and [Martin](https://github.com/mal2tin) for the_ **Monkslab Team** ❤️
+
+_Made with love by the_ **Monkslab** ❤️
 
 ## Test coverage: 100.0%
 

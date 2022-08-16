@@ -2,6 +2,8 @@
 
 This is a series of patterns that we found useful to follow, because they make our code cleaner, our processes easier and our lives, happier. If you found that any of these could be improved, please present your proves to us, and after a good discussion, we update them!
 
+Made with love by the_ **Monkslab** ❤️
+
 ## General
 
 ### Naming

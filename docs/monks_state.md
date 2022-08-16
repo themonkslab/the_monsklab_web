@@ -1,9 +1,9 @@
 # 🎯 Monks State
 
-_made with love by [Mau](https://github.com/maurodibert) and [Martin](https://github.com/mal2tin)  for the_ **Monkslab Team** ❤️
-
 This is an ultra super checklist for freeing the inner 🥷 we all have inside.
 It's designed to drive learning and deliverying quality efficiently, evolving in the process and have some good ninja fun!
+
+_Made with love by the_ **Monkslab** ❤️
 
 ## Tension and distension
 

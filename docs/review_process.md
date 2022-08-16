@@ -1,7 +1,8 @@
 # 🧐  PRs Reviewing Process
 
 A place to remember the importance of knowing the whole code and share knowledge.
-_made with love by [Mau](https://github.com/maurodibert) and [Martin](https://github.com/mal2tin) for the_ **Monkslab Team** ❤️
+
+_Made with love by the_ **Monkslab** ❤️
 
 ## Redo until PR accepted
 
