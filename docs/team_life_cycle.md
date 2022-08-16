@@ -1,9 +1,9 @@
-# Regular daily / weekly tasks
+# 🌓 Regular daily / weekly tasks
 
 A place for the team to check weather some regular weekly tasks has been done
 _made with love by [Mau](https://github.com/maurodibert) and [Martin](https://github.com/mal2tin) for the_ **Monkslab Team** ❤️
 
-## 🧐 Weekly tasks
+## Weekly tasks
 
 Update each new week
 

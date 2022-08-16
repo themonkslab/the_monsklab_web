@@ -1,4 +1,4 @@
-# Before COMMIT
+# 🤔 Before COMMIT
 
 _made with love by [Mau](https://github.com/maurodibert) and [Martin](https://github.com/mal2tin)  for the_ **Monkslab Team** ❤️
 

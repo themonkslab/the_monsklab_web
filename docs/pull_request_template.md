@@ -1,4 +1,4 @@
-# Flutter PRs
+# 🤘 Flutter PRs
 
 | :point_up: don't even dare to be here if you didn't check [before_pr.md](./docs/before_pr.md) file |
 | --- |

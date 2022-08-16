@@ -1,6 +1,6 @@
-export 'app_app_bar.dart';
-export 'app_profile_photo.dart';
-export 'app_save_button.dart';
-export 'app_social_icon.dart';
-export 'app_socials.dart';
+export 'app_bar.dart';
 export 'components/index.dart';
+export 'profile_photo.dart';
+export 'save_button.dart';
+export 'social_icon.dart';
+export 'socials.dart';

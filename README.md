@@ -70,6 +70,7 @@ main
 
 ## :point_up: Decisions and Considerations
 
+- **follow [our patterns and conventions](./docs/conventions.md)**
 - **be minimal**: ask always if that piece of code ads value
 - **update [changelog](./changelog.md) as priority**, letting users know where we are, with a couple of clicks
 - **follow our exhaustive lifecycle for PRs with trank based strategy for version control**, to keep code cohesive, promote improvement, and precision
@@ -79,6 +80,7 @@ main
   - **[pull_request_template.md](./docs/pull_request_template.md)**
 
 - **review code with our [standardize PR review process](./docs/review_process.md)**, helping everyone to learn, and know the code's big picture
+
 
 ## :blue_book: Development and design process
 
@@ -134,36 +136,7 @@ Would be nice to follow [this](https://material.io/resources/color/#!/?view.left
 
 ### **Helpful OS Tools**
 
-- [LICECap](https://www.cockos.com/licecap/) for fast and lightweight .gif screen captures
-
-### **Flutter best practices**
-
-- Testing is not about coverage but about risks assessment
-- prefix **custom** or **generic** widgets with _app_: app_card
-_A widget should be generic if could be used outside of a feature; it's custom when it could be used outside of a feature and needs additional functionalities than it's source class_
-- use **stateless** widgets instead of functions
-- pass **ids** instead of objects
-- create **index** to avoid unnecessary imports
-- begin with **fetch** methods returning a **Future**
-- begin with **watch** methods returning a **Stream**
-- prefer **map** instead _forEach_
-- always choose [sizes](./lib/src/ui/sizes) instead of SizedBoxes
-- remember to be responsive based on these [breakpoints](./lib/src/ui/breakpoints)
-- Has no sense to test models using freezed; just test fromJson
-
-### **Riverpod best practices**
-
-- like better **asyncVlaue** instead _futureBuilder_
-- pick **ConsumerWidget** as default **if small**
-- choose **AsyncValue.guard** before _try/catch_
-- Never observe (.watch) controller inside build method > observe always state
-
-### **Go Router best practices**
-
-- create **routes in enum** and **navigate by name**
-
----
-
+- [LICECap](https://www.cockos.com/licecap/) for fast and lightweight .gif screen captures---
 ### :heart_eyes:  Final but the most importantest: learn to love testing
 
 ---

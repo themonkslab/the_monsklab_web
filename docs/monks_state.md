@@ -1,11 +1,11 @@
-# Monks State
+# 🎯 Monks State
 
 _made with love by [Mau](https://github.com/maurodibert) and [Martin](https://github.com/mal2tin)  for the_ **Monkslab Team** ❤️
 
 This is an ultra super checklist for freeing the inner 🥷 we all have inside.
 It's designed to drive learning and deliverying quality efficiently, evolving in the process and have some good ninja fun!
 
-## :clock12: Tension and distension
+## Tension and distension
 
 Brain could focus for X amount of time; then, it needs some rest (something you enjoy that could be done unconscious). There are several ways of doing this. We use, in different moments, one of these:
 
@@ -14,7 +14,7 @@ Brain could focus for X amount of time; then, it needs some rest (something you 
 
 **Be 5' flexible** because there are times you'll need to finish that task or relax a bit more but not more because you need energy for the future and over concentration will lead to exhaustion. And obviously, experiment and find your own!
 
-## :nerd_face: Before focus
+## Before focus
 
 ### 1. Forget
 
@@ -33,7 +33,7 @@ Brain could focus for X amount of time; then, it needs some rest (something you 
 - [ ] 2. How are you breathing? Relax your pelvis, breath there and exhale relaxing your shoulders. Repeat circularly until ready: **confortly active**
 - [ ] 3. Be prepared to forget what is not urgent for your next objective as soon is it pops
 
-## :dart: During focus
+## During focus
 
 ### 4. Ask
 
@@ -56,7 +56,7 @@ Brain could focus for X amount of time; then, it needs some rest (something you 
 - [ ] 5. Remember **people who inspires** you. Ask what inspired me about him/her
 - [ ] 6. Walk, code or do the minimum next step and **enjoy with you and others** of this awesome opportunity to live! :muscle: :smile: :heart:
 
-### 7. :bookmark: Before ending focus and going to break
+### 7. Before ending focus and going to break
 
 - [ ] 1. **decide** what you should do next
 - [ ] 2. open search and **find 'continue's** clauses
@@ -66,7 +66,7 @@ Brain could focus for X amount of time; then, it needs some rest (something you 
   - [ ] b. **append 'continue'** if with just that one will be enough or use numbers to show a flow 'continue1', 'continue2', etc
   - [ ] c. go for a **break**
 
-## :tropical_drink: Break time
+## Break time
 
 Feel free to add more!
 

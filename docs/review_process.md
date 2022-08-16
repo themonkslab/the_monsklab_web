@@ -1,9 +1,9 @@
-# PRs Reviewing Process
+# 🧐  PRs Reviewing Process
 
 A place to remember the importance of knowing the whole code and share knowledge.
 _made with love by [Mau](https://github.com/maurodibert) and [Martin](https://github.com/mal2tin) for the_ **Monkslab Team** ❤️
 
-## 🧐 Redo until PR accepted
+## Redo until PR accepted
 
 - [ ] 1. **reviewer** open a review. There suggest, ask, propose
 - [ ] 2. **author** enters the review, ask and change the code when necessary
