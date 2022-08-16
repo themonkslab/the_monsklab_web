@@ -5,17 +5,15 @@ _made with love by [Mau](https://github.com/maurodibert) and [Martin](https://gi
 ## Get MAIN code, and align
 
 - [x] 1. run all the test: flutter test --coverage and remove unnecessary files with: lcov --remove coverage/lcov.info '**/*.g.dart' '**/*.freezed.dart' -o coverage/lcov.info
-- [ ] 2. test in iOS, android and web
-- [ ] 3. solve conflicts - relay on team mates when necessary
-- [ ] 4. check if imports are correctly sorted.
-- [ ] 5. sort correctly pubspec: use pubspecAssist sort all dependencies
-- [ ] 6. format: flutter format .
-- [ ] 7. flutter analyze .
+- [x] 2. test required platforms (iOS, android, web, windows, mac)
+- [x] 3. solve conflicts - relay on team mates when necessary
+- [x] 6. format: flutter format .
+- [x] 7. flutter analyze .
     _if you find problems..._
-  - [ ] a. solve conflicts with dart fix --apply (dart fix --dry-run if you want to see a list of possible conflicts to solve, first)
-  - [ ] b. solve manually
-  - [ ] c. check with flutter analyze to wrap up
-- [ ] 8. leave the project with 0 problems
+  - [x] a. solve conflicts with dart fix --apply (dart fix --dry-run if you want to see a list of possible conflicts to solve, first)
+  - [x] b. solve manually
+  - [x] c. check with flutter analyze to wrap up
+- [x] 8. leave the project with 0 problems
 - [ ] 9. commit your code so it's pristine before merge with parent branch
 - [ ] 10. do git pull source branch
 - [ ] 11. merge into your branch

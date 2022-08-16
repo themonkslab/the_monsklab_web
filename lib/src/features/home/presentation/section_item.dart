@@ -1,8 +1,9 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:the_monkslab_web/src/app.dart';
 import 'package:the_monkslab_web/src/constants/index.dart';
 import 'package:the_monkslab_web/src/ui/index.dart';
+
+import '../../../core/routing/routing.dart';
 
 class SectionItem extends StatelessWidget {
   const SectionItem({
@@ -39,7 +40,7 @@ class SectionItem extends StatelessWidget {
                         ),
                       ),
                       onPressed: () => context.beamToNamed(
-                            '${AppRoute.article.name}/:chapter',
+                            '${AppRoutes.article.name}/:chapter',
                             data: chapter,
                           ),
                       child: Padding(
