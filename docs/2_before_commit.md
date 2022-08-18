@@ -1,6 +1,6 @@
-# Before COMMIT
+# 🤔 Before COMMIT
 
-_made with love by [Mau](https://github.com/maurodibert) and [Martin](https://github.com/mal2tin)  for the_ **Monkslab Team** ❤️
+_Made with love by the_ **Monkslab** ❤️
 
 - [ ] 1. use [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
   - [ ] a. header based on branch.

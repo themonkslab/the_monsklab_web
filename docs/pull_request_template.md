@@ -1,11 +1,12 @@
-# Flutter PRs
+# 🤘 Flutter PRs
 
 | :point_up: don't even dare to be here if you didn't check [before_pr.md](./docs/before_pr.md) file |
 | --- |
 
 Thank you for adding your efforts to this awesome project and Flutter Team! 🤘
 Please, keep your PRs short to make everybody happy
-_made with love by [Mau](https://github.com/maurodibert) and [Martin](https://github.com/mal2tin)  for the_ **Monkslab Team** ❤️
+
+_Made with love by the_ **Monkslab** ❤️
 
 ## Keep it clean
 

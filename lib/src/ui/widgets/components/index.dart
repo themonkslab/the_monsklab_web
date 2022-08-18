@@ -1,2 +1,2 @@
-export 'app_bordered_container.dart';
-export 'app_on_hover.dart';
+export 'bordered_container.dart';
+export 'on_hover.dart';
