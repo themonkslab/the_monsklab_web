@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:the_monkslab_web/src/constants/_index.dart';
-import 'package:the_monkslab_web/src/features/home/presentation/_index.dart';
+import 'package:the_monkslab_web/src/features/course/presentation/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class CourseView extends StatelessWidget {
+  const CourseView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

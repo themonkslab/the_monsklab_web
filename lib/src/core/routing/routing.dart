@@ -10,7 +10,7 @@ enum AppRoutes {
 final routerDelegate = BeamerDelegate(
   locationBuilder: RoutesLocationBuilder(
     routes: {
-      '/': (_, __, ___) => const Home(),
+      '/': (_, __, ___) => const CourseView(),
       '/article/:chapter': ((_, __, data) {
         final chapter = data as CourseChapter;
         return Article(chapter: chapter);
