@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:the_monkslab_web/src/constants/index.dart';
-import 'package:the_monkslab_web/src/features/home/presentation/index.dart';
-import 'package:the_monkslab_web/src/ui/index.dart';
-import 'package:the_monkslab_web/src/utils/index.dart';
+import 'package:the_monkslab_web/src/constants/_index.dart';
+import 'package:the_monkslab_web/src/features/home/presentation/_index.dart';
+import 'package:the_monkslab_web/src/ui/_index.dart';
+import 'package:the_monkslab_web/src/utils/_index.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);

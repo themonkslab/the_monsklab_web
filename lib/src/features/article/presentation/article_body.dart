@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../constants/index.dart';
+import '../../../constants/_index.dart';
 
 class ArticleBody extends StatelessWidget {
   const ArticleBody({Key? key, required this.data}) : super(key: key);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:the_monkslab_web/src/constants/index.dart';
-import 'package:the_monkslab_web/src/ui/index.dart';
-import 'package:the_monkslab_web/src/utils/index.dart';
+import 'package:the_monkslab_web/src/constants/_index.dart';
+import 'package:the_monkslab_web/src/ui/_index.dart';
+import 'package:the_monkslab_web/src/utils/_index.dart';
 
 import 'article_body.dart';
 import 'article_header.dart';

@@ -1,4 +1,4 @@
-import 'package:the_monkslab_web/src/constants/index.dart';
+import 'package:the_monkslab_web/src/constants/_index.dart';
 
 final limitless = AppCourse(
   title: 'Sin limites',

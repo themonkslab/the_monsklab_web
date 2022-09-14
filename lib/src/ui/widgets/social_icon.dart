@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:the_monkslab_web/src/constants/index.dart';
+import 'package:the_monkslab_web/src/constants/_index.dart';
 
 class AppSocialIcon extends StatelessWidget {
   const AppSocialIcon({

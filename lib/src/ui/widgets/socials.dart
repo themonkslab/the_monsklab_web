@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:the_monkslab_web/src/constants/models.dart';
 import 'package:the_monkslab_web/src/ui/sizes.dart';
 
-import 'index.dart';
+import '_index.dart';
 
 class AppSocials extends StatelessWidget {
   const AppSocials({Key? key}) : super(key: key);

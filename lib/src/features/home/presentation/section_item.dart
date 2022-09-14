@@ -1,7 +1,7 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:the_monkslab_web/src/constants/index.dart';
-import 'package:the_monkslab_web/src/ui/index.dart';
+import 'package:the_monkslab_web/src/constants/_index.dart';
+import 'package:the_monkslab_web/src/ui/_index.dart';
 
 import '../../../core/routing/routing.dart';
 

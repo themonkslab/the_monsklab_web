@@ -1,6 +1,6 @@
 import 'package:beamer/beamer.dart';
 import 'package:the_monkslab_web/src/constants/models.dart';
-import 'package:the_monkslab_web/src/features/index.dart';
+import 'package:the_monkslab_web/src/features/_index.dart';
 
 enum AppRoutes {
   home,
