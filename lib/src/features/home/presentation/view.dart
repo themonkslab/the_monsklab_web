@@ -22,9 +22,9 @@ class Home extends StatelessWidget {
       body: Center(
         child: SizedBox(
           width: isDesktopOrLarge
-              ? 960.0
+              ? AppSizes.largeContentContainer
               : isTablet
-                  ? 760.0
+                  ? AppSizes.desktopContentContainer
                   : double.infinity,
           child: ListView(
             children: <Widget>[
