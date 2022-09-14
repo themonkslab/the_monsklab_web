@@ -24,7 +24,7 @@ class ArticleHeader extends StatelessWidget {
         color: AppColors.black,
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+            padding: padH24,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,

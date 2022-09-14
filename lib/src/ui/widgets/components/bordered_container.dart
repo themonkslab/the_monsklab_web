@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_monkslab_web/src/ui/sizes.dart';
 
 class AppBorderedContainer extends Container {
   AppBorderedContainer({
@@ -23,8 +24,8 @@ class AppBorderedContainer extends Container {
     return Container(
       width: newWidth,
       height: newHeight,
-      margin: newMargin ?? const EdgeInsets.all(0),
-      padding: newPadding ?? const EdgeInsets.all(0),
+      margin: newMargin ?? pad0,
+      padding: newPadding ?? pad0,
       decoration: BoxDecoration(
         color: newColor ?? Colors.transparent,
 

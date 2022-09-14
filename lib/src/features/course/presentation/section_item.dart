@@ -19,7 +19,7 @@ class SectionItem extends StatelessWidget {
         children: [
           gapH24,
           Container(
-            padding: const EdgeInsets.all(16.0),
+            padding: padAll16,
             width: double.infinity,
             child: Text(
               section.title.toUpperCase(),
@@ -44,7 +44,7 @@ class SectionItem extends StatelessWidget {
                             data: chapter,
                           ),
                       child: Padding(
-                        padding: const EdgeInsets.all(16.0),
+                        padding: padAll16,
                         child: Row(
                           children: [
                             Text(chapter.title),

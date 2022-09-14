@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart' show SizedBox;
+import 'package:flutter/material.dart' show EdgeInsets, SizedBox;
 
 /// Constant sizes to be used in the app (paddings, gaps, rounded corners etc.)
 class AppSizes {
@@ -42,3 +42,11 @@ const gapH24 = SizedBox(height: AppSizes.p24);
 const gapH32 = SizedBox(height: AppSizes.p32);
 const gapH48 = SizedBox(height: AppSizes.p48);
 const gapH64 = SizedBox(height: AppSizes.p64);
+
+/// Constant paddings
+
+const pad0 = EdgeInsets.all(0.0);
+const padAll16 = EdgeInsets.all(16.0);
+const padAll32 = EdgeInsets.all(32.0);
+const padH24 = EdgeInsets.symmetric(horizontal: 24.0);
+const padV28 = EdgeInsets.symmetric(vertical: 28.0);

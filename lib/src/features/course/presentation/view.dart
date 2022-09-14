@@ -30,12 +30,12 @@ class CourseView extends StatelessWidget {
             children: <Widget>[
               gapH24,
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
+                padding: padH24,
                 child: Text(limitless.title.toUpperCase(),
                     style: AppTextStyles.h1),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
+                padding: padH24,
                 child: Text(limitless.description, style: AppTextStyles.p),
               ),
               gapH24,
