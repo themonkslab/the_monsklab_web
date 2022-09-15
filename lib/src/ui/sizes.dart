@@ -48,5 +48,6 @@ const gapH64 = SizedBox(height: AppSizes.p64);
 const pad0 = EdgeInsets.all(0.0);
 const padAll16 = EdgeInsets.all(16.0);
 const padAll32 = EdgeInsets.all(32.0);
+const padH8 = EdgeInsets.symmetric(horizontal: 8.0);
 const padH24 = EdgeInsets.symmetric(horizontal: 24.0);
 const padV28 = EdgeInsets.symmetric(vertical: 28.0);

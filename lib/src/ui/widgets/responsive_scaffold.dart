@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_monkslab_web/src/constants/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
 
@@ -15,8 +16,8 @@ class AppResponsiveScaffold extends StatelessWidget {
     final isTablet = screenType == ScreenType.tablet;
 
     return Scaffold(
-      appBar: const AppAppBar(
-        title: 'THE MONKSLAB',
+      appBar: AppAppBar(
+        title: appTitle.toUpperCase(),
       ),
       body: Center(
         child: SizedBox(

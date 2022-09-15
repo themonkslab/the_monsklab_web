@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_monkslab_web/src/constants/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/utils/extensions.dart';
 
@@ -15,14 +16,20 @@ class ArchiveView extends StatelessWidget {
           ? Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text('The Archive', style: AppTextStyles.h1HeaderPhone),
-                //TODO -CONT-: add description as constant
+                Text(archiveViewTitle, style: AppTextStyles.h1HeaderPhone),
+                gapH20,
+                Padding(
+                  padding: padH8,
+                  child: Text(archiveViewDescription, style: AppTextStyles.p),
+                ),
               ],
             )
           : Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text('The Archive', style: AppTextStyles.h1Header),
+                Text(archiveViewTitle, style: AppTextStyles.h1Header),
+                gapH20,
+                Text(archiveViewDescription, style: AppTextStyles.p),
               ],
             ),
     ));
