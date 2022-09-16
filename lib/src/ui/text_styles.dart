@@ -95,4 +95,11 @@ class AppTextStyles {
     height: 1.2,
     fontWeight: FontWeight.w400,
   ));
+
+  static final hypertext = GoogleFonts.montserrat(
+      textStyle: const TextStyle(
+    fontSize: 20.0,
+    fontWeight: FontWeight.w400,
+    color: AppColors.cyan,
+  ));
 }
