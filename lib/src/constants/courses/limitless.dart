@@ -1,9 +1,9 @@
 import 'package:the_monkslab_web/src/constants/_index.dart';
 
 final limitless = AppCourse(
-  title: 'Sin limites',
+  title: 'Aprender a aprender',
   description:
-      'Mejora tus capacidades, aprende más rápido alcanza una vida excepcional',
+      'Un resumen propio del libro Sin limites, mejora tus capacidades, aprende más rápido alcanza una vida excepcional',
   materialsAuthor: 'Jim Kwik',
   authors: [
     const AppAuthor(name: 'Mau Di Bert', picture: ''),

@@ -10,28 +10,54 @@ class ArchiveView extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenType = context.getScreenType();
 
+    final isPhoneOrTablet =
+        screenType == ScreenType.phone || screenType == ScreenType.tablet;
+
     return AppResponsiveScaffold(
         child: SingleChildScrollView(
-      child: screenType == ScreenType.phone || screenType == ScreenType.tablet
-          ? Column(
-              mainAxisAlignment: MainAxisAlignment.start,
+      child: Padding(
+        padding: padH8,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(archiveViewTitle,
+                style: isPhoneOrTablet
+                    ? AppTextStyles.h1HeaderPhone
+                    : AppTextStyles.h1Header),
+            gapH20,
+            Text(archiveViewDescription, style: AppTextStyles.p),
+            gapH64,
+            Row(
               children: [
-                Text(archiveViewTitle, style: AppTextStyles.h1HeaderPhone),
-                gapH20,
-                Padding(
-                  padding: padH8,
-                  child: Text(archiveViewDescription, style: AppTextStyles.p),
-                ),
+                for (var learningPath in [flutterLearningPath])
+                  //TODO -CONT- make width max aligning column left
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        learningPath.title,
+                        style: isPhoneOrTablet
+                            ? AppTextStyles.h2Phone
+                            : AppTextStyles.h2,
+                      ),
+                      gapH12,
+                      for (var course in learningPath.courses)
+                        Text(
+                          course.title,
+                          style: isPhoneOrTablet
+                              ? AppTextStyles.h3Phone
+                                  .copyWith(color: Colors.cyan)
+                              : AppTextStyles.h3.copyWith(
+                                  color: Colors.cyan,
+                                ),
+                        ),
+                    ],
+                  )
               ],
             )
-          : Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Text(archiveViewTitle, style: AppTextStyles.h1Header),
-                gapH20,
-                Text(archiveViewDescription, style: AppTextStyles.p),
-              ],
-            ),
+          ],
+        ),
+      ),
     ));
   }
 }

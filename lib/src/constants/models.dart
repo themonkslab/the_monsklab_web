@@ -19,6 +19,16 @@ class AppAuthor {
   });
 }
 
+class AppLearningPath {
+  AppLearningPath({
+    required this.title,
+    required this.courses,
+  });
+
+  final String title;
+  final List<AppCourse> courses;
+}
+
 class AppCourse {
   AppCourse({
     required this.title,
