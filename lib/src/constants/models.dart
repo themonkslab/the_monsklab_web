@@ -21,16 +21,19 @@ class AppAuthor {
 
 class AppLearningPath {
   AppLearningPath({
+    required this.id,
     required this.title,
     required this.courses,
   });
 
+  final int id;
   final String title;
   final List<AppCourse> courses;
 }
 
 class AppCourse {
   AppCourse({
+    required this.id,
     required this.title,
     required this.description,
     required this.authors,
@@ -39,6 +42,7 @@ class AppCourse {
     this.materialsAuthor,
   });
 
+  final int id;
   final String title;
   final String? subTitle;
   final String description;
@@ -49,11 +53,12 @@ class AppCourse {
 
 class CourseSection {
   CourseSection({
+    required this.id,
     required this.title,
     required this.chapters,
     this.description,
   });
-
+  final int id;
   final String title;
   final String? description;
   final List<CourseChapter> chapters;
@@ -61,11 +66,13 @@ class CourseSection {
 
 class CourseChapter {
   CourseChapter({
+    required this.id,
     required this.title,
     required this.description,
     required this.data,
     required this.author,
   });
+  final int id;
   final String title;
   final String description;
   final String data;

@@ -1,6 +1,7 @@
 import 'package:the_monkslab_web/src/constants/_index.dart';
 
 final limitless = AppCourse(
+  id: 0,
   title: 'Aprender a aprender',
   description:
       'Un resumen propio del libro Sin limites, mejora tus capacidades, aprende más rápido alcanza una vida excepcional',
@@ -11,9 +12,11 @@ final limitless = AppCourse(
   ],
   content: [
     CourseSection(
+      id: 0,
       title: 'Introducción',
       chapters: [
         CourseChapter(
+          id: 0,
           title: 'Introducción',
           description: '',
           author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
@@ -34,9 +37,11 @@ La misión de este libro es concederte ese deseo.
       ],
     ),
     CourseSection(
+      id: 1,
       title: 'PARTE I',
       chapters: [
         CourseChapter(
+          id: 0,
           title: 'Convertirse en ilimitado',
           description:
               'Ilimitado: el acto o proceso de dejar de lado las percepciones inexactas y restrictivas del potencial de uno y abrazar la realidad de que, con la mentalidad, la motivación y los métodos correctos, no hay limitaciones.',
@@ -67,6 +72,7 @@ Te ayudaré a volverte ilimitado a tu manera, dentro del marco de las tres área
 ''',
         ),
         CourseChapter(
+          id: 1,
           title: 'Por qué esto importa ahora',
           description:
               'Todos tenemos superpoderes increíbles que esperan ser despertados. Pero esos superpoderes tiene enemigos.',
@@ -110,6 +116,7 @@ Me encanta el lado luminoso de la tecnología pero como cualquier herramienta, n
 ''',
         ),
         CourseChapter(
+          id: 2,
           title: 'Tu cerebro ilimitado',
           description:
               'Naciste con la última tecnología, la mayor superpotencia.',
@@ -151,6 +158,7 @@ Todo lo que tenemos que hacer es __actualizar tu cerebro__ y __una de mis formas
 ''',
         ),
         CourseChapter(
+          id: 3,
           title: 'Cómo leer y recordar este (y cualquier otro) libro',
           description:
               'Aquí hay algunas recomendaciones sobre cómo aprovechar al máximo este y cada libro que leas',
@@ -234,9 +242,11 @@ En lugar de leer pasivamente, considera estas preguntas a medida que asimiles lo
       ],
     ),
     CourseSection(
+      id: 1,
       title: 'PARTE II',
       chapters: [
         CourseChapter(
+          id: 0,
           title: 'Mentalidad sin límites',
           description:
               'Mentalidad:Las creencias, actitudes y suposiciones profundamente arraigadas que creamos sobre quiénes somos, cómo funciona el mundo, de qué somos capaces, qué merecemos y qué es posible.',
@@ -261,6 +271,7 @@ En los próximos capítulos __descubrirás de dónde vienen estas mentiras__, c�
 ''',
         ),
         CourseChapter(
+          id: 1,
           title: 'El hechizo de los sistemas de creencias',
           description:
               'Por qué tus creencias tienen tanto efecto en tu vida? Por qué las creencias limitantes te impiden alcanzar tus metas? Cómo rechazarlas?',
@@ -323,6 +334,7 @@ Cuando experimentamos emociones positivas como alegría, satisfacción y amor, v
 ''',
         ),
         CourseChapter(
+          id: 2,
           title: 'Las 7 mentiras del aprendizaje',
           description:
               'Cuáles son los mitos más limitantes que te cuentas a ti mismo? Cómo se pueden superar? Cómo puedes convertirlo en positivo?',

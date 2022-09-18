@@ -4,11 +4,21 @@ import 'package:the_monkslab_web/src/features/course/presentation/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 
 class CourseView extends StatelessWidget {
-  const CourseView({Key? key}) : super(key: key);
+  const CourseView(
+    this.courseId, {
+    Key? key,
+  }) : super(key: key);
+
+  final int courseId;
 
   @override
   Widget build(BuildContext context) {
-    final courseSections = limitless.content;
+    //TODO -MEDIUM- from git/firebase
+    final course = flutterLearningPath.courses
+        .where((course) => course.id == courseId)
+        .first;
+
+    final courseSections = course.content;
 
     return AppResponsiveScaffold(
         child: ListView(
@@ -23,7 +33,11 @@ class CourseView extends StatelessWidget {
           child: Text(limitless.description, style: AppTextStyles.p),
         ),
         gapH24,
-        for (var section in courseSections) SectionItem(section: section)
+        for (var section in courseSections)
+          SectionItem(
+            sectionId: section.id,
+            courseId: course.id,
+          )
       ],
     ));
   }

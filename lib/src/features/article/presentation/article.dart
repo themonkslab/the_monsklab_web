@@ -8,11 +8,15 @@ import 'article_header.dart';
 
 class Article extends StatefulWidget {
   const Article({
+    required this.chapterId,
+    required this.sectionId,
+    required this.courseId,
     Key? key,
-    required this.chapter,
   }) : super(key: key);
 
-  final CourseChapter chapter;
+  final int chapterId;
+  final int sectionId;
+  final int courseId;
 
   @override
   State<Article> createState() => _ArticleState();
@@ -42,6 +46,9 @@ class _ArticleState extends State<Article> {
   @override
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
+    final chapter = flutterLearningPath.courses[widget.courseId]
+        .content[widget.sectionId].chapters[widget.chapterId];
+
     final screenType = context.getScreenType();
     final isDesktopOrLarge =
         screenType == ScreenType.desktop || screenType == ScreenType.large;
@@ -58,9 +65,9 @@ class _ArticleState extends State<Article> {
         body: ListView(
           controller: scrollController,
           children: <Widget>[
-            ArticleHeader(chapter: widget.chapter),
+            ArticleHeader(chapter: chapter),
             gapH24,
-            ArticleBody(data: widget.chapter.data),
+            ArticleBody(data: chapter.data),
             gapH48,
           ],
         ),
@@ -79,7 +86,7 @@ class _ArticleState extends State<Article> {
             child: Column(
               children: [
                 ArticleHeader(
-                  chapter: widget.chapter,
+                  chapter: chapter,
                 ),
                 gapH24,
                 Container(
@@ -87,7 +94,7 @@ class _ArticleState extends State<Article> {
                     width: isDesktopOrLarge
                         ? AppSizes.largeContentContainer
                         : AppSizes.desktopContentContainer,
-                    child: ArticleBody(data: widget.chapter.data)),
+                    child: ArticleBody(data: chapter.data)),
                 gapH48,
               ],
             )),

@@ -1,5 +1,7 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:the_monkslab_web/src/constants/_index.dart';
+import 'package:the_monkslab_web/src/core/routing/routing.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
 import 'package:the_monkslab_web/src/utils/extensions.dart';
@@ -44,6 +46,9 @@ class ArchiveView extends StatelessWidget {
                       for (var course in learningPath.courses)
                         AppHypertext(
                           text: course.title,
+                          onPressed: () => context.beamToNamed(
+                            '/${AppRoutes.course.name}/${course.id}',
+                          ),
                           style: isPhoneOrTablet
                               ? AppTextStyles.h3Phone
                               : AppTextStyles.h3,

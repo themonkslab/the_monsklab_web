@@ -7,12 +7,18 @@ import '../../../core/routing/routing.dart';
 
 class SectionItem extends StatelessWidget {
   const SectionItem({
+    required this.sectionId,
+    required this.courseId,
     Key? key,
-    required this.section,
   }) : super(key: key);
-  final CourseSection section;
+
+  final int sectionId;
+  final int courseId;
+
   @override
   Widget build(BuildContext context) {
+    final section = flutterLearningPath.courses[courseId].content[sectionId];
+
     return SizedBox(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,8 +46,7 @@ class SectionItem extends StatelessWidget {
                         ),
                       ),
                       onPressed: () => context.beamToNamed(
-                            '${AppRoutes.article.name}/:chapter',
-                            data: chapter,
+                            '/${AppRoutes.article.name}/$courseId/$sectionId/${chapter.id}',
                           ),
                       child: Padding(
                         padding: padAll16,

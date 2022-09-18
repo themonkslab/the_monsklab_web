@@ -100,6 +100,5 @@ class AppTextStyles {
       textStyle: const TextStyle(
     fontSize: 20.0,
     fontWeight: FontWeight.w400,
-    color: AppColors.cyan,
   ));
 }
