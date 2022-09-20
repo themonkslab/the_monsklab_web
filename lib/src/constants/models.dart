@@ -69,12 +69,16 @@ class CourseChapter {
     required this.id,
     required this.title,
     required this.description,
-    required this.data,
+    required this.content,
     required this.author,
+    required this.published,
+    this.readingTime,
   });
   final int id;
   final String title;
   final String description;
-  final String data;
+  final String content;
   final AppAuthor author;
+  final DateTime published;
+  final String? readingTime;
 }

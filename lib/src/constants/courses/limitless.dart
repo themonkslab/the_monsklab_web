@@ -20,7 +20,8 @@ final limitless = AppCourse(
           title: 'Introducción',
           description: '',
           author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
-          data: '''
+          published: DateTime.now(),
+          content: '''
 # Introducción
 
 Si un genio se ofreciera a concederte un deseo, pero uno solo, qué pedirías? Deseos ilimitados! Por supuesto!
@@ -46,7 +47,8 @@ La misión de este libro es concederte ese deseo.
           description:
               'Ilimitado: el acto o proceso de dejar de lado las percepciones inexactas y restrictivas del potencial de uno y abrazar la realidad de que, con la mentalidad, la motivación y los métodos correctos, no hay limitaciones.',
           author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
-          data: '''
+          published: DateTime.now(),
+          content: '''
 # Convertirse en ilimitado
 
 *Aclaración*: La primer parte de este capítulo versa sobre la vida de Jim y cómo él descubre su pasión por el aprendizaje. Recomiendo en lugar de transcribirles pedazos de la historia, que [lo vean](https://www.youtube.com/watch?v=f-hlNEPhyeE) (**pueden activar subtítulos**) y puedan percibir más que lo que algunas palabras podrían transferirles.
@@ -77,7 +79,8 @@ Te ayudaré a volverte ilimitado a tu manera, dentro del marco de las tres área
           description:
               'Todos tenemos superpoderes increíbles que esperan ser despertados. Pero esos superpoderes tiene enemigos.',
           author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
-          data: '''
+          published: DateTime.now(),
+          content: '''
 # Por qué esto importa ahora
 
 Todos tenemos superpoderes increíbles que esperan ser despertados. Pero esos superpoderes tiene enemigos.
@@ -121,7 +124,8 @@ Me encanta el lado luminoso de la tecnología pero como cualquier herramienta, n
           description:
               'Naciste con la última tecnología, la mayor superpotencia.',
           author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
-          data: '''
+          published: DateTime.now(),
+          content: '''
 # Tu cerebro ilimitado
 
 Nuestro cerebro es __lo que nos separa del resto del reino animal__, ya que en la mayoría de las funciones físicas, estamos en la media. Pero debido al poder de nuestros cerebros, somos abrumadoramente la especia más dominante de la Tierra.
@@ -163,7 +167,8 @@ Todo lo que tenemos que hacer es __actualizar tu cerebro__ y __una de mis formas
           description:
               'Aquí hay algunas recomendaciones sobre cómo aprovechar al máximo este y cada libro que leas',
           author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
-          data: '''
+          published: DateTime.now(),
+          content: '''
 # Cómo leer y recordar este (y cualquier otro) libro
 
 > "Tu tiempo es uno de tus mayores activos. Lo único que no puedes recuperar". Jim Kwik
@@ -251,7 +256,8 @@ En lugar de leer pasivamente, considera estas preguntas a medida que asimiles lo
           description:
               'Mentalidad:Las creencias, actitudes y suposiciones profundamente arraigadas que creamos sobre quiénes somos, cómo funciona el mundo, de qué somos capaces, qué merecemos y qué es posible.',
           author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
-          data: '''
+          published: DateTime.now(),
+          content: '''
 # Mentalidad sin límites
 
 Mentalidad es la __actitud__ o disposición mental __que predetermina las respuestas__ de una persona y las interpretaciones de las situaciones.
@@ -276,7 +282,8 @@ En los próximos capítulos __descubrirás de dónde vienen estas mentiras__, c�
           description:
               'Por qué tus creencias tienen tanto efecto en tu vida? Por qué las creencias limitantes te impiden alcanzar tus metas? Cómo rechazarlas?',
           author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
-          data: '''
+          published: DateTime.now(),
+          content: '''
 # El hechizo de los sistemas de creencias
 
 __Los superhéroes no se convierten en verdaderos superhéroes cediendo a sus creencias limitantes__: Superman no cree que tal vez en un buen día pueda saltar de un edificio alto o tal vez, ya sabes, al menos de un par de pisos.
@@ -339,7 +346,8 @@ Cuando experimentamos emociones positivas como alegría, satisfacción y amor, v
           description:
               'Cuáles son los mitos más limitantes que te cuentas a ti mismo? Cómo se pueden superar? Cómo puedes convertirlo en positivo?',
           author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
-          data: '''
+          published: DateTime.now(),
+          content: '''
 # Las 7 mentiras del aprendizaje
 
 ## Mentira 1: La inteligencia es fija

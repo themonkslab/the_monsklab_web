@@ -67,7 +67,7 @@ class _ArticleState extends State<Article> {
           children: <Widget>[
             ArticleHeader(chapter: chapter),
             gapH24,
-            ArticleBody(data: chapter.data),
+            ArticleBody(data: chapter.content),
             gapH48,
           ],
         ),
@@ -94,7 +94,7 @@ class _ArticleState extends State<Article> {
                     width: isDesktopOrLarge
                         ? AppSizes.largeContentContainer
                         : AppSizes.desktopContentContainer,
-                    child: ArticleBody(data: chapter.data)),
+                    child: ArticleBody(data: chapter.content)),
                 gapH48,
               ],
             )),
