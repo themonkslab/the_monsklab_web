@@ -14,7 +14,7 @@ class ArticleHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final deviceHeight = MediaQuery.of(context).size.height;
+    final deviceHeight = context.height;
     final screenType = context.getScreenType();
 
     if (screenType == ScreenType.phone || screenType == ScreenType.tablet) {
@@ -43,11 +43,18 @@ class ArticleHeader extends StatelessWidget {
                   ),
                 gapH20,
                 Text(
-                  'June 27 · 3 min read'.hardcoded,
+                  chapter.published.toReadable,
                   style: AppTextStyles.caption.copyWith(
                     color: AppColors.white,
                   ),
                 ),
+                if (chapter.readingTime != null)
+                  Text(
+                    chapter.readingTime!,
+                    style: AppTextStyles.captionMini.copyWith(
+                      color: AppColors.white,
+                    ),
+                  ),
               ],
             ),
           ),
@@ -80,11 +87,18 @@ class ArticleHeader extends StatelessWidget {
                   ),
                 gapH20,
                 Text(
-                  'June 27 · 3 min read'.hardcoded,
+                  chapter.published.toReadable,
                   style: AppTextStyles.caption.copyWith(
                     color: AppColors.white,
                   ),
                 ),
+                if (chapter.readingTime != null)
+                  Text(
+                    chapter.readingTime!,
+                    style: AppTextStyles.captionMini.copyWith(
+                      color: AppColors.white,
+                    ),
+                  ),
               ],
             ),
           ),

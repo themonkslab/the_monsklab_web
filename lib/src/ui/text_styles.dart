@@ -96,6 +96,13 @@ class AppTextStyles {
     fontWeight: FontWeight.w400,
   ));
 
+  static final captionMini = GoogleFonts.montserrat(
+      textStyle: const TextStyle(
+    fontSize: 12.0,
+    height: 1.2,
+    fontWeight: FontWeight.w700,
+  ));
+
   static final hypertext = GoogleFonts.montserrat(
       textStyle: const TextStyle(
     fontSize: 20.0,

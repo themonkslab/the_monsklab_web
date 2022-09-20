@@ -21,6 +21,7 @@ final limitless = AppCourse(
           description: '',
           author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
           published: DateTime.now(),
+          readingTime: '2 minutes',
           content: '''
 # Introducción
 
@@ -48,6 +49,7 @@ La misión de este libro es concederte ese deseo.
               'Ilimitado: el acto o proceso de dejar de lado las percepciones inexactas y restrictivas del potencial de uno y abrazar la realidad de que, con la mentalidad, la motivación y los métodos correctos, no hay limitaciones.',
           author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
           published: DateTime.now(),
+          readingTime: '2 minutes',
           content: '''
 # Convertirse en ilimitado
 
@@ -80,6 +82,7 @@ Te ayudaré a volverte ilimitado a tu manera, dentro del marco de las tres área
               'Todos tenemos superpoderes increíbles que esperan ser despertados. Pero esos superpoderes tiene enemigos.',
           author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
           published: DateTime.now(),
+          readingTime: '2 minutes',
           content: '''
 # Por qué esto importa ahora
 
@@ -125,6 +128,7 @@ Me encanta el lado luminoso de la tecnología pero como cualquier herramienta, n
               'Naciste con la última tecnología, la mayor superpotencia.',
           author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
           published: DateTime.now(),
+          readingTime: '2 minutes',
           content: '''
 # Tu cerebro ilimitado
 
@@ -168,6 +172,7 @@ Todo lo que tenemos que hacer es __actualizar tu cerebro__ y __una de mis formas
               'Aquí hay algunas recomendaciones sobre cómo aprovechar al máximo este y cada libro que leas',
           author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
           published: DateTime.now(),
+          readingTime: '2 minutes',
           content: '''
 # Cómo leer y recordar este (y cualquier otro) libro
 
@@ -257,6 +262,7 @@ En lugar de leer pasivamente, considera estas preguntas a medida que asimiles lo
               'Mentalidad:Las creencias, actitudes y suposiciones profundamente arraigadas que creamos sobre quiénes somos, cómo funciona el mundo, de qué somos capaces, qué merecemos y qué es posible.',
           author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
           published: DateTime.now(),
+          readingTime: '2 minutes',
           content: '''
 # Mentalidad sin límites
 
@@ -283,6 +289,7 @@ En los próximos capítulos __descubrirás de dónde vienen estas mentiras__, c�
               'Por qué tus creencias tienen tanto efecto en tu vida? Por qué las creencias limitantes te impiden alcanzar tus metas? Cómo rechazarlas?',
           author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
           published: DateTime.now(),
+          readingTime: '2 minutes',
           content: '''
 # El hechizo de los sistemas de creencias
 
