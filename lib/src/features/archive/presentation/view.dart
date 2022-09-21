@@ -17,48 +17,47 @@ class ArchiveView extends StatelessWidget {
         screenType == ScreenType.phone || screenType == ScreenType.tablet;
 
     return AppResponsiveScaffold(
-        child: SingleChildScrollView(
-      child: Padding(
-        padding: padH8,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(archiveViewTitle,
-                style: isPhoneOrTablet
-                    ? AppTextStyles.h1HeaderPhone
-                    : AppTextStyles.h1Header),
-            gapH20,
-            Text(archiveViewDescription, style: AppTextStyles.p),
-            gapH64,
-            Row(
-              children: [
-                for (var learningPath in [flutterLearningPath])
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        learningPath.title,
+        child: Padding(
+      padding: isPhoneOrTablet ? padH8 : padH24,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          gapH48,
+          Text(archiveViewTitle,
+              style: isPhoneOrTablet
+                  ? AppTextStyles.h1HeaderPhone
+                  : AppTextStyles.h1Header),
+          gapH20,
+          Text(archiveViewDescription, style: AppTextStyles.p),
+          gapH64,
+          Row(
+            children: [
+              for (var learningPath in [flutterLearningPath])
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      learningPath.title,
+                      style: isPhoneOrTablet
+                          ? AppTextStyles.h2Phone
+                          : AppTextStyles.h2,
+                    ),
+                    gapH12,
+                    for (var course in learningPath.courses)
+                      AppHypertext(
+                        text: course.title,
+                        onPressed: () => context.beamToNamed(
+                          '/${AppRoutes.course.name}/${course.id}',
+                        ),
                         style: isPhoneOrTablet
-                            ? AppTextStyles.h2Phone
-                            : AppTextStyles.h2,
-                      ),
-                      gapH12,
-                      for (var course in learningPath.courses)
-                        AppHypertext(
-                          text: course.title,
-                          onPressed: () => context.beamToNamed(
-                            '/${AppRoutes.course.name}/${course.id}',
-                          ),
-                          style: isPhoneOrTablet
-                              ? AppTextStyles.h3Phone
-                              : AppTextStyles.h3,
-                        )
-                    ],
-                  )
-              ],
-            )
-          ],
-        ),
+                            ? AppTextStyles.h3Phone
+                            : AppTextStyles.h3,
+                      )
+                  ],
+                )
+            ],
+          )
+        ],
       ),
     ));
   }

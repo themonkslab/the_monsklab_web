@@ -21,9 +21,9 @@ class CourseView extends StatelessWidget {
     final courseSections = course.content;
 
     return AppResponsiveScaffold(
-        child: ListView(
+        child: Column(
       children: <Widget>[
-        gapH24,
+        gapH48,
         Padding(
           padding: padH24,
           child: Text(course.title.toUpperCase(), style: AppTextStyles.h1),
