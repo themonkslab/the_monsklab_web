@@ -15,16 +15,15 @@ This place could be useful to throw those things and have a document to reflect 
 
 --
 
-## Challenge
-
-- Alias history:
-  - other feature that save and persist shortened urls
-  - (removes)
-  - (update)
-- UrlShortener+
-  - the input check if is a number an change the method to retrieve constructed alias
-
 ## Things Learned
 
-- Never observe (.watch) controller inside build method > observe always state
-- Has no sense to test models using freezed; just test fromJson
+### Shortcuts
+
+#### Edition
+
+- To expand/contract line: cmd k, then cmd l
+
+#### Debugger
+
+    - To start debug: F5
+    - To stop debug: shift + F5

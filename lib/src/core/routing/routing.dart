@@ -14,7 +14,7 @@ final routerDelegate = BeamerDelegate(
   transitionDelegate: const NoAnimationTransitionDelegate(),
   locationBuilder: RoutesLocationBuilder(
     routes: {
-      '/': (_, __, ___) => const ArchiveView(),
+      '/': (_, __, ___) => const HomeView(),
       '/archive': (_, __, ___) => const ArchiveView(),
       '/course/:id': (_, state, __) {
         final id = int.tryParse(state.pathParameters['id']!);
