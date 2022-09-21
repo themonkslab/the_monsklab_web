@@ -24,7 +24,7 @@ class ArticleHeader extends StatelessWidget {
         color: AppColors.black,
         child: Center(
           child: Padding(
-            padding: padH24,
+            padding: screenType == ScreenType.tablet ? padH48 : padH24,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,

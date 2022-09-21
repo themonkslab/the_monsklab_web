@@ -50,4 +50,6 @@ const padAll16 = EdgeInsets.all(16.0);
 const padAll32 = EdgeInsets.all(32.0);
 const padH8 = EdgeInsets.symmetric(horizontal: 8.0);
 const padH24 = EdgeInsets.symmetric(horizontal: 24.0);
+const padH48 = EdgeInsets.symmetric(horizontal: 48.0);
+
 const padV28 = EdgeInsets.symmetric(vertical: 28.0);

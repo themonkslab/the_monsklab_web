@@ -26,11 +26,11 @@ class CourseView extends StatelessWidget {
         gapH24,
         Padding(
           padding: padH24,
-          child: Text(limitless.title.toUpperCase(), style: AppTextStyles.h1),
+          child: Text(course.title.toUpperCase(), style: AppTextStyles.h1),
         ),
         Padding(
           padding: padH24,
-          child: Text(limitless.description, style: AppTextStyles.p),
+          child: Text(course.description, style: AppTextStyles.p),
         ),
         gapH24,
         for (var section in courseSections)
