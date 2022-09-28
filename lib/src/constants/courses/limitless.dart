@@ -252,7 +252,7 @@ En lugar de leer pasivamente, considera estas preguntas a medida que asimiles lo
       ],
     ),
     CourseSection(
-      id: 1,
+      id: 2,
       title: 'PARTE II',
       chapters: [
         CourseChapter(
