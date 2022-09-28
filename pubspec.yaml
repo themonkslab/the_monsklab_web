@@ -26,13 +26,16 @@ dependencies:
   http_mock_adapter: ^0.3.2
   intl: ^0.17.0
   json_serializable: ^6.2.0
-  mocktail: ^0.3.0
+
   rxdart: ^0.27.4
   user_repository:
     path: packages/user_repository
   url_launcher: ^6.1.4
 
+
 dev_dependencies:
+  bloc_test: ^9.1.0
+  mocktail: ^0.3.0
   build_runner: ^2.1.11
   flutter_lints: ^2.0.1
   flutter_test:
