@@ -66,9 +66,9 @@ class _ArticleState extends State<Article> {
           controller: scrollController,
           children: <Widget>[
             ArticleHeader(chapter: chapter),
-            gapH24,
+            AppGaps.gapH24,
             ArticleBody(data: chapter.content),
-            gapH48,
+            AppGaps.gapH48,
           ],
         ),
       );
@@ -88,14 +88,14 @@ class _ArticleState extends State<Article> {
                 ArticleHeader(
                   chapter: chapter,
                 ),
-                gapH24,
+                AppGaps.gapH24,
                 Container(
                     color: Colors.white,
                     width: isDesktopOrLarge
                         ? AppSizes.largeContentContainer
                         : AppSizes.desktopContentContainer,
                     child: ArticleBody(data: chapter.content)),
-                gapH48,
+                AppGaps.gapH48,
               ],
             )),
       );

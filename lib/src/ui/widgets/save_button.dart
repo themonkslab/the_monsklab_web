@@ -22,7 +22,7 @@ class AppSaveButton extends StatelessWidget {
               Icons.bookmark_add_outlined,
               color: AppColors.grey,
             ),
-            gapW8,
+            AppGaps.gapW8,
             Text(
               'Save',
               style: textTheme.caption,

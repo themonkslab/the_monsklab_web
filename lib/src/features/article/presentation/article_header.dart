@@ -24,7 +24,9 @@ class ArticleHeader extends StatelessWidget {
         color: AppColors.black,
         child: Center(
           child: Padding(
-            padding: screenType == ScreenType.tablet ? padH48 : padH24,
+            padding: screenType == ScreenType.tablet
+                ? AppPaddings.padH48
+                : AppPaddings.padH24,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,14 +36,14 @@ class ArticleHeader extends StatelessWidget {
                   style: AppTextStyles.h1HeaderPhone
                       .copyWith(color: AppColors.white),
                 ),
-                if (chapter.description != '') gapH20,
+                if (chapter.description != '') AppGaps.gapH20,
                 if (chapter.description != '')
                   Text(
                     chapter.description,
                     style: AppTextStyles.descriptionHeaderPhone
                         .copyWith(color: AppColors.white),
                   ),
-                gapH20,
+                AppGaps.gapH20,
                 Text(
                   chapter.published.toReadable,
                   style: AppTextStyles.caption.copyWith(
@@ -78,14 +80,14 @@ class ArticleHeader extends StatelessWidget {
                   style:
                       AppTextStyles.h1Header.copyWith(color: AppColors.white),
                 ),
-                if (chapter.description != '') gapH20,
+                if (chapter.description != '') AppGaps.gapH20,
                 if (chapter.description != '')
                   Text(
                     chapter.description,
                     style: AppTextStyles.descriptionHeader
                         .copyWith(color: AppColors.white),
                   ),
-                gapH20,
+                AppGaps.gapH20,
                 Text(
                   chapter.published.toReadable,
                   style: AppTextStyles.caption.copyWith(

@@ -18,18 +18,18 @@ class ArchiveView extends StatelessWidget {
 
     return AppResponsiveScaffold(
         child: Padding(
-      padding: isPhoneOrTablet ? padH8 : padH24,
+      padding: isPhoneOrTablet ? AppPaddings.padH8 : AppPaddings.padH24,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          gapH48,
+          AppGaps.gapH48,
           Text(archiveViewTitle,
               style: isPhoneOrTablet
                   ? AppTextStyles.h1HeaderPhone
                   : AppTextStyles.h1Header),
-          gapH20,
+          AppGaps.gapH20,
           Text(archiveViewDescription, style: AppTextStyles.p),
-          gapH64,
+          AppGaps.gapH64,
           Row(
             children: [
               for (var learningPath in [flutterLearningPath])
@@ -42,7 +42,7 @@ class ArchiveView extends StatelessWidget {
                           ? AppTextStyles.h2Phone
                           : AppTextStyles.h2,
                     ),
-                    gapH12,
+                    AppGaps.gapH12,
                     for (var course in learningPath.courses)
                       AppHypertext(
                         text: course.title,

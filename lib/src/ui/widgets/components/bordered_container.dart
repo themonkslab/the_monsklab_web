@@ -24,8 +24,8 @@ class AppBorderedContainer extends Container {
     return Container(
       width: newWidth,
       height: newHeight,
-      margin: newMargin ?? pad0,
-      padding: newPadding ?? pad0,
+      margin: newMargin ?? AppPaddings.padAll0,
+      padding: newPadding ?? AppPaddings.padAll0,
       decoration: BoxDecoration(
         color: newColor ?? Colors.transparent,
 

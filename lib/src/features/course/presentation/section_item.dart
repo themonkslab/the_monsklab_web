@@ -23,16 +23,16 @@ class SectionItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          gapH24,
+          AppGaps.gapH24,
           Container(
-            padding: padAll16,
+            padding: AppPaddings.padAll16,
             width: double.infinity,
             child: Text(
               section.title.toUpperCase(),
               style: AppTextStyles.h2.copyWith(color: AppColors.black),
             ),
           ),
-          gapH12,
+          AppGaps.gapH12,
           for (var chapter in section.chapters)
             Column(
               children: [
@@ -49,7 +49,7 @@ class SectionItem extends StatelessWidget {
                             '/${AppRoutes.article.name}/$courseId/$sectionId/${chapter.id}',
                           ),
                       child: Padding(
-                        padding: padAll16,
+                        padding: AppPaddings.padAll16,
                         child: Row(
                           children: [
                             Text(chapter.title),

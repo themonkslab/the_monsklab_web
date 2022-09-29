@@ -23,16 +23,16 @@ class CourseView extends StatelessWidget {
     return AppResponsiveScaffold(
         child: Column(
       children: <Widget>[
-        gapH48,
+        AppGaps.gapH48,
         Padding(
-          padding: padH24,
+          padding: AppPaddings.padH24,
           child: Text(course.title.toUpperCase(), style: AppTextStyles.h1),
         ),
         Padding(
-          padding: padH24,
+          padding: AppPaddings.padH24,
           child: Text(course.description, style: AppTextStyles.p),
         ),
-        gapH24,
+        AppGaps.gapH24,
         for (var section in courseSections)
           SectionItem(
             sectionId: section.id,
