@@ -1,8 +1,7 @@
 import 'package:authentication_repository/authentication_repository.dart';
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
-import 'package:the_monkslab_web/src/features/login/models/password.dart';
 
 import '../models/_index.dart';
 
