@@ -52,7 +52,7 @@ class HomeView extends StatelessWidget {
             Builder(
               builder: (context) {
                 final userId = context.select(
-                  (AuthenticationBloc bloc) => bloc.state.user.id,
+                  (AuthBloc bloc) => bloc.state.user.id,
                 );
                 return Text('UserID: $userId');
               },
@@ -60,9 +60,7 @@ class HomeView extends StatelessWidget {
             ElevatedButton(
               child: const Text('Logout'),
               onPressed: () {
-                context
-                    .read<AuthenticationBloc>()
-                    .add(AuthenticationLogoutRequested());
+                context.read<AuthBloc>().add(AuthLogoutRequested());
               },
             ),
           ],

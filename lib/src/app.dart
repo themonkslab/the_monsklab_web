@@ -4,26 +4,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/core/authentication/bloc/authentication_bloc.dart';
 import 'package:the_monkslab_web/src/features/_index.dart';
 import 'package:the_monkslab_web/src/features/login/_index.dart';
-import 'package:user_repository/user_repository.dart';
 
 class App extends StatelessWidget {
   const App({
     Key? key,
-    required this.authenticationRepository,
-    required this.userRepository,
-  }) : super(key: key);
+    required authenticationRepository,
+  })  : _authenticationRepository = authenticationRepository,
+        super(key: key);
 
-  final AuthenticationRepository authenticationRepository;
-  final UserRepository userRepository;
+  final AuthRepository _authenticationRepository;
 
   @override
   Widget build(BuildContext context) {
     return RepositoryProvider.value(
-      value: authenticationRepository,
+      value: _authenticationRepository,
       child: BlocProvider(
-        create: (_) => AuthenticationBloc(
-          authenticationRepository: authenticationRepository,
-          userRepository: userRepository,
+        create: (_) => AuthBloc(
+          authenticationRepository: _authenticationRepository,
         ),
         child: const AppView(),
       ),
@@ -47,18 +44,16 @@ class _AppViewState extends State<AppView> {
     return MaterialApp(
       navigatorKey: _navigatorKey,
       builder: (context, child) {
-        return BlocListener<AuthenticationBloc, AuthenticationState>(
+        return BlocListener<AuthBloc, AuthState>(
           listener: (context, state) {
             switch (state.status) {
-              case AuthenticationStatus.authenticated:
+              case AuthStatus.authenticated:
                 _navigator.pushAndRemoveUntil<void>(
                     HomeView.route(), (route) => false);
                 break;
-              case AuthenticationStatus.unauthenticated:
+              case AuthStatus.unauthenticated:
                 _navigator.pushAndRemoveUntil<void>(
                     LoginView.route(), (route) => false);
-                break;
-              case AuthenticationStatus.unknown:
                 break;
             }
           },

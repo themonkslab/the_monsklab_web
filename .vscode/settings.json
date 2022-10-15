@@ -17,7 +17,14 @@
         "titleBar.activeForeground": "#e7e7e7",
         "titleBar.inactiveBackground": "#303c5499",
         "titleBar.inactiveForeground": "#e7e7e799",
-        "commandCenter.border": "#e7e7e799"
+        "commandCenter.border": "#e7e7e799",
+        "dart.flutterSdkPath": ".fvm/flutter_sdk",
+        "search.exclude": {
+            "**/.fvm": true
+        },
+        "files.watcherExclude": {
+            "**/.fvm": true
+        }
     },
-    "peacock.color": "303C54"
+    "peacock.color": "303C54",
 }

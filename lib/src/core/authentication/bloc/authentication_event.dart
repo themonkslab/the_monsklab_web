@@ -1,19 +1,19 @@
 part of 'authentication_bloc.dart';
 
-abstract class AuthenticationEvent extends Equatable {
-  const AuthenticationEvent();
+abstract class AuthEvent extends Equatable {
+  const AuthEvent();
 
   @override
   List<Object?> get props => [];
 }
 
-class AuthenticationStatusChanged extends AuthenticationEvent {
-  const AuthenticationStatusChanged(this.status);
+class AuthUserChanged extends AuthEvent {
+  const AuthUserChanged(this.user);
 
-  final AuthenticationStatus status;
+  final User user;
 
   @override
-  List<Object> get props => [status];
+  List<Object> get props => [user];
 }
 
-class AuthenticationLogoutRequested extends AuthenticationEvent {}
+class AuthLogoutRequested extends AuthEvent {}

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "894604238429",
+    "project_id": "the-monkslab-web-tests",
+    "storage_bucket": "the-monkslab-web-tests.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:894604238429:android:9a39c7f1894c76aa72f7b4",
+        "android_client_info": {
+          "package_name": "com.example.the_monkslab_web"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "894604238429-peoem6s1fuarf7l2qslgceg5np289m7d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiIJRMYDIIdRjqAEWCOpGGR4MhS0sMcyM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "894604238429-peoem6s1fuarf7l2qslgceg5np289m7d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

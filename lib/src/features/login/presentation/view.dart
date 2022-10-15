@@ -21,7 +21,7 @@ class LoginView extends StatelessWidget {
           create: ((context) {
             return LoginBloc(
               authenticationRepository:
-                  RepositoryProvider.of<AuthenticationRepository>(context),
+                  RepositoryProvider.of<AuthRepository>(context),
             );
           }),
           child: const LoginForm(),
