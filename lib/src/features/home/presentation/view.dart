@@ -1,49 +1,33 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:the_monkslab_web/src/constants/index.dart';
-import 'package:the_monkslab_web/src/features/home/presentation/index.dart';
-import 'package:the_monkslab_web/src/ui/index.dart';
-import 'package:the_monkslab_web/src/utils/index.dart';
+import 'package:the_monkslab_web/src/constants/_index.dart';
+import 'package:the_monkslab_web/src/core/routing/routing.dart';
+import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class HomeView extends StatelessWidget {
+  const HomeView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final courseSections = limitless.content;
-    final screenType = context.getScreenType();
-    final isDesktopOrLarge =
-        screenType == ScreenType.desktop || screenType == ScreenType.large;
-    final isTablet = screenType == ScreenType.tablet;
-
     return Scaffold(
-      appBar: const AppAppBar(
-        title: 'THE MONKSLAB',
-      ),
       body: Center(
-        child: SizedBox(
-          width: isDesktopOrLarge
-              ? 960.0
-              : isTablet
-                  ? 760.0
-                  : double.infinity,
-          child: ListView(
-            children: <Widget>[
-              gapH24,
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Text(limitless.title.toUpperCase(),
-                    style: AppTextStyles.h1),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Text(limitless.description, style: AppTextStyles.p),
-              ),
-              gapH24,
-              for (var section in courseSections) SectionItem(section: section)
-            ],
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const Image(
+            width: 120,
+            height: 120,
+            image: AssetImage(AppAssets.monkslabNoBackground),
           ),
-        ),
-      ),
+          AppHypertext(
+            text: appTitle.toUpperCase(),
+            textAlign: TextAlign.center,
+            style: AppTextStyles.h1.copyWith(color: AppColors.white),
+            enabledDisabledColors: const [AppColors.black, AppColors.white],
+            onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),
+          )
+        ],
+      )),
     );
   }
 }

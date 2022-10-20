@@ -1,31 +1,38 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:the_monkslab_web/src/app.dart';
-import 'package:the_monkslab_web/src/constants/index.dart';
-import 'package:the_monkslab_web/src/ui/index.dart';
+import 'package:the_monkslab_web/src/constants/_index.dart';
+import 'package:the_monkslab_web/src/ui/_index.dart';
+
+import '../../../core/routing/routing.dart';
 
 class SectionItem extends StatelessWidget {
   const SectionItem({
+    required this.sectionId,
+    required this.courseId,
     Key? key,
-    required this.section,
   }) : super(key: key);
-  final CourseSection section;
+
+  final int sectionId;
+  final int courseId;
+
   @override
   Widget build(BuildContext context) {
+    final section = flutterLearningPath.courses[courseId].content[sectionId];
+
     return SizedBox(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          gapH24,
+          AppGaps.gapH24,
           Container(
-            padding: const EdgeInsets.all(16.0),
+            padding: AppPaddings.padAll16,
             width: double.infinity,
             child: Text(
               section.title.toUpperCase(),
               style: AppTextStyles.h2.copyWith(color: AppColors.black),
             ),
           ),
-          gapH12,
+          AppGaps.gapH12,
           for (var chapter in section.chapters)
             Column(
               children: [
@@ -39,11 +46,10 @@ class SectionItem extends StatelessWidget {
                         ),
                       ),
                       onPressed: () => context.beamToNamed(
-                            '${AppRoute.article.name}/:chapter',
-                            data: chapter,
+                            '/${AppRoutes.article.name}/$courseId/$sectionId/${chapter.id}',
                           ),
                       child: Padding(
-                        padding: const EdgeInsets.all(16.0),
+                        padding: AppPaddings.padAll16,
                         child: Row(
                           children: [
                             Text(chapter.title),

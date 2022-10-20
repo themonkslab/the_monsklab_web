@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:the_monkslab_web/src/ui/sizes.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../constants/index.dart';
+import '../../../constants/_index.dart';
 
 class ArticleBody extends StatelessWidget {
   const ArticleBody({Key? key, required this.data}) : super(key: key);
@@ -31,7 +32,7 @@ class ArticleBody extends StatelessWidget {
           h4Padding: const EdgeInsets.only(top: 28.0),
           p: AppTextStyles.p,
           pPadding: const EdgeInsets.only(bottom: 28.0),
-          blockquotePadding: const EdgeInsets.all(32.0),
+          blockquotePadding: AppPaddings.padAll32,
           listBullet: AppTextStyles.li,
           code: const TextStyle(fontSize: 16.0),
           horizontalRuleDecoration: BoxDecoration(

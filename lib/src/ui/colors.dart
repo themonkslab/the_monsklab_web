@@ -15,4 +15,5 @@ class AppColors {
   static final white60 = const Color(0xFFFFFFFF).withOpacity(0.6);
   static final black20 = const Color(0xFF000000).withOpacity(0.2);
   static final black50 = const Color(0xFF000000).withOpacity(0.5);
+  static const cyan = Colors.cyan;
 }

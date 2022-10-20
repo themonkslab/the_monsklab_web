@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:the_monkslab_web/src/constants/app_models.dart';
+import 'package:the_monkslab_web/src/constants/models.dart';
 import 'package:the_monkslab_web/src/ui/sizes.dart';
 
-import 'index.dart';
+import '_index.dart';
 
 class AppSocials extends StatelessWidget {
   const AppSocials({Key? key}) : super(key: key);
@@ -21,28 +21,28 @@ class AppSocials extends StatelessWidget {
               onTap: () {},
             ),
           ),
-          gapW20,
+          AppGaps.gapW20,
           AppOnHover(
             child: AppSocialIcon(
               socialsName: AppSocialsType.instagram,
               onTap: () {},
             ),
           ),
-          gapW20,
+          AppGaps.gapW20,
           AppOnHover(
             child: AppSocialIcon(
               socialsName: AppSocialsType.linkedin,
               onTap: () {},
             ),
           ),
-          gapW12,
+          AppGaps.gapW12,
           AppOnHover(
             child: AppSocialIcon(
               socialsName: AppSocialsType.facebook,
               onTap: () {},
             ),
           ),
-          gapW20,
+          AppGaps.gapW20,
         ],
       ),
     );

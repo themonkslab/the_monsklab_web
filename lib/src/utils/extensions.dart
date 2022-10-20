@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 enum ScreenType {
   phone(500),
@@ -10,6 +11,7 @@ enum ScreenType {
   const ScreenType(this.width);
 }
 
+/// Easy access to UI common functions
 extension UIHelpers on BuildContext {
   double get width => MediaQuery.of(this).size.width;
   double get height => MediaQuery.of(this).size.height;
@@ -25,6 +27,10 @@ extension UIHelpers on BuildContext {
 
 /// A simple placeholder that can be used to search all the hardcoded strings
 /// in the code (useful to identify strings that need to be localized).
-extension StringHardcoded on String {
+extension StringX on String {
   String get hardcoded => this;
+}
+
+extension DateTimeX on DateTime {
+  String get toReadable => DateFormat.yMMMMEEEEd().format(this);
 }

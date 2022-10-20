@@ -12,7 +12,4 @@ class AppAssets {
   static const mauPicture = 'images/mau_photo.jpg';
   static const tinPicture = 'images/tin_photo.jpeg';
   static const monkPicture = 'images/monk_photo.jpg';
-
-  // * String
-  static const appName = 'The Monkslab';
 }

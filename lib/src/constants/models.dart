@@ -1,4 +1,4 @@
-import 'package:the_monkslab_web/src/constants/index.dart';
+import 'package:the_monkslab_web/src/constants/_index.dart';
 
 enum AppSocialsType {
   facebook(AppAssets.facebookLogo),
@@ -19,8 +19,21 @@ class AppAuthor {
   });
 }
 
+class AppLearningPath {
+  AppLearningPath({
+    required this.id,
+    required this.title,
+    required this.courses,
+  });
+
+  final int id;
+  final String title;
+  final List<AppCourse> courses;
+}
+
 class AppCourse {
   AppCourse({
+    required this.id,
     required this.title,
     required this.description,
     required this.authors,
@@ -29,6 +42,7 @@ class AppCourse {
     this.materialsAuthor,
   });
 
+  final int id;
   final String title;
   final String? subTitle;
   final String description;
@@ -39,11 +53,12 @@ class AppCourse {
 
 class CourseSection {
   CourseSection({
+    required this.id,
     required this.title,
     required this.chapters,
     this.description,
   });
-
+  final int id;
   final String title;
   final String? description;
   final List<CourseChapter> chapters;
@@ -51,13 +66,19 @@ class CourseSection {
 
 class CourseChapter {
   CourseChapter({
+    required this.id,
     required this.title,
     required this.description,
-    required this.data,
+    required this.content,
     required this.author,
+    required this.published,
+    this.readingTime,
   });
+  final int id;
   final String title;
   final String description;
-  final String data;
+  final String content;
   final AppAuthor author;
+  final DateTime published;
+  final String? readingTime;
 }
