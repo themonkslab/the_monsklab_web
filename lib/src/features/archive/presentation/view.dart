@@ -44,14 +44,17 @@ class ArchiveView extends StatelessWidget {
                     ),
                     AppGaps.gapH12,
                     for (var course in learningPath.courses)
-                      AppHypertext(
-                        text: course.title,
-                        onPressed: () => context.beamToNamed(
-                          '/${AppRoutes.course.name}/${course.id}',
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0),
+                        child: AppHypertext(
+                          text: course.title,
+                          onPressed: () => context.beamToNamed(
+                            '/${AppRoutes.course.name}/${course.id}',
+                          ),
+                          style: isPhoneOrTablet
+                              ? AppTextStyles.h3Phone
+                              : AppTextStyles.h3,
                         ),
-                        style: isPhoneOrTablet
-                            ? AppTextStyles.h3Phone
-                            : AppTextStyles.h3,
                       )
                   ],
                 )
