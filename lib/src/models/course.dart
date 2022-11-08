@@ -1,21 +1,20 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 
-class Course {
-  Course({
-    required this.id,
-    required this.title,
-    required this.description,
-    required this.authors,
-    required this.content,
-    this.subTitle,
-    this.materialsAuthor,
-  });
+part 'course.freezed.dart';
+part 'course.g.dart';
 
-  final int id;
-  final String title;
-  final String? subTitle;
-  final String description;
-  final List<Author> authors;
-  final String? materialsAuthor;
-  final List<Section> content;
+@freezed
+class Course with _$Course {
+  const factory Course({
+    required int id,
+    required String title,
+    String? subTitle,
+    required String description,
+    required List<Author> authors,
+    String? materialsAuthor,
+    required List<Section> content,
+  }) = _Course;
+
+  factory Course.fromJson(Map<String, Object?> json) => _$CourseFromJson(json);
 }
