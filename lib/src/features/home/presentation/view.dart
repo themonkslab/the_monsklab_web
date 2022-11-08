@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:the_monkslab_web/src/constants/index.dart';
-import 'package:the_monkslab_web/src/features/home/presentation/index.dart';
 import 'package:the_monkslab_web/src/ui/index.dart';
 import 'package:the_monkslab_web/src/utils/index.dart';
 
@@ -9,7 +7,7 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final courseSections = limitless.content;
+    // final courseSections = limitless.content;
     final screenType = context.getScreenType();
     final isDesktopOrLarge =
         screenType == ScreenType.desktop || screenType == ScreenType.large;
@@ -29,17 +27,17 @@ class Home extends StatelessWidget {
           child: ListView(
             children: <Widget>[
               gapH24,
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 24),
+              //   child: Text(limitless.title.toUpperCase(),
+              //       style: AppTextStyles.h1),
+              // ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Text(limitless.title.toUpperCase(),
-                    style: AppTextStyles.h1),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24),
-                child: Text(limitless.description, style: AppTextStyles.p),
+                // child: Text(limitless.description, style: AppTextStyles.p),
               ),
               gapH24,
-              for (var section in courseSections) SectionItem(section: section)
+              // for (var section in courseSections) SectionItem(section: section)
             ],
           ),
         ),

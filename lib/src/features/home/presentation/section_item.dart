@@ -9,7 +9,7 @@ class SectionItem extends StatelessWidget {
     Key? key,
     required this.section,
   }) : super(key: key);
-  final CourseSection section;
+  final Section section;
   @override
   Widget build(BuildContext context) {
     return SizedBox(

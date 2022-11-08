@@ -1,22 +1,23 @@
 import 'package:the_monkslab_web/src/constants/index.dart';
+import 'package:the_monkslab_web/src/models/course.dart';
 
-final limitless = AppCourse(
+final limitless = Course(
   title: 'Sin limites',
   description:
       'Mejora tus capacidades, aprende más rápido alcanza una vida excepcional',
   materialsAuthor: 'Jim Kwik',
   authors: [
-    const AppAuthor(name: 'Mau Di Bert', picture: ''),
-    const AppAuthor(name: 'Tin Smith', picture: ''),
+    const Author(name: 'Mau Di Bert', picture: ''),
+    const Author(name: 'Tin Smith', picture: ''),
   ],
   content: [
-    CourseSection(
+    Section(
       title: 'Introducción',
       chapters: [
         CourseChapter(
           title: 'Introducción',
           description: '',
-          author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
+          author: const Author(name: 'Mau Di Bert', picture: ''),
           data: '''
 # Introducción
 
@@ -30,17 +31,19 @@ La misión de este libro es concederte ese deseo.
 > "Si una fuerza externa rompe un huevo, la vida termina. Si se rompe por una fuerza interior, comienza la vida. Las grandes cosas siempre comienzan desde adentro." Jim Kwik
 
 ''',
+          url: '',
         ),
       ],
+      url: '',
     ),
-    CourseSection(
+    Section(
       title: 'PARTE I',
       chapters: [
         CourseChapter(
           title: 'Convertirse en ilimitado',
           description:
               'Ilimitado: el acto o proceso de dejar de lado las percepciones inexactas y restrictivas del potencial de uno y abrazar la realidad de que, con la mentalidad, la motivación y los métodos correctos, no hay limitaciones.',
-          author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
+          author: const Author(name: 'Mau Di Bert', picture: ''),
           data: '''
 # Convertirse en ilimitado
 
@@ -64,12 +67,13 @@ Te ayudaré a volverte ilimitado a tu manera, dentro del marco de las tres área
 
 
 ''',
+          url: '',
         ),
         CourseChapter(
           title: 'Por qué esto importa ahora',
           description:
               'Todos tenemos superpoderes increíbles que esperan ser despertados. Pero esos superpoderes tiene enemigos.',
-          author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
+          author: const Author(name: 'Mau Di Bert', picture: ''),
           data: '''
 # Por qué esto importa ahora
 
@@ -107,8 +111,11 @@ Me encanta el lado luminoso de la tecnología pero como cualquier herramienta, n
 
 
 ''',
+          url: '',
         ),
       ],
+      url: '',
     )
   ],
+  url: '',
 );

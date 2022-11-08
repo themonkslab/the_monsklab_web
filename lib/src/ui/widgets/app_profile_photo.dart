@@ -7,7 +7,7 @@ class AppProfilePhoto extends StatelessWidget {
     required this.author,
     Key? key,
   }) : super(key: key);
-  final AppAuthor author;
+  final Author author;
   @override
   Widget build(BuildContext context) {
     return Container(

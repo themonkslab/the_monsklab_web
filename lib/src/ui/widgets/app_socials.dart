@@ -17,28 +17,28 @@ class AppSocials extends StatelessWidget {
         children: [
           AppOnHover(
             child: AppSocialIcon(
-              socialsName: AppSocialsType.twitter,
+              socialsName: SocialsType.twitter,
               onTap: () {},
             ),
           ),
           gapW20,
           AppOnHover(
             child: AppSocialIcon(
-              socialsName: AppSocialsType.instagram,
+              socialsName: SocialsType.instagram,
               onTap: () {},
             ),
           ),
           gapW20,
           AppOnHover(
             child: AppSocialIcon(
-              socialsName: AppSocialsType.linkedin,
+              socialsName: SocialsType.linkedin,
               onTap: () {},
             ),
           ),
           gapW12,
           AppOnHover(
             child: AppSocialIcon(
-              socialsName: AppSocialsType.facebook,
+              socialsName: SocialsType.facebook,
               onTap: () {},
             ),
           ),
