@@ -1,4 +1,4 @@
-import 'package:the_monkslab_web/src/constants/_index.dart';
+import 'package:the_monkslab_web/src/models/_index.dart';
 
 final limitless = Course(
   id: 0,
@@ -11,11 +11,11 @@ final limitless = Course(
     const Author(name: 'Tin Smith', picture: ''),
   ],
   content: [
-    CourseSection(
+    Section(
       id: 0,
       title: 'Introducción',
       chapters: [
-        CourseChapter(
+        Article(
           id: 0,
           title: 'Introducción',
           description: '',
@@ -38,11 +38,11 @@ La misión de este libro es concederte ese deseo.
         ),
       ],
     ),
-    CourseSection(
+    Section(
       id: 1,
       title: 'PARTE I',
       chapters: [
-        CourseChapter(
+        Article(
           id: 0,
           title: 'Convertirse en ilimitado',
           description:
@@ -75,7 +75,7 @@ Te ayudaré a volverte ilimitado a tu manera, dentro del marco de las tres área
 
 ''',
         ),
-        CourseChapter(
+        Article(
           id: 1,
           title: 'Por qué esto importa ahora',
           description:
@@ -121,7 +121,7 @@ Me encanta el lado luminoso de la tecnología pero como cualquier herramienta, n
 
 ''',
         ),
-        CourseChapter(
+        Article(
           id: 2,
           title: 'Tu cerebro ilimitado',
           description:
@@ -165,7 +165,7 @@ Todo lo que tenemos que hacer es __actualizar tu cerebro__ y __una de mis formas
 
 ''',
         ),
-        CourseChapter(
+        Article(
           id: 3,
           title: 'Cómo leer y recordar este (y cualquier otro) libro',
           description:
@@ -251,11 +251,11 @@ En lugar de leer pasivamente, considera estas preguntas a medida que asimiles lo
         ),
       ],
     ),
-    CourseSection(
+    Section(
       id: 2,
       title: 'PARTE II',
       chapters: [
-        CourseChapter(
+        Article(
           id: 0,
           title: 'Mentalidad sin límites',
           description:
@@ -282,7 +282,7 @@ En los próximos capítulos __descubrirás de dónde vienen estas mentiras__, c�
 
 ''',
         ),
-        CourseChapter(
+        Article(
           id: 1,
           title: 'El hechizo de los sistemas de creencias',
           description:
@@ -347,7 +347,7 @@ Cuando experimentamos emociones positivas como alegría, satisfacción y amor, v
 
 ''',
         ),
-        CourseChapter(
+        Article(
           id: 2,
           title: 'Las 7 mentiras del aprendizaje',
           description:

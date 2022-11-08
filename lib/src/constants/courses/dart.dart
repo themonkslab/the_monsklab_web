@@ -1,4 +1,4 @@
-import 'package:the_monkslab_web/src/constants/_index.dart';
+import 'package:the_monkslab_web/src/models/_index.dart';
 
 final dart = Course(
   id: 1,
@@ -11,8 +11,8 @@ final dart = Course(
       'Un curso que enseñe desde fin a principio, que instale buenas prácticas desde el primer código',
   materialsAuthor: 'Mauro Di Bert and Martin Smith',
   content: [
-    CourseSection(id: 0, title: 'Introducción', chapters: [
-      CourseChapter(
+    Section(id: 0, title: 'Introducción', chapters: [
+      Article(
         id: 0,
         title: 'La verdadera intro',
         description:
@@ -54,7 +54,7 @@ __Vas a aprender haciendo__ así que tratá de hacer los ejercicios alternativos
 Si hay algo que no entendés, seguí [esta guía]() para tratar de responderte vos mismx en primer lugar (una habilidad que todo programador debe dominar) y sino lo lográs, buscar respuestas de forma respetuosa e inteligente para con el tiempo de los otros y otras.
 ''',
       ),
-      CourseChapter(
+      Article(
         id: 1,
         title: 'Introducción a Dart',
         description:
@@ -69,7 +69,7 @@ Si hay algo que no entendés, seguí [esta guía]() para tratar de responderte v
 
 ''',
       ),
-      CourseChapter(
+      Article(
         id: 2,
         title: 'Introducción a DartPad',
         description:
@@ -91,8 +91,8 @@ Dart viene con una herramienta para rápidamente escribir código Dart online y 
 ''',
       ),
     ]),
-    CourseSection(id: 1, title: 'Dart Básico', chapters: [
-      CourseChapter(
+    Section(id: 1, title: 'Dart Básico', chapters: [
+      Article(
         id: 0,
         title: 'Dart básico',
         description:
@@ -115,7 +115,7 @@ Esta sección es para incluso quienes jamás vieron una línea de código. Vamos
 Al final, vas a poder escribir programas simples en Dart!
 ''',
       ),
-      CourseChapter(
+      Article(
         id: 1,
         title: 'El método main',
         description: '',
@@ -162,7 +162,7 @@ Esto es un __estándar en la industria__ cuando queremos llegar a trabajar para 
 
 ''',
       ),
-      CourseChapter(
+      Article(
         id: 2,
         title: 'Nuestro primer programa',
         description: '',
@@ -249,7 +249,7 @@ __Tratamos de que no solamente aprendan a escribir código de calidad sino tambi
 
 ''',
       ),
-      CourseChapter(
+      Article(
         id: 3,
         title: 'Variables: declaración e inicialización',
         description: '',
