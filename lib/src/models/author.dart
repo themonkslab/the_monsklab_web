@@ -1,8 +1,14 @@
-class Author {
-  final String picture;
-  final String name;
-  const Author({
-    required this.name,
-    required this.picture,
-  });
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'author.freezed.dart';
+part 'author.g.dart';
+
+@freezed
+class Author with _$Author {
+  const factory Author({
+    required String name,
+    required String picture,
+  }) = _Author;
+
+  factory Author.fromJson(Map<String, Object?> json) => _$AuthorFromJson(json);
 }

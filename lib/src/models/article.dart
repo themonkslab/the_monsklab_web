@@ -1,20 +1,21 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 
-class Article {
-  Article({
-    required this.id,
-    required this.title,
-    required this.description,
-    required this.content,
-    required this.author,
-    required this.published,
-    this.readingTime,
-  });
-  final int id;
-  final String title;
-  final String description;
-  final String content;
-  final Author author;
-  final DateTime published;
-  final String? readingTime;
+part 'article.freezed.dart';
+part 'article.g.dart';
+
+@freezed
+class Article with _$Article {
+  const factory Article({
+    required int id,
+    required String title,
+    required String description,
+    required String content,
+    required Author author,
+    required DateTime published,
+    String? readingTime,
+  }) = _Article;
+
+  factory Article.fromJson(Map<String, Object?> json) =>
+      _$ArticleFromJson(json);
 }
