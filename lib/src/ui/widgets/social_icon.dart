@@ -14,7 +14,7 @@ class AppSocialIcon extends StatelessWidget {
     this.height,
   }) : super(key: key);
 
-  final AppSocialsType socialsName;
+  final SocialsType socialsName;
   final void Function()? onTap;
   final Color? color;
   final EdgeInsets? margin;

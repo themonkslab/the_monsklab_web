@@ -1,26 +1,26 @@
 import 'package:the_monkslab_web/src/constants/_index.dart';
 
-enum AppSocialsType {
+enum SocialsType {
   facebook(AppAssets.facebookLogo),
   instagram(AppAssets.instagramLogo),
   linkedin(AppAssets.linkedinLogo),
   twitter(AppAssets.twitterLogo);
 
   final String socialAsset;
-  const AppSocialsType(this.socialAsset);
+  const SocialsType(this.socialAsset);
 }
 
-class AppAuthor {
+class Author {
   final String picture;
   final String name;
-  const AppAuthor({
+  const Author({
     required this.name,
     required this.picture,
   });
 }
 
-class AppLearningPath {
-  AppLearningPath({
+class LearningPath {
+  LearningPath({
     required this.id,
     required this.title,
     required this.courses,
@@ -28,11 +28,11 @@ class AppLearningPath {
 
   final int id;
   final String title;
-  final List<AppCourse> courses;
+  final List<Course> courses;
 }
 
-class AppCourse {
-  AppCourse({
+class Course {
+  Course({
     required this.id,
     required this.title,
     required this.description,
@@ -46,7 +46,7 @@ class AppCourse {
   final String title;
   final String? subTitle;
   final String description;
-  final List<AppAuthor> authors;
+  final List<Author> authors;
   final String? materialsAuthor;
   final List<CourseSection> content;
 }
@@ -78,7 +78,7 @@ class CourseChapter {
   final String title;
   final String description;
   final String content;
-  final AppAuthor author;
+  final Author author;
   final DateTime published;
   final String? readingTime;
 }

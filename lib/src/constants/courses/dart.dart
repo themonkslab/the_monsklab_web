@@ -1,11 +1,11 @@
 import 'package:the_monkslab_web/src/constants/_index.dart';
 
-final dart = AppCourse(
+final dart = Course(
   id: 1,
   title: 'Introducción a la programación y TDD con Dart',
   authors: [
-    const AppAuthor(name: 'Mau Di Bert', picture: ''),
-    const AppAuthor(name: 'Tin Smith', picture: ''),
+    const Author(name: 'Mau Di Bert', picture: ''),
+    const Author(name: 'Tin Smith', picture: ''),
   ],
   description:
       'Un curso que enseñe desde fin a principio, que instale buenas prácticas desde el primer código',
@@ -17,7 +17,7 @@ final dart = AppCourse(
         title: 'La verdadera intro',
         description:
             'Acá te contamos qué podés esperar del curso y qué nosotros esperamos de ustedes',
-        author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
+        author: const Author(name: 'Mau Di Bert', picture: ''),
         published: DateTime.now(),
         readingTime: '1 minuto',
         content: '''
@@ -59,7 +59,7 @@ Si hay algo que no entendés, seguí [esta guía]() para tratar de responderte v
         title: 'Introducción a Dart',
         description:
             'Acá te contamos qué podés esperar del curso y qué nosotros esperamos de ustedes',
-        author: const AppAuthor(name: 'Tin Smith', picture: ''),
+        author: const Author(name: 'Tin Smith', picture: ''),
         published: DateTime.now(),
         readingTime: '1 minuto',
         content: '''
@@ -74,7 +74,7 @@ Si hay algo que no entendés, seguí [esta guía]() para tratar de responderte v
         title: 'Introducción a DartPad',
         description:
             'Acá te contamos qué podés esperar del curso y qué nosotros esperamos de ustedes',
-        author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
+        author: const Author(name: 'Mau Di Bert', picture: ''),
         published: DateTime.now(),
         readingTime: '1 minuto',
         content: '''
@@ -97,7 +97,7 @@ Dart viene con una herramienta para rápidamente escribir código Dart online y 
         title: 'Dart básico',
         description:
             'Esta sección es para incluso quienes jamás vieron una línea de código',
-        author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
+        author: const Author(name: 'Mau Di Bert', picture: ''),
         published: DateTime.now(),
         readingTime: '1 minuto',
         content: '''
@@ -119,7 +119,7 @@ Al final, vas a poder escribir programas simples en Dart!
         id: 1,
         title: 'El método main',
         description: '',
-        author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
+        author: const Author(name: 'Mau Di Bert', picture: ''),
         published: DateTime.now(),
         readingTime: '1 minuto',
         content: '''
@@ -166,7 +166,7 @@ Esto es un __estándar en la industria__ cuando queremos llegar a trabajar para 
         id: 2,
         title: 'Nuestro primer programa',
         description: '',
-        author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
+        author: const Author(name: 'Mau Di Bert', picture: ''),
         published: DateTime.now(),
         readingTime: '1 minuto',
         content: '''
@@ -253,7 +253,7 @@ __Tratamos de que no solamente aprendan a escribir código de calidad sino tambi
         id: 3,
         title: 'Variables: declaración e inicialización',
         description: '',
-        author: const AppAuthor(name: 'Mau Di Bert', picture: ''),
+        author: const Author(name: 'Mau Di Bert', picture: ''),
         published: DateTime.now(),
         readingTime: '1 minuto',
         content: '''

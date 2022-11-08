@@ -2,7 +2,7 @@
 
 import 'package:the_monkslab_web/src/constants/_index.dart';
 
-final flutterLearningPath = AppLearningPath(
+final flutterLearningPath = LearningPath(
   id: 1,
   title: 'Aprender Flutter desde las bases',
   courses: [limitless, dart],
