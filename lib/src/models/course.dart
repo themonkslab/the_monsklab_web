@@ -13,7 +13,7 @@ class Course with _$Course {
     required String description,
     required List<Author> authors,
     String? materialsAuthor,
-    required List<Section> content,
+    required List<Section> sections,
   }) = _Course;
 
   factory Course.fromJson(Map<String, Object?> json) => _$CourseFromJson(json);

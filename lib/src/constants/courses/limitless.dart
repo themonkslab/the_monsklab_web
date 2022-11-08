@@ -10,7 +10,7 @@ final limitless = Course(
     const Author(name: 'Mau Di Bert', picture: ''),
     const Author(name: 'Tin Smith', picture: ''),
   ],
-  content: [
+  sections: [
     Section(
       id: 0,
       title: 'Introducción',

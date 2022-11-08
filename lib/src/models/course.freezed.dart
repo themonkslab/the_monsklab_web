@@ -26,7 +26,7 @@ mixin _$Course {
   String get description => throw _privateConstructorUsedError;
   List<Author> get authors => throw _privateConstructorUsedError;
   String? get materialsAuthor => throw _privateConstructorUsedError;
-  List<Section> get content => throw _privateConstructorUsedError;
+  List<Section> get sections => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,7 +45,7 @@ abstract class $CourseCopyWith<$Res> {
       String description,
       List<Author> authors,
       String? materialsAuthor,
-      List<Section> content});
+      List<Section> sections});
 }
 
 /// @nodoc
@@ -67,7 +67,7 @@ class _$CourseCopyWithImpl<$Res, $Val extends Course>
     Object? description = null,
     Object? authors = null,
     Object? materialsAuthor = freezed,
-    Object? content = null,
+    Object? sections = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -94,9 +94,9 @@ class _$CourseCopyWithImpl<$Res, $Val extends Course>
           ? _value.materialsAuthor
           : materialsAuthor // ignore: cast_nullable_to_non_nullable
               as String?,
-      content: null == content
-          ? _value.content
-          : content // ignore: cast_nullable_to_non_nullable
+      sections: null == sections
+          ? _value.sections
+          : sections // ignore: cast_nullable_to_non_nullable
               as List<Section>,
     ) as $Val);
   }
@@ -115,7 +115,7 @@ abstract class _$$_CourseCopyWith<$Res> implements $CourseCopyWith<$Res> {
       String description,
       List<Author> authors,
       String? materialsAuthor,
-      List<Section> content});
+      List<Section> sections});
 }
 
 /// @nodoc
@@ -134,7 +134,7 @@ class __$$_CourseCopyWithImpl<$Res>
     Object? description = null,
     Object? authors = null,
     Object? materialsAuthor = freezed,
-    Object? content = null,
+    Object? sections = null,
   }) {
     return _then(_$_Course(
       id: null == id
@@ -161,9 +161,9 @@ class __$$_CourseCopyWithImpl<$Res>
           ? _value.materialsAuthor
           : materialsAuthor // ignore: cast_nullable_to_non_nullable
               as String?,
-      content: null == content
-          ? _value._content
-          : content // ignore: cast_nullable_to_non_nullable
+      sections: null == sections
+          ? _value._sections
+          : sections // ignore: cast_nullable_to_non_nullable
               as List<Section>,
     ));
   }
@@ -179,9 +179,9 @@ class _$_Course implements _Course {
       required this.description,
       required final List<Author> authors,
       this.materialsAuthor,
-      required final List<Section> content})
+      required final List<Section> sections})
       : _authors = authors,
-        _content = content;
+        _sections = sections;
 
   factory _$_Course.fromJson(Map<String, dynamic> json) =>
       _$$_CourseFromJson(json);
@@ -203,16 +203,16 @@ class _$_Course implements _Course {
 
   @override
   final String? materialsAuthor;
-  final List<Section> _content;
+  final List<Section> _sections;
   @override
-  List<Section> get content {
+  List<Section> get sections {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_content);
+    return EqualUnmodifiableListView(_sections);
   }
 
   @override
   String toString() {
-    return 'Course(id: $id, title: $title, subTitle: $subTitle, description: $description, authors: $authors, materialsAuthor: $materialsAuthor, content: $content)';
+    return 'Course(id: $id, title: $title, subTitle: $subTitle, description: $description, authors: $authors, materialsAuthor: $materialsAuthor, sections: $sections)';
   }
 
   @override
@@ -229,7 +229,7 @@ class _$_Course implements _Course {
             const DeepCollectionEquality().equals(other._authors, _authors) &&
             (identical(other.materialsAuthor, materialsAuthor) ||
                 other.materialsAuthor == materialsAuthor) &&
-            const DeepCollectionEquality().equals(other._content, _content));
+            const DeepCollectionEquality().equals(other._sections, _sections));
   }
 
   @JsonKey(ignore: true)
@@ -242,7 +242,7 @@ class _$_Course implements _Course {
       description,
       const DeepCollectionEquality().hash(_authors),
       materialsAuthor,
-      const DeepCollectionEquality().hash(_content));
+      const DeepCollectionEquality().hash(_sections));
 
   @JsonKey(ignore: true)
   @override
@@ -266,7 +266,7 @@ abstract class _Course implements Course {
       required final String description,
       required final List<Author> authors,
       final String? materialsAuthor,
-      required final List<Section> content}) = _$_Course;
+      required final List<Section> sections}) = _$_Course;
 
   factory _Course.fromJson(Map<String, dynamic> json) = _$_Course.fromJson;
 
@@ -283,7 +283,7 @@ abstract class _Course implements Course {
   @override
   String? get materialsAuthor;
   @override
-  List<Section> get content;
+  List<Section> get sections;
   @override
   @JsonKey(ignore: true)
   _$$_CourseCopyWith<_$_Course> get copyWith =>

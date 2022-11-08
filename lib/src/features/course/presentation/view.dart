@@ -18,7 +18,7 @@ class CourseView extends StatelessWidget {
         .where((course) => course.id == courseId)
         .first;
 
-    final courseSections = course.content;
+    final courseSections = course.sections;
 
     return AppResponsiveScaffold(
         child: Column(

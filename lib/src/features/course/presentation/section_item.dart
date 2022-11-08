@@ -17,7 +17,7 @@ class SectionItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final section = flutterLearningPath.courses[courseId].content[sectionId];
+    final section = flutterLearningPath.courses[courseId].sections[sectionId];
 
     return SizedBox(
       child: Column(

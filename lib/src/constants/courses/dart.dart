@@ -10,7 +10,7 @@ final dart = Course(
   description:
       'Un curso que enseñe desde fin a principio, que instale buenas prácticas desde el primer código',
   materialsAuthor: 'Mauro Di Bert and Martin Smith',
-  content: [
+  sections: [
     Section(id: 0, title: 'Introducción', chapters: [
       Article(
         id: 0,

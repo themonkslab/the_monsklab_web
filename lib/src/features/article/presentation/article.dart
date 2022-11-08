@@ -47,7 +47,7 @@ class _ArticleState extends State<Article> {
   Widget build(BuildContext context) {
     screenHeight = MediaQuery.of(context).size.height;
     final chapter = flutterLearningPath.courses[widget.courseId]
-        .content[widget.sectionId].chapters[widget.chapterId];
+        .sections[widget.sectionId].chapters[widget.chapterId];
 
     final screenType = context.getScreenType();
     final isDesktopOrLarge =

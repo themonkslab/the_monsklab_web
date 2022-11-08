@@ -15,7 +15,7 @@ _$_Course _$$_CourseFromJson(Map<String, dynamic> json) => _$_Course(
           .map((e) => Author.fromJson(e as Map<String, dynamic>))
           .toList(),
       materialsAuthor: json['materialsAuthor'] as String?,
-      content: (json['content'] as List<dynamic>)
+      sections: (json['sections'] as List<dynamic>)
           .map((e) => Section.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
@@ -27,5 +27,5 @@ Map<String, dynamic> _$$_CourseToJson(_$_Course instance) => <String, dynamic>{
       'description': instance.description,
       'authors': instance.authors,
       'materialsAuthor': instance.materialsAuthor,
-      'content': instance.content,
+      'sections': instance.sections,
     };
