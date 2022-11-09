@@ -1,13 +1,17 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 
-class LearningPath {
-  LearningPath({
-    required this.id,
-    required this.title,
-    required this.courses,
-  });
+part 'learning_path.freezed.dart';
+part 'learning_path.g.dart';
 
-  final int id;
-  final String title;
-  final List<Course> courses;
+@freezed
+class LearningPath with _$LearningPath {
+  const factory LearningPath({
+    required int id,
+    required String title,
+    required List<Course> courses,
+  }) = _LearningPath;
+
+  factory LearningPath.fromJson(Map<String, Object?> json) =>
+      _$LearningPathFromJson(json);
 }
