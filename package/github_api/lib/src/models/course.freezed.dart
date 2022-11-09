@@ -22,11 +22,7 @@ Course _$CourseFromJson(Map<String, dynamic> json) {
 mixin _$Course {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  String? get subTitle => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  List<Author> get authors => throw _privateConstructorUsedError;
-  String? get materialsAuthor => throw _privateConstructorUsedError;
-  List<Section> get sections => throw _privateConstructorUsedError;
+  String get url => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,14 +34,7 @@ abstract class $CourseCopyWith<$Res> {
   factory $CourseCopyWith(Course value, $Res Function(Course) then) =
       _$CourseCopyWithImpl<$Res, Course>;
   @useResult
-  $Res call(
-      {int id,
-      String title,
-      String? subTitle,
-      String description,
-      List<Author> authors,
-      String? materialsAuthor,
-      List<Section> sections});
+  $Res call({int id, String title, String url});
 }
 
 /// @nodoc
@@ -63,11 +52,7 @@ class _$CourseCopyWithImpl<$Res, $Val extends Course>
   $Res call({
     Object? id = null,
     Object? title = null,
-    Object? subTitle = freezed,
-    Object? description = null,
-    Object? authors = null,
-    Object? materialsAuthor = freezed,
-    Object? sections = null,
+    Object? url = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -78,26 +63,10 @@ class _$CourseCopyWithImpl<$Res, $Val extends Course>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      subTitle: freezed == subTitle
-          ? _value.subTitle
-          : subTitle // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
               as String,
-      authors: null == authors
-          ? _value.authors
-          : authors // ignore: cast_nullable_to_non_nullable
-              as List<Author>,
-      materialsAuthor: freezed == materialsAuthor
-          ? _value.materialsAuthor
-          : materialsAuthor // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sections: null == sections
-          ? _value.sections
-          : sections // ignore: cast_nullable_to_non_nullable
-              as List<Section>,
     ) as $Val);
   }
 }
@@ -108,14 +77,7 @@ abstract class _$$_CourseCopyWith<$Res> implements $CourseCopyWith<$Res> {
       __$$_CourseCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int id,
-      String title,
-      String? subTitle,
-      String description,
-      List<Author> authors,
-      String? materialsAuthor,
-      List<Section> sections});
+  $Res call({int id, String title, String url});
 }
 
 /// @nodoc
@@ -130,11 +92,7 @@ class __$$_CourseCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? title = null,
-    Object? subTitle = freezed,
-    Object? description = null,
-    Object? authors = null,
-    Object? materialsAuthor = freezed,
-    Object? sections = null,
+    Object? url = null,
   }) {
     return _then(_$_Course(
       id: null == id
@@ -145,26 +103,10 @@ class __$$_CourseCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      subTitle: freezed == subTitle
-          ? _value.subTitle
-          : subTitle // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      url: null == url
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
               as String,
-      authors: null == authors
-          ? _value._authors
-          : authors // ignore: cast_nullable_to_non_nullable
-              as List<Author>,
-      materialsAuthor: freezed == materialsAuthor
-          ? _value.materialsAuthor
-          : materialsAuthor // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sections: null == sections
-          ? _value._sections
-          : sections // ignore: cast_nullable_to_non_nullable
-              as List<Section>,
     ));
   }
 }
@@ -172,16 +114,7 @@ class __$$_CourseCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Course implements _Course {
-  const _$_Course(
-      {required this.id,
-      required this.title,
-      this.subTitle,
-      required this.description,
-      required final List<Author> authors,
-      this.materialsAuthor,
-      required final List<Section> sections})
-      : _authors = authors,
-        _sections = sections;
+  const _$_Course({required this.id, required this.title, required this.url});
 
   factory _$_Course.fromJson(Map<String, dynamic> json) =>
       _$$_CourseFromJson(json);
@@ -191,28 +124,11 @@ class _$_Course implements _Course {
   @override
   final String title;
   @override
-  final String? subTitle;
-  @override
-  final String description;
-  final List<Author> _authors;
-  @override
-  List<Author> get authors {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_authors);
-  }
-
-  @override
-  final String? materialsAuthor;
-  final List<Section> _sections;
-  @override
-  List<Section> get sections {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_sections);
-  }
+  final String url;
 
   @override
   String toString() {
-    return 'Course(id: $id, title: $title, subTitle: $subTitle, description: $description, authors: $authors, materialsAuthor: $materialsAuthor, sections: $sections)';
+    return 'Course(id: $id, title: $title, url: $url)';
   }
 
   @override
@@ -222,27 +138,12 @@ class _$_Course implements _Course {
             other is _$_Course &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.subTitle, subTitle) ||
-                other.subTitle == subTitle) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            const DeepCollectionEquality().equals(other._authors, _authors) &&
-            (identical(other.materialsAuthor, materialsAuthor) ||
-                other.materialsAuthor == materialsAuthor) &&
-            const DeepCollectionEquality().equals(other._sections, _sections));
+            (identical(other.url, url) || other.url == url));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      title,
-      subTitle,
-      description,
-      const DeepCollectionEquality().hash(_authors),
-      materialsAuthor,
-      const DeepCollectionEquality().hash(_sections));
+  int get hashCode => Object.hash(runtimeType, id, title, url);
 
   @JsonKey(ignore: true)
   @override
@@ -262,11 +163,7 @@ abstract class _Course implements Course {
   const factory _Course(
       {required final int id,
       required final String title,
-      final String? subTitle,
-      required final String description,
-      required final List<Author> authors,
-      final String? materialsAuthor,
-      required final List<Section> sections}) = _$_Course;
+      required final String url}) = _$_Course;
 
   factory _Course.fromJson(Map<String, dynamic> json) = _$_Course.fromJson;
 
@@ -275,15 +172,7 @@ abstract class _Course implements Course {
   @override
   String get title;
   @override
-  String? get subTitle;
-  @override
-  String get description;
-  @override
-  List<Author> get authors;
-  @override
-  String? get materialsAuthor;
-  @override
-  List<Section> get sections;
+  String get url;
   @override
   @JsonKey(ignore: true)
   _$$_CourseCopyWith<_$_Course> get copyWith =>

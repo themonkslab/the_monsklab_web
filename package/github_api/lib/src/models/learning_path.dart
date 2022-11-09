@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:github_api/src/models/_index.dart';
 
 part 'learning_path.freezed.dart';
 part 'learning_path.g.dart';
@@ -9,7 +8,7 @@ class LearningPath with _$LearningPath {
   const factory LearningPath({
     required int id,
     required String title,
-    required List<Course> courses,
+    required String url,
   }) = _LearningPath;
 
   factory LearningPath.fromJson(Map<String, Object?> json) =>
