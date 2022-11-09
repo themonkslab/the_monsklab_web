@@ -12,7 +12,7 @@ class ArticleBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding: AppPaddings.padAll12,
       child: MarkdownBody(
         onTapLink: (text, href, title) {
           href != null ? launchUrl(Uri.parse(href)) : null;
@@ -20,7 +20,7 @@ class ArticleBody extends StatelessWidget {
         data: data,
         styleSheet: MarkdownStyleSheet(
           h1: AppTextStyles.h1,
-          h1Padding: const EdgeInsets.symmetric(vertical: 28.0),
+          h1Padding: AppPaddings.padV28,
 
           /// alignment does not work
           // h1Align: WrapAlignment.center,

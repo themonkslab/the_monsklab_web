@@ -23,7 +23,10 @@ class HomeView extends StatelessWidget {
             text: appTitle.toUpperCase(),
             textAlign: TextAlign.center,
             style: AppTextStyles.h1.copyWith(color: AppColors.white),
-            enabledDisabledColors: const [AppColors.black, AppColors.white],
+            enabledDisabledColors: const [
+              AppColors.black,
+              AppColors.white,
+            ],
             onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),
           )
         ],

@@ -28,7 +28,10 @@ class ArchiveView extends StatelessWidget {
                   ? AppTextStyles.h1HeaderPhone
                   : AppTextStyles.h1Header),
           AppGaps.gapH20,
-          Text(archiveViewDescription, style: AppTextStyles.p),
+          Text(
+            archiveViewDescription,
+            style: AppTextStyles.p,
+          ),
           AppGaps.gapH64,
           Row(
             children: [

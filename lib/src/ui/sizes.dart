@@ -40,7 +40,6 @@ class AppGaps {
   static const gapH64 = SizedBox(height: 64.0);
 }
 
-
 /// __Customized Paddings Shortcuts__
 ///
 /// _padAll4_: EdgeInsets.all(4.0)
@@ -52,6 +51,7 @@ class AppPaddings {
 //* All
   static const padAll0 = EdgeInsets.all(0.0);
   static const padAll4 = EdgeInsets.all(4.0);
+  static const padAll12 = EdgeInsets.all(12.0);
   static const padAll16 = EdgeInsets.all(16.0);
   static const padAll32 = EdgeInsets.all(32.0);
 

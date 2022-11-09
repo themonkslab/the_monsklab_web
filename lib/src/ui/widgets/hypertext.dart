@@ -31,8 +31,11 @@ class _AppHypertextState extends State<AppHypertext> {
   @override
   void initState() {
     isEnabled = widget.onPressed != null;
-    finalEnabledDisabledColors =
-        widget.enabledDisabledColors ?? [AppColors.cyan, AppColors.lighterGrey];
+    finalEnabledDisabledColors = widget.enabledDisabledColors ??
+        [
+          AppColors.cyan,
+          AppColors.lighterGrey,
+        ];
     super.initState();
   }
 

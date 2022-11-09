@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:github_api/github_api.dart';
+import '../lib/github_api.dart';
 
 void main() {
   test('adds one to input values', () {

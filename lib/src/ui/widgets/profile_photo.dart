@@ -16,9 +16,7 @@ class AppProfilePhoto extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.yellow,
         shape: BoxShape.circle,
-        image: DecorationImage(
-          image: AssetImage(author.picture),
-        ),
+        image: DecorationImage(image: AssetImage(author.picture)),
       ),
     );
   }
