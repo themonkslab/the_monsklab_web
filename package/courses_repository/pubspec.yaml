@@ -1,6 +1,7 @@
 name: courses_repository
 description: A new Flutter package project.
 version: 0.0.1
+publish_to: none
 
 environment:
   sdk: '>=2.19.0-255.2.beta <3.0.0'
