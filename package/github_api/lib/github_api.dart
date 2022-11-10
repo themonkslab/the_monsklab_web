@@ -1,7 +1,4 @@
 library github_api;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export './src/github_api_client.dart';
+export './src/models/_index.dart';
