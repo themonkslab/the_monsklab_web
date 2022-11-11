@@ -1,10 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:the_monkslab_web/src/constants/_index.dart';
-import 'package:the_monkslab_web/src/ui/_index.dart';
-import 'package:the_monkslab_web/src/utils/_index.dart';
-
-import 'article_body.dart';
-import 'article_header.dart';
 
 class Article extends StatefulWidget {
   const Article({
@@ -45,60 +39,60 @@ class _ArticleState extends State<Article> {
 
   @override
   Widget build(BuildContext context) {
-    screenHeight = MediaQuery.of(context).size.height;
-    final chapter = flutterLearningPath.courses[widget.courseId]
-        .sections[widget.sectionId].chapters[widget.chapterId];
+    return SizedBox.shrink();
+    // screenHeight = MediaQuery.of(context).size.height;
+    // final chapter = flutterLearningPath.courses[widget.courseId]
+    //     .sections[widget.sectionId].chapters[widget.chapterId];
 
-    final screenType = context.getScreenType();
-    final isDesktopOrLarge =
-        screenType == ScreenType.desktop || screenType == ScreenType.large;
+    // final screenType = context.getScreenType();
+    // final isDesktopOrLarge =
+    //     screenType == ScreenType.desktop || screenType == ScreenType.large;
 
-    if (screenType == ScreenType.phone) {
-      return Scaffold(
-        appBar: isHeaderOnScreen
-            ? const AppAppBar(
-                elevation: 0,
-                showSocials: false,
-                backgroundColor: AppColors.black,
-              )
-            : const AppAppBar(showSocials: true),
-        body: ListView(
-          controller: scrollController,
-          children: <Widget>[
-            ArticleHeader(chapter: chapter),
-            AppGaps.gapH24,
-            ArticleBody(data: chapter.content),
-            AppGaps.gapH48,
-          ],
-        ),
-      );
-    } else {
-      return Scaffold(
-        appBar: isHeaderOnScreen
-            ? const AppAppBar(
-                elevation: 0,
-                showSocials: false,
-                backgroundColor: AppColors.black,
-              )
-            : const AppAppBar(showSocials: true),
-        body: SingleChildScrollView(
-            controller: scrollController,
-            child: Column(
-              children: [
-                ArticleHeader(
-                  chapter: chapter,
-                ),
-                AppGaps.gapH24,
-                Container(
-                    color: Colors.white,
-                    width: isDesktopOrLarge
-                        ? AppSizes.largeContentContainer
-                        : AppSizes.desktopContentContainer,
-                    child: ArticleBody(data: chapter.content)),
-                AppGaps.gapH48,
-              ],
-            )),
-      );
-    }
+    // if (screenType == ScreenType.phone) {
+    //   return Scaffold(
+    //     appBar: isHeaderOnScreen
+    //         ? const AppAppBar(
+    //             elevation: 0,
+    //             showSocials: false,
+    //             backgroundColor: AppColors.black,
+    //           )
+    //         : const AppAppBar(showSocials: true),
+    //     body: ListView(
+    //       controller: scrollController,
+    //       children: <Widget>[
+    //         ArticleHeader(chapter: chapter),
+    //         AppGaps.gapH24,
+    //         ArticleBody(data: chapter.content),
+    //         AppGaps.gapH48,
+    //       ],
+    //     ),
+    //   );
+    // } else {
+    //   return Scaffold(
+    //     appBar: isHeaderOnScreen
+    //         ? const AppAppBar(
+    //             elevation: 0,
+    //             showSocials: false,
+    //             backgroundColor: AppColors.black,
+    //           )
+    //         : const AppAppBar(showSocials: true),
+    //     body: SingleChildScrollView(
+    //         controller: scrollController,
+    //         child: Column(
+    //           children: [
+    //             ArticleHeader(
+    //               chapter: chapter,
+    //             ),
+    //             AppGaps.gapH24,
+    //             Container(
+    //                 color: Colors.white,
+    //                 width: isDesktopOrLarge
+    //                     ? AppSizes.largeContentContainer
+    //                     : AppSizes.desktopContentContainer,
+    //                 child: ArticleBody(data: chapter.content)),
+    //             AppGaps.gapH48,
+    //           ],
+    //         )),
+    //   );
   }
 }

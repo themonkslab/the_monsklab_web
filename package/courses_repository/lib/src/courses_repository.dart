@@ -8,16 +8,14 @@ class CoursesRepository {
 
   final GithubApiClient _githubApiClient;
 
-  Future<List<LearningPath>> getLearningPath({
-    required String url,
-    required String mainKey,
-  }) async {
-    final list = await _githubApiClient.getLearningPathList(
-      url:
-          'https://raw.githubusercontent.com/themonkslab/courses/main/learning_path_list.json',
-      mainKey: 'learning_path_list',
-    );
+  //TODO -LOW- add method for home page listing all the learning paths
+  // Future<List<LearningPath>> getLearningPathList() async {
+  //   final list = await _githubApiClient.getLearningPathList();
+  //   return list;
+  // }
 
-    return list;
+  Future<LearningPath> getLearningPath() async {
+    final learningPath = await _githubApiClient.getLearningPath();
+    return learningPath;
   }
 }
