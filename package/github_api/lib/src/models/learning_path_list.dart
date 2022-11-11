@@ -14,3 +14,13 @@ class LearningPathList with _$LearningPathList {
   factory LearningPathList.fromJson(Map<String, Object?> json) =>
       _$LearningPathListFromJson(json);
 }
+
+// {
+//     "learning_path_list": [
+//         {
+//             "id": 0,
+//             "title": "Flutter Learning Path",
+//             "url": "https://raw.githubusercontent.com/themonkslab/courses/main/flutter_learning_path.json"
+//         }
+//     ]
+// }

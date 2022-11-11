@@ -13,28 +13,29 @@ class GithubApiClient {
 
   final http.Client _httpClient;
 
-  Future<List<LearningPath>> getLearningPathList({
-    required String url,
-    required String mainKey,
-  }) async {
+  //TODO -LOW- add method for home page listing all the learning paths
+  // Future<List<LearningPath>> getLearningPathList() async {
+  //   final String url = '';
+  //   final String mainKey = '';
+
+  //   final response = await _httpClient.get(Uri.https(url));
+
+  //   if (response.statusCode != 200) {
+  //     throw RequestFailure();
+  //   }
+  //   final responseJson = jsonDecode(response.body) as Map;
+  //   if (!responseJson.containsKey(mainKey)) throw NotFoundFailure();
+  //   final results = responseJson[mainKey] as List;
+  //   if (results.isEmpty) throw NotFoundFailure();
+  //   return results.map((map) => LearningPath.fromJson(map)).toList();
+  // }
+
+  Future<LearningPath> getLearningPath() async {
+    const String url =
+        'https://raw.githubusercontent.com/themonkslab/courses/main/flutter_learning_path.json';
+    const String mainKey = 'courses';
+
     final response = await _httpClient.get(Uri.https(url));
-
-    if (response.statusCode != 200) {
-      throw RequestFailure();
-    }
-    final responseJson = jsonDecode(response.body) as Map;
-    if (!responseJson.containsKey(mainKey)) throw NotFoundFailure();
-    final results = responseJson[mainKey] as List;
-    if (results.isEmpty) throw NotFoundFailure();
-    return results.map((map) => LearningPath.fromJson(map)).toList();
-  }
-
-  Future<LearningPath> getLearningPath({
-    required String url,
-    required String mainKey,
-  }) async {
-    final response = await _httpClient.get(Uri.https(url));
-
     if (response.statusCode != 200) {
       throw RequestFailure();
     }
