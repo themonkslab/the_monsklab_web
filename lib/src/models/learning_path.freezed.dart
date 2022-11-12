@@ -22,6 +22,7 @@ LearningPath _$LearningPathFromJson(Map<String, dynamic> json) {
 mixin _$LearningPath {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
+  List<Course> get courses => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +36,7 @@ abstract class $LearningPathCopyWith<$Res> {
           LearningPath value, $Res Function(LearningPath) then) =
       _$LearningPathCopyWithImpl<$Res, LearningPath>;
   @useResult
-  $Res call({int id, String title});
+  $Res call({int id, String title, List<Course> courses});
 }
 
 /// @nodoc
@@ -53,6 +54,7 @@ class _$LearningPathCopyWithImpl<$Res, $Val extends LearningPath>
   $Res call({
     Object? id = null,
     Object? title = null,
+    Object? courses = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -63,6 +65,10 @@ class _$LearningPathCopyWithImpl<$Res, $Val extends LearningPath>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      courses: null == courses
+          ? _value.courses
+          : courses // ignore: cast_nullable_to_non_nullable
+              as List<Course>,
     ) as $Val);
   }
 }
@@ -75,7 +81,7 @@ abstract class _$$_LearningPathCopyWith<$Res>
       __$$_LearningPathCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String title});
+  $Res call({int id, String title, List<Course> courses});
 }
 
 /// @nodoc
@@ -91,6 +97,7 @@ class __$$_LearningPathCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? title = null,
+    Object? courses = null,
   }) {
     return _then(_$_LearningPath(
       id: null == id
@@ -101,6 +108,10 @@ class __$$_LearningPathCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      courses: null == courses
+          ? _value._courses
+          : courses // ignore: cast_nullable_to_non_nullable
+              as List<Course>,
     ));
   }
 }
@@ -108,7 +119,11 @@ class __$$_LearningPathCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_LearningPath implements _LearningPath {
-  const _$_LearningPath({required this.id, required this.title});
+  const _$_LearningPath(
+      {required this.id,
+      required this.title,
+      required final List<Course> courses})
+      : _courses = courses;
 
   factory _$_LearningPath.fromJson(Map<String, dynamic> json) =>
       _$$_LearningPathFromJson(json);
@@ -117,10 +132,16 @@ class _$_LearningPath implements _LearningPath {
   final int id;
   @override
   final String title;
+  final List<Course> _courses;
+  @override
+  List<Course> get courses {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_courses);
+  }
 
   @override
   String toString() {
-    return 'LearningPath(id: $id, title: $title)';
+    return 'LearningPath(id: $id, title: $title, courses: $courses)';
   }
 
   @override
@@ -129,12 +150,14 @@ class _$_LearningPath implements _LearningPath {
         (other.runtimeType == runtimeType &&
             other is _$_LearningPath &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.title, title) || other.title == title));
+            (identical(other.title, title) || other.title == title) &&
+            const DeepCollectionEquality().equals(other._courses, _courses));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, title);
+  int get hashCode => Object.hash(
+      runtimeType, id, title, const DeepCollectionEquality().hash(_courses));
 
   @JsonKey(ignore: true)
   @override
@@ -152,7 +175,9 @@ class _$_LearningPath implements _LearningPath {
 
 abstract class _LearningPath implements LearningPath {
   const factory _LearningPath(
-      {required final int id, required final String title}) = _$_LearningPath;
+      {required final int id,
+      required final String title,
+      required final List<Course> courses}) = _$_LearningPath;
 
   factory _LearningPath.fromJson(Map<String, dynamic> json) =
       _$_LearningPath.fromJson;
@@ -161,6 +186,8 @@ abstract class _LearningPath implements LearningPath {
   int get id;
   @override
   String get title;
+  @override
+  List<Course> get courses;
   @override
   @JsonKey(ignore: true)
   _$$_LearningPathCopyWith<_$_LearningPath> get copyWith =>
