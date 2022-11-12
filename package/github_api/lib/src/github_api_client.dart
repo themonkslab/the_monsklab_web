@@ -1,28 +1,28 @@
 import 'dart:convert';
 
+import 'package:dio/dio.dart';
 import 'package:github_api/src/models/_index.dart';
-import 'package:http/http.dart' as http;
 
 class RequestFailure implements Exception {}
 
 class NotFoundFailure implements Exception {}
 
 class GithubApiClient {
-  GithubApiClient({http.Client? httpClient})
-      : _httpClient = httpClient ?? http.Client();
+  GithubApiClient() : _httpClient = Dio();
 
-  final http.Client _httpClient;
+  final Dio _httpClient;
 
   Future<LearningPathApi> getLearningPath() async {
     const String url =
         'https://raw.githubusercontent.com/themonkslab/courses/main/flutter_learning_path.json';
     const String mainKey = 'courses';
 
-    final response = await _httpClient.get(Uri.https(url));
+    final response = await _httpClient.get(url,
+        options: Options(headers: {"Content-Type": "application/json"}));
     if (response.statusCode != 200) {
       throw RequestFailure();
     }
-    final responseJson = jsonDecode(response.body) as Map;
+    final responseJson = jsonDecode(response.data) as Map;
     if (!responseJson.containsKey(mainKey)) throw NotFoundFailure();
     final results = responseJson[mainKey] as List;
     if (results.isEmpty) throw NotFoundFailure();
@@ -33,13 +33,13 @@ class GithubApiClient {
     required String url,
     required String mainKey,
   }) async {
-    final response = await _httpClient.get(Uri.https(url));
+    final response = await _httpClient.get(url);
 
     if (response.statusCode != 200) {
       throw RequestFailure();
     }
 
-    final responseJson = jsonDecode(response.body) as Map;
+    final responseJson = jsonDecode(response.data) as Map;
     if (!responseJson.containsKey(mainKey)) throw NotFoundFailure();
     final results = responseJson[mainKey] as List;
     if (results.isEmpty) throw NotFoundFailure();
@@ -50,13 +50,13 @@ class GithubApiClient {
     required String url,
     required String mainKey,
   }) async {
-    final response = await _httpClient.get(Uri.https(url));
+    final response = await _httpClient.get(url);
 
     if (response.statusCode != 200) {
       throw RequestFailure();
     }
 
-    final responseJson = jsonDecode(response.body) as Map;
+    final responseJson = jsonDecode(response.data) as Map;
     if (!responseJson.containsKey(mainKey)) throw NotFoundFailure();
     final results = responseJson[mainKey] as List;
     if (results.isEmpty) throw NotFoundFailure();
@@ -67,13 +67,13 @@ class GithubApiClient {
     required String url,
     required String mainKey,
   }) async {
-    final response = await _httpClient.get(Uri.https(url));
+    final response = await _httpClient.get(url);
 
     if (response.statusCode != 200) {
       throw RequestFailure();
     }
 
-    final responseJson = jsonDecode(response.body) as Map;
+    final responseJson = jsonDecode(response.data) as Map;
     if (!responseJson.containsKey(mainKey)) throw NotFoundFailure();
     final results = responseJson[mainKey] as List;
     if (results.isEmpty) throw NotFoundFailure();

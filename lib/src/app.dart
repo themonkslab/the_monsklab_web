@@ -1,6 +1,8 @@
+import 'package:beamer/beamer.dart';
 import 'package:courses_repository/courses_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:the_monkslab_web/src/core/routing/routing.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
 
@@ -21,36 +23,20 @@ class App extends StatelessWidget {
   }
 }
 
-// class AppView extends StatelessWidget {
-//   const AppView({super.key});
+class AppView extends StatelessWidget {
+  const AppView({super.key});
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       debugShowCheckedModeBanner: false,
-//       theme: AppTheme.light,
-//       darkTheme: AppTheme.dark,
-//       restorationScopeId: 'app',
-//       onGenerateTitle: (BuildContext context) => 'The Monsklab Web'.hardcoded,
-//       initialRoute: ,
-//     );
-//   }
-// }
-
-// class AppView extends StatelessWidget {
-//   const AppView({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp.router(
-//       routeInformationParser: BeamerParser(),
-//       routerDelegate: routerDelegate,
-//       debugShowCheckedModeBanner: false,
-//       theme: AppTheme.light,
-//       darkTheme: AppTheme.dark,
-//       themeMode: ThemeMode.light,
-//       restorationScopeId: 'app',
-//       onGenerateTitle: (BuildContext context) => 'The Monsklab Web'.hardcoded,
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      routeInformationParser: BeamerParser(),
+      routerDelegate: routerDelegate,
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
+      themeMode: ThemeMode.light,
+      restorationScopeId: 'app',
+      onGenerateTitle: (BuildContext context) => 'The Monsklab Web'.hardcoded,
+    );
+  }
+}
