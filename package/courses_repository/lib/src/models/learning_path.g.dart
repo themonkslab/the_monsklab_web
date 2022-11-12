@@ -6,16 +6,16 @@ part of 'learning_path.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_LearningPath _$$_LearningPathFromJson(Map<String, dynamic> json) =>
-    _$_LearningPath(
+_$_LearningPathRepo _$$_LearningPathRepoFromJson(Map<String, dynamic> json) =>
+    _$_LearningPathRepo(
       id: json['id'] as int,
       title: json['title'] as String,
       courses: (json['courses'] as List<dynamic>)
-          .map((e) => Course.fromJson(e as Map<String, dynamic>))
+          .map((e) => CourseRepo.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$$_LearningPathToJson(_$_LearningPath instance) =>
+Map<String, dynamic> _$$_LearningPathRepoToJson(_$_LearningPathRepo instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,

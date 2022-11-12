@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:courses_repository/src/models/_index.dart';
 import 'package:github_api/github_api.dart';
 
 class CoursesRepository {
@@ -8,14 +9,16 @@ class CoursesRepository {
 
   final GithubApiClient _githubApiClient;
 
-  //TODO -LOW- add method for home page listing all the learning paths
-  // Future<List<LearningPath>> getLearningPathList() async {
-  //   final list = await _githubApiClient.getLearningPathList();
-  //   return list;
-  // }
-
-  Future<LearningPath> getLearningPath() async {
+  Future<LearningPathRepo> getLearningPath() async {
     final learningPath = await _githubApiClient.getLearningPath();
-    return learningPath;
+
+    return LearningPathRepo(
+      id: learningPath.id,
+      title: learningPath.title,
+      courses: learningPath.courses
+          .map((course) =>
+              CourseRepo(id: course.id, title: course.title, url: course.url))
+          .toList(),
+    );
   }
 }

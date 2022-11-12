@@ -6,26 +6,16 @@ part of 'course.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_Course _$$_CourseFromJson(Map<String, dynamic> json) => _$_Course(
+_$_CourseRepo _$$_CourseRepoFromJson(Map<String, dynamic> json) =>
+    _$_CourseRepo(
       id: json['id'] as int,
       title: json['title'] as String,
-      subTitle: json['subTitle'] as String?,
-      description: json['description'] as String,
-      authors: (json['authors'] as List<dynamic>)
-          .map((e) => Author.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      materialsAuthor: json['materialsAuthor'] as String?,
-      sections: (json['sections'] as List<dynamic>)
-          .map((e) => Section.fromJson(e as Map<String, dynamic>))
-          .toList(),
+      url: json['url'] as String,
     );
 
-Map<String, dynamic> _$$_CourseToJson(_$_Course instance) => <String, dynamic>{
+Map<String, dynamic> _$$_CourseRepoToJson(_$_CourseRepo instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
-      'subTitle': instance.subTitle,
-      'description': instance.description,
-      'authors': instance.authors,
-      'materialsAuthor': instance.materialsAuthor,
-      'sections': instance.sections,
+      'url': instance.url,
     };

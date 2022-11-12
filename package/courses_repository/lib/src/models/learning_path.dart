@@ -5,13 +5,13 @@ part 'learning_path.freezed.dart';
 part 'learning_path.g.dart';
 
 @freezed
-class LearningPath with _$LearningPath {
-  const factory LearningPath({
+class LearningPathRepo with _$LearningPathRepo {
+  const factory LearningPathRepo({
     required int id,
     required String title,
-    required List<Course> courses,
-  }) = _LearningPath;
+    required List<CourseRepo> courses,
+  }) = _LearningPathRepo;
 
-  factory LearningPath.fromJson(Map<String, Object?> json) =>
-      _$LearningPathFromJson(json);
+  factory LearningPathRepo.fromJson(Map<String, Object?> json) =>
+      _$LearningPathRepoFromJson(json);
 }
