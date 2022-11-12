@@ -16,7 +16,7 @@ class LearningPath with _$LearningPath {
       _$LearningPathFromJson(json);
 
   factory LearningPath.fromRepository(
-      courses_repository.LearningPath learningPath) {
+      courses_repository.LearningPathRepo learningPath) {
     return LearningPath(
       id: learningPath.id,
       title: learningPath.title,

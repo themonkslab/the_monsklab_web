@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Course _$CourseFromJson(Map<String, dynamic> json) {
+CourseApi _$CourseFromJson(Map<String, dynamic> json) {
   return _Course.fromJson(json);
 }
 
@@ -26,19 +26,19 @@ mixin _$Course {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CourseCopyWith<Course> get copyWith => throw _privateConstructorUsedError;
+  $CourseCopyWith<CourseApi> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CourseCopyWith<$Res> {
-  factory $CourseCopyWith(Course value, $Res Function(Course) then) =
-      _$CourseCopyWithImpl<$Res, Course>;
+  factory $CourseCopyWith(CourseApi value, $Res Function(CourseApi) then) =
+      _$CourseCopyWithImpl<$Res, CourseApi>;
   @useResult
   $Res call({int id, String title, String url});
 }
 
 /// @nodoc
-class _$CourseCopyWithImpl<$Res, $Val extends Course>
+class _$CourseCopyWithImpl<$Res, $Val extends CourseApi>
     implements $CourseCopyWith<$Res> {
   _$CourseCopyWithImpl(this._value, this._then);
 
@@ -159,7 +159,7 @@ class _$_Course implements _Course {
   }
 }
 
-abstract class _Course implements Course {
+abstract class _Course implements CourseApi {
   const factory _Course(
       {required final int id,
       required final String title,

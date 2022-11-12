@@ -13,24 +13,7 @@ class GithubApiClient {
 
   final http.Client _httpClient;
 
-  //TODO -LOW- add method for home page listing all the learning paths
-  // Future<List<LearningPath>> getLearningPathList() async {
-  //   final String url = '';
-  //   final String mainKey = '';
-
-  //   final response = await _httpClient.get(Uri.https(url));
-
-  //   if (response.statusCode != 200) {
-  //     throw RequestFailure();
-  //   }
-  //   final responseJson = jsonDecode(response.body) as Map;
-  //   if (!responseJson.containsKey(mainKey)) throw NotFoundFailure();
-  //   final results = responseJson[mainKey] as List;
-  //   if (results.isEmpty) throw NotFoundFailure();
-  //   return results.map((map) => LearningPath.fromJson(map)).toList();
-  // }
-
-  Future<LearningPath> getLearningPath() async {
+  Future<LearningPathApi> getLearningPath() async {
     const String url =
         'https://raw.githubusercontent.com/themonkslab/courses/main/flutter_learning_path.json';
     const String mainKey = 'courses';
@@ -43,10 +26,10 @@ class GithubApiClient {
     if (!responseJson.containsKey(mainKey)) throw NotFoundFailure();
     final results = responseJson[mainKey] as List;
     if (results.isEmpty) throw NotFoundFailure();
-    return LearningPath.fromJson(results.first as Map<String, dynamic>);
+    return LearningPathApi.fromJson(results.first as Map<String, dynamic>);
   }
 
-  Future<Course> getCourse({
+  Future<CourseApi> getCourse({
     required String url,
     required String mainKey,
   }) async {
@@ -60,7 +43,7 @@ class GithubApiClient {
     if (!responseJson.containsKey(mainKey)) throw NotFoundFailure();
     final results = responseJson[mainKey] as List;
     if (results.isEmpty) throw NotFoundFailure();
-    return Course.fromJson(results.first as Map<String, dynamic>);
+    return CourseApi.fromJson(results.first as Map<String, dynamic>);
   }
 
   Future<Section> getSection({
