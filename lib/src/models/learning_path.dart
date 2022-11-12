@@ -22,4 +22,6 @@ class LearningPath with _$LearningPath {
       title: learningPath.title,
     );
   }
+
+  static const empty = LearningPath(id: -1, title: '--');
 }
