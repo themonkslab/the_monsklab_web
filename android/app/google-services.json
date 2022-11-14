@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1056886643362",
+    "project_id": "monkslab-courses",
+    "storage_bucket": "monkslab-courses.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056886643362:android:fc01275ff07d02998295fb",
+        "android_client_info": {
+          "package_name": "com.example.the_monkslab_web"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1056886643362-i0d4msirr0df4dc9k11bkh3h95fkps3a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCN06QfL8l3AfBa9zkxopHVL8o9i2L3Ioc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1056886643362-i0d4msirr0df4dc9k11bkh3h95fkps3a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1056886643362-favha8att8f56m4b7dfok3cdrvgivdq6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.theMonkslabWeb"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

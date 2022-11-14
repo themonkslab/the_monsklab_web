@@ -1,5 +1,4 @@
-import 'package:courses_repository/courses_repository.dart'
-    as courses_repository;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 
@@ -9,7 +8,7 @@ part 'learning_path.g.dart';
 @freezed
 class LearningPath with _$LearningPath {
   const factory LearningPath({
-    required int id,
+    required String id,
     required String title,
     required List<Course> courses,
   }) = _LearningPath;
@@ -17,23 +16,21 @@ class LearningPath with _$LearningPath {
   factory LearningPath.fromJson(Map<String, Object?> json) =>
       _$LearningPathFromJson(json);
 
-  factory LearningPath.fromRepository(
-      courses_repository.LearningPathRepo learningPath) {
+  factory LearningPath.fromDocumentSnapshot(
+      DocumentSnapshot<Map<String, dynamic>> doc) {
+    final courses = doc.data()!['courses'] as List<Course>;
     return LearningPath(
-      id: learningPath.id,
-      title: learningPath.title,
-      courses: learningPath.courses
-          .map(
-            (course) =>
-                Course(id: course.id, title: course.title, url: course.url),
-          )
-          .toList(),
+      id: doc.id,
+      title: doc.data()!['title'],
+      courses: courses,
     );
+    // courses:courses.map((course) =>
+    //     Course(id: course.id, title: course.title, sections: course)));
   }
 
-  static const empty = LearningPath(
-    id: -1,
-    title: '--',
-    courses: [],
-  );
+  // static const empty = LearningPath(
+  //   id: '',
+  //   title: '--',
+  //   courses: [],
+  // );
 }

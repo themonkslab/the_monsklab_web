@@ -20,7 +20,7 @@ LearningPath _$LearningPathFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$LearningPath {
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   List<Course> get courses => throw _privateConstructorUsedError;
 
@@ -36,7 +36,7 @@ abstract class $LearningPathCopyWith<$Res> {
           LearningPath value, $Res Function(LearningPath) then) =
       _$LearningPathCopyWithImpl<$Res, LearningPath>;
   @useResult
-  $Res call({int id, String title, List<Course> courses});
+  $Res call({String id, String title, List<Course> courses});
 }
 
 /// @nodoc
@@ -60,7 +60,7 @@ class _$LearningPathCopyWithImpl<$Res, $Val extends LearningPath>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -81,7 +81,7 @@ abstract class _$$_LearningPathCopyWith<$Res>
       __$$_LearningPathCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String title, List<Course> courses});
+  $Res call({String id, String title, List<Course> courses});
 }
 
 /// @nodoc
@@ -103,7 +103,7 @@ class __$$_LearningPathCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -129,7 +129,7 @@ class _$_LearningPath implements _LearningPath {
       _$$_LearningPathFromJson(json);
 
   @override
-  final int id;
+  final String id;
   @override
   final String title;
   final List<Course> _courses;
@@ -175,7 +175,7 @@ class _$_LearningPath implements _LearningPath {
 
 abstract class _LearningPath implements LearningPath {
   const factory _LearningPath(
-      {required final int id,
+      {required final String id,
       required final String title,
       required final List<Course> courses}) = _$_LearningPath;
 
@@ -183,7 +183,7 @@ abstract class _LearningPath implements LearningPath {
       _$_LearningPath.fromJson;
 
   @override
-  int get id;
+  String get id;
   @override
   String get title;
   @override

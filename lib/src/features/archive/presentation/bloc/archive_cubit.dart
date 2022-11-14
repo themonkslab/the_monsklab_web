@@ -1,8 +1,8 @@
-import 'package:courses_repository/courses_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/models/learning_path.dart';
+import 'package:the_monkslab_web/src/repositories/_index.dart';
 
 part 'archive_cubit.freezed.dart';
 
@@ -11,12 +11,11 @@ class ArchiveCubit extends Cubit<ArchiveState> {
 
   final CoursesRepository _coursesRepository;
 
-  Future<void> fetchCourses() async {
+  Future<void> fetchLearningPath() async {
     emit(state.copyWith(status: ArchiveStatus.loading));
     try {
-      final learningPath = LearningPath.fromRepository(
-        await _coursesRepository.getLearningPath(),
-      );
+      final learningPath = await _coursesRepository.getLearningPath();
+
       emit(
         state.copyWith(
           status: ArchiveStatus.success,

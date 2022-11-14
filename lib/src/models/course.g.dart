@@ -9,11 +9,13 @@ part of 'course.dart';
 _$_Course _$$_CourseFromJson(Map<String, dynamic> json) => _$_Course(
       id: json['id'] as int,
       title: json['title'] as String,
-      url: json['url'] as String,
+      sections: (json['sections'] as List<dynamic>)
+          .map((e) => Section.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$_CourseToJson(_$_Course instance) => <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
-      'url': instance.url,
+      'sections': instance.sections,
     };

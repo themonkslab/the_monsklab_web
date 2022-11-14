@@ -10,7 +10,7 @@ class Section with _$Section {
     required int id,
     required String title,
     String? description,
-    required List<Article> chapters,
+    required List<Article> articles,
   }) = _Section;
 
   factory Section.fromJson(Map<String, Object?> json) =>

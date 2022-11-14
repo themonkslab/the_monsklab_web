@@ -23,7 +23,7 @@ mixin _$Section {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
-  List<Article> get chapters => throw _privateConstructorUsedError;
+  List<Article> get articles => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,7 @@ abstract class $SectionCopyWith<$Res> {
       _$SectionCopyWithImpl<$Res, Section>;
   @useResult
   $Res call(
-      {int id, String title, String? description, List<Article> chapters});
+      {int id, String title, String? description, List<Article> articles});
 }
 
 /// @nodoc
@@ -55,7 +55,7 @@ class _$SectionCopyWithImpl<$Res, $Val extends Section>
     Object? id = null,
     Object? title = null,
     Object? description = freezed,
-    Object? chapters = null,
+    Object? articles = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -70,9 +70,9 @@ class _$SectionCopyWithImpl<$Res, $Val extends Section>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      chapters: null == chapters
-          ? _value.chapters
-          : chapters // ignore: cast_nullable_to_non_nullable
+      articles: null == articles
+          ? _value.articles
+          : articles // ignore: cast_nullable_to_non_nullable
               as List<Article>,
     ) as $Val);
   }
@@ -86,7 +86,7 @@ abstract class _$$_SectionCopyWith<$Res> implements $SectionCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int id, String title, String? description, List<Article> chapters});
+      {int id, String title, String? description, List<Article> articles});
 }
 
 /// @nodoc
@@ -102,7 +102,7 @@ class __$$_SectionCopyWithImpl<$Res>
     Object? id = null,
     Object? title = null,
     Object? description = freezed,
-    Object? chapters = null,
+    Object? articles = null,
   }) {
     return _then(_$_Section(
       id: null == id
@@ -117,9 +117,9 @@ class __$$_SectionCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      chapters: null == chapters
-          ? _value._chapters
-          : chapters // ignore: cast_nullable_to_non_nullable
+      articles: null == articles
+          ? _value._articles
+          : articles // ignore: cast_nullable_to_non_nullable
               as List<Article>,
     ));
   }
@@ -132,8 +132,8 @@ class _$_Section implements _Section {
       {required this.id,
       required this.title,
       this.description,
-      required final List<Article> chapters})
-      : _chapters = chapters;
+      required final List<Article> articles})
+      : _articles = articles;
 
   factory _$_Section.fromJson(Map<String, dynamic> json) =>
       _$$_SectionFromJson(json);
@@ -144,16 +144,16 @@ class _$_Section implements _Section {
   final String title;
   @override
   final String? description;
-  final List<Article> _chapters;
+  final List<Article> _articles;
   @override
-  List<Article> get chapters {
+  List<Article> get articles {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_chapters);
+    return EqualUnmodifiableListView(_articles);
   }
 
   @override
   String toString() {
-    return 'Section(id: $id, title: $title, description: $description, chapters: $chapters)';
+    return 'Section(id: $id, title: $title, description: $description, articles: $articles)';
   }
 
   @override
@@ -165,13 +165,13 @@ class _$_Section implements _Section {
             (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            const DeepCollectionEquality().equals(other._chapters, _chapters));
+            const DeepCollectionEquality().equals(other._articles, _articles));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, title, description,
-      const DeepCollectionEquality().hash(_chapters));
+      const DeepCollectionEquality().hash(_articles));
 
   @JsonKey(ignore: true)
   @override
@@ -192,7 +192,7 @@ abstract class _Section implements Section {
       {required final int id,
       required final String title,
       final String? description,
-      required final List<Article> chapters}) = _$_Section;
+      required final List<Article> articles}) = _$_Section;
 
   factory _Section.fromJson(Map<String, dynamic> json) = _$_Section.fromJson;
 
@@ -203,7 +203,7 @@ abstract class _Section implements Section {
   @override
   String? get description;
   @override
-  List<Article> get chapters;
+  List<Article> get articles;
   @override
   @JsonKey(ignore: true)
   _$$_SectionCopyWith<_$_Section> get copyWith =>
