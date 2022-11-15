@@ -1,41 +1,34 @@
 {
   "project_info": {
-    "project_number": "1056886643362",
-    "project_id": "monkslab-courses",
-    "storage_bucket": "monkslab-courses.appspot.com"
+    "project_number": "837553242957",
+    "project_id": "monsklab-courses",
+    "storage_bucket": "monsklab-courses.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1056886643362:android:fc01275ff07d02998295fb",
+        "mobilesdk_app_id": "1:837553242957:android:c98b4af966e93761edad04",
         "android_client_info": {
           "package_name": "com.example.the_monkslab_web"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1056886643362-i0d4msirr0df4dc9k11bkh3h95fkps3a.apps.googleusercontent.com",
+          "client_id": "837553242957-r17d63dch5gg9angngprtob41npgm0at.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCN06QfL8l3AfBa9zkxopHVL8o9i2L3Ioc"
+          "current_key": "AIzaSyA-_XQi3bgqzX74q4i2k3LR3O-VNl5eL1I"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1056886643362-i0d4msirr0df4dc9k11bkh3h95fkps3a.apps.googleusercontent.com",
+              "client_id": "837553242957-r17d63dch5gg9angngprtob41npgm0at.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "1056886643362-favha8att8f56m4b7dfok3cdrvgivdq6.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.example.theMonkslabWeb"
-              }
             }
           ]
         }

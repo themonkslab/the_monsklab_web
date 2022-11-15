@@ -16,10 +16,11 @@ class LearningPath with _$LearningPath {
   factory LearningPath.fromJson(Map<String, Object?> json) =>
       _$LearningPathFromJson(json);
 
+  //! Monkeys CONT
   factory LearningPath.fromDocumentSnapshot(
       DocumentSnapshot<Map<String, dynamic>> doc) {
     final courses = (doc.data()!['courses'] as List)
-        .map((e) => Course.fromDocumentReference(e))
+        .map((e) => Course.fromJson(e))
         .toList();
 
     return LearningPath(

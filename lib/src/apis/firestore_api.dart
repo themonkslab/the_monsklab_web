@@ -11,10 +11,10 @@ class FirestoreApi {
 
   final FirebaseFirestore _firestore;
 
-  getLearningPath() async {
+  Future<LearningPath> getLearningPath() async {
     final doc = await _firestore
         .collection('learningPath')
-        .doc('fCWOrEcwfax6Y7mew1Qt')
+        .doc('iDZmfaVMVGQdh1UB3QSS')
         .get();
     return LearningPath.fromDocumentSnapshot(doc);
   }

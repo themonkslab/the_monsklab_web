@@ -44,40 +44,40 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyB3-tT7LORnOFcxGWcbvAsd-3zXdGcCEY0',
-    appId: '1:1056886643362:web:9a15011c639436cc8295fb',
-    messagingSenderId: '1056886643362',
-    projectId: 'monkslab-courses',
-    authDomain: 'monkslab-courses.firebaseapp.com',
-    storageBucket: 'monkslab-courses.appspot.com',
-    measurementId: 'G-1D1MYMH3ST',
+    apiKey: 'AIzaSyBGOVRyABKzyN1sK8bfw95e1YaCY4aQrCw',
+    appId: '1:837553242957:web:5d207458020ebd1bedad04',
+    messagingSenderId: '837553242957',
+    projectId: 'monsklab-courses',
+    authDomain: 'monsklab-courses.firebaseapp.com',
+    storageBucket: 'monsklab-courses.appspot.com',
+    measurementId: 'G-T4QMR5W0FB',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCN06QfL8l3AfBa9zkxopHVL8o9i2L3Ioc',
-    appId: '1:1056886643362:android:fc01275ff07d02998295fb',
-    messagingSenderId: '1056886643362',
-    projectId: 'monkslab-courses',
-    storageBucket: 'monkslab-courses.appspot.com',
+    apiKey: 'AIzaSyA-_XQi3bgqzX74q4i2k3LR3O-VNl5eL1I',
+    appId: '1:837553242957:android:c98b4af966e93761edad04',
+    messagingSenderId: '837553242957',
+    projectId: 'monsklab-courses',
+    storageBucket: 'monsklab-courses.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCVlggRLri0rg1NZdl4gGFqMp3Hbq7zXwc',
-    appId: '1:1056886643362:ios:6932d5d21d8eeefb8295fb',
-    messagingSenderId: '1056886643362',
-    projectId: 'monkslab-courses',
-    storageBucket: 'monkslab-courses.appspot.com',
-    iosClientId: '1056886643362-favha8att8f56m4b7dfok3cdrvgivdq6.apps.googleusercontent.com',
+    apiKey: 'AIzaSyA0CJhRUlWJhERnh3WaM7UmrPTltP2re3Y',
+    appId: '1:837553242957:ios:b4f2853a1c1aa451edad04',
+    messagingSenderId: '837553242957',
+    projectId: 'monsklab-courses',
+    storageBucket: 'monsklab-courses.appspot.com',
+    iosClientId: '837553242957-rv87kul03luqnhbo1pgba236n15rb6aj.apps.googleusercontent.com',
     iosBundleId: 'com.example.theMonkslabWeb',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyCVlggRLri0rg1NZdl4gGFqMp3Hbq7zXwc',
-    appId: '1:1056886643362:ios:6932d5d21d8eeefb8295fb',
-    messagingSenderId: '1056886643362',
-    projectId: 'monkslab-courses',
-    storageBucket: 'monkslab-courses.appspot.com',
-    iosClientId: '1056886643362-favha8att8f56m4b7dfok3cdrvgivdq6.apps.googleusercontent.com',
+    apiKey: 'AIzaSyA0CJhRUlWJhERnh3WaM7UmrPTltP2re3Y',
+    appId: '1:837553242957:ios:b4f2853a1c1aa451edad04',
+    messagingSenderId: '837553242957',
+    projectId: 'monsklab-courses',
+    storageBucket: 'monsklab-courses.appspot.com',
+    iosClientId: '837553242957-rv87kul03luqnhbo1pgba236n15rb6aj.apps.googleusercontent.com',
     iosBundleId: 'com.example.theMonkslabWeb',
   );
 }
