@@ -22,7 +22,7 @@ LearningPath _$LearningPathFromJson(Map<String, dynamic> json) {
 mixin _$LearningPath {
   String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
-  List<Course> get courses => throw _privateConstructorUsedError;
+  List<CourseReference> get courses => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,7 @@ abstract class $LearningPathCopyWith<$Res> {
           LearningPath value, $Res Function(LearningPath) then) =
       _$LearningPathCopyWithImpl<$Res, LearningPath>;
   @useResult
-  $Res call({String id, String title, List<Course> courses});
+  $Res call({String id, String title, List<CourseReference> courses});
 }
 
 /// @nodoc
@@ -68,7 +68,7 @@ class _$LearningPathCopyWithImpl<$Res, $Val extends LearningPath>
       courses: null == courses
           ? _value.courses
           : courses // ignore: cast_nullable_to_non_nullable
-              as List<Course>,
+              as List<CourseReference>,
     ) as $Val);
   }
 }
@@ -81,7 +81,7 @@ abstract class _$$_LearningPathCopyWith<$Res>
       __$$_LearningPathCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String title, List<Course> courses});
+  $Res call({String id, String title, List<CourseReference> courses});
 }
 
 /// @nodoc
@@ -111,7 +111,7 @@ class __$$_LearningPathCopyWithImpl<$Res>
       courses: null == courses
           ? _value._courses
           : courses // ignore: cast_nullable_to_non_nullable
-              as List<Course>,
+              as List<CourseReference>,
     ));
   }
 }
@@ -122,7 +122,7 @@ class _$_LearningPath implements _LearningPath {
   const _$_LearningPath(
       {required this.id,
       required this.title,
-      required final List<Course> courses})
+      required final List<CourseReference> courses})
       : _courses = courses;
 
   factory _$_LearningPath.fromJson(Map<String, dynamic> json) =>
@@ -132,9 +132,9 @@ class _$_LearningPath implements _LearningPath {
   final String id;
   @override
   final String title;
-  final List<Course> _courses;
+  final List<CourseReference> _courses;
   @override
-  List<Course> get courses {
+  List<CourseReference> get courses {
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_courses);
   }
@@ -177,7 +177,7 @@ abstract class _LearningPath implements LearningPath {
   const factory _LearningPath(
       {required final String id,
       required final String title,
-      required final List<Course> courses}) = _$_LearningPath;
+      required final List<CourseReference> courses}) = _$_LearningPath;
 
   factory _LearningPath.fromJson(Map<String, dynamic> json) =
       _$_LearningPath.fromJson;
@@ -187,7 +187,7 @@ abstract class _LearningPath implements LearningPath {
   @override
   String get title;
   @override
-  List<Course> get courses;
+  List<CourseReference> get courses;
   @override
   @JsonKey(ignore: true)
   _$$_LearningPathCopyWith<_$_LearningPath> get copyWith =>

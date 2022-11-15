@@ -11,7 +11,7 @@ _$_LearningPath _$$_LearningPathFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       title: json['title'] as String,
       courses: (json['courses'] as List<dynamic>)
-          .map((e) => Course.fromJson(e as Map<String, dynamic>))
+          .map((e) => CourseReference.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

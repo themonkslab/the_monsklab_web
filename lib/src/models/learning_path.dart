@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
+import 'package:the_monkslab_web/src/models/course_reference.dart';
 
 part 'learning_path.freezed.dart';
 part 'learning_path.g.dart';
@@ -10,7 +11,7 @@ class LearningPath with _$LearningPath {
   const factory LearningPath({
     required String id,
     required String title,
-    required List<Course> courses,
+    required List<CourseReference> courses,
   }) = _LearningPath;
 
   factory LearningPath.fromJson(Map<String, Object?> json) =>
@@ -20,7 +21,7 @@ class LearningPath with _$LearningPath {
   factory LearningPath.fromDocumentSnapshot(
       DocumentSnapshot<Map<String, dynamic>> doc) {
     final courses = (doc.data()!['courses'] as List)
-        .map((e) => Course.fromJson(e))
+        .map((e) => CourseReference.fromJson(e))
         .toList();
 
     return LearningPath(
