@@ -18,19 +18,14 @@ class LearningPath with _$LearningPath {
 
   factory LearningPath.fromDocumentSnapshot(
       DocumentSnapshot<Map<String, dynamic>> doc) {
-    final courses = doc.data()!['courses'] as List<Course>;
+    final courses = (doc.data()!['courses'] as List)
+        .map((e) => Course.fromDocumentReference(e))
+        .toList();
+
     return LearningPath(
       id: doc.id,
       title: doc.data()!['title'],
       courses: courses,
     );
-    // courses:courses.map((course) =>
-    //     Course(id: course.id, title: course.title, sections: course)));
   }
-
-  // static const empty = LearningPath(
-  //   id: '',
-  //   title: '--',
-  //   courses: [],
-  // );
 }

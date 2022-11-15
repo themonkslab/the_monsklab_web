@@ -7,7 +7,7 @@ part of 'course.dart';
 // **************************************************************************
 
 _$_Course _$$_CourseFromJson(Map<String, dynamic> json) => _$_Course(
-      id: json['id'] as int,
+      id: json['id'] as String,
       title: json['title'] as String,
       sections: (json['sections'] as List<dynamic>)
           .map((e) => Section.fromJson(e as Map<String, dynamic>))

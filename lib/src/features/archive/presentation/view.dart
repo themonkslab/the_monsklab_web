@@ -14,10 +14,10 @@ class ArchivePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
+    return BlocProvider<ArchiveCubit>(
       create: (context) => ArchiveCubit(
-        context.read<CoursesRepository>()..getLearningPath(),
-      ),
+        context.read<CoursesRepository>(),
+      )..fetchLearningPath(),
       child: const ArchiveView(),
     );
   }

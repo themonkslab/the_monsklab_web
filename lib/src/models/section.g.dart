@@ -7,7 +7,7 @@ part of 'section.dart';
 // **************************************************************************
 
 _$_Section _$$_SectionFromJson(Map<String, dynamic> json) => _$_Section(
-      id: json['id'] as int,
+      id: json['id'] as String,
       title: json['title'] as String,
       description: json['description'] as String?,
       articles: (json['articles'] as List<dynamic>)

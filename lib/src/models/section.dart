@@ -7,7 +7,7 @@ part 'section.g.dart';
 @freezed
 class Section with _$Section {
   const factory Section({
-    required int id,
+    required String id,
     required String title,
     String? description,
     required List<Article> articles,

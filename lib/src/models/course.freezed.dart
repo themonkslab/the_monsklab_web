@@ -20,7 +20,7 @@ Course _$CourseFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Course {
-  int get id => throw _privateConstructorUsedError;
+  String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   List<Section> get sections => throw _privateConstructorUsedError;
 
@@ -34,7 +34,7 @@ abstract class $CourseCopyWith<$Res> {
   factory $CourseCopyWith(Course value, $Res Function(Course) then) =
       _$CourseCopyWithImpl<$Res, Course>;
   @useResult
-  $Res call({int id, String title, List<Section> sections});
+  $Res call({String id, String title, List<Section> sections});
 }
 
 /// @nodoc
@@ -58,7 +58,7 @@ class _$CourseCopyWithImpl<$Res, $Val extends Course>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -77,7 +77,7 @@ abstract class _$$_CourseCopyWith<$Res> implements $CourseCopyWith<$Res> {
       __$$_CourseCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String title, List<Section> sections});
+  $Res call({String id, String title, List<Section> sections});
 }
 
 /// @nodoc
@@ -98,7 +98,7 @@ class __$$_CourseCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -124,7 +124,7 @@ class _$_Course implements _Course {
       _$$_CourseFromJson(json);
 
   @override
-  final int id;
+  final String id;
   @override
   final String title;
   final List<Section> _sections;
@@ -170,14 +170,14 @@ class _$_Course implements _Course {
 
 abstract class _Course implements Course {
   const factory _Course(
-      {required final int id,
+      {required final String id,
       required final String title,
       required final List<Section> sections}) = _$_Course;
 
   factory _Course.fromJson(Map<String, dynamic> json) = _$_Course.fromJson;
 
   @override
-  int get id;
+  String get id;
   @override
   String get title;
   @override

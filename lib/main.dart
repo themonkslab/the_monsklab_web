@@ -4,7 +4,7 @@ import 'package:the_monkslab_web/firebase_options.dart';
 import 'package:the_monkslab_web/src/app.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
 
-Future<void> main() async {
+Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(
