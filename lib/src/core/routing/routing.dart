@@ -16,9 +16,10 @@ final routerDelegate = BeamerDelegate(
     routes: {
       '/': (_, __, ___) => const HomeView(),
       '/archive': (_, __, ___) => const ArchivePage(),
-      '/course/:id': (_, state, __) {
-        final id = int.tryParse(state.pathParameters['id']!);
-        return CourseView(id!);
+      '/course/:path': (_, state, __) {
+        final path = state.pathParameters['path']!;
+        //TODO -LOW- prevent if something happens and path == null
+        return CoursePage(path);
       },
       //TODO -HIGH- fix bug that prevents hot reload / hot restart on Article
       '/article/:courseId/:sectionId/:chapterId': ((_, state, __) {

@@ -1,3 +1,4 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/constants/_index.dart';
@@ -81,9 +82,9 @@ class ArchiveView extends StatelessWidget {
                               padding: const EdgeInsets.only(bottom: 8.0),
                               child: AppHypertext(
                                 text: course.title,
-                                // onPressed: () => context.beamToNamed(
-                                //   '/${AppRoutes.course.name}/${course.id}',
-                                // ),
+                                onPressed: () => context.beamToNamed(
+                                  '/${course.path}',
+                                ),
                                 style: isPhoneOrTablet
                                     ? AppTextStyles.h3Phone
                                     : AppTextStyles.h3,

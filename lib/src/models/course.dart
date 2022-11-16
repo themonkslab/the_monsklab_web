@@ -15,11 +15,15 @@ class Course with _$Course {
 
   factory Course.fromJson(Map<String, Object?> json) => _$CourseFromJson(json);
 
-  factory Course.fromDocumentReference(
-      DocumentReference<Map<String, dynamic>> doc) {
+  factory Course.fromDocumentSnapshot(
+      DocumentSnapshot<Map<String, dynamic>> doc) {
+    // final sections = (doc.data()!['sections'] as List)
+    //     .map((e) => SectionReference.fromJson(e))
+    //     .toList();
+
     return Course(
       id: doc.id,
-      title: "Falta el título?",
+      title: doc.data()!['title'],
       sections: [],
     );
   }
