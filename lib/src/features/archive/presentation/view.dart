@@ -36,17 +36,9 @@ class ArchiveView extends StatelessWidget {
       builder: (context, state) {
         switch (state.status) {
           case ArchiveStatus.loading:
-            return const Material(
-              child: Center(
-                child: CircularProgressIndicator(),
-              ),
-            );
+            return const AppLoader();
           case ArchiveStatus.failure:
-            return const Material(
-              child: Center(
-                child: Text('Ooops! Something happened! Sorry!'),
-              ),
-            );
+            return const AppFailure();
           case ArchiveStatus.success:
             return AppResponsiveScaffold(
                 child: Padding(
@@ -98,11 +90,7 @@ class ArchiveView extends StatelessWidget {
               ),
             ));
           default:
-            return const Material(
-              child: Center(
-                child: Text('Coming soon!'),
-              ),
-            );
+            return const AppFailure();
         }
       },
     );
