@@ -21,6 +21,7 @@ final routerDelegate = BeamerDelegate(
         //TODO -LOW- prevent if something happens and path == null
         return CoursePage(path);
       },
+
       //TODO -HIGH- fix bug that prevents hot reload / hot restart on Article
       '/article/:courseId/:sectionId/:chapterId': ((_, state, __) {
         final courseId = int.tryParse(state.pathParameters['courseId']!);

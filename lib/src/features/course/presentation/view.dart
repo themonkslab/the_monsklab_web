@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/features/_index.dart';
+import 'package:the_monkslab_web/src/features/section/_index.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 
@@ -36,7 +37,6 @@ class CourseView extends StatelessWidget {
           case CourseStatus.failure:
             return const AppFailure();
           case CourseStatus.success:
-            final courseSections = state.course!.sections;
             return AppResponsiveScaffold(
                 child: Column(
               children: <Widget>[
@@ -56,12 +56,8 @@ class CourseView extends StatelessWidget {
                   ),
                 ),
                 AppGaps.gapH24,
-                for (var section in courseSections)
-
-                  //TODO CONT: promote SectionItem to SectionView and update all the models
-                  SectionItem(
-                    section: section,
-                  )
+                for (var section in state.course!.sections)
+                  SectionPage(section.path)
               ],
             ));
           default:

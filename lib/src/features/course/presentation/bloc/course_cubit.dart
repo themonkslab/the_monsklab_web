@@ -19,7 +19,6 @@ class CourseCubit extends Cubit<CourseState> {
     emit(state.copyWith(status: CourseStatus.loading));
     try {
       final course = await _coursesRepository.getCourse(path);
-
       emit(
         state.copyWith(
           status: CourseStatus.success,

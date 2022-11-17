@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
+import 'package:the_monkslab_web/src/models/section.dart';
 
 class RequestFailure implements Exception {}
 
@@ -22,5 +23,10 @@ class FirestoreApi {
   Future<Course> getCourse(String path) async {
     final doc = await _firestore.collection('course').doc(path).get();
     return Course.fromDocumentSnapshot(doc);
+  }
+
+  Future<Section> getSection(String path) async {
+    final doc = await _firestore.collection('section').doc(path).get();
+    return Section.fromDocumentSnapshot(doc);
   }
 }

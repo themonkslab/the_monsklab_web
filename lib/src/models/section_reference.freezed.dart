@@ -21,8 +21,7 @@ SectionReference _$SectionReferenceFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$SectionReference {
   String get title => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  List<ArticleReference> get articles => throw _privateConstructorUsedError;
+  String get path => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,8 +35,7 @@ abstract class $SectionReferenceCopyWith<$Res> {
           SectionReference value, $Res Function(SectionReference) then) =
       _$SectionReferenceCopyWithImpl<$Res, SectionReference>;
   @useResult
-  $Res call(
-      {String title, String? description, List<ArticleReference> articles});
+  $Res call({String title, String path});
 }
 
 /// @nodoc
@@ -54,22 +52,17 @@ class _$SectionReferenceCopyWithImpl<$Res, $Val extends SectionReference>
   @override
   $Res call({
     Object? title = null,
-    Object? description = freezed,
-    Object? articles = null,
+    Object? path = null,
   }) {
     return _then(_value.copyWith(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      articles: null == articles
-          ? _value.articles
-          : articles // ignore: cast_nullable_to_non_nullable
-              as List<ArticleReference>,
+      path: null == path
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -82,8 +75,7 @@ abstract class _$$_SectionReferenceCopyWith<$Res>
       __$$_SectionReferenceCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {String title, String? description, List<ArticleReference> articles});
+  $Res call({String title, String path});
 }
 
 /// @nodoc
@@ -98,22 +90,17 @@ class __$$_SectionReferenceCopyWithImpl<$Res>
   @override
   $Res call({
     Object? title = null,
-    Object? description = freezed,
-    Object? articles = null,
+    Object? path = null,
   }) {
     return _then(_$_SectionReference(
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      articles: null == articles
-          ? _value._articles
-          : articles // ignore: cast_nullable_to_non_nullable
-              as List<ArticleReference>,
+      path: null == path
+          ? _value.path
+          : path // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -121,11 +108,7 @@ class __$$_SectionReferenceCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_SectionReference implements _SectionReference {
-  const _$_SectionReference(
-      {required this.title,
-      this.description,
-      required final List<ArticleReference> articles})
-      : _articles = articles;
+  const _$_SectionReference({required this.title, required this.path});
 
   factory _$_SectionReference.fromJson(Map<String, dynamic> json) =>
       _$$_SectionReferenceFromJson(json);
@@ -133,17 +116,11 @@ class _$_SectionReference implements _SectionReference {
   @override
   final String title;
   @override
-  final String? description;
-  final List<ArticleReference> _articles;
-  @override
-  List<ArticleReference> get articles {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_articles);
-  }
+  final String path;
 
   @override
   String toString() {
-    return 'SectionReference(title: $title, description: $description, articles: $articles)';
+    return 'SectionReference(title: $title, path: $path)';
   }
 
   @override
@@ -152,15 +129,12 @@ class _$_SectionReference implements _SectionReference {
         (other.runtimeType == runtimeType &&
             other is _$_SectionReference &&
             (identical(other.title, title) || other.title == title) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
-            const DeepCollectionEquality().equals(other._articles, _articles));
+            (identical(other.path, path) || other.path == path));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, title, description,
-      const DeepCollectionEquality().hash(_articles));
+  int get hashCode => Object.hash(runtimeType, title, path);
 
   @JsonKey(ignore: true)
   @override
@@ -179,8 +153,7 @@ class _$_SectionReference implements _SectionReference {
 abstract class _SectionReference implements SectionReference {
   const factory _SectionReference(
       {required final String title,
-      final String? description,
-      required final List<ArticleReference> articles}) = _$_SectionReference;
+      required final String path}) = _$_SectionReference;
 
   factory _SectionReference.fromJson(Map<String, dynamic> json) =
       _$_SectionReference.fromJson;
@@ -188,9 +161,7 @@ abstract class _SectionReference implements SectionReference {
   @override
   String get title;
   @override
-  String? get description;
-  @override
-  List<ArticleReference> get articles;
+  String get path;
   @override
   @JsonKey(ignore: true)
   _$$_SectionReferenceCopyWith<_$_SectionReference> get copyWith =>
