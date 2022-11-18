@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dio/dio.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/models/section.dart';
 
@@ -32,6 +33,24 @@ class FirestoreApi {
 
   Future<Article> getArticle(String path) async {
     final doc = await _firestore.collection('article').doc(path).get();
-    return Article.fromDocumentSnapshot(doc);
+    final content = await getArticleContent(doc.data()!['contentUrl']);
+    return Article(
+      id: doc.id,
+      title: doc.data()!['title'],
+      description: doc.data()!['description'],
+      content: content,
+      author: Author(name: doc.data()!['author'], picture: 'mau_photo'),
+      //published: doc.data()!['published'],
+      published: DateTime.now(),
+    );
+  }
+
+  Future<String> getArticleContent(String contentUrl) async {
+    try {
+      var response = await Dio().get(contentUrl);
+      return response.data;
+    } catch (e) {
+      return e.toString();
+    }
   }
 }
