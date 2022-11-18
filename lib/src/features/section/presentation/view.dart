@@ -1,13 +1,20 @@
+import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:the_monkslab_web/src/core/routing/routing.dart';
 import 'package:the_monkslab_web/src/features/section/_index.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 
 class SectionPage extends StatelessWidget {
-  const SectionPage(this.path, {super.key});
+  const SectionPage({
+    required this.path,
+    required this.courseId,
+    super.key,
+  });
 
   final String path;
+  final String courseId;
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +23,20 @@ class SectionPage extends StatelessWidget {
         coursesRepository: context.read<CoursesRepository>(),
         path: path,
       )..fetchSection(),
-      child: const SectionView(),
+      child: SectionView(
+        courseId: courseId,
+      ),
     );
   }
 }
 
 class SectionView extends StatelessWidget {
-  const SectionView({Key? key}) : super(key: key);
+  const SectionView({
+    Key? key,
+    required this.courseId,
+  }) : super(key: key);
 
+  final String courseId;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SectionCubit, SectionState>(
@@ -60,11 +73,9 @@ class SectionView extends StatelessWidget {
                                   const ContinuousRectangleBorder(),
                                 ),
                               ),
-                              // onPressed: () => context.beamToNamed(
-                              //       '/${AppRoutes.article.name}/$courseId/$sectionId/${chapter.id}',
-                              //     ),
-                              //! Monkeys: CONT generate last
-                              onPressed: () {},
+                              onPressed: () => context.beamToNamed(
+                                    '/${AppRoutes.article.name}/$courseId/${state.section!.id}/${article.path}',
+                                  ),
                               child: Padding(
                                 padding: AppPaddings.padAll16,
                                 child: Row(

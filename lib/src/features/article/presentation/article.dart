@@ -8,9 +8,9 @@ class Article extends StatefulWidget {
     Key? key,
   }) : super(key: key);
 
-  final int chapterId;
-  final int sectionId;
-  final int courseId;
+  final String chapterId;
+  final String sectionId;
+  final String courseId;
 
   @override
   State<Article> createState() => _ArticleState();
@@ -39,7 +39,18 @@ class _ArticleState extends State<Article> {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox.shrink();
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(widget.courseId),
+            Text(widget.sectionId),
+            Text(widget.chapterId),
+          ],
+        ),
+      ),
+    );
     // screenHeight = MediaQuery.of(context).size.height;
     // final chapter = flutterLearningPath.courses[widget.courseId]
     //     .sections[widget.sectionId].chapters[widget.chapterId];

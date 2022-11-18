@@ -57,7 +57,10 @@ class CourseView extends StatelessWidget {
                 ),
                 AppGaps.gapH24,
                 for (var section in state.course!.sections)
-                  SectionPage(section.path)
+                  SectionPage(
+                    path: section.path,
+                    courseId: state.course!.id,
+                  )
               ],
             ));
           default:

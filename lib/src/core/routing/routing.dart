@@ -24,14 +24,14 @@ final routerDelegate = BeamerDelegate(
 
       //TODO -HIGH- fix bug that prevents hot reload / hot restart on Article
       '/article/:courseId/:sectionId/:chapterId': ((_, state, __) {
-        final courseId = int.tryParse(state.pathParameters['courseId']!);
-        final sectionId = int.tryParse(state.pathParameters['sectionId']!);
-        final chapterId = int.tryParse(state.pathParameters['chapterId']!);
+        final courseId = (state.pathParameters['courseId']!);
+        final sectionId = (state.pathParameters['sectionId']!);
+        final chapterId = (state.pathParameters['chapterId']!);
 
         return Article(
-          courseId: courseId!,
-          sectionId: sectionId!,
-          chapterId: chapterId!,
+          courseId: courseId,
+          sectionId: sectionId,
+          chapterId: chapterId,
         );
       }),
     },

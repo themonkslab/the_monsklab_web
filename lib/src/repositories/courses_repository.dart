@@ -19,4 +19,8 @@ class CoursesRepository {
   Future<Section> getSection(String path) async {
     return await _firebaseApi.getSection(path);
   }
+
+  Future<Article> getArticle(String path) async {
+    return await _firebaseApi.getArticle(path);
+  }
 }

@@ -29,4 +29,9 @@ class FirestoreApi {
     final doc = await _firestore.collection('section').doc(path).get();
     return Section.fromDocumentSnapshot(doc);
   }
+
+  Future<Article> getArticle(String path) async {
+    final doc = await _firestore.collection('article').doc(path).get();
+    return Article.fromDocumentSnapshot(doc);
+  }
 }
