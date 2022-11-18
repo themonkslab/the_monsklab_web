@@ -26,8 +26,8 @@ final routerDelegate = BeamerDelegate(
       '/article/:chapterId': ((_, state, __) {
         final chapterId = (state.pathParameters['chapterId']!);
 
-        return Article(
-          chapterId: chapterId,
+        return ArticlePage(
+          path: chapterId,
         );
       }),
     },

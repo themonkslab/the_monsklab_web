@@ -27,8 +27,9 @@ class Article with _$Article {
       title: doc.data()!['title'],
       description: doc.data()!['description'],
       content: doc.data()!['contentUrl'],
-      author: doc.data()!['author'],
-      published: doc.data()!['published'],
+      author: Author(name: doc.data()!['author'], picture: 'mau_photo'),
+      //published: doc.data()!['published'],
+      published: DateTime.now(),
     );
   }
 }
