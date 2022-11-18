@@ -74,7 +74,7 @@ class SectionView extends StatelessWidget {
                                 ),
                               ),
                               onPressed: () => context.beamToNamed(
-                                    '/${AppRoutes.article.name}/$courseId/${state.section!.id}/${article.path}',
+                                    '/${AppRoutes.article.name}/${article.path}',
                                   ),
                               child: Padding(
                                 padding: AppPaddings.padAll16,

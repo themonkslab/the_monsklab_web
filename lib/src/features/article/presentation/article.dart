@@ -3,14 +3,10 @@ import 'package:flutter/material.dart';
 class Article extends StatefulWidget {
   const Article({
     required this.chapterId,
-    required this.sectionId,
-    required this.courseId,
     Key? key,
   }) : super(key: key);
 
   final String chapterId;
-  final String sectionId;
-  final String courseId;
 
   @override
   State<Article> createState() => _ArticleState();
@@ -44,8 +40,6 @@ class _ArticleState extends State<Article> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(widget.courseId),
-            Text(widget.sectionId),
             Text(widget.chapterId),
           ],
         ),
