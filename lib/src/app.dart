@@ -9,7 +9,7 @@ import 'package:the_monkslab_web/src/utils/_index.dart';
 class App extends StatelessWidget {
   const App({
     super.key,
-    required CoursesRepository coursesRepository,
+    required coursesRepository,
   }) : _coursesRepository = coursesRepository;
 
   final CoursesRepository _coursesRepository;

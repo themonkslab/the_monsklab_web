@@ -18,17 +18,11 @@ final routerDelegate = BeamerDelegate(
       '/archive': (_, __, ___) => const ArchivePage(),
       '/course/:path': (_, state, __) {
         final path = state.pathParameters['path']!;
-        //TODO -LOW- prevent if something happens and path == null
         return CoursePage(path);
       },
-
-      //TODO -HIGH- fix bug that prevents hot reload / hot restart on Article
-      '/article/:chapterId': ((_, state, __) {
-        final chapterId = (state.pathParameters['chapterId']!);
-
-        return ArticlePage(
-          path: chapterId,
-        );
+      '/article/:path': ((_, state, __) {
+        final path = (state.pathParameters['path']!);
+        return ArticlePage(path: path);
       }),
     },
   ),

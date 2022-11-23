@@ -9,34 +9,25 @@ import 'package:the_monkslab_web/src/ui/_index.dart';
 class SectionPage extends StatelessWidget {
   const SectionPage({
     required this.path,
-    required this.courseId,
     super.key,
   });
 
   final String path;
-  final String courseId;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<SectionCubit>(
       create: (context) => SectionCubit(
         coursesRepository: context.read<CoursesRepository>(),
-        path: path,
-      )..fetchSection(),
-      child: SectionView(
-        courseId: courseId,
-      ),
+      )..fetchSection(path),
+      child: const SectionView(),
     );
   }
 }
 
 class SectionView extends StatelessWidget {
-  const SectionView({
-    Key? key,
-    required this.courseId,
-  }) : super(key: key);
+  const SectionView({super.key});
 
-  final String courseId;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<SectionCubit, SectionState>(

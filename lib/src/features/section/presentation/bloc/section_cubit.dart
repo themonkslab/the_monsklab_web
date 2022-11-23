@@ -8,14 +8,12 @@ part 'section_cubit.freezed.dart';
 class SectionCubit extends Cubit<SectionState> {
   SectionCubit({
     required CoursesRepository coursesRepository,
-    required this.path,
   })  : _coursesRepository = coursesRepository,
         super(const SectionState());
 
   final CoursesRepository _coursesRepository;
-  final String path;
 
-  Future<void> fetchSection() async {
+  Future<void> fetchSection(String path) async {
     emit(state.copyWith(status: SectionStatus.loading));
     try {
       final section = await _coursesRepository.getSection(path);

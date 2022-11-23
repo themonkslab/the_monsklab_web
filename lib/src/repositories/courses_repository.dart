@@ -2,14 +2,15 @@ import 'package:the_monkslab_web/src/apis/firestore_api.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/models/section.dart';
 
+//TODO -MEDIUM- create abstract class
 class CoursesRepository {
   CoursesRepository({FirestoreApi? firebaseApi})
       : _firebaseApi = firebaseApi ?? FirestoreApi();
 
   final FirestoreApi _firebaseApi;
 
-  Future<LearningPath> getLearningPath() async {
-    return await _firebaseApi.getLearningPath();
+  Future<LearningPath> getLearningPath(String path) async {
+    return await _firebaseApi.getLearningPath(path);
   }
 
   Future<Course> getCourse(String path) async {

@@ -8,7 +8,7 @@ environment:
   sdk: ">=2.17.1 <3.0.0"
 
 dependencies:
-  beamer: ^1.5.0
+  beamer: ^1.5.3
   dio: ^4.0.6
   flutter:
     sdk: flutter

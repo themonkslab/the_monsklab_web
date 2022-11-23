@@ -2,6 +2,7 @@ import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/constants/_index.dart';
+import 'package:the_monkslab_web/src/constants/environment.dart';
 import 'package:the_monkslab_web/src/features/archive/presentation/bloc/archive_cubit.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
@@ -16,17 +17,18 @@ class ArchivePage extends StatelessWidget {
     return BlocProvider<ArchiveCubit>(
       create: (context) => ArchiveCubit(
         context.read<CoursesRepository>(),
-      )..fetchLearningPath(),
+      )..fetchLearningPath(AppEnvironment.flutterLearningPathId),
       child: const ArchiveView(),
     );
   }
 }
 
 class ArchiveView extends StatelessWidget {
-  const ArchiveView({Key? key}) : super(key: key);
+  const ArchiveView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    //TODO -LOW- create AppLayoutBuilder
     final screenType = context.getScreenType();
 
     final isPhoneOrTablet =
@@ -74,9 +76,8 @@ class ArchiveView extends StatelessWidget {
                               padding: const EdgeInsets.only(bottom: 8.0),
                               child: AppHypertext(
                                 text: course.title,
-                                onPressed: () => context.beamToNamed(
-                                  '/${course.path}',
-                                ),
+                                onPressed: () =>
+                                    context.beamToNamed('/${course.path}'),
                                 style: isPhoneOrTablet
                                     ? AppTextStyles.h3Phone
                                     : AppTextStyles.h3,

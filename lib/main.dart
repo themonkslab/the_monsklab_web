@@ -7,7 +7,5 @@ import 'package:the_monkslab_web/src/repositories/_index.dart';
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(
-    App(coursesRepository: CoursesRepository()),
-  );
+  runApp(App(coursesRepository: CoursesRepository()));
 }

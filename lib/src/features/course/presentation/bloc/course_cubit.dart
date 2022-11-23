@@ -8,14 +8,12 @@ part 'course_cubit.freezed.dart';
 class CourseCubit extends Cubit<CourseState> {
   CourseCubit({
     required CoursesRepository coursesRepository,
-    required this.path,
   })  : _coursesRepository = coursesRepository,
         super(const CourseState());
 
   final CoursesRepository _coursesRepository;
-  final String path;
 
-  Future<void> fetchCourse() async {
+  Future<void> fetchCourse(String path) async {
     emit(state.copyWith(status: CourseStatus.loading));
     try {
       final course = await _coursesRepository.getCourse(path);

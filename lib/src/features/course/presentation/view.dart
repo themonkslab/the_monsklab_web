@@ -15,17 +15,14 @@ class CoursePage extends StatelessWidget {
     return BlocProvider<CourseCubit>(
       create: (context) => CourseCubit(
         coursesRepository: context.read<CoursesRepository>(),
-        path: path,
-      )..fetchCourse(),
+      )..fetchCourse(path),
       child: const CourseView(),
     );
   }
 }
 
 class CourseView extends StatelessWidget {
-  const CourseView({
-    Key? key,
-  }) : super(key: key);
+  const CourseView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -57,10 +54,7 @@ class CourseView extends StatelessWidget {
                 ),
                 AppGaps.gapH24,
                 for (var section in state.course!.sections)
-                  SectionPage(
-                    path: section.path,
-                    courseId: state.course!.id,
-                  )
+                  SectionPage(path: section.path)
               ],
             ));
           default:
