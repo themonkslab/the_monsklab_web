@@ -19,8 +19,7 @@ class ArticlePage extends StatelessWidget {
     return BlocProvider<ArticleCubit>(
       create: (context) => ArticleCubit(
         coursesRepository: context.read<CoursesRepository>(),
-        path: path,
-      )..fetchArticle(),
+      )..fetchArticle(path),
       child: const ArticleView(),
     );
   }
@@ -62,7 +61,7 @@ class _ArticleViewState extends State<ArticleView> {
       builder: ((context, state) {
         screenHeight = MediaQuery.of(context).size.height;
 
-        final chapter = state.article;
+        final article = state.article;
         // TODO use build.when?
         switch (state.status) {
           case ArticleStatus.loading:
@@ -78,12 +77,13 @@ class _ArticleViewState extends State<ArticleView> {
                       backgroundColor: AppColors.black,
                     )
                   : const AppAppBar(showSocials: true),
+              //TODO -HIGH- make all screens work
               body: ListView(
                 controller: scrollController,
                 children: <Widget>[
-                  ArticleHeader(chapter: chapter!),
+                  ArticleHeader(chapter: article!),
                   AppGaps.gapH24,
-                  ArticleBody(data: chapter.content),
+                  ArticleBody(data: article.content),
                   AppGaps.gapH48,
                 ],
               ),

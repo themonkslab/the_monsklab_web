@@ -29,6 +29,7 @@ class FirestoreApi {
   }
 
   Future<Article> getArticle(String path) async {
+    //TODO -HIGH- make http instead
     final doc = await _firestore.collection('article').doc(path).get();
     final content = await getArticleContent(doc.data()!['contentUrl']);
     return Article(
