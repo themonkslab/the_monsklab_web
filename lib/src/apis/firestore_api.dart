@@ -1,17 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dio/dio.dart';
+import 'package:the_monkslab_web/src/apis/_index.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
-import 'package:the_monkslab_web/src/models/section.dart';
-
-class RequestFailure implements Exception {}
-
-class NotFoundFailure implements Exception {}
 
 class FirestoreApi {
-  FirestoreApi({FirebaseFirestore? firestore})
-      : _firestore = firestore ?? FirebaseFirestore.instance;
+  FirestoreApi({
+    FirebaseFirestore? firestore,
+    HttpApi? httpApi,
+  })  : _firestore = firestore ?? FirebaseFirestore.instance,
+        _httpApi = httpApi ?? HttpApi();
 
   final FirebaseFirestore _firestore;
+  final HttpApi _httpApi;
 
   Future<LearningPath> getLearningPath(String path) async {
     final doc = await _firestore.collection('learningPath').doc(path).get();
@@ -29,26 +28,16 @@ class FirestoreApi {
   }
 
   Future<Article> getArticle(String path) async {
-    //TODO -HIGH- make http instead
     final doc = await _firestore.collection('article').doc(path).get();
-    final content = await getArticleContent(doc.data()!['contentUrl']);
+    final articleContent = await _httpApi.getRequest(doc.data()!['contentUrl']);
     return Article(
       id: doc.id,
       title: doc.data()!['title'],
       description: doc.data()!['description'],
-      content: content,
+      content: articleContent,
       author: Author(name: doc.data()!['author'], picture: 'mau_photo'),
       //published: doc.data()!['published'],
       published: DateTime.now(),
     );
-  }
-
-  Future<String> getArticleContent(String contentUrl) async {
-    try {
-      var response = await Dio().get(contentUrl);
-      return response.data;
-    } catch (e) {
-      return e.toString();
-    }
   }
 }
