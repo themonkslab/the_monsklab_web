@@ -18,6 +18,7 @@ class ArticleBody extends StatelessWidget {
           href != null ? launchUrl(Uri.parse(href)) : null;
         },
         data: data,
+        selectable: true,
         styleSheet: MarkdownStyleSheet(
           h1: AppTextStyles.h1,
           h1Padding: AppPaddings.padV28,
