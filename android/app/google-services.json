@@ -29,6 +29,13 @@
             {
               "client_id": "837553242957-r17d63dch5gg9angngprtob41npgm0at.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "837553242957-rv87kul03luqnhbo1pgba236n15rb6aj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.theMonkslabWeb"
+              }
             }
           ]
         }
