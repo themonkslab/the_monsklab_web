@@ -6,11 +6,11 @@ import 'package:the_monkslab_web/src/utils/extensions.dart';
 
 class ArticleHeader extends StatelessWidget {
   const ArticleHeader({
-    required this.chapter,
-    Key? key,
-  }) : super(key: key);
+    required this.article,
+    super.key,
+  });
 
-  final Article chapter;
+  final Article article;
 
   @override
   Widget build(BuildContext context) {
@@ -32,27 +32,27 @@ class ArticleHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  chapter.title,
+                  article.title,
                   style: AppTextStyles.h1HeaderPhone
                       .copyWith(color: AppColors.white),
                 ),
-                if (chapter.description != '') AppGaps.gapH20,
-                if (chapter.description != '')
+                if (article.description != '') AppGaps.gapH20,
+                if (article.description != '')
                   Text(
-                    chapter.description,
+                    article.description,
                     style: AppTextStyles.descriptionHeaderPhone
                         .copyWith(color: AppColors.white),
                   ),
                 AppGaps.gapH20,
                 Text(
-                  chapter.published.toReadable,
+                  article.published.toReadable,
                   style: AppTextStyles.caption.copyWith(
                     color: AppColors.white,
                   ),
                 ),
-                if (chapter.readingTime != null)
+                if (article.readingTime != null)
                   Text(
-                    chapter.readingTime!,
+                    article.readingTime!,
                     style: AppTextStyles.captionMini.copyWith(
                       color: AppColors.white,
                     ),
@@ -76,27 +76,27 @@ class ArticleHeader extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  chapter.title,
+                  article.title,
                   style:
                       AppTextStyles.h1Header.copyWith(color: AppColors.white),
                 ),
-                if (chapter.description != '') AppGaps.gapH20,
-                if (chapter.description != '')
+                if (article.description != '') AppGaps.gapH20,
+                if (article.description != '')
                   Text(
-                    chapter.description,
+                    article.description,
                     style: AppTextStyles.descriptionHeader
                         .copyWith(color: AppColors.white),
                   ),
                 AppGaps.gapH20,
                 Text(
-                  chapter.published.toReadable,
+                  article.published.toReadable,
                   style: AppTextStyles.caption.copyWith(
                     color: AppColors.white,
                   ),
                 ),
-                if (chapter.readingTime != null)
+                if (article.readingTime != null)
                   Text(
-                    chapter.readingTime!,
+                    article.readingTime!,
                     style: AppTextStyles.captionMini.copyWith(
                       color: AppColors.white,
                     ),

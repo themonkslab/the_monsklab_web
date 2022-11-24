@@ -86,7 +86,7 @@ class _ArticleViewState extends State<ArticleView> {
                 body: ListView(
                   controller: scrollController,
                   children: <Widget>[
-                    ArticleHeader(chapter: article!),
+                    ArticleHeader(article: article!),
                     AppGaps.gapH24,
                     ArticleBody(data: article.content),
                     AppGaps.gapH48,
@@ -107,7 +107,7 @@ class _ArticleViewState extends State<ArticleView> {
                     child: Column(
                       children: [
                         ArticleHeader(
-                          chapter: article!,
+                          article: article!,
                         ),
                         AppGaps.gapH24,
                         Container(

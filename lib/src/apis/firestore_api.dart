@@ -36,8 +36,7 @@ class FirestoreApi {
       description: doc.data()!['description'],
       content: articleContent,
       author: Author(name: doc.data()!['author'], picture: 'mau_photo'),
-      //published: doc.data()!['published'],
-      published: DateTime.now(),
+      published: (doc.data()!['published'] as Timestamp).toDate(),
     );
   }
 }
