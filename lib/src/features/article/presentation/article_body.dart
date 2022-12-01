@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_highlight/flutter_highlight.dart';
+import 'package:flutter_highlight/themes/github.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:markdown/markdown.dart' as md;
 import 'package:the_monkslab_web/src/ui/sizes.dart';
@@ -16,22 +18,36 @@ class ArticleBody extends StatelessWidget {
       padding: AppPaddings.padAll12,
       child: Html(
         data: htmlData,
+        customRender: {
+          'code': (context, parsedChild) {
+            // use for implementing copy
+            // context.parser.onImageTap
+            return HighlightView(
+              '''main() {
+  print("Hello, World!");
+}
+''',
+              language: 'dart',
+              theme: githubTheme,
+              textStyle: AppTextStyles.code,
+            );
+          }
+        },
         style: {
           // TODO -HIGH- revisit to check if selectable is possible
           // https://github.com/Sub6Resources/flutter_html/issues/717
           'h1': Style.fromTextStyle(AppTextStyles.h1),
           'h2': Style.fromTextStyle(AppTextStyles.h2)
-              .copyWith(padding: const EdgeInsets.only(top: 12.0)),
+              .copyWith(padding: AppPaddings.padTop12),
           'h3': Style.fromTextStyle(AppTextStyles.h3)
-              .copyWith(padding: const EdgeInsets.only(top: 12.0)),
+              .copyWith(padding: AppPaddings.padTop12),
           'h4': Style.fromTextStyle(AppTextStyles.h4)
-              .copyWith(padding: const EdgeInsets.only(top: 12.0)),
+              .copyWith(padding: AppPaddings.padTop12),
           'p': Style.fromTextStyle(AppTextStyles.p)
               .copyWith(padding: AppPaddings.padV12),
           'li': Style.fromTextStyle(AppTextStyles.li),
           'pre': Style(
-            margin:
-                const EdgeInsets.symmetric(vertical: 24.0, horizontal: 24.0),
+            margin: AppPaddings.padAll24,
             backgroundColor: AppColors.monkChick,
             padding: const EdgeInsets.fromLTRB(24, 24, 24, 12),
           ),
