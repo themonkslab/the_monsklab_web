@@ -81,12 +81,19 @@ class AppTextStyles {
       textStyle: const TextStyle(
     fontSize: 20.0,
     fontWeight: FontWeight.w400,
+    height: 1.33,
+  ));
+
+  static final code = GoogleFonts.robotoMono(
+      textStyle: const TextStyle(
+    fontSize: 20.0,
+    fontWeight: FontWeight.w400,
   ));
 
   static final li = GoogleFonts.libreCaslonText(
       textStyle: const TextStyle(
-    fontSize: 16.0,
-    fontWeight: FontWeight.w700,
+    fontSize: 20.0,
+    fontWeight: FontWeight.w400,
   ));
 
   static final caption = GoogleFonts.montserrat(

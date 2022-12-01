@@ -63,5 +63,6 @@ class AppPaddings {
 
 //* Symmetric Vertical
   static const padV4 = EdgeInsets.symmetric(vertical: 4.0);
+  static const padV12 = EdgeInsets.symmetric(vertical: 12.0);
   static const padV28 = EdgeInsets.symmetric(vertical: 28.0);
 }

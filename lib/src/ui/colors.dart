@@ -5,6 +5,7 @@ class AppColors {
   static const black = Color.fromARGB(255, 28, 28, 28);
 
   static const confortableYellow = Color.fromARGB(255, 229, 143, 3);
+  static const monkChick = Color.fromRGBO(255, 204, 188, 1);
   static const lightestGrey = Color(0xFFDDDDDD);
   static const lighterGrey = Color(0xFFC1C1C1);
   static const grey = Color(0xFFA8A8A8);
