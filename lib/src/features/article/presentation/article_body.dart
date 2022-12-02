@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
 import 'package:flutter_highlight/themes/darcula.dart';
 import 'package:flutter_html/flutter_html.dart';
@@ -29,20 +30,41 @@ class ArticleBody extends StatelessWidget {
           codeMatcher(): CustomRender.widget(widget: ((context, buildChildren) {
             final dataText = context.tree.element!.innerHtml;
 
-            return Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(25),
-                child: HighlightView(
-                  dataText,
-                  language: 'dart',
-                  theme: darculaTheme,
-                  textStyle: AppTextStyles.code,
-                  padding: AppPaddings.padAll40.copyWith(bottom: 24),
+            return Stack(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.black12,
+                          spreadRadius: 5,
+                          blurRadius: 10,
+                        )
+                      ]),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(25),
+                    child: HighlightView(
+                      dataText,
+                      language: 'dart',
+                      theme: darculaTheme,
+                      textStyle: AppTextStyles.code,
+                      padding: AppPaddings.padAll40.copyWith(bottom: 24),
+                    ),
+                  ),
                 ),
-              ),
+                Positioned(
+                  top: 8,
+                  right: 8,
+                  child: IconButton(
+                    onPressed: () async {
+                      await Clipboard.setData(ClipboardData(text: dataText));
+                    },
+                    icon: const Icon(Icons.copy_rounded),
+                    color: const Color.fromARGB(255, 249, 217, 130),
+                  ),
+                ),
+              ],
             );
           })),
         },
