@@ -55,6 +55,7 @@ class AppPaddings {
   static const padAll16 = EdgeInsets.all(16.0);
   static const padAll24 = EdgeInsets.all(24.0);
   static const padAll32 = EdgeInsets.all(32.0);
+  static const padAll40 = EdgeInsets.all(40.0);
 
 //* Only
   static const padTop12 = EdgeInsets.only(top: 12.0);

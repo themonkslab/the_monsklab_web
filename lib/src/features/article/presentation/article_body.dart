@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_highlight/flutter_highlight.dart';
-import 'package:flutter_highlight/themes/github.dart';
+import 'package:flutter_highlight/themes/darcula.dart';
 import 'package:flutter_html/flutter_html.dart';
 import 'package:markdown/markdown.dart' as md;
 import 'package:the_monkslab_web/src/ui/sizes.dart';
 
 import '../../../constants/_index.dart';
+
+// CustomRenderMatcher codeMatcher() =>
+//     (context) => context.tree.element?.localName == 'pre';
+
+CustomRenderMatcher codeMatcher() => (context) =>
+    context.tree.element?.attributes['class']?.contains('language-dart') ??
+    false;
 
 class ArticleBody extends StatelessWidget {
   const ArticleBody({Key? key, required this.data}) : super(key: key);
@@ -18,20 +25,26 @@ class ArticleBody extends StatelessWidget {
       padding: AppPaddings.padAll12,
       child: Html(
         data: htmlData,
-        customRender: {
-          'code': (context, parsedChild) {
-            // use for implementing copy
-            // context.parser.onImageTap
-            return HighlightView(
-              '''main() {
-  print("Hello, World!");
-}
-''',
-              language: 'dart',
-              theme: githubTheme,
-              textStyle: AppTextStyles.code,
+        customRenders: {
+          codeMatcher(): CustomRender.widget(widget: ((context, buildChildren) {
+            final dataText = context.tree.element!.innerHtml;
+
+            return Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(25),
+                child: HighlightView(
+                  dataText,
+                  language: 'dart',
+                  theme: darculaTheme,
+                  textStyle: AppTextStyles.code,
+                  padding: AppPaddings.padAll40.copyWith(bottom: 24),
+                ),
+              ),
             );
-          }
+          })),
         },
         style: {
           // TODO -HIGH- revisit to check if selectable is possible
@@ -46,12 +59,6 @@ class ArticleBody extends StatelessWidget {
           'p': Style.fromTextStyle(AppTextStyles.p)
               .copyWith(padding: AppPaddings.padV12),
           'li': Style.fromTextStyle(AppTextStyles.li),
-          'pre': Style(
-            margin: AppPaddings.padAll24,
-            backgroundColor: AppColors.monkChick,
-            padding: const EdgeInsets.fromLTRB(24, 24, 24, 12),
-          ),
-          'code': Style.fromTextStyle(AppTextStyles.code),
         },
       ),
     );
