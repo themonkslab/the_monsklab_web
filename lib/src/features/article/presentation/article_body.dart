@@ -8,9 +8,6 @@ import 'package:the_monkslab_web/src/ui/sizes.dart';
 
 import '../../../constants/_index.dart';
 
-// CustomRenderMatcher codeMatcher() =>
-//     (context) => context.tree.element?.localName == 'pre';
-
 CustomRenderMatcher codeMatcher() => (context) =>
     context.tree.element?.attributes['class']?.contains('language-dart') ??
     false;
@@ -27,11 +24,12 @@ class ArticleBody extends StatelessWidget {
       child: Html(
         data: htmlData,
         customRenders: {
-          codeMatcher(): CustomRender.widget(widget: ((context, buildChildren) {
+          codeMatcher(): CustomRender.widget(widget: ((context, _) {
             final dataText = context.tree.element!.innerHtml;
 
             return Stack(
               children: [
+                //* Code
                 Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
@@ -53,6 +51,7 @@ class ArticleBody extends StatelessWidget {
                     ),
                   ),
                 ),
+                //* Copy button
                 Positioned(
                   top: 8,
                   right: 8,
@@ -69,8 +68,6 @@ class ArticleBody extends StatelessWidget {
           })),
         },
         style: {
-          // TODO -HIGH- revisit to check if selectable is possible
-          // https://github.com/Sub6Resources/flutter_html/issues/717
           'h1': Style.fromTextStyle(AppTextStyles.h1),
           'h2': Style.fromTextStyle(AppTextStyles.h2)
               .copyWith(padding: AppPaddings.padTop12),
