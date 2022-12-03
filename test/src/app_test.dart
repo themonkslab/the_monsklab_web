@@ -9,7 +9,7 @@ class MockCoursesRepository extends Mock implements CoursesRepository {}
 
 void main() {
   group('App', () {
-    //? Why separe between declaration and setup?
+    //? Why separate between declaration and setup?
     late CoursesRepository coursesRepository;
 
     setUp(() {
