@@ -26,11 +26,15 @@ void main() {
       await r.expectOneOfType(HomeView);
     });
 
+    //TODO -CONT- check how to inject providers on top of MaterialApp
     //TODO -CONT- mock classes and complete test
     testWidgets('navigates to the archive when hypertext is tapped',
         (tester) async {
       final r = HomeRobot(tester);
-      await r.pumpWidget(App(coursesRepository: coursesRepository));
+      await r.pumpWidget(
+        const HomeView(),
+        withRouter: true,
+      );
       await tester.tap(find.byType(AppHypertext));
       await tester.pumpAndSettle();
       expect(find.byType(ArchivePage), findsOneWidget);

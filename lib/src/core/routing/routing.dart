@@ -8,22 +8,23 @@ enum AppRoutes {
   course,
 }
 
-final routerDelegate = BeamerDelegate(
-  initialPath: '/',
-  //TODO -LOW- remove animation just on web
-  transitionDelegate: const NoAnimationTransitionDelegate(),
-  locationBuilder: RoutesLocationBuilder(
-    routes: {
-      '/': (_, __, ___) => const HomeView(),
-      '/archive': (_, __, ___) => const ArchivePage(),
-      '/course/:path': (_, state, __) {
-        final path = state.pathParameters['path']!;
-        return CoursePage(path);
-      },
-      '/article/:path': ((_, state, __) {
-        final path = (state.pathParameters['path']!);
-        return ArticlePage(path: path);
-      }),
-    },
-  ),
-);
+routerDelegate({String? initialPath}) => BeamerDelegate(
+      //? What about this for testing purposes?
+      initialPath: initialPath ?? '/',
+      //TODO -LOW- remove animation just on web
+      transitionDelegate: const NoAnimationTransitionDelegate(),
+      locationBuilder: RoutesLocationBuilder(
+        routes: {
+          '/': (_, __, ___) => const HomeView(),
+          '/archive': (_, __, ___) => const ArchivePage(),
+          '/course/:path': (_, state, __) {
+            final path = state.pathParameters['path']!;
+            return CoursePage(path);
+          },
+          '/article/:path': ((_, state, __) {
+            final path = (state.pathParameters['path']!);
+            return ArticlePage(path: path);
+          }),
+        },
+      ),
+    );

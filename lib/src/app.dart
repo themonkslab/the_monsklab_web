@@ -30,7 +30,7 @@ class AppView extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       routeInformationParser: BeamerParser(),
-      routerDelegate: routerDelegate,
+      routerDelegate: routerDelegate(),
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
