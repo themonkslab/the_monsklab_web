@@ -1,6 +1,6 @@
+import 'package:mocktail/mocktail.dart';
 import 'package:the_monkslab_web/src/apis/firestore_api.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
-import 'package:the_monkslab_web/src/models/section.dart';
 
 //TODO -MEDIUM- create abstract class
 class CoursesRepository {
@@ -25,3 +25,5 @@ class CoursesRepository {
     return await _firebaseApi.getArticle(path);
   }
 }
+
+class MockCoursesRepository extends Mock implements CoursesRepository {}

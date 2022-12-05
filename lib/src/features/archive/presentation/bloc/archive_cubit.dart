@@ -30,6 +30,8 @@ class ArchiveCubit extends Cubit<ArchiveState> {
 
 enum ArchiveStatus { initial, loading, success, failure }
 
+//? Why using JsonSerializable and Equatable
+//? when freezed is less verbose
 @freezed
 class ArchiveState with _$ArchiveState {
   const factory ArchiveState({

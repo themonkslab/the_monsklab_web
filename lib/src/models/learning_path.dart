@@ -28,4 +28,11 @@ class LearningPath with _$LearningPath {
       courses: courses,
     );
   }
+
+  //? Why a static const and not a named constructor? Less verbose?
+  // factory LearningPath.emptyWithNamedConstructor() {
+  //   return const LearningPath(id: 'id', title: 'title', courses: []);
+  // }
+
+  static const empty = LearningPath(id: '', title: '', courses: []);
 }
