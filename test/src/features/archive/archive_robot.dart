@@ -3,13 +3,15 @@ import 'package:flutter/material.dart' show MaterialApp, Widget;
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:the_monkslab_web/src/core/routing/routing.dart';
+import 'package:the_monkslab_web/src/features/archive/presentation/bloc/archive_cubit.dart';
 import 'package:the_monkslab_web/src/repositories/courses_repository.dart';
 
 class ArchiveRobot {
   const ArchiveRobot(this.tester);
   final WidgetTester tester;
 
-  Future<void> pumpWidget(CoursesRepository coursesRepository) async {
+  Future<void> pumpWidgetWithRepository(
+      CoursesRepository coursesRepository) async {
     await tester.pumpWidget(RepositoryProvider.value(
       value: coursesRepository,
       child: MaterialApp.router(
@@ -17,6 +19,18 @@ class ArchiveRobot {
         routerDelegate: routerDelegate(initialPath: '/archive'),
       ),
     ));
+  }
+
+  Future<void> pumpWidgetWithProvider({
+    required ArchiveCubit archiveCubit,
+    required Widget child,
+  }) async {
+    await tester.pumpWidget(
+      BlocProvider<ArchiveCubit>.value(
+        value: archiveCubit,
+        child: MaterialApp(home: child),
+      ),
+    );
   }
 
   //* Expect

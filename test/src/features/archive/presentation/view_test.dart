@@ -1,10 +1,17 @@
+import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:the_monkslab_web/src/features/_index.dart';
+import 'package:the_monkslab_web/src/features/archive/presentation/bloc/archive_cubit.dart';
 import 'package:the_monkslab_web/src/models/learning_path.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
+import 'package:the_monkslab_web/src/ui/widgets/_index.dart';
 
 import '../archive_robot.dart';
+
+//? Can't be used inside ArchiveCubit?
+class MockArchiveCubit extends MockCubit<ArchiveState> implements ArchiveCubit {
+}
 
 void main() {
   group('ArchivePage', () {
@@ -17,8 +24,28 @@ void main() {
       final r = ArchiveRobot(tester);
       when(() => coursesRepository.getLearningPath(any()))
           .thenAnswer((_) async => LearningPath.empty);
-      await r.pumpWidget(coursesRepository);
+      await r.pumpWidgetWithRepository(coursesRepository);
       await r.expectOneOfType(ArchiveView);
+    });
+  });
+  group('ArchiveView', () {
+    late ArchiveCubit archiveCubit;
+
+    setUp(() {
+      archiveCubit = MockArchiveCubit();
+    });
+
+    testWidgets('renders AppLoader for ArchiveStatus.loading', (tester) async {
+      final r = ArchiveRobot(tester);
+      when(() => archiveCubit.state).thenReturn(const ArchiveState(
+        status: ArchiveStatus.loading,
+      ));
+
+      await r.pumpWidgetWithProvider(
+        archiveCubit: archiveCubit,
+        child: const ArchiveView(),
+      );
+      await r.expectOneOfType(AppLoader);
     });
   });
 }
