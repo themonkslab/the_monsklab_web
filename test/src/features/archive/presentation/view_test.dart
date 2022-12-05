@@ -8,14 +8,14 @@ import '../archive_robot.dart';
 
 void main() {
   group('ArchivePage', () {
-    late final CoursesRepository coursesRepository;
+    late CoursesRepository coursesRepository;
     setUp(() {
       coursesRepository = MockCoursesRepository();
     });
 
     testWidgets('renders ArchiveView', (tester) async {
       final r = ArchiveRobot(tester);
-      when(() async => await coursesRepository.getLearningPath(any()))
+      when(() => coursesRepository.getLearningPath(any()))
           .thenAnswer((_) async => LearningPath.empty);
       await r.pumpWidget(coursesRepository);
       await r.expectOneOfType(ArchiveView);
