@@ -47,5 +47,32 @@ void main() {
       );
       await r.expectOneOfType(AppLoader);
     });
+
+    testWidgets('renders AppFailure for ArchiveStatus.failure', (tester) async {
+      final r = ArchiveRobot(tester);
+      when(() => archiveCubit.state).thenReturn(const ArchiveState(
+        status: ArchiveStatus.failure,
+      ));
+
+      await r.pumpWidgetWithProvider(
+        archiveCubit: archiveCubit,
+        child: const ArchiveView(),
+      );
+      await r.expectOneOfType(AppFailure);
+    });
+
+    testWidgets('renders AppSuccess for ArchiveStatus.success', (tester) async {
+      final r = ArchiveRobot(tester);
+      when(() => archiveCubit.state).thenReturn(const ArchiveState(
+        status: ArchiveStatus.success,
+        learningPath: LearningPath.empty,
+      ));
+
+      await r.pumpWidgetWithProvider(
+        archiveCubit: archiveCubit,
+        child: const ArchiveView(),
+      );
+      await r.expectOneOfType(ArchivePopulated);
+    });
   });
 }
