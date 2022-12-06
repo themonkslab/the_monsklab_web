@@ -19,7 +19,7 @@ void main() {
       );
       await r.expectOneOfType(AppResponsiveScaffold);
       expect(
-        find.byType(Padding).first,
+        tester.widget(find.byType(Padding).first),
         isA<Padding>().having((p) => p.padding, 'padding', AppPaddings.padH8),
       );
     });
