@@ -33,6 +33,10 @@ class ArchiveRobot {
     );
   }
 
+  Future<void> pumpWidget({required Widget child}) async {
+    await tester.pumpWidget(MaterialApp(home: child));
+  }
+
   //* Expect
   Future<void> expectOneOfType(Type type) async {
     expect(find.byType(type), findsOneWidget);

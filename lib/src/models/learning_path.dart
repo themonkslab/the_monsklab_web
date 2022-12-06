@@ -34,5 +34,20 @@ class LearningPath with _$LearningPath {
   //   return const LearningPath(id: 'id', title: 'title', courses: []);
   // }
 
-  static const empty = LearningPath(id: '', title: '', courses: []);
+  static const empty = LearningPath(
+    id: '',
+    title: '',
+    courses: [],
+  );
+
+  static const sample = LearningPath(id: '1', title: 'Title', courses: [
+    CourseReference(
+      path: 'path1',
+      title: 'Course title1',
+    ),
+    CourseReference(
+      path: 'path2',
+      title: 'Course title2',
+    ),
+  ]);
 }

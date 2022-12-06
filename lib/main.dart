@@ -9,6 +9,7 @@ import 'package:the_monkslab_web/web_observer.dart';
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = WebObserver();
+  //? Error in firebase?
   if (kIsWeb) {
     await Firebase.initializeApp(
         options: const FirebaseOptions(
