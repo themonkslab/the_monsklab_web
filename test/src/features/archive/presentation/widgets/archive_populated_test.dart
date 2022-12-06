@@ -24,4 +24,21 @@ void main() {
       );
     });
   });
+  group('ArchivePopulated when not isPhoneOrTablet', () {
+    testWidgets('renders AppResponsiveScaffold with padH24', (tester) async {
+      final r = ArchiveRobot(tester);
+
+      await r.pumpWidget(
+        child: const ArchivePopulated(
+          isPhoneOrTablet: false,
+          learningPath: LearningPath.sample,
+        ),
+      );
+      await r.expectOneOfType(AppResponsiveScaffold);
+      expect(
+        tester.widget(find.byType(Padding).first),
+        isA<Padding>().having((p) => p.padding, 'padding', AppPaddings.padH24),
+      );
+    });
+  });
 }
