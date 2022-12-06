@@ -37,9 +37,8 @@ void main() {
 
     testWidgets('renders AppLoader for ArchiveStatus.loading', (tester) async {
       final r = ArchiveRobot(tester);
-      when(() => archiveCubit.state).thenReturn(const ArchiveState(
-        status: ArchiveStatus.loading,
-      ));
+      when(() => archiveCubit.state)
+          .thenReturn(const ArchiveState(status: ArchiveStatus.loading));
 
       await r.pumpWidgetWithProvider(
         archiveCubit: archiveCubit,
@@ -50,9 +49,8 @@ void main() {
 
     testWidgets('renders AppFailure for ArchiveStatus.failure', (tester) async {
       final r = ArchiveRobot(tester);
-      when(() => archiveCubit.state).thenReturn(const ArchiveState(
-        status: ArchiveStatus.failure,
-      ));
+      when(() => archiveCubit.state)
+          .thenReturn(const ArchiveState(status: ArchiveStatus.failure));
 
       await r.pumpWidgetWithProvider(
         archiveCubit: archiveCubit,

@@ -33,11 +33,8 @@ void main() {
         (tester) async {
       final r = HomeRobot(tester);
       await r.pumpWidget(App(coursesRepository: coursesRepository));
-      when(() => coursesRepository.getLearningPath(any())).thenAnswer(
-        (_) async {
-          return LearningPath.empty;
-        },
-      );
+      when(() => coursesRepository.getLearningPath(any()))
+          .thenAnswer((_) async => LearningPath.empty);
       await r.tap(AppHypertext);
       await tester.pumpAndSettle();
       await r.expectOneOfType(ArchivePage);
