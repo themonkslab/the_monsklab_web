@@ -59,6 +59,7 @@ class AppPaddings {
 
 //* Only
   static const padTop12 = EdgeInsets.only(top: 12.0);
+  static const padBottom40 = EdgeInsets.only(bottom: 40.0);
 
 //* Symmetric Horizontal
   static const padH4 = EdgeInsets.symmetric(horizontal: 4.0);

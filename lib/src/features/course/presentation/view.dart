@@ -35,27 +35,30 @@ class CourseView extends StatelessWidget {
             return const AppFailure();
           case CourseStatus.success:
             return AppResponsiveScaffold(
-                child: Column(
-              children: <Widget>[
-                AppGaps.gapH48,
-                Padding(
-                  padding: AppPaddings.padH24,
-                  child: Text(
-                    state.course!.title.toUpperCase(),
-                    style: AppTextStyles.h1,
+                child: Padding(
+              padding: AppPaddings.padBottom40,
+              child: Column(
+                children: <Widget>[
+                  AppGaps.gapH48,
+                  Padding(
+                    padding: AppPaddings.padH24,
+                    child: Text(
+                      state.course!.title.toUpperCase(),
+                      style: AppTextStyles.h1,
+                    ),
                   ),
-                ),
-                Padding(
-                  padding: AppPaddings.padH24,
-                  child: Text(
-                    state.course!.description,
-                    style: AppTextStyles.p,
+                  Padding(
+                    padding: AppPaddings.padH24,
+                    child: Text(
+                      state.course!.description,
+                      style: AppTextStyles.p,
+                    ),
                   ),
-                ),
-                AppGaps.gapH24,
-                for (var section in state.course!.sections)
-                  SectionPage(path: section.path)
-              ],
+                  AppGaps.gapH24,
+                  for (var section in state.course!.sections)
+                    SectionPage(path: section.path)
+                ],
+              ),
             ));
           default:
             return const AppFailure();

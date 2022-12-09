@@ -27,7 +27,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/1.Introducción/1_Sacar_provecho_del_curso.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.557605"
+            "published": "2022-12-09 07:33:36.915705"
           },
           {
             "path": "1.Introducción_2_Qué_esperamos_nosotros",
@@ -36,7 +36,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/1.Introducción/2_Qué_esperamos_nosotros.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.557504"
+            "published": "2022-12-09 07:33:36.915600"
           },
           {
             "path": "1.Introducción_3_Introducción_a_Dart",
@@ -45,7 +45,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/1.Introducción/3_Introducción_a_Dart.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.557666"
+            "published": "2022-12-09 07:33:36.915771"
           },
           {
             "path": "1.Introducción_4_Introducción_a_Dartpad",
@@ -54,7 +54,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/1.Introducción/4_Introducción_a_Dartpad.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.557726"
+            "published": "2022-12-09 07:33:36.915837"
           }
         ]
       },
@@ -70,7 +70,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/1_Introducción.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.554575"
+            "published": "2022-12-09 07:33:36.912775"
           },
           {
             "path": "2.Dart_básico_2_Método_main",
@@ -79,7 +79,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/2_Método_main.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.555878"
+            "published": "2022-12-09 07:33:36.914065"
           },
           {
             "path": "2.Dart_básico_3_Primer_programa",
@@ -88,7 +88,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/3_Primer_programa.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.554059"
+            "published": "2022-12-09 07:33:36.912389"
           },
           {
             "path": "2.Dart_básico_4_Variables,declaración_e_inicialización",
@@ -97,16 +97,16 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/4_Variables,declaración_e_inicialización.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.555232"
+            "published": "2022-12-09 07:33:36.913321"
           },
           {
-            "path": "2.Dart_básico_5_Tipos_bésicos",
-            "title": "5.Tipos bésicos",
+            "path": "2.Dart_básico_5_Tipos_básicos",
+            "title": "5.Tipos básicos",
             "description": "",
             "contentUrl":
-                "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/5_Tipos_bésicos.md",
+                "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/5_Tipos_básicos.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.554187"
+            "published": "2022-12-09 07:33:36.913938"
           },
           {
             "path": "2.Dart_básico_6_Escape_caracteres",
@@ -115,7 +115,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/6_Escape_caracteres.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.555778"
+            "published": "2022-12-09 07:33:36.913876"
           },
           {
             "path": "2.Dart_básico_7_Líneas_múltiples_de_texto",
@@ -124,7 +124,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/7_Líneas_múltiples_de_texto.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.555014"
+            "published": "2022-12-09 07:33:36.913119"
           },
           {
             "path": "2.Dart_básico_8_Métodos_comunes_en_textos",
@@ -133,7 +133,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/8_Métodos_comunes_en_textos.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.555346"
+            "published": "2022-12-09 07:33:36.913429"
           },
           {
             "path": "2.Dart_básico_9_Inicialización_y_asignación",
@@ -142,7 +142,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/9_Inicialización_y_asignación.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.555657"
+            "published": "2022-12-09 07:33:36.913753"
           },
           {
             "path": "2.Dart_básico_10_Contiene_y_reemplazar",
@@ -151,7 +151,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/10_Contiene_y_reemplazar.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.555719"
+            "published": "2022-12-09 07:33:36.913817"
           },
           {
             "path": "2.Dart_básico_11_Conversiones_entre_tipos",
@@ -160,7 +160,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/11_Conversiones_entre_tipos.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.554260"
+            "published": "2022-12-09 07:33:36.912494"
           },
           {
             "path": "2.Dart_básico_12_Operaciones_aritméticas",
@@ -169,7 +169,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/12_Operaciones_aritméticas.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.553932"
+            "published": "2022-12-09 07:33:36.912280"
           },
           {
             "path": "2.Dart_básico_13_Operadores_de_incremento_y_decremento",
@@ -178,7 +178,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/13_Operadores_de_incremento_y_decremento.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.554752"
+            "published": "2022-12-09 07:33:36.912938"
           },
           {
             "path":
@@ -188,7 +188,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/14_Operadores_lógicos_,_de_igualdad_y_relaciones.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.556012"
+            "published": "2022-12-09 07:33:36.914149"
           },
           {
             "path": "2.Dart_básico_15_Operador_condicional",
@@ -197,7 +197,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/15_Operador_condicional.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.555150"
+            "published": "2022-12-09 07:33:36.913220"
           },
           {
             "path": "2.Dart_básico_16_Comentarios",
@@ -206,7 +206,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/16_Comentarios.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.554682"
+            "published": "2022-12-09 07:33:36.912871"
           },
           {
             "path": "2.Dart_básico_17_Expresiones_y_declaraciones",
@@ -215,7 +215,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/17_Expresiones_y_declaraciones.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.555456"
+            "published": "2022-12-09 07:33:36.913540"
           },
           {
             "path": "2.Dart_básico_18_Afirmaciones",
@@ -224,7 +224,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/18_Afirmaciones.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.554373"
+            "published": "2022-12-09 07:33:36.912595"
           }
         ]
       },
@@ -240,7 +240,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/3.Sistema_de_tipado/1_introducción.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.558112"
+            "published": "2022-12-09 07:33:36.916236"
           },
           {
             "path": "3.Sistema_de_tipado_2_Lenguajes_estáticos_y_dinámicos",
@@ -249,7 +249,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/3.Sistema_de_tipado/2_Lenguajes_estáticos_y_dinámicos.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.558227"
+            "published": "2022-12-09 07:33:36.916356"
           },
           {
             "path": "3.Sistema_de_tipado_3_Inferencia_de_tipo",
@@ -258,7 +258,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/3.Sistema_de_tipado/3_Inferencia_de_tipo.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.558020"
+            "published": "2022-12-09 07:33:36.916146"
           },
           {
             "path": "3.Sistema_de_tipado_4_final_keyword",
@@ -267,7 +267,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/3.Sistema_de_tipado/4_final_keyword.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.558164"
+            "published": "2022-12-09 07:33:36.916289"
           },
           {
             "path": "3.Sistema_de_tipado_5_const_keyword",
@@ -276,7 +276,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/3.Sistema_de_tipado/5_const_keyword.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.558341"
+            "published": "2022-12-09 07:33:36.916447"
           },
           {
             "path": "3.Sistema_de_tipado_6_dynamic_keyword",
@@ -285,7 +285,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/3.Sistema_de_tipado/6_dynamic_keyword.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.557963"
+            "published": "2022-12-09 07:33:36.916090"
           }
         ]
       },
@@ -301,7 +301,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/4.Flujo_de_control/1_introducción.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.558762"
+            "published": "2022-12-09 07:33:36.916850"
           },
           {
             "path": "4.Flujo_de_control_2_if_else",
@@ -310,7 +310,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/4.Flujo_de_control/2_if_else.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.558961"
+            "published": "2022-12-09 07:33:36.917049"
           },
           {
             "path": "4.Flujo_de_control_3_while_loop",
@@ -319,7 +319,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/4.Flujo_de_control/3_while_loop.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.559186"
+            "published": "2022-12-09 07:33:36.917246"
           },
           {
             "path": "4.Flujo_de_control_4_for_loop",
@@ -328,7 +328,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/4.Flujo_de_control/4_for_loop.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.558823"
+            "published": "2022-12-09 07:33:36.916915"
           },
           {
             "path": "4.Flujo_de_control_5_break_continue",
@@ -337,7 +337,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/4.Flujo_de_control/5_break_continue.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.558876"
+            "published": "2022-12-09 07:33:36.916968"
           },
           {
             "path": "4.Flujo_de_control_6_switch",
@@ -346,7 +346,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/4.Flujo_de_control/6_switch.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.559059"
+            "published": "2022-12-09 07:33:36.917145"
           },
           {
             "path": "4.Flujo_de_control_7_enumerations",
@@ -355,7 +355,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/4.Flujo_de_control/7_enumerations.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.559011"
+            "published": "2022-12-09 07:33:36.917098"
           }
         ]
       },
@@ -371,7 +371,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/1_Introducción.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.556803"
+            "published": "2022-12-09 07:33:36.914908"
           },
           {
             "path": "5.app_linea_comando_2_Dart_sdk",
@@ -380,7 +380,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/2_Dart_sdk.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.556650"
+            "published": "2022-12-09 07:33:36.914773"
           },
           {
             "path": "5.app_linea_comando_3_VS_Code",
@@ -389,7 +389,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/3_VS_Code.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.556860"
+            "published": "2022-12-09 07:33:36.914959"
           },
           {
             "path": "5.app_linea_comando_4_Resúmen_del_juego",
@@ -398,7 +398,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/4_Resúmen_del_juego.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.556507"
+            "published": "2022-12-09 07:33:36.914639"
           },
           {
             "path": "5.app_linea_comando_5_Creando_una_app_en_línea_de_comando",
@@ -407,7 +407,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/5_Creando_una_app_en_línea_de_comando.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.557188"
+            "published": "2022-12-09 07:33:36.915269"
           },
           {
             "path": "5.app_linea_comando_6_pseudo_code_del_juego",
@@ -416,7 +416,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/6_pseudo_code_del_juego.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.557088"
+            "published": "2022-12-09 07:33:36.915175"
           },
           {
             "path": "5.app_linea_comando_7_Obteniendo_user_input",
@@ -425,7 +425,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/7_Obteniendo_user_input.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.556443"
+            "published": "2022-12-09 07:33:36.914581"
           },
           {
             "path": "5.app_linea_comando_8_Implementando_el_loop",
@@ -434,7 +434,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/8_Implementando_el_loop.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.556563"
+            "published": "2022-12-09 07:33:36.914691"
           },
           {
             "path": "5.app_linea_comando_9_Implementando_la_lógica_del_juego",
@@ -443,7 +443,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/9_Implementando_la_lógica_del_juego.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.556963"
+            "published": "2022-12-09 07:33:36.915056"
           }
         ]
       },
@@ -459,7 +459,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/1_Introducción.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.559745"
+            "published": "2022-12-09 07:33:36.917809"
           },
           {
             "path": "6.Collections_2_Lists",
@@ -468,7 +468,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/2_Lists.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.559438"
+            "published": "2022-12-09 07:33:36.917494"
           },
           {
             "path": "6.Collections_3_List_methods",
@@ -477,7 +477,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/3_List_methods.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.559489"
+            "published": "2022-12-09 07:33:36.917545"
           },
           {
             "path": "6.Collections_4_Type_annotations",
@@ -486,7 +486,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/4_Type_annotations.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.559803"
+            "published": "2022-12-09 07:33:36.917873"
           },
           {
             "path": "6.Collections_5_var_final_const_with_lists",
@@ -495,7 +495,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/5_var_final_const_with_lists.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.559965"
+            "published": "2022-12-09 07:33:36.918021"
           },
           {
             "path": "6.Collections_6_Sets",
@@ -504,7 +504,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/6_Sets.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.560011"
+            "published": "2022-12-09 07:33:36.918064"
           },
           {
             "path": "6.Collections_7_Maps",
@@ -513,7 +513,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/7_Maps.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.559536"
+            "published": "2022-12-09 07:33:36.917595"
           },
           {
             "path": "6.Collections_8_Type_test_operators",
@@ -522,7 +522,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/8_Type_test_operators.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.559585"
+            "published": "2022-12-09 07:33:36.917644"
           },
           {
             "path": "6.Collections_9_Iterating_on_maps",
@@ -531,7 +531,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/9_Iterating_on_maps.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.559854"
+            "published": "2022-12-09 07:33:36.917924"
           },
           {
             "path": "6.Collections_10_Nested_collections",
@@ -540,7 +540,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/10_Nested_collections.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.560058"
+            "published": "2022-12-09 07:33:36.918110"
           },
           {
             "path": "6.Collections_11_Nuevos_operadores_y_statements",
@@ -549,7 +549,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/11_Nuevos_operadores_y_statements.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.559636"
+            "published": "2022-12-09 07:33:36.917697"
           },
           {
             "path": "6.Collections_12_Copiando_colecciones",
@@ -558,7 +558,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/12_Copiando_colecciones.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.559910"
+            "published": "2022-12-09 07:33:36.917971"
           }
         ]
       },
@@ -574,7 +574,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/7.Procesamiento_de_datos/1_Introducción.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.552668"
+            "published": "2022-12-09 07:33:36.910698"
           },
           {
             "path":
@@ -584,7 +584,7 @@ class FirestoreApi {
             "contentUrl":
                 "https://raw.githubusercontent.com/themonkslab/courses/main/dart/7.Procesamiento_de_datos/2_Parseando_argumentos_desde_linea_de_comando.md",
             "author": "Mau Di Bert",
-            "published": "2022-12-09 06:30:30.551351"
+            "published": "2022-12-09 07:33:36.909335"
           }
         ]
       }

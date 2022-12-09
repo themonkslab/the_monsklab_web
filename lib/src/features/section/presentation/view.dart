@@ -5,6 +5,8 @@ import 'package:the_monkslab_web/src/core/routing/routing.dart';
 import 'package:the_monkslab_web/src/features/section/_index.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
+import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
+import 'package:the_monkslab_web/src/utils/_index.dart';
 
 class SectionPage extends StatelessWidget {
   const SectionPage({
@@ -30,6 +32,9 @@ class SectionView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenType = context.getScreenType();
+    final isPhone = screenType == ScreenType.phone;
+
     return BlocBuilder<SectionCubit, SectionState>(
       builder: ((context, state) {
         switch (state.status) {
@@ -56,27 +61,37 @@ class SectionView extends StatelessWidget {
                   for (var article in state.section!.articles)
                     Column(
                       children: [
-                        SizedBox(
-                          width: double.infinity,
-                          child: OutlinedButton(
-                              style: ButtonStyle(
-                                shape: MaterialStateProperty.all<
-                                    ContinuousRectangleBorder>(
-                                  const ContinuousRectangleBorder(),
-                                ),
-                              ),
-                              onPressed: () => context.beamToNamed(
+                        isPhone
+                            ? SizedBox(
+                                width: double.infinity,
+                                child: OutlinedButton(
+                                    style: ButtonStyle(
+                                      shape: MaterialStateProperty.all<
+                                          ContinuousRectangleBorder>(
+                                        const ContinuousRectangleBorder(),
+                                      ),
+                                    ),
+                                    onPressed: () => context.beamToNamed(
+                                          '/${AppRoutes.article.name}/${article.path}',
+                                        ),
+                                    child: Padding(
+                                      padding: AppPaddings.padAll16,
+                                      child: Row(
+                                        children: [
+                                          Text(article.title),
+                                        ],
+                                      ),
+                                    )))
+                            : Padding(
+                                padding: AppPaddings.padV4,
+                                child: AppHypertext(
+                                  text: article.title,
+                                  onPressed: () => context.beamToNamed(
                                     '/${AppRoutes.article.name}/${article.path}',
                                   ),
-                              child: Padding(
-                                padding: AppPaddings.padAll16,
-                                child: Row(
-                                  children: [
-                                    Text(article.title),
-                                  ],
+                                  style: AppTextStyles.h3,
                                 ),
-                              )),
-                        ),
+                              ),
                       ],
                     ),
                 ],

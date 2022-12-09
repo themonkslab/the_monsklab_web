@@ -14,6 +14,12 @@ Made with love by the_ **Monkslab** ❤️
 
 ### Flutter best practices
 
+- Widget strategy
+
+  - separate widgets that inject state ('WidgetNamePage') with the views ('WidgetNameView').
+  - public widget for testing purposes.
+
+- Use classes to save conventions in design and styles
 - Testing is not about coverage but about risks assessment
 - A widget should be generic if could be used outside of a feature; it's custom when it could be used outside of a feature and needs additional functionalities than it's source class_
 - Use **stateless** widgets instead of functions
