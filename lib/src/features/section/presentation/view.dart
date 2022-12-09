@@ -34,7 +34,8 @@ class SectionView extends StatelessWidget {
       builder: ((context, state) {
         switch (state.status) {
           case SectionStatus.loading:
-            return const AppLoader();
+            //TODO -MEDIUM- coordinate loading in relation with parent
+            return const SizedBox.shrink();
           case SectionStatus.failure:
             return const AppFailure();
           case SectionStatus.success:

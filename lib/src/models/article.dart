@@ -12,7 +12,7 @@ class Article with _$Article {
     required String description,
     required String content,
     required Author author,
-    required DateTime published,
+    required String published,
     String? readingTime,
   }) = _Article;
 

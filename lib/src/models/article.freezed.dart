@@ -25,7 +25,7 @@ mixin _$Article {
   String get description => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
   Author get author => throw _privateConstructorUsedError;
-  DateTime get published => throw _privateConstructorUsedError;
+  String get published => throw _privateConstructorUsedError;
   String? get readingTime => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -44,7 +44,7 @@ abstract class $ArticleCopyWith<$Res> {
       String description,
       String content,
       Author author,
-      DateTime published,
+      String published,
       String? readingTime});
 
   $AuthorCopyWith<$Res> get author;
@@ -95,7 +95,7 @@ class _$ArticleCopyWithImpl<$Res, $Val extends Article>
       published: null == published
           ? _value.published
           : published // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as String,
       readingTime: freezed == readingTime
           ? _value.readingTime
           : readingTime // ignore: cast_nullable_to_non_nullable
@@ -125,7 +125,7 @@ abstract class _$$_ArticleCopyWith<$Res> implements $ArticleCopyWith<$Res> {
       String description,
       String content,
       Author author,
-      DateTime published,
+      String published,
       String? readingTime});
 
   @override
@@ -174,7 +174,7 @@ class __$$_ArticleCopyWithImpl<$Res>
       published: null == published
           ? _value.published
           : published // ignore: cast_nullable_to_non_nullable
-              as DateTime,
+              as String,
       readingTime: freezed == readingTime
           ? _value.readingTime
           : readingTime // ignore: cast_nullable_to_non_nullable
@@ -209,7 +209,7 @@ class _$_Article implements _Article {
   @override
   final Author author;
   @override
-  final DateTime published;
+  final String published;
   @override
   final String? readingTime;
 
@@ -261,7 +261,7 @@ abstract class _Article implements Article {
       required final String description,
       required final String content,
       required final Author author,
-      required final DateTime published,
+      required final String published,
       final String? readingTime}) = _$_Article;
 
   factory _Article.fromJson(Map<String, dynamic> json) = _$_Article.fromJson;
@@ -277,7 +277,7 @@ abstract class _Article implements Article {
   @override
   Author get author;
   @override
-  DateTime get published;
+  String get published;
   @override
   String? get readingTime;
   @override

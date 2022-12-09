@@ -45,7 +45,7 @@ class ArticleHeader extends StatelessWidget {
                   ),
                 AppGaps.gapH20,
                 Text(
-                  article.published.toReadable,
+                  article.published,
                   style: AppTextStyles.caption.copyWith(
                     color: AppColors.white,
                   ),
@@ -89,7 +89,7 @@ class ArticleHeader extends StatelessWidget {
                   ),
                 AppGaps.gapH20,
                 Text(
-                  article.published.toReadable,
+                  article.published,
                   style: AppTextStyles.caption.copyWith(
                     color: AppColors.white,
                   ),

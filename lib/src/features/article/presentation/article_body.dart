@@ -69,14 +69,10 @@ class ArticleBody extends StatelessWidget {
         },
         style: {
           'h1': Style.fromTextStyle(AppTextStyles.h1),
-          'h2': Style.fromTextStyle(AppTextStyles.h2)
-              .copyWith(padding: AppPaddings.padTop12),
-          'h3': Style.fromTextStyle(AppTextStyles.h3)
-              .copyWith(padding: AppPaddings.padTop12),
-          'h4': Style.fromTextStyle(AppTextStyles.h4)
-              .copyWith(padding: AppPaddings.padTop12),
-          'p': Style.fromTextStyle(AppTextStyles.p)
-              .copyWith(padding: AppPaddings.padV12),
+          'h2': Style.fromTextStyle(AppTextStyles.h2),
+          'h3': Style.fromTextStyle(AppTextStyles.h3),
+          'h4': Style.fromTextStyle(AppTextStyles.h4),
+          'p': Style.fromTextStyle(AppTextStyles.p),
           'li': Style.fromTextStyle(AppTextStyles.li),
         },
       ),
