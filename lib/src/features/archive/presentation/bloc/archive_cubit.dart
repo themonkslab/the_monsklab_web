@@ -37,6 +37,7 @@ enum ArchiveStatus { initial, loading, success, failure }
 
 //? Why using JsonSerializable and Equatable
 //? when freezed is less verbose
+//? Advantages using Mason in the implementation
 @freezed
 class ArchiveState with _$ArchiveState {
   const factory ArchiveState({

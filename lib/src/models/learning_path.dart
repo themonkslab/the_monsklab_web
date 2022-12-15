@@ -40,6 +40,7 @@ class LearningPath with _$LearningPath {
     courses: [],
   );
 
+  //? To conventions
   static const sample = LearningPath(id: '1', title: 'Title', courses: [
     CourseReference(
       path: 'path1',

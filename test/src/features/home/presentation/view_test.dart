@@ -10,6 +10,7 @@ import '../home_robot.dart';
 
 //? Wouldn't be better to gather everyone in one file? Or much better: in the abstract class?
 // class MockCoursesRepository extends Mock implements CoursesRepository {}
+//? Mock with Stream variable with non-nullable type (Tete) | Problem with Mockito?
 
 void main() {
   group('HomeView', () {
