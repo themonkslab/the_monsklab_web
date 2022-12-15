@@ -12,6 +12,7 @@ class App extends StatelessWidget {
     required coursesRepository,
   }) : _coursesRepository = coursesRepository;
 
+  //? why private as pattern
   final CoursesRepository _coursesRepository;
 
   @override
@@ -28,7 +29,7 @@ class AppView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //TODO -HIGH- move to FlowBuilder
+    //TODO -MEDIUM- move to FlowBuilder
     return MaterialApp.router(
       routeInformationParser: BeamerParser(),
       routerDelegate: routerDelegate(),

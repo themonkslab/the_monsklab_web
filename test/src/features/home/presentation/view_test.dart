@@ -20,16 +20,12 @@ void main() {
       coursesRepository = MockCoursesRepository();
     });
 
-    //? We have no HomePage because we need no injection. Is it correct to directly insert a HomeView?
-    //? Is correct to test like this or it belongs to AppTests?
     testWidgets('is rendered as the root page', (tester) async {
       final r = HomeRobot(tester);
       await r.pumpWidget(App(coursesRepository: coursesRepository));
       await r.expectOneOfType(HomeView);
     });
 
-    //TODO -CONT- check how to inject providers on top of MaterialApp
-    //TODO -CONT- mock classes and complete test
     testWidgets('navigates to the archive when hypertext is tapped',
         (tester) async {
       final r = HomeRobot(tester);
