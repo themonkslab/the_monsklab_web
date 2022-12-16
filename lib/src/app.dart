@@ -6,13 +6,16 @@ import 'package:the_monkslab_web/src/repositories/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
 
-class App extends StatelessWidget {
-  const App({
+//! PageView
+class AppPage extends StatelessWidget {
+  const AppPage({
     super.key,
     required coursesRepository,
   }) : _coursesRepository = coursesRepository;
 
-  //? why private as pattern
+  //? answered - why private as pattern
+  // - will prevent the repository from been used outside the class.
+  // - will enforce the separation of layers
   final CoursesRepository _coursesRepository;
 
   @override

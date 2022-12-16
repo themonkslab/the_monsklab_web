@@ -15,7 +15,7 @@ void main() {
     });
 
     testWidgets('renders AppView', (tester) async {
-      await tester.pumpWidget(App(coursesRepository: coursesRepository));
+      await tester.pumpWidget(AppPage(coursesRepository: coursesRepository));
       expect(find.byType(AppView), findsOneWidget);
       expect(find.byType(MaterialApp), findsOneWidget);
     });

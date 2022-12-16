@@ -35,9 +35,10 @@ class ArchiveCubit extends Cubit<ArchiveState> {
 
 enum ArchiveStatus { initial, loading, success, failure }
 
-//? Why using JsonSerializable and Equatable
-//? when freezed is less verbose
-//? Advantages using Mason in the implementation
+//? answered - Why using JsonSerializable and Equatable when freezed is less verbose
+// - Equatable no generates code, making the process of development much faster and even faster the CICD in production.
+// - Equatable has a team and a company that mantains the package thus is more reliable.
+// TODO -MEDIUM- migrate to Equatable
 @freezed
 class ArchiveState with _$ArchiveState {
   const factory ArchiveState({

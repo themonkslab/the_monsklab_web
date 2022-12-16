@@ -29,7 +29,10 @@ class LearningPath with _$LearningPath {
     );
   }
 
-  //? Why a static const and not a named constructor? Less verbose?
+  //? answered - Why a static const and not a named constructor? Less verbose?
+  // A named constructor will not be created when the class is created so would be a better option to save memory.
+
+  // TODO -MEDIUM/EASY-: pass this to named constructor
   // factory LearningPath.emptyWithNamedConstructor() {
   //   return const LearningPath(id: 'id', title: 'title', courses: []);
   // }
@@ -40,7 +43,9 @@ class LearningPath with _$LearningPath {
     courses: [],
   );
 
-  //? To conventions
+  //? answered - Having those here is a good idea?
+  // It's not a good idea because we adding code to the app that will not be used
+  // TODO -LOW/EASY- move to test folder
   static const sample = LearningPath(id: '1', title: 'Title', courses: [
     CourseReference(
       path: 'path1',
