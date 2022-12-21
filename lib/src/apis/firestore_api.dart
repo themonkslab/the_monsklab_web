@@ -12,7 +12,7 @@ class FirestoreApi {
   final FirebaseFirestore _firestore;
   final HttpApi _httpApi;
 
-  //TODO -HIGH- write in firebase from json
+  //TODO -MEDIUM/HARD- make better solution
   Future<void> createEmptyArticles() async {
     final course = [
       {

@@ -2,7 +2,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:the_monkslab_web/src/apis/firestore_api.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 
-//TODO -MEDIUM- create abstract class
+//TODO -MEDIUM/MEDIUM- create abstract class
 class CoursesRepository {
   CoursesRepository({FirestoreApi? firebaseApi})
       : _firebaseApi = firebaseApi ?? FirestoreApi();
