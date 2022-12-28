@@ -14,7 +14,7 @@ routerDelegate({String? initialPath}) => BeamerDelegate(
       transitionDelegate: const NoAnimationTransitionDelegate(),
       locationBuilder: RoutesLocationBuilder(
         routes: {
-          '/': (_, __, ___) => const HomeView(),
+          '/': (_, __, ___) => const HomePage(),
           '/archive': (_, __, ___) => const ArchivePage(),
           '/course/:path': (_, state, __) {
             final path = state.pathParameters['path']!;

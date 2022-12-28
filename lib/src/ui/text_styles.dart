@@ -115,4 +115,12 @@ class AppTextStyles {
     fontSize: 20.0,
     fontWeight: FontWeight.w400,
   ));
+
+  static final barLocationLink = GoogleFonts.montserrat(
+    textStyle: const TextStyle(
+      fontSize: 16.0,
+      fontWeight: FontWeight.w400,
+      color: AppColors.black,
+    ),
+  );
 }

@@ -28,7 +28,6 @@ class ArchiveView extends StatelessWidget {
   Widget build(BuildContext context) {
     //TODO -LOW/MEDIUM- create AppLayoutBuilder
     final screenType = context.getScreenType();
-
     final isPhoneOrTablet =
         screenType == ScreenType.phone || screenType == ScreenType.tablet;
 
