@@ -45,12 +45,12 @@ class LocationLink extends StatelessWidget {
             ? AppTextStyles.barLocationLink.copyWith(
                 color: AppColors.white,
                 fontSize: 16,
-                fontWeight: FontWeight.w300,
+                fontWeight: FontWeight.w500,
               )
             : AppTextStyles.barLocationLink.copyWith(
                 color: AppColors.white,
                 fontSize: 16,
-                fontWeight: FontWeight.w300,
+                fontWeight: FontWeight.w500,
               ),
         enabledDisabledColors: const [
           AppColors.black,

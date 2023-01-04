@@ -9,6 +9,7 @@ class AppSizes {
   // * ContentContainers
   static const desktopContentContainer = 760.0;
   static const largeContentContainer = 960.0;
+  static const centeredTextContainer = 540.0;
 }
 
 /// __Customized Paddings Shortcuts__

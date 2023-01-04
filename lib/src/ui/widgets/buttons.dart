@@ -25,16 +25,17 @@ class AppFilledButton extends StatelessWidget {
             color: onTap != null ? AppColors.primaryDark : AppColors.grey,
             boxShadow: [
               BoxShadow(
-                blurRadius: 4,
+                blurRadius: 5,
                 spreadRadius: 2,
                 offset: const Offset(0, 0),
-                color: AppColors.black20,
+                color: AppColors.black10,
               )
             ],
           ),
           child: Text(
             text,
-            style: AppTextStyles.captionMini.copyWith(color: AppColors.white),
+            style: AppTextStyles.captionMini
+                .copyWith(color: AppColors.white, fontSize: 16),
           ),
         ),
       ),
