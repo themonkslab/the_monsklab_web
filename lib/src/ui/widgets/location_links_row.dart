@@ -53,7 +53,7 @@ class LocationLink extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
         enabledDisabledColors: const [
-          AppColors.black,
+          AppColors.white,
           AppColors.grey,
         ],
         onPressed: () => context.beamToNamed(location),

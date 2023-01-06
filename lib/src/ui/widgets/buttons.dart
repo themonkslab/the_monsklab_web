@@ -25,9 +25,9 @@ class AppFilledButton extends StatelessWidget {
             color: onTap != null ? AppColors.primaryDark : AppColors.grey,
             boxShadow: [
               BoxShadow(
-                blurRadius: 5,
-                spreadRadius: 2,
-                offset: const Offset(0, 0),
+                blurRadius: 3,
+                spreadRadius: 1,
+                offset: const Offset(0, 2),
                 color: AppColors.black10,
               )
             ],
