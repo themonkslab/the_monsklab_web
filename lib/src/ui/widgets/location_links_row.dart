@@ -5,19 +5,42 @@ import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
 
-class LocationLinksRow extends StatelessWidget {
-  const LocationLinksRow({super.key});
+class LocationLinksRowOrColumn extends StatelessWidget {
+  const LocationLinksRowOrColumn({
+    super.key,
+    this.isRow = true,
+  });
+  final isRow;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        LocationLink(text: 'Jobs', location: '/${AppRoutes.archive.name}'),
-        LocationLink(text: 'Cursos', location: '/${AppRoutes.archive.name}'),
-        LocationLink(text: 'Comunidad', location: '/${AppRoutes.archive.name}'),
-        LocationLink(text: 'Hola!', location: '/${AppRoutes.archive.name}'),
-      ],
-    );
+    return isRow
+        ? Row(
+            children: [
+              LocationLink(
+                  text: 'Jobs', location: '/${AppRoutes.archive.name}'),
+              LocationLink(
+                  text: 'Cursos', location: '/${AppRoutes.archive.name}'),
+              LocationLink(
+                  text: 'Comunidad', location: '/${AppRoutes.archive.name}'),
+              LocationLink(
+                  text: 'Hola!', location: '/${AppRoutes.archive.name}'),
+            ],
+          )
+        : Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              LocationLink(
+                  text: 'Jobs', location: '/${AppRoutes.archive.name}'),
+              LocationLink(
+                  text: 'Cursos', location: '/${AppRoutes.archive.name}'),
+              LocationLink(
+                  text: 'Comunidad', location: '/${AppRoutes.archive.name}'),
+              LocationLink(
+                  text: 'Hola!', location: '/${AppRoutes.archive.name}'),
+            ],
+          );
   }
 }
 
