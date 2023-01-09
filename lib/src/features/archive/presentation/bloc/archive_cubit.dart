@@ -13,11 +13,11 @@ class ArchiveCubit extends Cubit<ArchiveState> {
 
   Future<void> fetchLearningPath(String path) async {
     emit(state.copyWith(status: ArchiveStatus.loading));
-    // try {
-    //   await _coursesRepository.createEmptyArticle();
-    // } catch (e) {
-    //   print(e);
-    // }
+    try {
+      await _coursesRepository.createEmptyArticle();
+    } catch (e) {
+      print(e);
+    }
     try {
       final learningPath = await _coursesRepository.getLearningPath(path);
 
