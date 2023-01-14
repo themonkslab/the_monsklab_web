@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:the_monkslab_web/src/utils/helpers.dart';
 
 class Header extends StatelessWidget {
   const Header({
@@ -61,10 +61,9 @@ class Header extends StatelessWidget {
                     AppFilledButton(
                       text: 'Qué estás esperando! Sumate!',
                       onTap: () async {
-                        final uri = Uri.parse('https://discord.gg/vpPVf7guPC');
-                        if (await canLaunchUrl(uri)) {
-                          launchUrl(uri);
-                        } else {
+                        try {
+                          Helpers.launchDiscord();
+                        } catch (e) {
                           //TODO -HIGH- manage error
                           throw Exception('Could not launch url');
                         }
