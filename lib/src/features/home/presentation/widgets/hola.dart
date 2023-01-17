@@ -6,8 +6,10 @@ import 'package:url_launcher/url_launcher.dart';
 
 class Hola extends StatelessWidget {
   const Hola({
-    Key? key,
-  }) : super(key: key);
+    required this.isPhoneOrTablet,
+    super.key,
+  });
+  final bool isPhoneOrTablet;
 
   @override
   Widget build(BuildContext context) {
@@ -31,16 +33,20 @@ class Hola extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
               AppGaps.gapH32,
-              Text(
-                '''
+              Padding(
+                padding:
+                    isPhoneOrTablet ? AppPaddings.padH24 : AppPaddings.padAll0,
+                child: Text(
+                  '''
 Un grupo de amigos apasionados por aprender y enseñar, obsesionados con las convenciones y el orden y convencidos de que la abundancia de esta industria, puede maximizarse dando posibilidades a un sin fin de personas.
 
 Creemos que muchos más merecen las oportunidades que nosotros tuvimos y tratamos día a día de volverlo una realidad.
 
 Monsklab trata de ser aquel lugar que habríamos amado tener cuando comenzamos.
 ''',
-                textAlign: TextAlign.center,
-                style: AppTextStyles.pLarge,
+                  textAlign: TextAlign.center,
+                  style: AppTextStyles.pLarge,
+                ),
               ),
               AppGaps.gapH32,
               Row(

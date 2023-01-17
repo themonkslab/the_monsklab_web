@@ -4,8 +4,11 @@ import 'package:the_monkslab_web/src/ui/_index.dart';
 
 class Contratanos extends StatelessWidget {
   const Contratanos({
-    Key? key,
-  }) : super(key: key);
+    required this.isPhoneOrTablet,
+    super.key,
+  });
+
+  final bool isPhoneOrTablet;
 
   @override
   Widget build(BuildContext context) {
@@ -53,12 +56,13 @@ class Contratanos extends StatelessWidget {
               ),
             ),
           ),
-          AppGaps.gapW64,
-          SvgPicture.asset(
-            'assets/images/logos/dart_logo.svg',
-            height: 480,
-            fit: BoxFit.cover,
-          )
+          if (!isPhoneOrTablet) AppGaps.gapW64,
+          if (!isPhoneOrTablet)
+            SvgPicture.asset(
+              'assets/images/logos/dart_logo.svg',
+              height: 480,
+              fit: BoxFit.cover,
+            )
         ],
       ),
     );

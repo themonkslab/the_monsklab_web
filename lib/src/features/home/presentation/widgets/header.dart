@@ -5,8 +5,11 @@ import 'package:the_monkslab_web/src/utils/helpers.dart';
 
 class Header extends StatelessWidget {
   const Header({
-    Key? key,
-  }) : super(key: key);
+    required this.isPhoneOrTablet,
+    super.key,
+  });
+
+  final bool isPhoneOrTablet;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +30,7 @@ class Header extends StatelessWidget {
                   'Aprender a programar como habríamos soñado!',
                   style: AppTextStyles.h1.copyWith(
                     color: AppColors.white,
-                    fontSize: 100,
+                    fontSize: isPhoneOrTablet ? 60 : 100,
                     fontWeight: FontWeight.w700,
                   ),
                   textAlign: TextAlign.center,
@@ -88,10 +91,11 @@ class Header extends StatelessWidget {
           ),
         ),
         //* Flutter logo
-        Positioned(
-          bottom: -10,
-          child: SvgPicture.asset('assets/images/logos/flutter_logo.svg'),
-        ),
+        if (!isPhoneOrTablet)
+          Positioned(
+            bottom: -10,
+            child: SvgPicture.asset('assets/images/logos/flutter_logo.svg'),
+          ),
       ],
     );
   }

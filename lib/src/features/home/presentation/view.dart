@@ -26,18 +26,18 @@ class HomeView extends StatelessWidget {
         child: Padding(
           padding: isPhoneOrTablet ? AppPaddings.padH8 : AppPaddings.padV12,
           child: Column(
-            children: const [
+            children: [
               //* Bar
-              Bar(),
+              if (!isPhoneOrTablet) const Bar(),
               AppGaps.gapH12,
               //* Hero
-              Header(),
+              Header(isPhoneOrTablet: isPhoneOrTablet),
               //* Hola
-              Hola(),
+              Hola(isPhoneOrTablet: isPhoneOrTablet),
               //* Contratanos
-              Contratanos(),
+              Contratanos(isPhoneOrTablet: isPhoneOrTablet),
               //* Footer
-              Footer(),
+              Footer(isPhoneOrTablet: isPhoneOrTablet),
             ],
           ),
         ),
