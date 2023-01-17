@@ -28,7 +28,7 @@ class HomeView extends StatelessWidget {
           child: Column(
             children: [
               //* Bar
-              if (!isPhoneOrTablet) const Bar(),
+              Bar(isPhoneOrTablet: isPhoneOrTablet),
               AppGaps.gapH12,
               //* Hero
               Header(isPhoneOrTablet: isPhoneOrTablet),
