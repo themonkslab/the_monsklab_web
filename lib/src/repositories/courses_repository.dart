@@ -13,8 +13,8 @@ class CoursesRepository {
     return await _firebaseApi.getLearningPath(path);
   }
 
-  Future<void> createEmptyArticle() async {
-    return await _firebaseApi.createEmptyArticles();
+  Future<void> createDartCourseIndexes() async {
+    return await _firebaseApi.createDartCourseIndexes();
   }
 
   Future<Course> getCourse(String path) async {

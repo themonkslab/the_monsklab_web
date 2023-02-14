@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:the_monkslab_web/src/apis/_index.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
@@ -12,8 +14,13 @@ class FirestoreApi {
   final FirebaseFirestore _firestore;
   final HttpApi _httpApi;
 
+  Future<void> createCoursesIndexes() async {
+    await createDartCourseIndexes();
+    await createCicdCourseIndexes();
+  }
+
   //TODO -HIGH- write in firebase from json
-  Future<void> createEmptyArticles() async {
+  Future<void> createDartCourseIndexes() async {
     final course = [
       {
         "path": "1.Introducción",
@@ -652,6 +659,24 @@ class FirestoreApi {
       }
     ];
 
+    return _addCourse(
+      docId: '4q3OBzCmxhQye1DU0mla', 
+      title: 'Dart y TDD', 
+      description: 'Aprender a programar desde cero desde fin a principio, aprendiendo a testear a cada paso', 
+      course: course,
+    );
+  }
+
+  Future<void> createCicdCourseIndexes() async {
+
+  }
+
+  Future<void> _addCourse({
+    required String docId, 
+    required String title, 
+    required String description, 
+    required dynamic course,
+  }) async {
     try {
       final sectionsList = [];
       // sections
@@ -682,10 +707,10 @@ class FirestoreApi {
               .set((articlesList[j]));
         }
       }
-      _firestore.collection('course').doc('4q3OBzCmxhQye1DU0mla').set({
-        'title': 'Dart y TDD',
+      _firestore.collection('course').doc(docId).set({
+        'title': title,
         'description':
-            'Aprender a programar desde cero desde fin a principio, aprendiendo a testear a cada paso',
+            description,
         'sections': sectionsList,
       });
     } catch (e) {
@@ -720,4 +745,24 @@ class FirestoreApi {
       published: doc.data()!['published'],
     );
   }
+}
+
+class _CourseSectionModel {
+  _CourseSectionModel({
+    required this.path,
+    required this.title,
+  });
+  final String path;
+  final String title;
+
+  Map<String, dynamic> toMap() {
+    final result = <String, dynamic>{};
+  
+    result.addAll({'path': path});
+    result.addAll({'title': title});
+  
+    return result;
+  }
+
+  String toJson() => json.encode(toMap());
 }
