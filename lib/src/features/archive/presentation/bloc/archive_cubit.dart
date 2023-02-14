@@ -14,7 +14,7 @@ class ArchiveCubit extends Cubit<ArchiveState> {
   Future<void> fetchLearningPath(String path) async {
     emit(state.copyWith(status: ArchiveStatus.loading));
     // try {
-    //   await _coursesRepository.createEmptyArticle();
+    //   await _coursesRepository.createDartCourseIndexes();
     // } catch (e) {
     //   print(e);
     // }
