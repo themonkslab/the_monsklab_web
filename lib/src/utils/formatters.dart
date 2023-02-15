@@ -13,8 +13,10 @@ String formatGitHubImagesUrls(String content, String baseUrl) {
       String imageFilename = match.group(2).toString()
         .replaceAll('(', '')
         .replaceAll(')', '');
-      String urlBasedImageFilename = baseUrl + imageFilename;
-      output = output.replaceAll(imageFilename, urlBasedImageFilename);
+        if (!imageFilename.contains('https://')) {
+          String urlBasedImageFilename = baseUrl + imageFilename;
+          output = output.replaceAll(imageFilename, urlBasedImageFilename);
+        }
     }
     return output;
   }
