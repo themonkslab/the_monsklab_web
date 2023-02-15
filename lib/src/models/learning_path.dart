@@ -46,14 +46,18 @@ class LearningPath with _$LearningPath {
   //? answered - Having those here is a good idea?
   // It's not a good idea because we adding code to the app that will not be used
   // TODO -LOW/EASY- move to test folder
-  static const sample = LearningPath(id: '1', title: 'Title', courses: [
-    CourseReference(
-      path: 'path1',
-      title: 'Course title1',
-    ),
-    CourseReference(
-      path: 'path2',
-      title: 'Course title2',
-    ),
-  ]);
+  static const sample = LearningPath(
+    id: '1',
+    title: 'Title',
+    courses: [
+      CourseReference(
+        path: 'path1',
+        title: 'Course title1',
+      ),
+      CourseReference(
+        path: 'path2',
+        title: 'Course title2',
+      ),
+    ],
+  );
 }

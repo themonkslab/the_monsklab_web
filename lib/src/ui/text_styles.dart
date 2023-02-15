@@ -24,7 +24,7 @@ class AppTextStyles {
     ),
   );
 
-  static final h3Phone = GoogleFonts.libreCaslonText(
+  static final h3Phone = GoogleFonts.sourceSerifPro(
     textStyle: const TextStyle(
       fontSize: 18.0,
       fontWeight: FontWeight.w800,
@@ -35,8 +35,8 @@ class AppTextStyles {
   //* Tablet, Desktop or Large
   static final h1Header = GoogleFonts.montserrat(
       textStyle: const TextStyle(
-    fontSize: 72.0,
-    fontWeight: FontWeight.w800,
+    fontSize: 100.0,
+    fontWeight: FontWeight.w700,
   ));
 
   static final descriptionHeader = GoogleFonts.montserrat(
@@ -61,7 +61,7 @@ class AppTextStyles {
     ),
   );
 
-  static final h3 = GoogleFonts.libreCaslonText(
+  static final h3 = GoogleFonts.sourceSerifPro(
     textStyle: const TextStyle(
       fontSize: 22.0,
       fontWeight: FontWeight.w800,
@@ -69,7 +69,7 @@ class AppTextStyles {
     ),
   );
 
-  static final h4 = GoogleFonts.libreCaslonText(
+  static final h4 = GoogleFonts.sourceSerifPro(
     textStyle: const TextStyle(
       fontSize: 22.0,
       fontWeight: FontWeight.w800,
@@ -77,11 +77,18 @@ class AppTextStyles {
     ),
   );
 
-  static final p = GoogleFonts.libreCaslonText(
+  static final pLarge = GoogleFonts.sourceSerifPro(
+      textStyle: const TextStyle(
+    fontSize: 24.0,
+    fontWeight: FontWeight.w400,
+    height: 1.6,
+  ));
+
+  static final p = GoogleFonts.sourceSerifPro(
       textStyle: const TextStyle(
     fontSize: 20.0,
     fontWeight: FontWeight.w400,
-    height: 1.33,
+    height: 1.4,
   ));
 
   static final code = GoogleFonts.robotoMono(
@@ -90,7 +97,7 @@ class AppTextStyles {
     fontWeight: FontWeight.w400,
   ));
 
-  static final li = GoogleFonts.libreCaslonText(
+  static final li = GoogleFonts.sourceSerifPro(
       textStyle: const TextStyle(
     fontSize: 20.0,
     fontWeight: FontWeight.w400,
@@ -115,4 +122,12 @@ class AppTextStyles {
     fontSize: 20.0,
     fontWeight: FontWeight.w400,
   ));
+
+  static final barLocationLink = GoogleFonts.montserrat(
+    textStyle: const TextStyle(
+      fontSize: 16.0,
+      fontWeight: FontWeight.w400,
+      color: AppColors.black,
+    ),
+  );
 }

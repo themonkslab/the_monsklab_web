@@ -10,11 +10,11 @@ enum AppRoutes {
 
 routerDelegate({String? initialPath}) => BeamerDelegate(
       initialPath: initialPath ?? '/',
-      //TODO -LOW- remove animation just on web
+      //TODO -LOW/MEDIUM- remove animation just on web
       transitionDelegate: const NoAnimationTransitionDelegate(),
       locationBuilder: RoutesLocationBuilder(
         routes: {
-          '/': (_, __, ___) => const HomeView(),
+          '/': (_, __, ___) => const HomePage(),
           '/archive': (_, __, ___) => const ArchivePage(),
           '/course/:path': (_, state, __) {
             final path = state.pathParameters['path']!;

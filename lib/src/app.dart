@@ -32,7 +32,6 @@ class AppView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //TODO -MEDIUM- move to FlowBuilder
     return MaterialApp.router(
       routeInformationParser: BeamerParser(),
       routerDelegate: routerDelegate(),
