@@ -19,7 +19,7 @@ void main() {
     testWidgets('is rendered as the root page', (tester) async {
       final r = HomeRobot(tester);
       await r.pumpWidget(AppPage(coursesRepository: coursesRepository));
-      await r.expectOneOfType(HomeView);
+      await r.expectOneOfType(HomePage);
     });
 
     testWidgets('navigates to the archive when hypertext is tapped',

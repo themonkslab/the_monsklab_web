@@ -26,9 +26,8 @@ class ArchiveView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //TODO -LOW- create AppLayoutBuilder
+    //TODO -LOW/MEDIUM- create AppLayoutBuilder
     final screenType = context.getScreenType();
-
     final isPhoneOrTablet =
         screenType == ScreenType.phone || screenType == ScreenType.tablet;
 

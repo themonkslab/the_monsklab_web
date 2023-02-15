@@ -62,8 +62,8 @@ class _ArticleViewState extends State<ArticleView> {
       builder: ((context, state) {
         screenHeight = MediaQuery.of(context).size.height;
 
-        //TODO -MEDIUM- use build.when?
         switch (state.status) {
+          case ArticleStatus.initial:
           case ArticleStatus.loading:
             return const AppLoader();
           case ArticleStatus.failure:
@@ -121,9 +121,6 @@ class _ArticleViewState extends State<ArticleView> {
                     )),
               );
             }
-
-          default:
-            return const AppFailure();
         }
       }),
     );

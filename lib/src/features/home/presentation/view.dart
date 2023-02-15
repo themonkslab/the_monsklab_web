@@ -1,36 +1,47 @@
-import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:the_monkslab_web/src/constants/_index.dart';
-import 'package:the_monkslab_web/src/core/routing/routing.dart';
-import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
+import 'package:the_monkslab_web/src/features/home/presentation/widgets/_index.dart';
+import 'package:the_monkslab_web/src/ui/_index.dart';
+import 'package:the_monkslab_web/src/utils/_index.dart';
+
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const HomeView();
+  }
+}
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final screenType = context.getScreenType();
+    final isPhoneOrTablet =
+        screenType == ScreenType.phone || screenType == ScreenType.tablet;
     return Scaffold(
-      body: Center(
+      backgroundColor: AppColors.black,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: isPhoneOrTablet ? AppPaddings.padH8 : AppPaddings.padV12,
           child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Image(
-            width: 120,
-            height: 120,
-            image: AssetImage(AppAssets.monkslabNoBackground),
-          ),
-          AppHypertext(
-            text: appTitle.toUpperCase(),
-            textAlign: TextAlign.center,
-            style: AppTextStyles.h1.copyWith(color: AppColors.white),
-            enabledDisabledColors: const [
-              AppColors.black,
-              AppColors.white,
+            children: [
+              //* Bar
+              Bar(isPhoneOrTablet: isPhoneOrTablet),
+              AppGaps.gapH12,
+              //* Hero
+              Header(isPhoneOrTablet: isPhoneOrTablet),
+              //* Hola
+              Hola(isPhoneOrTablet: isPhoneOrTablet),
+              //* Contratanos
+              Contratanos(isPhoneOrTablet: isPhoneOrTablet),
+              //* Footer
+              Footer(isPhoneOrTablet: isPhoneOrTablet),
             ],
-            onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),
-          )
-        ],
-      )),
+          ),
+        ),
+      ),
     );
   }
 }
