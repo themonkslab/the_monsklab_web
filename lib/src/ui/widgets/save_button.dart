@@ -12,7 +12,10 @@ class AppSaveButton extends StatelessWidget {
     return OutlinedButton(
       style: OutlinedButton.styleFrom(
           shape: const StadiumBorder(),
-          side: const BorderSide(width: 1, color: AppColors.grey)),
+          side: const BorderSide(
+            width: 1,
+            color: AppColors.grey,
+          )),
       onPressed: () {},
       child: Padding(
         padding: const EdgeInsets.all(8.0),

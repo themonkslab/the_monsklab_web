@@ -4,11 +4,9 @@ import 'widgets_robot.dart';
 
 void main() {
   group('AppOnHover:', () {
-    setUp(() {});
-
     testWidgets('''
 [correct rendering]
-Given a AppOnHover
+Given an AppOnHover
 When is constructed
 Then should be finded
 ''', (tester) async {

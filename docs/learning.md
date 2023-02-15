@@ -7,6 +7,10 @@ Generally, the best way to produce quality at fast peace is to fail fast and fix
 
 This place could be useful to throw those things and have a document to reflect on while moving threw the dev process, at its end, and before starting new ones.
 
+## Questions for Marcos
+
+- Why separate into packages?
+
 ## Nice to have
 
 --

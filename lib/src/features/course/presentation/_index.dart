@@ -1,2 +1,2 @@
-export 'section_item.dart';
+export 'bloc/course_cubit.dart';
 export 'view.dart';

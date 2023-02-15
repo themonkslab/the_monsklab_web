@@ -22,17 +22,14 @@ class AppOnHoverState extends State<AppOnHover>
           begin: 1 - widget.hoveredScalePercentage,
           end: 1 + widget.hoveredScalePercentage)
       .animate(animationController);
-  var isHovered = false;
-  var isTapped = false;
+  bool isHovered = false;
+  bool isTapped = false;
 
   @override
   void initState() {
     super.initState();
     animationController = AnimationController(
-        vsync: this,
-        duration: const Duration(
-          milliseconds: 300,
-        ));
+        vsync: this, duration: const Duration(milliseconds: 300));
     animationController.value = 0.5;
   }
 

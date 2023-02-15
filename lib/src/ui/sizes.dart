@@ -9,6 +9,7 @@ class AppSizes {
   // * ContentContainers
   static const desktopContentContainer = 760.0;
   static const largeContentContainer = 960.0;
+  static const centeredTextContainer = 540.0;
 }
 
 /// __Customized Paddings Shortcuts__
@@ -51,16 +52,26 @@ class AppPaddings {
 //* All
   static const padAll0 = EdgeInsets.all(0.0);
   static const padAll4 = EdgeInsets.all(4.0);
+  static const padAll12 = EdgeInsets.all(12.0);
   static const padAll16 = EdgeInsets.all(16.0);
+  static const padAll24 = EdgeInsets.all(24.0);
   static const padAll32 = EdgeInsets.all(32.0);
+  static const padAll40 = EdgeInsets.all(40.0);
+
+//* Only
+  static const padTop12 = EdgeInsets.only(top: 12.0);
+  static const padBottom40 = EdgeInsets.only(bottom: 40.0);
 
 //* Symmetric Horizontal
   static const padH4 = EdgeInsets.symmetric(horizontal: 4.0);
   static const padH8 = EdgeInsets.symmetric(horizontal: 8.0);
+  static const padH12 = EdgeInsets.symmetric(horizontal: 12.0);
+  static const padH16 = EdgeInsets.symmetric(horizontal: 16.0);
   static const padH24 = EdgeInsets.symmetric(horizontal: 24.0);
   static const padH48 = EdgeInsets.symmetric(horizontal: 48.0);
 
 //* Symmetric Vertical
   static const padV4 = EdgeInsets.symmetric(vertical: 4.0);
+  static const padV12 = EdgeInsets.symmetric(vertical: 12.0);
   static const padV28 = EdgeInsets.symmetric(vertical: 28.0);
 }

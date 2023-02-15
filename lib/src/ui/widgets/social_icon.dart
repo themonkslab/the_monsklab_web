@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:the_monkslab_web/src/constants/_index.dart';
+import 'package:the_monkslab_web/src/models/_index.dart';
 
 class AppSocialIcon extends StatelessWidget {
   const AppSocialIcon({
@@ -14,7 +15,7 @@ class AppSocialIcon extends StatelessWidget {
     this.height,
   }) : super(key: key);
 
-  final AppSocialsType socialsName;
+  final SocialsType socialsName;
   final void Function()? onTap;
   final Color? color;
   final EdgeInsets? margin;

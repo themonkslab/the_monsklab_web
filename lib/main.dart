@@ -1,19 +1,14 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:the_monkslab_web/firebase_options.dart';
 import 'package:the_monkslab_web/src/app.dart';
+import 'package:the_monkslab_web/src/repositories/_index.dart';
+import 'package:the_monkslab_web/web_observer.dart';
 
-void main() async {
-  // getHttp();
-  runApp(
-    const App(),
-  );
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = WebObserver();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  runApp(AppPage(coursesRepository: CoursesRepository()));
 }
-
-// void getHttp() async {
-//   try {
-//     var response = await Dio().get(
-//         'https://raw.githubusercontent.com/themonkslab/the_monsklab_web/main/README.md');
-//     print(response);
-//   } catch (e) {
-//     print(e);
-//   }
-// }

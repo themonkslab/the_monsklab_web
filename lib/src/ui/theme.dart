@@ -9,10 +9,9 @@ class AppTheme {
 
       //* AppBar
       appBarTheme: const AppBarTheme(
-          centerTitle: true,
-          iconTheme: IconThemeData(
-            color: Colors.black,
-          )),
+        centerTitle: true,
+        iconTheme: IconThemeData(color: Colors.black),
+      ),
       //* Texts
       textTheme: GoogleFonts.interTextTheme(),
     );
