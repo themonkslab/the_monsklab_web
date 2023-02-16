@@ -13,9 +13,8 @@ class AppSaveButton extends StatelessWidget {
       style: OutlinedButton.styleFrom(
           shape: const StadiumBorder(),
           side: const BorderSide(
-            width: 1,
             color: AppColors.grey,
-          )),
+          ),),
       onPressed: () {},
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -28,7 +27,7 @@ class AppSaveButton extends StatelessWidget {
             AppGaps.gapW8,
             Text(
               'Save',
-              style: textTheme.caption,
+              style: textTheme.bodySmall,
             ),
           ],
         ),

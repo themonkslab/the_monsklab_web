@@ -81,7 +81,7 @@ class SectionView extends StatelessWidget {
                                           Text(article.title),
                                         ],
                                       ),
-                                    )))
+                                    ),),)
                             : Padding(
                                 padding: AppPaddings.padV4,
                                 child: AppHypertext(

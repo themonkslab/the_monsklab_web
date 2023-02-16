@@ -17,7 +17,7 @@ class LearningPath with _$LearningPath {
       _$LearningPathFromJson(json);
 
   factory LearningPath.fromDocumentSnapshot(
-      DocumentSnapshot<Map<String, dynamic>> doc) {
+      DocumentSnapshot<Map<String, dynamic>> doc,) {
     final courses = (doc.data()!['courses'] as List)
         .map((e) => CourseReference.fromJson(e))
         .toList();

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/features/article/_index.dart';
+import 'package:the_monkslab_web/src/features/article/presentation/bloc/article_cubit.dart';
 import 'package:the_monkslab_web/src/repositories/courses_repository.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
-
-import 'bloc/article_cubit.dart';
 
 class ArticlePage extends StatelessWidget {
   const ArticlePage({
@@ -79,7 +78,6 @@ class _ArticleViewState extends State<ArticleView> {
                 appBar: isHeaderOnScreen
                     ? const AppAppBar(
                         elevation: 0,
-                        showSocials: false,
                         backgroundColor: AppColors.black,
                       )
                     : const AppAppBar(showSocials: true),
@@ -98,27 +96,28 @@ class _ArticleViewState extends State<ArticleView> {
                 appBar: isHeaderOnScreen
                     ? const AppAppBar(
                         elevation: 0,
-                        showSocials: false,
                         backgroundColor: AppColors.black,
                       )
                     : const AppAppBar(showSocials: true),
                 body: SingleChildScrollView(
-                    controller: scrollController,
-                    child: Column(
-                      children: [
-                        ArticleHeader(
-                          article: article!,
-                        ),
-                        AppGaps.gapH24,
-                        Container(
-                            color: Colors.white,
-                            width: isDesktopOrLarge
-                                ? AppSizes.largeContentContainer
-                                : AppSizes.desktopContentContainer,
-                            child: ArticleBody(data: article.content)),
-                        AppGaps.gapH48,
-                      ],
-                    )),
+                  controller: scrollController,
+                  child: Column(
+                    children: [
+                      ArticleHeader(
+                        article: article!,
+                      ),
+                      AppGaps.gapH24,
+                      Container(
+                        color: Colors.white,
+                        width: isDesktopOrLarge
+                            ? AppSizes.largeContentContainer
+                            : AppSizes.desktopContentContainer,
+                        child: ArticleBody(data: article.content),
+                      ),
+                      AppGaps.gapH48,
+                    ],
+                  ),
+                ),
               );
             }
         }
