@@ -59,7 +59,7 @@ class CourseView extends StatelessWidget {
                     SectionPage(path: section.path)
                 ],
               ),
-            ));
+            ),);
           default:
             return const AppFailure();
         }

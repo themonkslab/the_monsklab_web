@@ -18,13 +18,13 @@ class LocationLinksRowOrColumn extends StatelessWidget {
         ? Row(
             children: [
               LocationLink(
-                  text: 'Jobs', location: '/${AppRoutes.archive.name}'),
+                  text: 'Jobs', location: '/${AppRoutes.archive.name}',),
               LocationLink(
-                  text: 'Cursos', location: '/${AppRoutes.archive.name}'),
+                  text: 'Cursos', location: '/${AppRoutes.archive.name}',),
               LocationLink(
-                  text: 'Comunidad', location: '/${AppRoutes.archive.name}'),
+                  text: 'Comunidad', location: '/${AppRoutes.archive.name}',),
               LocationLink(
-                  text: 'Hola!', location: '/${AppRoutes.archive.name}'),
+                  text: 'Hola!', location: '/${AppRoutes.archive.name}',),
             ],
           )
         : Column(
@@ -32,13 +32,13 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               LocationLink(
-                  text: 'Jobs', location: '/${AppRoutes.archive.name}'),
+                  text: 'Jobs', location: '/${AppRoutes.archive.name}',),
               LocationLink(
-                  text: 'Cursos', location: '/${AppRoutes.archive.name}'),
+                  text: 'Cursos', location: '/${AppRoutes.archive.name}',),
               LocationLink(
-                  text: 'Comunidad', location: '/${AppRoutes.archive.name}'),
+                  text: 'Comunidad', location: '/${AppRoutes.archive.name}',),
               LocationLink(
-                  text: 'Hola!', location: '/${AppRoutes.archive.name}'),
+                  text: 'Hola!', location: '/${AppRoutes.archive.name}',),
             ],
           );
   }

@@ -21,13 +21,12 @@ class ArchivePopulated extends StatelessWidget {
         child: Padding(
       padding: isPhoneOrTablet ? AppPaddings.padH8 : AppPaddings.padH24,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           AppGaps.gapH48,
           Text(archiveViewTitle,
               style: isPhoneOrTablet
                   ? AppTextStyles.h1HeaderPhone
-                  : AppTextStyles.h1Header),
+                  : AppTextStyles.h1Header,),
           AppGaps.gapH20,
           Text(
             archiveViewDescription,
@@ -63,6 +62,6 @@ class ArchivePopulated extends StatelessWidget {
           )
         ],
       ),
-    ));
+    ),);
   }
 }

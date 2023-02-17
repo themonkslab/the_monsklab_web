@@ -63,7 +63,7 @@ void main() {
       when(() => archiveCubit.state).thenReturn(const ArchiveState(
         status: ArchiveStatus.success,
         learningPath: LearningPath.empty,
-      ));
+      ),);
 
       await r.pumpWidgetWithProvider(
         archiveCubit: archiveCubit,

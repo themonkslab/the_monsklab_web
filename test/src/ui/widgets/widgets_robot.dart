@@ -27,7 +27,7 @@ class WidgetsRobot {
               child: SizedBox(
                 width: subjectOriginalSize.width,
                 height: subjectOriginalSize.height,
-              )),
+              ),),
         ),
       ),
     );

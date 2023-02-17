@@ -63,7 +63,7 @@ class Footer extends StatelessWidget {
                                 horizontal: 34.0,
                               ),
                               child: LocationLinksRowOrColumn(isRow: false),
-                            )),
+                            ),),
                             Expanded(
                               child: Container(
                                 decoration: const BoxDecoration(
@@ -76,7 +76,7 @@ class Footer extends StatelessWidget {
                                 child: Center(
                                   child: Padding(
                                     padding: const EdgeInsets.symmetric(
-                                        horizontal: 48.0),
+                                        horizontal: 48.0,),
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
@@ -160,6 +160,6 @@ class MonkslabDescription extends StatelessWidget {
               fontSize: 14,
             ),
           )
-        ]);
+        ],);
   }
 }
