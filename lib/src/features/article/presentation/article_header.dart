@@ -44,12 +44,12 @@ class ArticleHeader extends StatelessWidget {
                         .copyWith(color: AppColors.white),
                   ),
                 AppGaps.gapH20,
-                Text(
-                  article.published,
-                  style: AppTextStyles.caption.copyWith(
-                    color: AppColors.white,
-                  ),
-                ),
+                // Text(
+                //   article.published,
+                //   style: AppTextStyles.caption.copyWith(
+                //     color: AppColors.white,
+                //   ),
+                // ),
                 if (article.readingTime != null)
                   Text(
                     article.readingTime!,
