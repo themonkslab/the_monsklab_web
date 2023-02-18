@@ -43,9 +43,14 @@ class FirestoreApi extends CoursesApi {
   }
 
   @override
-  Future<LearningPath> getLearningPath(String path) async {
-    final doc = await _firestore.collection('learningPath').doc(path).get();
+  Future<LearningPath> getLearningPath(String id) async {
+    final doc = await _firestore.collection('learningPath').doc(id).get();
     return LearningPath.fromDocumentSnapshot(doc);
+  }
+
+  @override
+  Future<void> updateLearningPath(String id, Map<String, dynamic> content) async {
+    await _firestore.collection('learningPath').doc(id).update(content);
   }
 
   @override

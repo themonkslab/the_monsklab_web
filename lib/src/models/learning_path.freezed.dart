@@ -22,6 +22,7 @@ LearningPath _$LearningPathFromJson(Map<String, dynamic> json) {
 mixin _$LearningPath {
   String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
+  bool get shouldUpdate => throw _privateConstructorUsedError;
   List<CourseReference> get courses => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -36,7 +37,11 @@ abstract class $LearningPathCopyWith<$Res> {
           LearningPath value, $Res Function(LearningPath) then) =
       _$LearningPathCopyWithImpl<$Res, LearningPath>;
   @useResult
-  $Res call({String id, String title, List<CourseReference> courses});
+  $Res call(
+      {String id,
+      String title,
+      bool shouldUpdate,
+      List<CourseReference> courses});
 }
 
 /// @nodoc
@@ -54,6 +59,7 @@ class _$LearningPathCopyWithImpl<$Res, $Val extends LearningPath>
   $Res call({
     Object? id = null,
     Object? title = null,
+    Object? shouldUpdate = null,
     Object? courses = null,
   }) {
     return _then(_value.copyWith(
@@ -65,6 +71,10 @@ class _$LearningPathCopyWithImpl<$Res, $Val extends LearningPath>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      shouldUpdate: null == shouldUpdate
+          ? _value.shouldUpdate
+          : shouldUpdate // ignore: cast_nullable_to_non_nullable
+              as bool,
       courses: null == courses
           ? _value.courses
           : courses // ignore: cast_nullable_to_non_nullable
@@ -81,7 +91,11 @@ abstract class _$$_LearningPathCopyWith<$Res>
       __$$_LearningPathCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String title, List<CourseReference> courses});
+  $Res call(
+      {String id,
+      String title,
+      bool shouldUpdate,
+      List<CourseReference> courses});
 }
 
 /// @nodoc
@@ -97,6 +111,7 @@ class __$$_LearningPathCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? title = null,
+    Object? shouldUpdate = null,
     Object? courses = null,
   }) {
     return _then(_$_LearningPath(
@@ -108,6 +123,10 @@ class __$$_LearningPathCopyWithImpl<$Res>
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      shouldUpdate: null == shouldUpdate
+          ? _value.shouldUpdate
+          : shouldUpdate // ignore: cast_nullable_to_non_nullable
+              as bool,
       courses: null == courses
           ? _value._courses
           : courses // ignore: cast_nullable_to_non_nullable
@@ -122,6 +141,7 @@ class _$_LearningPath implements _LearningPath {
   const _$_LearningPath(
       {required this.id,
       required this.title,
+      required this.shouldUpdate,
       required final List<CourseReference> courses})
       : _courses = courses;
 
@@ -132,6 +152,8 @@ class _$_LearningPath implements _LearningPath {
   final String id;
   @override
   final String title;
+  @override
+  final bool shouldUpdate;
   final List<CourseReference> _courses;
   @override
   List<CourseReference> get courses {
@@ -141,7 +163,7 @@ class _$_LearningPath implements _LearningPath {
 
   @override
   String toString() {
-    return 'LearningPath(id: $id, title: $title, courses: $courses)';
+    return 'LearningPath(id: $id, title: $title, shouldUpdate: $shouldUpdate, courses: $courses)';
   }
 
   @override
@@ -151,13 +173,15 @@ class _$_LearningPath implements _LearningPath {
             other is _$_LearningPath &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
+            (identical(other.shouldUpdate, shouldUpdate) ||
+                other.shouldUpdate == shouldUpdate) &&
             const DeepCollectionEquality().equals(other._courses, _courses));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType, id, title, const DeepCollectionEquality().hash(_courses));
+  int get hashCode => Object.hash(runtimeType, id, title, shouldUpdate,
+      const DeepCollectionEquality().hash(_courses));
 
   @JsonKey(ignore: true)
   @override
@@ -177,6 +201,7 @@ abstract class _LearningPath implements LearningPath {
   const factory _LearningPath(
       {required final String id,
       required final String title,
+      required final bool shouldUpdate,
       required final List<CourseReference> courses}) = _$_LearningPath;
 
   factory _LearningPath.fromJson(Map<String, dynamic> json) =
@@ -186,6 +211,8 @@ abstract class _LearningPath implements LearningPath {
   String get id;
   @override
   String get title;
+  @override
+  bool get shouldUpdate;
   @override
   List<CourseReference> get courses;
   @override

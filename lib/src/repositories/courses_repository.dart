@@ -13,21 +13,15 @@ class CoursesRepository {
 
   final CoursesApi _coursesApi;
 
-  Future<LearningPath> getLearningPath(String path) async {
-    return await _coursesApi.getLearningPath(path);
+  Future<LearningPath> getLearningPath(String id) async {
+    LearningPath learningPath = await _coursesApi.getLearningPath(id);
+    if (learningPath.shouldUpdate) {
+      await createCoursesIndexes('src/resources/courses', learningPath);
+    }
+    return learningPath;
   }
 
-  Future<void> createCoursesIndexes(String rootPath) async {
-    var roorPathDir = Directory(rootPath);
-    if (!roorPathDir.existsSync()) {
-      await roorPathDir.create(recursive: true);
-    }
-    var lastUpdateResource = '$rootPath/last_update';
-    if (File(lastUpdateResource).existsSync()) {
-      return;
-    }
-    File file = await File(lastUpdateResource).create();
-
+  Future<void> createCoursesIndexes(String rootPath, LearningPath learningPath) async {
     var dartCourseResource = '$rootPath/dart_course.json';
     await createCourseIndexFromResource(
       dartCourseResource, 
@@ -44,7 +38,7 @@ class CoursesRepository {
       'Aprender a utilizar GitHub como herramienta de CICD para proyectos Flutter',
     );
 
-    await file.writeAsString(DateTime.now().toString());
+    await _coursesApi.updateLearningPath(learningPath.id, learningPath.copyWith(shouldUpdate: false).toJson());
   }
 
   //TODO -HIGH- write in firebase from json

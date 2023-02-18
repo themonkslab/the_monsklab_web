@@ -3,7 +3,7 @@ import 'package:the_monkslab_web/src/models/_index.dart';
 
 class FakeCoursesApi extends CoursesApi {
 
-  final Article article = const Article(
+  static const Article article = Article(
     id: 'id', 
     title: 'title', 
     description: 'description', 
@@ -12,7 +12,7 @@ class FakeCoursesApi extends CoursesApi {
     published: 'published',
   );
 
-  final Course course = Course(
+  static final Course course = Course(
     id: 'id', 
     title: 'title', 
     description: 'description', 
@@ -24,18 +24,21 @@ class FakeCoursesApi extends CoursesApi {
     }),
   );
 
-  final LearningPath learningPath = LearningPath(
+  static final LearningPath learningPath = LearningPath(
     id: 'id', 
     title: 'title', 
-    courses: List.of({const CourseReference(title: 'title', path: 'path')})
+    courses: List.of({const CourseReference(title: 'title', path: 'path')}), 
+    shouldUpdate: false,
   );
 
-  final section = Section(
+  static final section = Section(
     id: 'id', 
     title: 'title', 
     description: 'description', 
     articles: List.of({const ArticleReference(title: 'title', path: 'path')})
   );
+
+  Map<String, dynamic>? lastUpdatedContent;
 
   @override
   Future<void> deleteArticle(String id) async {
@@ -49,22 +52,22 @@ class FakeCoursesApi extends CoursesApi {
 
   @override
   Future<Article> getArticle(String path) async {
-    return article;
+    return article.copyWith(id: path);
   }
 
   @override
   Future<Course> getCourse(String path) async {
-    return course;
+    return course.copyWith(id: path);
   }
 
   @override
-  Future<LearningPath> getLearningPath(String path) async {
-    return learningPath;
+  Future<LearningPath> getLearningPath(String id) async {
+    return learningPath.copyWith(id: id);
   }
 
   @override
   Future<Section> getSection(String path) async {
-    return section;
+    return section.copyWith(id: path);
   }
 
   @override
@@ -80,5 +83,10 @@ class FakeCoursesApi extends CoursesApi {
   @override
   Future<void> setSection(String id, Map<String, dynamic> content) async {
 
+  }
+  
+  @override
+  Future<void> updateLearningPath(String id, Map<String, dynamic> content) async {
+    lastUpdatedContent = content;
   }
 }

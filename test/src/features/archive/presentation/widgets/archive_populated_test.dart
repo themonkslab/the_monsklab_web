@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:the_monkslab_web/src/apis/courses/impl/fake_courses_api.dart';
 import 'package:the_monkslab_web/src/features/_index.dart';
-import 'package:the_monkslab_web/src/models/learning_path.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 
 import '../../archive_robot.dart';
@@ -12,9 +12,9 @@ void main() {
       final r = ArchiveRobot(tester);
 
       await r.pumpWidget(
-        child: const ArchivePopulated(
+        child: ArchivePopulated(
           isPhoneOrTablet: true,
-          learningPath: LearningPath.sample,
+          learningPath: FakeCoursesApi.learningPath,
         ),
       );
       await r.expectOneOfType(AppResponsiveScaffold);
@@ -29,9 +29,9 @@ void main() {
       final r = ArchiveRobot(tester);
 
       await r.pumpWidget(
-        child: const ArchivePopulated(
+        child: ArchivePopulated(
           isPhoneOrTablet: false,
-          learningPath: LearningPath.sample,
+          learningPath: FakeCoursesApi.learningPath,
         ),
       );
       await r.expectOneOfType(AppResponsiveScaffold);

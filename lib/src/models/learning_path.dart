@@ -10,6 +10,7 @@ class LearningPath with _$LearningPath {
   const factory LearningPath({
     required String id,
     required String title,
+    @Default(false) required bool shouldUpdate,
     required List<CourseReference> courses,
   }) = _LearningPath;
 
@@ -26,6 +27,7 @@ class LearningPath with _$LearningPath {
       id: doc.id,
       title: doc.data()!['title'],
       courses: courses,
+      shouldUpdate: doc.data()!['shouldUpdate']
     );
   }
 
@@ -41,23 +43,7 @@ class LearningPath with _$LearningPath {
     id: '',
     title: '',
     courses: [],
+    shouldUpdate: false,
   );
 
-  //? answered - Having those here is a good idea?
-  // It's not a good idea because we adding code to the app that will not be used
-  // TODO -LOW/EASY- move to test folder
-  static const sample = LearningPath(
-    id: '1',
-    title: 'Title',
-    courses: [
-      CourseReference(
-        path: 'path1',
-        title: 'Course title1',
-      ),
-      CourseReference(
-        path: 'path2',
-        title: 'Course title2',
-      ),
-    ],
-  );
 }
