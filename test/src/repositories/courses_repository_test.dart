@@ -5,7 +5,6 @@ import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/repositories/courses_repository.dart';
 
 void main() {
-  const String rootPath = 'test/resources';
   late CoursesRepository coursesRepository;
   late FakeCoursesApi fakeCoursesApi;
 
@@ -23,7 +22,7 @@ void main() {
 
     test('create courses indexed set shouldUpdate to false', () async {
       LearningPath learningPath =  FakeCoursesApi.learningPath.copyWith(shouldUpdate: true);
-      await coursesRepository.createCoursesIndexes(rootPath, learningPath);
+      await coursesRepository.createCoursesIndexes(learningPath);
       fakeCoursesApi.lastUpdatedContent = learningPath.copyWith(shouldUpdate: false).toJson();
     });
   });

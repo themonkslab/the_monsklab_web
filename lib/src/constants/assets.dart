@@ -12,4 +12,8 @@ class AppAssets {
   static const mauPicture = 'assets/images/mau_photo.jpg';
   static const tinPicture = 'assets/images/tin_photo.jpeg';
   static const monkPicture = 'assets/images/monk_photo.jpg';
+
+  //* Courses
+  static const dartCourse = 'assets/courses/dart_course.json';
+  static const cicdCourse = 'assets/courses/cicd_course.json';
 }

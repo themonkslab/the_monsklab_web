@@ -1,7 +1,12 @@
+
+import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/widgets.dart';
 import 'package:the_monkslab_web/src/apis/_index.dart';
 import 'package:the_monkslab_web/src/apis/courses/courses_api.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
+import 'package:the_monkslab_web/src/repositories/courses_repository.dart';
 
 class FirestoreApi extends CoursesApi {
   FirestoreApi({
@@ -15,15 +20,18 @@ class FirestoreApi extends CoursesApi {
 
   @override
   Future<void> setCourse(String id, String title, String description, List<dynamic> sectionsList) async {
+    final firestoreSection = sectionsList as List<FirestoreSection>;
+    debugPrint('setCourse(id: $id, title: $title, description: $description)');
     _firestore.collection('section').doc(id).set({
       'title': title,
       'description': description,
-      'sections': sectionsList,
+      'sections': jsonEncode(firestoreSection),
     });
   }
 
   @override
   Future<void> setArticle(String id, Map<String, dynamic> content) async {
+    debugPrint('setArticle(id: $id)');
     _firestore.collection('section').doc(id).set(content);
   }
   
@@ -34,6 +42,7 @@ class FirestoreApi extends CoursesApi {
 
   @override
   Future<void> setSection(String id, Map<String, dynamic> content) async {
+    debugPrint('setSection(id: $id)');
     _firestore.collection('section').doc(id).set(content);
   }
 
@@ -50,7 +59,8 @@ class FirestoreApi extends CoursesApi {
 
   @override
   Future<void> updateLearningPath(String id, Map<String, dynamic> content) async {
-    await _firestore.collection('learningPath').doc(id).update(content);
+    debugPrint('updateLearningPath(id: $id)');
+    _firestore.collection('learningPath').doc(id).set(content);
   }
 
   @override
