@@ -23,8 +23,6 @@ class LocationLinksRowOrColumn extends StatelessWidget {
                   text: 'Cursos', location: '/${AppRoutes.archive.name}',),
               LocationLink(
                   text: 'Comunidad', location: '/${AppRoutes.archive.name}',),
-              LocationLink(
-                  text: 'Hola!', location: '/${AppRoutes.archive.name}',),
             ],
           )
         : Column(
@@ -37,8 +35,6 @@ class LocationLinksRowOrColumn extends StatelessWidget {
                   text: 'Cursos', location: '/${AppRoutes.archive.name}',),
               LocationLink(
                   text: 'Comunidad', location: '/${AppRoutes.archive.name}',),
-              LocationLink(
-                  text: 'Hola!', location: '/${AppRoutes.archive.name}',),
             ],
           );
   }

@@ -32,8 +32,6 @@ class HomeView extends StatelessWidget {
               AppGaps.gapH12,
               //* Hero
               Header(isPhoneOrTablet: isPhoneOrTablet),
-              //* Hola
-              Hola(isPhoneOrTablet: isPhoneOrTablet),
               //* Contratanos
               Contratanos(isPhoneOrTablet: isPhoneOrTablet),
               //* Footer
