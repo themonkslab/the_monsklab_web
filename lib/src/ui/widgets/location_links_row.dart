@@ -4,6 +4,7 @@ import 'package:the_monkslab_web/src/core/routing/routing.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
+import 'package:the_monkslab_web/src/utils/localize.dart';
 
 class LocationLinksRowOrColumn extends StatelessWidget {
   const LocationLinksRowOrColumn({
@@ -18,11 +19,11 @@ class LocationLinksRowOrColumn extends StatelessWidget {
         ? Row(
             children: [
               LocationLink(
-                  text: 'Jobs', location: '/${AppRoutes.archive.name}',),
+                  text: localize(context).jobs, location: '/${AppRoutes.archive.name}',),
               LocationLink(
-                  text: 'Cursos', location: '/${AppRoutes.archive.name}',),
+                  text: localize(context).courses, location: '/${AppRoutes.archive.name}',),
               LocationLink(
-                  text: 'Comunidad', location: '/${AppRoutes.archive.name}',),
+                  text: localize(context).community, location: '/${AppRoutes.archive.name}',),
             ],
           )
         : Column(
@@ -30,11 +31,11 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               LocationLink(
-                  text: 'Jobs', location: '/${AppRoutes.archive.name}',),
+                  text: localize(context).jobs, location: '/${AppRoutes.archive.name}',),
               LocationLink(
-                  text: 'Cursos', location: '/${AppRoutes.archive.name}',),
+                  text: localize(context).courses, location: '/${AppRoutes.archive.name}',),
               LocationLink(
-                  text: 'Comunidad', location: '/${AppRoutes.archive.name}',),
+                  text: localize(context).community, location: '/${AppRoutes.archive.name}',),
             ],
           );
   }
