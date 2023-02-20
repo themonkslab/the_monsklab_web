@@ -1,9 +1,10 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
+import 'package:the_monkslab_web/src/constants/_index.dart';
 import 'package:the_monkslab_web/src/core/routing/routing.dart';
-import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class LocationLinksRowOrColumn extends StatelessWidget {
   const LocationLinksRowOrColumn({
@@ -18,11 +19,11 @@ class LocationLinksRowOrColumn extends StatelessWidget {
         ? Row(
             children: [
               LocationLink(
-                  text: localize(context).jobs, location: '/${AppRoutes.archive.name}',),
+                  text: localize(context).jobs, onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),),
               LocationLink(
-                  text: localize(context).courses, location: '/${AppRoutes.archive.name}',),
+                  text: localize(context).courses, onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),),
               LocationLink(
-                  text: localize(context).community, location: '/${AppRoutes.archive.name}',),
+                  text: localize(context).community, onPressed: () async => await _launchUrl(torcsDiscord),),
             ],
           )
         : Column(
@@ -30,24 +31,31 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               LocationLink(
-                  text: localize(context).jobs, location: '/${AppRoutes.archive.name}',),
+                  text: localize(context).jobs, onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),),
               LocationLink(
-                  text: localize(context).courses, location: '/${AppRoutes.archive.name}',),
+                  text: localize(context).courses, onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),),
               LocationLink(
-                  text: localize(context).community, location: '/${AppRoutes.archive.name}',),
+                  text: localize(context).community, onPressed: () async => await _launchUrl(torcsDiscord),),
             ],
           );
+  }
+
+  Future<void> _launchUrl(String url) async {
+    final Uri urlUri = Uri.parse(url);
+    if (!await launchUrl(urlUri)) {
+      throw Exception('Could not launch $urlUri');
+    }
   }
 }
 
 class LocationLink extends StatelessWidget {
   const LocationLink({
     required this.text,
-    required this.location,
+    this.onPressed,
     super.key,
   });
   final String text;
-  final String location;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +83,7 @@ class LocationLink extends StatelessWidget {
           AppColors.white,
           AppColors.grey,
         ],
-        onPressed: () => context.beamToNamed(location),
+        onPressed: onPressed,
       ),
     );
   }
