@@ -19,7 +19,7 @@ class LocationLinksRowOrColumn extends StatelessWidget {
         ? Row(
             children: [
               LocationLink(
-                  text: localize(context).jobs, onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),),
+                  text: localize(context).jobs, onPressed: () async => await _launchUrl(torcApplyForJobs),),
               LocationLink(
                   text: localize(context).courses, onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),),
               LocationLink(
@@ -31,7 +31,7 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               LocationLink(
-                  text: localize(context).jobs, onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),),
+                  text: localize(context).jobs, onPressed: () async => await _launchUrl(torcApplyForJobs),),
               LocationLink(
                   text: localize(context).courses, onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),),
               LocationLink(
