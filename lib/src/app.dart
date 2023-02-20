@@ -1,8 +1,6 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/core/routing/routing.dart';
-import 'package:the_monkslab_web/src/repositories/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
 
@@ -10,20 +8,11 @@ import 'package:the_monkslab_web/src/utils/_index.dart';
 class AppPage extends StatelessWidget {
   const AppPage({
     super.key,
-    required coursesRepository,
-  }) : _coursesRepository = coursesRepository;
-
-  //? answered - why private as pattern
-  // - will prevent the repository from been used outside the class.
-  // - will enforce the separation of layers
-  final CoursesRepository _coursesRepository;
+  });
 
   @override
   Widget build(BuildContext context) {
-    return RepositoryProvider.value(
-      value: _coursesRepository,
-      child: const AppView(),
-    );
+    return const AppView();
   }
 }
 

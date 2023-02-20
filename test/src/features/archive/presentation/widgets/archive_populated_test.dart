@@ -14,7 +14,7 @@ void main() {
       await r.pumpWidget(
         child: ArchivePopulated(
           isPhoneOrTablet: true,
-          learningPath: FakeCoursesApi.learningPath,
+          coursesList: List.of({FakeCoursesApi.courses}),
         ),
       );
       await r.expectOneOfType(AppResponsiveScaffold);
@@ -31,7 +31,7 @@ void main() {
       await r.pumpWidget(
         child: ArchivePopulated(
           isPhoneOrTablet: false,
-          learningPath: FakeCoursesApi.learningPath,
+          coursesList: List.of({FakeCoursesApi.courses}),
         ),
       );
       await r.expectOneOfType(AppResponsiveScaffold);

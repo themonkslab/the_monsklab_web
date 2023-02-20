@@ -24,7 +24,7 @@ class FakeCoursesApi extends CoursesApi {
     }),
   );
 
-  static final LearningPath learningPath = LearningPath(
+  static final Courses courses = Courses(
     id: 'id', 
     title: 'title', 
     courses: List.of({const CourseReference(title: 'title', path: 'path')}), 
@@ -61,8 +61,8 @@ class FakeCoursesApi extends CoursesApi {
   }
 
   @override
-  Future<LearningPath> getLearningPath(String id) async {
-    return learningPath.copyWith(id: id);
+  Future<Courses> getCourses(String id) async {
+    return courses.copyWith(id: id);
   }
 
   @override

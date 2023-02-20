@@ -8,12 +8,12 @@ import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
 class ArchivePopulated extends StatelessWidget {
   const ArchivePopulated({
     required this.isPhoneOrTablet,
-    required this.learningPath,
+    required this.coursesList,
     super.key,
   });
 
   final bool isPhoneOrTablet;
-  final LearningPath learningPath;
+  final List<Courses> coursesList;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +22,7 @@ class ArchivePopulated extends StatelessWidget {
       padding: isPhoneOrTablet ? AppPaddings.padH8 : AppPaddings.padH24,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AppGaps.gapH48,
           Text(archiveViewTitle,
@@ -34,31 +35,33 @@ class ArchivePopulated extends StatelessWidget {
             style: AppTextStyles.p,
           ),
           AppGaps.gapH64,
-          Row(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    learningPath.title,
-                    style: isPhoneOrTablet
-                        ? AppTextStyles.h2Phone
-                        : AppTextStyles.h2,
-                  ),
-                  AppGaps.gapH12,
-                  for (var course in learningPath.courses)
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 8.0),
-                      child: AppHypertext(
-                        text: course.title,
-                        onPressed: () => context.beamToNamed('/${course.path}'),
-                        style: isPhoneOrTablet
-                            ? AppTextStyles.h3Phone
-                            : AppTextStyles.h3,
-                      ),
-                    )
-                ],
-              )
+              for (var courses in coursesList) 
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      courses.title,
+                      style: isPhoneOrTablet
+                          ? AppTextStyles.h2Phone
+                          : AppTextStyles.h2,
+                    ),
+                    AppGaps.gapH12,
+                    for (var course in courses.courses)
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 8.0),
+                        child: AppHypertext(
+                          text: course.title,
+                          onPressed: () => context.beamToNamed('/course/${course.path}'),
+                          style: isPhoneOrTablet
+                              ? AppTextStyles.h3Phone
+                              : AppTextStyles.h3,
+                        ),
+                      )
+                  ],
+                )
             ],
           )
         ],

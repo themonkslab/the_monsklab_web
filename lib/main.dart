@@ -4,11 +4,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/firebase_options.dart';
 import 'package:the_monkslab_web/src/app.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
+import 'package:the_monkslab_web/src/repositories/courses_repository/impl/file_courses_repository.dart';
 import 'package:the_monkslab_web/web_observer.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = WebObserver();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(AppPage(coursesRepository: CoursesRepository()));
+  runApp(MultiRepositoryProvider(
+        providers: [
+          RepositoryProvider<CoursesRepository>(create: (_) => FileCoursesRepositoryImpl('assets/courses/course_es.json')),
+        ],
+        child: const AppPage(),
+      ));
 }

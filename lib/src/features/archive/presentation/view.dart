@@ -41,7 +41,7 @@ class ArchiveView extends StatelessWidget {
           case ArchiveStatus.success:
             return ArchivePopulated(
               isPhoneOrTablet: isPhoneOrTablet,
-              learningPath: state.learningPath!,
+              coursesList: state.coursesList!,
             );
           default:
             return const AppFailure();

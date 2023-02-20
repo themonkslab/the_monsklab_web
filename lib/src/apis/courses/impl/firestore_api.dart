@@ -6,7 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:the_monkslab_web/src/apis/_index.dart';
 import 'package:the_monkslab_web/src/apis/courses/courses_api.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
-import 'package:the_monkslab_web/src/repositories/courses_repository.dart';
+import 'package:the_monkslab_web/src/repositories/courses_repository/impl/firebase_courses_repository.dart';
 
 class FirestoreApi extends CoursesApi {
   FirestoreApi({
@@ -52,9 +52,9 @@ class FirestoreApi extends CoursesApi {
   }
 
   @override
-  Future<LearningPath> getLearningPath(String id) async {
+  Future<Courses> getCourses(String id) async {
     final doc = await _firestore.collection('learningPath').doc(id).get();
-    return LearningPath.fromDocumentSnapshot(doc);
+    return Courses.fromDocumentSnapshot(doc);
   }
 
   @override

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/features/article/_index.dart';
-import 'package:the_monkslab_web/src/repositories/courses_repository.dart';
+import 'package:the_monkslab_web/src/repositories/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
 

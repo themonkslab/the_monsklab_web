@@ -6,7 +6,7 @@ abstract class CoursesApi {
   Future<void> deleteArticle(String id);
   Future<void> setSection(String id, Map<String, dynamic> content);
   Future<void> deleteSection(String id);
-  Future<LearningPath> getLearningPath(String id);
+  Future<Courses> getCourses(String id);
   Future<void> updateLearningPath(String id, Map<String, dynamic> content);
   Future<Course> getCourse(String path);
   Future<Section> getSection(String path);

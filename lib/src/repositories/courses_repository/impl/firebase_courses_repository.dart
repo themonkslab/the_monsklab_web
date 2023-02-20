@@ -7,23 +7,27 @@ import 'package:the_monkslab_web/src/apis/courses/courses_api.dart';
 import 'package:the_monkslab_web/src/apis/courses/impl/firestore_api.dart';
 import 'package:the_monkslab_web/src/constants/assets.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
+import 'package:the_monkslab_web/src/repositories/courses_repository/courses_repository.dart';
 
 //TODO -MEDIUM/MEDIUM- create abstract class
-class CoursesRepository {
-  CoursesRepository({CoursesApi? coursesApi})
+class FirebaseCoursesRepository extends CoursesRepository {
+  FirebaseCoursesRepository({CoursesApi? coursesApi})
       : _coursesApi = coursesApi ?? FirestoreApi();
 
   final CoursesApi _coursesApi;
 
-  Future<LearningPath> getLearningPath(String id) async {
-    LearningPath learningPath = await _coursesApi.getLearningPath(id);
+  @override
+  Future<List<Courses>?> getCourses(String id) async {
+    List<Courses>? list = [];
+    Courses learningPath = await _coursesApi.getCourses(id);
+    list.add(learningPath);
     if (learningPath.shouldUpdate) {
       await createCoursesIndexes(learningPath);
     }
-    return learningPath;
+    return list;
   }
 
-  Future<void> createCoursesIndexes(LearningPath learningPath) async {
+  Future<void> createCoursesIndexes(Courses learningPath) async {
     await createCourseIndexFromResource(
       AppAssets.dartCourse, 
       '4q3OBzCmxhQye1DU0mla', 
@@ -38,7 +42,7 @@ class CoursesRepository {
       'Aprender a utilizar GitHub como herramienta de CICD para proyectos Flutter',
     );
 
-    await _coursesApi.updateLearningPath(learningPath.id, learningPath.copyWith(shouldUpdate: false).toJson());
+    await _coursesApi.updateLearningPath(learningPath.id, learningPath.copyWith(shouldUpdate: false).toMap());
   }
 
   //TODO -HIGH- write in firebase from json
@@ -154,20 +158,23 @@ class CoursesRepository {
   //   }
   // }
 
+  @override
   Future<Course> getCourse(String path) async {
     return await _coursesApi.getCourse(path);
   }
 
+  @override
   Future<Section> getSection(String path) async {
     return await _coursesApi.getSection(path);
   }
 
+  @override
   Future<Article> getArticle(String path) async {
     return await _coursesApi.getArticle(path);
   }
 }
 
-class MockCoursesRepository extends Mock implements CoursesRepository {}
+class MockCoursesRepository extends Mock implements FirebaseCoursesRepository {}
 
 class FirestoreCourse {
   String? path;
