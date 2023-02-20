@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/features/article/_index.dart';
+import 'package:the_monkslab_web/src/features/article/presentation/article_footer.dart';
 import 'package:the_monkslab_web/src/features/article/presentation/bloc/article_cubit.dart';
 import 'package:the_monkslab_web/src/repositories/courses_repository.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
@@ -88,6 +89,7 @@ class _ArticleViewState extends State<ArticleView> {
                     AppGaps.gapH24,
                     ArticleBody(data: article.content),
                     AppGaps.gapH48,
+                    const ArticleFooter(),
                   ],
                 ),
               );
@@ -115,6 +117,7 @@ class _ArticleViewState extends State<ArticleView> {
                         child: ArticleBody(data: article.content),
                       ),
                       AppGaps.gapH48,
+                      const ArticleFooter(),
                     ],
                   ),
                 ),

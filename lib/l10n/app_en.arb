@@ -67,5 +67,7 @@
 
   "archiveViewTitle": "Archive",
 
-  "archiveViewDescription":"Welcome to the archive. Here you will find thousands of pages related to software development but don't be confused: these are not isolated articles but a careful learning path where anyone with discipline and good will can become an expert developer. \n\nDon't forget to join our community on Discord to find many more exercises, mock job interviews, essays from foreign companies and much more.\n\nEnjoy! 😄"
+  "archiveViewDescription":"Welcome to the archive. Here you will find thousands of pages related to software development but don't be confused: these are not isolated articles but a careful learning path where anyone with discipline and good will can become an expert developer. \n\nDon't forget to join our community on Discord to find many more exercises, mock job interviews, essays from foreign companies and much more.\n\nEnjoy! 😄",
+
+  "reachOutOn":"If you have questions or suggestions don't heasitate to reach out on"
 }

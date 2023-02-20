@@ -4,7 +4,7 @@ import 'package:the_monkslab_web/src/constants/_index.dart';
 import 'package:the_monkslab_web/src/core/routing/routing.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
-import 'package:url_launcher/url_launcher.dart';
+
 
 class LocationLinksRowOrColumn extends StatelessWidget {
   const LocationLinksRowOrColumn({
@@ -19,11 +19,11 @@ class LocationLinksRowOrColumn extends StatelessWidget {
         ? Row(
             children: [
               LocationLink(
-                  text: localize(context).jobs, onPressed: () async => await _launchUrl(torcApplyForJobs),),
+                  text: localize(context).jobs, onPressed: () async => await UrlHelper.launchUrl(torcApplyForJobs),),
               LocationLink(
                   text: localize(context).courses, onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),),
               LocationLink(
-                  text: localize(context).community, onPressed: () async => await _launchUrl(torcsDiscord),),
+                  text: localize(context).community, onPressed: () async => await UrlHelper.launchUrl(torcsDiscord),),
             ],
           )
         : Column(
@@ -31,20 +31,13 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               LocationLink(
-                  text: localize(context).jobs, onPressed: () async => await _launchUrl(torcApplyForJobs),),
+                  text: localize(context).jobs, onPressed: () async => await UrlHelper.launchUrl(torcApplyForJobs),),
               LocationLink(
                   text: localize(context).courses, onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),),
               LocationLink(
-                  text: localize(context).community, onPressed: () async => await _launchUrl(torcsDiscord),),
+                  text: localize(context).community, onPressed: () async => await UrlHelper.launchUrl(torcsDiscord),),
             ],
           );
-  }
-
-  Future<void> _launchUrl(String url) async {
-    final Uri urlUri = Uri.parse(url);
-    if (!await launchUrl(urlUri)) {
-      throw Exception('Could not launch $urlUri');
-    }
   }
 }
 
