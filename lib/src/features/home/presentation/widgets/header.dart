@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
@@ -26,7 +27,7 @@ class Header extends StatelessWidget {
               AppGaps.gapH48,
               SizedBox(
                 width: 1200,
-                child: Text(
+                child: AutoSizeText(
                   localize(context).learnToProgramAsWeHadDreamed,
                   style: AppTextStyles.h1.copyWith(
                     color: AppColors.white,
@@ -34,6 +35,7 @@ class Header extends StatelessWidget {
                     fontWeight: FontWeight.w700,
                   ),
                   textAlign: TextAlign.center,
+                  maxLines: 4,
                 ),
               ),
               AppGaps.gapH48,
