@@ -18,11 +18,11 @@ class LocationLinksRowOrColumn extends StatelessWidget {
         ? Row(
             children: [
               LocationLink(
-                  text: 'Jobs', location: '/${AppRoutes.archive.name}',),
+                  text: localize(context).jobs, location: '/${AppRoutes.archive.name}',),
               LocationLink(
-                  text: 'Cursos', location: '/${AppRoutes.archive.name}',),
+                  text: localize(context).courses, location: '/${AppRoutes.archive.name}',),
               LocationLink(
-                  text: 'Comunidad', location: '/${AppRoutes.archive.name}',),
+                  text: localize(context).community, location: '/${AppRoutes.archive.name}',),
             ],
           )
         : Column(
@@ -30,11 +30,11 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               LocationLink(
-                  text: 'Jobs', location: '/${AppRoutes.archive.name}',),
+                  text: localize(context).jobs, location: '/${AppRoutes.archive.name}',),
               LocationLink(
-                  text: 'Cursos', location: '/${AppRoutes.archive.name}',),
+                  text: localize(context).courses, location: '/${AppRoutes.archive.name}',),
               LocationLink(
-                  text: 'Comunidad', location: '/${AppRoutes.archive.name}',),
+                  text: localize(context).community, location: '/${AppRoutes.archive.name}',),
             ],
           );
   }
