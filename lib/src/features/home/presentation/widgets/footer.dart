@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
-import 'package:the_monkslab_web/src/utils/localize.dart';
+import 'package:the_monkslab_web/src/utils/_index.dart';
 
 class Footer extends StatelessWidget {
   const Footer({

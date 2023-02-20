@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
-import 'package:the_monkslab_web/src/utils/localize.dart';
+import 'package:the_monkslab_web/src/utils/_index.dart';
 
 class ArchivePopulated extends StatelessWidget {
   const ArchivePopulated({

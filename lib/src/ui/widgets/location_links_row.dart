@@ -4,7 +4,6 @@ import 'package:the_monkslab_web/src/core/routing/routing.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
-import 'package:the_monkslab_web/src/utils/localize.dart';
 
 class LocationLinksRowOrColumn extends StatelessWidget {
   const LocationLinksRowOrColumn({
