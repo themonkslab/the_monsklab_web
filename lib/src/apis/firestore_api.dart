@@ -872,9 +872,9 @@ class FirestoreApi {
 
     return _addCourse(
       docId: '4q3OBzCmxhQye1DU0mla',
-      title: 'Dart y TDD',
+      title: 'Dart & Test Driven Development',
       description:
-          'Aprender a programar desde cero desde fin a principio, aprendiendo a testear a cada paso',
+          'Learn to code in Dart and Test Driven Development with Flutter and Dart',
       course: course,
     );
   }
