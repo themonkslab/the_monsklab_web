@@ -1,8 +1,8 @@
-import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:the_monkslab_web/src/apis/_index.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
+import 'package:the_monkslab_web/src/utils/_index.dart';
 
 class FirestoreApi {
   FirestoreApi({
@@ -1035,34 +1035,18 @@ class FirestoreApi {
 
   Future<Article> getArticle(String path) async {
     final doc = await _firestore.collection('article').doc(path).get();
-    final articleContent = await _httpApi.getRequest(doc.data()!['contentUrl']);
+    final contentUrl = doc.data()!['contentUrl'];
+    final articleContent = await _httpApi.getRequest(contentUrl);
+    final articleNameUrl = contentUrl.split('/').last;
+    final urlWithoutArticlePath = contentUrl.replaceAll(articleNameUrl, '');
+    final formattedContent = formatGitHubImagesUrls(articleContent, urlWithoutArticlePath);
     return Article(
       id: doc.id,
       title: doc.data()!['title'],
       description: doc.data()!['description'],
-      content: articleContent,
+      content: formattedContent,
       author: Author(name: doc.data()!['author'], picture: 'mau_photo'),
       published: doc.data()!['published'],
     );
   }
-}
-
-class _CourseSectionModel {
-  _CourseSectionModel({
-    required this.path,
-    required this.title,
-  });
-  final String path;
-  final String title;
-
-  Map<String, dynamic> toMap() {
-    final result = <String, dynamic>{};
-  
-    result.addAll({'path': path});
-    result.addAll({'title': title});
-  
-    return result;
-  }
-
-  String toJson() => json.encode(toMap());
 }
