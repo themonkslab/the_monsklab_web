@@ -5,6 +5,7 @@ import 'package:the_monkslab_web/src/apis/_index.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/models/author.dart' as author;
 import 'package:the_monkslab_web/src/repositories/_index.dart';
+import 'package:the_monkslab_web/src/utils/formatters.dart';
 
 
 class FileCoursesRepositoryImpl extends CoursesRepository {
@@ -25,7 +26,10 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
                 for (var article in fileSection.articles!) {
                   if (article.path == path && article.contentUrl != null) {
                     final articleContent = (await HttpApi().getRequest(article.contentUrl!)).toString();
-                    return Article(id: path, title: article.title ?? '', description: article.description ?? '', content: articleContent, author: const author.Author(name: 'The Monkslab', picture: 'picture'), published: article.published.toString());
+                    final articleNameUrl = article.contentUrl!.split('/').last;
+                    final folderUrl = article.contentUrl!.replaceAll(articleNameUrl, '');
+                    final formattedContent = formatGitHubImagesUrls(articleContent, folderUrl);
+                    return Article(id: path, title: article.title ?? '', description: article.description ?? '', content: formattedContent, author: const author.Author(name: 'The Monkslab', picture: 'picture'), published: article.published.toString());
                   }
                 }
               }
