@@ -1,7 +1,8 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
-import 'package:the_monkslab_web/src/utils/helpers.dart';
+import 'package:the_monkslab_web/src/utils/_index.dart';
 
 class Header extends StatelessWidget {
   const Header({
@@ -26,14 +27,15 @@ class Header extends StatelessWidget {
               AppGaps.gapH48,
               SizedBox(
                 width: 1200,
-                child: Text(
-                  'Aprender a programar como habríamos soñado!',
+                child: AutoSizeText(
+                  localize(context).learnToProgramAsWeHadDreamed,
                   style: AppTextStyles.h1.copyWith(
                     color: AppColors.white,
                     fontSize: isPhoneOrTablet ? 60 : 100,
                     fontWeight: FontWeight.w700,
                   ),
                   textAlign: TextAlign.center,
+                  maxLines: 4,
                 ),
               ),
               AppGaps.gapH48,
@@ -42,7 +44,7 @@ class Header extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      'Un camino de estudio y una comunidad de entrenamiento para formarse en el oficio del desarrollo. Un lugar para el que no se necesitan conocimientos previos y que espera darle todo lo que necesitan para volverse profesionales de alto nivel en esta industria.',
+                      localize(context).aPathOfStudyAndATrainigCommunity,
                       style: AppTextStyles.p.copyWith(
                         color: AppColors.white,
                       ),
@@ -52,8 +54,7 @@ class Header extends StatelessWidget {
                     const Divider(color: AppColors.grey),
                     AppGaps.gapH48,
                     Text(
-                      'Sumate sin ningún costo!\nSolo recibimos 10 personas cada mes!'
-                          .toUpperCase(),
+                      localize(context).sumWithoutAnyCost.toUpperCase(),
                       style: AppTextStyles.h1.copyWith(
                         color: AppColors.white,
                         fontSize: 20,
@@ -62,7 +63,7 @@ class Header extends StatelessWidget {
                     ),
                     AppGaps.gapH32,
                     AppFilledButton(
-                      text: 'Qué estás esperando! Sumate!',
+                      text: localize(context).whatAreYouWaitingFor,
                       onTap: () async {
                         try {
                           Helpers.launchDiscord();
@@ -76,7 +77,7 @@ class Header extends StatelessWidget {
                     const Divider(color: AppColors.grey),
                     AppGaps.gapH24,
                     Text(
-                      'Aprendemos a aprender, a pensar desde atrás hacia adelante testeando cada línea de código. Aprendemos a organizarnos y ordenarnos, entender el negocio y a focalizarlos en el valor que podemos aportar.',
+                      localize(context).learnToLearn,
                       style: AppTextStyles.p.copyWith(
                         color: AppColors.white,
                       ),

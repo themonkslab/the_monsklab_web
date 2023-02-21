@@ -9,6 +9,15 @@
 # packages, and plugins designed to encourage good coding practices.
 include: package:flutter_lints/flutter.yaml
 
+# To add linter rules to the analyzer as error, first add the linter rule,
+# then add the rule to analyzer error
+
+analyzer:
+  errors:
+    always_use_package_imports: error
+  exclude:
+    - "**.g.dart"
+
 linter:
   # The lint rules applied to this project can be customized in the
   # section below to disable rules from the `package:flutter_lints/flutter.yaml`
@@ -24,6 +33,18 @@ linter:
   rules:
     # avoid_print: false  # Uncomment to disable the `avoid_print` rule
     # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
+    # always_put_required_named_parameters_first: true 
+    always_use_package_imports: true
+    avoid_empty_else: true
+    avoid_redundant_argument_values: true
+    body_might_complete_normally_nullable: false
+    directives_ordering: true
+    require_trailing_commas: true
+    sort_child_properties_last: true
+    sort_constructors_first: true
+    sort_pub_dependencies: true
+    sort_unnamed_constructors_first: true
+
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options

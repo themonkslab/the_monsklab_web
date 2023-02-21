@@ -20,7 +20,7 @@ class AppOnHoverState extends State<AppOnHover>
   late final AnimationController animationController;
   late Animation scaleAnimation = Tween<double>(
           begin: 1 - widget.hoveredScalePercentage,
-          end: 1 + widget.hoveredScalePercentage)
+          end: 1 + widget.hoveredScalePercentage,)
       .animate(animationController);
   bool isHovered = false;
   bool isTapped = false;
@@ -29,7 +29,7 @@ class AppOnHoverState extends State<AppOnHover>
   void initState() {
     super.initState();
     animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 300));
+        vsync: this, duration: const Duration(milliseconds: 300),);
     animationController.value = 0.5;
   }
 
@@ -59,7 +59,7 @@ class AppOnHoverState extends State<AppOnHover>
                 alignment: FractionalOffset.center,
                 transform: Matrix4.identity()
                   ..scale(scaleAnimation.value as double,
-                      scaleAnimation.value as double),
+                      scaleAnimation.value as double,),
                 child: GestureDetector(
                     onTapDown: (_) {
                       isTapped = true;
@@ -73,8 +73,8 @@ class AppOnHoverState extends State<AppOnHover>
                       isTapped = false;
                       animationController.animateTo(0.5);
                     },
-                    child: widget.child)),
+                    child: widget.child,),),
           );
-        });
+        },);
   }
 }

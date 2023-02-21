@@ -18,7 +18,7 @@ class Section with _$Section {
       _$SectionFromJson(json);
 
   factory Section.fromDocumentSnapshot(
-      DocumentSnapshot<Map<String, dynamic>> doc) {
+      DocumentSnapshot<Map<String, dynamic>> doc,) {
     final articles = (doc.data()!['articles'] as List)
         .map((e) => ArticleReference.fromJson(e))
         .toList();

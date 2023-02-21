@@ -3,7 +3,7 @@ import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/ui/colors.dart';
 import 'package:the_monkslab_web/src/ui/sizes.dart';
 
-import '_index.dart';
+import 'package:the_monkslab_web/src/ui/widgets/_index.dart';
 
 class AppSocials extends StatelessWidget {
   const AppSocials({
@@ -18,7 +18,6 @@ class AppSocials extends StatelessWidget {
       height: _height,
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           AppOnHover(
             child: AppSocialIcon(

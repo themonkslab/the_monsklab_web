@@ -62,11 +62,11 @@ class _AppHypertextState extends State<AppHypertext> {
             style: widget.style?.copyWith(
                     color: isEnabled
                         ? finalEnabledDisabledColors[0]
-                        : finalEnabledDisabledColors[1]) ??
+                        : finalEnabledDisabledColors[1],) ??
                 AppTextStyles.hypertext.copyWith(
                     color: isEnabled
                         ? finalEnabledDisabledColors[0]
-                        : finalEnabledDisabledColors[1]),
+                        : finalEnabledDisabledColors[1],),
           ),
         ),
       ),

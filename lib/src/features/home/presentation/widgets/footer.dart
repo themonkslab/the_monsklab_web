@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
+import 'package:the_monkslab_web/src/utils/_index.dart';
 
 class Footer extends StatelessWidget {
   const Footer({
@@ -63,7 +64,7 @@ class Footer extends StatelessWidget {
                                 horizontal: 34.0,
                               ),
                               child: LocationLinksRowOrColumn(isRow: false),
-                            )),
+                            ),),
                             Expanded(
                               child: Container(
                                 decoration: const BoxDecoration(
@@ -76,7 +77,7 @@ class Footer extends StatelessWidget {
                                 child: Center(
                                   child: Padding(
                                     padding: const EdgeInsets.symmetric(
-                                        horizontal: 48.0),
+                                        horizontal: 48.0,),
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
@@ -116,14 +117,14 @@ class TermsAndConditions extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Terms and Conditions',
+          localize(context).termsAndConditions,
           style: AppTextStyles.caption.copyWith(
             color: AppColors.white,
             fontSize: 12,
           ),
         ),
         Text(
-          'Privacy Policy',
+          localize(context).privacyPolicy,
           style: AppTextStyles.caption.copyWith(
             color: AppColors.white,
             fontSize: 12,
@@ -154,12 +155,12 @@ class MonkslabDescription extends StatelessWidget {
           ),
           AppGaps.gapH16,
           Text(
-            'Un grupo de amigos que disfruta de hacer las cosas mejor cada vez pero que al mismo tiempo, quiere transmitir a otros todo lo aprendido, dar posibilidades y hacer de este mundo con cada granito de código, un mundo mejor.',
+            localize(context).aGroupOfFriendWhoEnjoyImproveThemself,
             style: AppTextStyles.p.copyWith(
               color: AppColors.white,
               fontSize: 14,
             ),
           )
-        ]);
+        ],);
   }
 }

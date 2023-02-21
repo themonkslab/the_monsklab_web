@@ -1,9 +1,9 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:the_monkslab_web/src/constants/_index.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
+import 'package:the_monkslab_web/src/utils/_index.dart';
 
 class ArchivePopulated extends StatelessWidget {
   const ArchivePopulated({
@@ -21,17 +21,16 @@ class ArchivePopulated extends StatelessWidget {
         child: Padding(
       padding: isPhoneOrTablet ? AppPaddings.padH8 : AppPaddings.padH24,
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AppGaps.gapH48,
-          Text(archiveViewTitle,
+          Text(localize(context).archiveViewTitle,
               style: isPhoneOrTablet
                   ? AppTextStyles.h1HeaderPhone
-                  : AppTextStyles.h1Header),
+                  : AppTextStyles.h1Header,),
           AppGaps.gapH20,
           Text(
-            archiveViewDescription,
+            localize(context).archiveViewDescription,
             style: AppTextStyles.p,
           ),
           AppGaps.gapH64,
@@ -66,6 +65,6 @@ class ArchivePopulated extends StatelessWidget {
           )
         ],
       ),
-    ));
+    ),);
   }
 }

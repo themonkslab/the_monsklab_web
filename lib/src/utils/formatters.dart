@@ -1,6 +1,3 @@
-
-
-
 String formatGitHubImagesUrls(String content, String baseUrl) {
     // From ![acciones externas resultado 1](3.2_external_action_result.png)
     // will get (3.2_external_action_result.png)

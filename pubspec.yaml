@@ -29,6 +29,7 @@ dependencies:
   flutter_html: ^3.0.0-alpha.5
   flutter_highlight: ^0.7.0
   mocktail: ^0.3.0
+  auto_size_text: ^3.0.0
   equatable: ^2.0.5
 
 dev_dependencies:
@@ -39,6 +40,7 @@ dev_dependencies:
     sdk: flutter
 flutter:
   uses-material-design: true
+  generate: true 
   assets:
     - assets/
     - assets/images/

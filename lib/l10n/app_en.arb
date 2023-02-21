@@ -1,0 +1,73 @@
+{
+  "theMonsklabWeb": "The Monsklab Web",
+  "@theMonsklabWeb": {
+    "description": "It's us!"
+  },
+
+  "learnToProgramAsWeHadDreamed": "Learn to code as we had dreamed",
+  "@learnToProgramAsWeHadDreamed": {
+    "description": "Home Header Learn to code as we had dreamed text"
+  },
+
+  "aPathOfStudyAndATrainigCommunity": "A path of study and a training community to train in the craft of development. A place for which no previous knowledge is needed and that expects to give you everything you need to become a high level professional in this industry.",
+  "@aPathOfStudyAndATrainigCommunity": {
+    "description": "Home header A path of study ... text"
+  },
+
+  "sumWithoutAnyCost": "Sum yourself without any cost!\nOnly 10 spots available each month",
+  "@sumWithoutAnyCost": {
+    "description": "Home header Sum yourself without any cost ... text"
+  },
+
+  "whatAreYouWaitingFor": "What are you waiting for? Apply now!",
+  "@whatAreYouWaitingFor": {
+    "description": "Home header What are you waiting for ... text"
+  },
+
+  "learnToLearn": "We learn to learn, to think from the back to the front, testing every line of code. We learn to organize and be organized, to understand the business and to focus on the value we can bring.",
+  "@learnToLearn": {
+    "description": "Home header We learn to learn ... text"
+  },
+
+  "doesYourBusinessNeedHighLevelFlutterDevelopment": "Does your business need a high level Flutter Development?",
+  "@doesYourBusinessNeedHighLevelFlutterDevelopment": {
+    "description": "Home Contratanos Does your business need a high level Flutter Development ... text"
+  },
+
+  "weTrainTopLevelDevelopers": "We train top level developers with team play, passion applied to every line of code and detail mindset",
+  "@weTrainTopLevelDevelopers": {
+    "description": "Home Contratanos We train top level developers ... text"
+  },
+
+  "hireUs": "Hire Us!",
+  "@hireUs": {
+    "description": "Home Contratanos Hire Us ... text"
+  },
+
+  "termsAndConditions": "Terms and Conditions",
+  "@termsAndConditions": {
+    "description": "Home Footer Hire Us ... text"
+  },
+
+  "privacyPolicy": "Privacy Policy",
+  "@privacyPolicy": {
+    "description": "Home Footer Hire Us ... text"
+  },
+
+  "aGroupOfFriendWhoEnjoyImproveThemself": "A group of friends who enjoy to improve themselfs, transmitting the learnings, give chances and do this world better with every piece of code at the same time",
+  "@aGroupOfFriendWhoEnjoyImproveThemself": {
+    "description": "Home Footer A group of friends who enjoy ... text"
+  },
+
+  "jobs": "Jobs",
+
+  "courses": "Courses",
+
+  "community": "Community",
+
+  "archiveViewTitle": "Archive",
+
+  "archiveViewDescription":"Welcome to the archive. Here you will find thousands of pages related to software development but don't be confused: these are not isolated articles but a careful learning path where anyone with discipline and good will can become an expert developer. \n\nDon't forget to join our community on Discord to find many more exercises, mock job interviews, essays from foreign companies and much more.\n\nEnjoy! 😄",
+
+  "reachOutOn":"If you have questions or suggestions don't heasitate to reach out on"
+}
