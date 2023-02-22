@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:the_monkslab_web/src/constants/urls.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
 
@@ -34,7 +35,8 @@ class Contratanos extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    localize(context).doesYourBusinessNeedHighLevelFlutterDevelopment
+                    localize(context)
+                        .doesYourBusinessNeedHighLevelFlutterDevelopment
                         .toUpperCase(),
                     textAlign: TextAlign.start,
                     style: AppTextStyles.h1.copyWith(
@@ -51,7 +53,8 @@ class Contratanos extends StatelessWidget {
                   AppGaps.gapH24,
                   AppFilledButton(
                     text: localize(context).hireUs,
-                    onTap: () {},
+                    onTap: () async =>
+                        await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
                   ),
                 ],
               ),

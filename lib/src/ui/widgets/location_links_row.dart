@@ -5,13 +5,12 @@ import 'package:the_monkslab_web/src/core/routing/routing.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
 
-
 class LocationLinksRowOrColumn extends StatelessWidget {
   const LocationLinksRowOrColumn({
     super.key,
     this.isRow = true,
   });
-  final isRow;
+  final bool isRow;
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +18,20 @@ class LocationLinksRowOrColumn extends StatelessWidget {
         ? Row(
             children: [
               LocationLink(
-                  text: localize(context).jobs, onPressed: () async => await UrlHelper.launchUrl(torcApplyForJobs),),
+                text: localize(context).jobs,
+                onPressed: () async =>
+                    await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
+              ),
               LocationLink(
-                  text: localize(context).courses, onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),),
+                text: localize(context).courses,
+                onPressed: () =>
+                    context.beamToNamed('/${AppRoutes.archive.name}'),
+              ),
               LocationLink(
-                  text: localize(context).community, onPressed: () async => await UrlHelper.launchUrl(torcsDiscord),),
+                text: localize(context).community,
+                onPressed: () async =>
+                    await UrlHelper.launchUrl(AppUrls.torcsDiscord),
+              ),
             ],
           )
         : Column(
@@ -31,11 +39,20 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               LocationLink(
-                  text: localize(context).jobs, onPressed: () async => await UrlHelper.launchUrl(torcApplyForJobs),),
+                text: localize(context).jobs,
+                onPressed: () async =>
+                    await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
+              ),
               LocationLink(
-                  text: localize(context).courses, onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),),
+                text: localize(context).courses,
+                onPressed: () =>
+                    context.beamToNamed('/${AppRoutes.archive.name}'),
+              ),
               LocationLink(
-                  text: localize(context).community, onPressed: () async => await UrlHelper.launchUrl(torcsDiscord),),
+                text: localize(context).community,
+                onPressed: () async =>
+                    await UrlHelper.launchUrl(AppUrls.torcsDiscord),
+              ),
             ],
           );
   }
