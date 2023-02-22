@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/ui/colors.dart';
 import 'package:the_monkslab_web/src/ui/sizes.dart';
-
 import 'package:the_monkslab_web/src/ui/widgets/_index.dart';
 
 class AppSocials extends StatelessWidget {
@@ -10,7 +9,7 @@ class AppSocials extends StatelessWidget {
     super.key,
     this.iconColor = AppColors.black,
   });
-  final iconColor;
+  final Color iconColor;
   final _height = 40.0;
   @override
   Widget build(BuildContext context) {
