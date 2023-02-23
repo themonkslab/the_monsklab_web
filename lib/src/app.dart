@@ -30,9 +30,13 @@ class AppView extends StatelessWidget {
       darkTheme: AppTheme.dark,
       themeMode: ThemeMode.light,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: AppLocalizations.supportedLocales,
+      supportedLocales: const <Locale>[
+        Locale('en'),
+        // Locale('es')
+      ],
       restorationScopeId: 'app',
-      onGenerateTitle: (BuildContext context) => localize(context).theMonsklabWeb,
+      onGenerateTitle: (BuildContext context) =>
+          localize(context).theMonsklabWeb,
     );
   }
 }

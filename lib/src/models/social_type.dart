@@ -6,6 +6,6 @@ enum SocialsType {
   linkedin(AppAssets.linkedinLogo),
   twitter(AppAssets.twitterLogo);
 
-  final String socialAsset;
   const SocialsType(this.socialAsset);
+  final String socialAsset;
 }
