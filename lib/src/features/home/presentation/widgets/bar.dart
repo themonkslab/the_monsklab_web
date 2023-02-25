@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:the_monkslab_web/src/features/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 
 class Bar extends StatefulWidget {
@@ -42,8 +43,7 @@ class _BarState extends State<Bar> with TickerProviderStateMixin {
       ),
       child: Center(
         child: Padding(
-          padding:
-              widget.isPhoneOrTablet ? AppPaddings.padH4 : AppPaddings.padAll0,
+          padding: widget.isPhoneOrTablet ? AppPaddings.padH4 : AppPaddings.padAll0,
           child: Column(
             children: [
               AppGaps.gapH12,
@@ -53,12 +53,9 @@ class _BarState extends State<Bar> with TickerProviderStateMixin {
                     SizedBox(
                       height: rowHeight,
                       child: Row(
-                        mainAxisAlignment: _isMenuOpened
-                            ? MainAxisAlignment.spaceBetween
-                            : MainAxisAlignment.end,
+                        mainAxisAlignment: _isMenuOpened ? MainAxisAlignment.spaceBetween : MainAxisAlignment.end,
                         children: [
-                          if (_isMenuOpened)
-                            const Center(child: LocationLinksRowOrColumn()),
+                          if (_isMenuOpened) const Center(child: LocationLinksRowOrColumn()),
                           GestureDetector(
                             onTap: () {
                               setState(() {
@@ -88,9 +85,10 @@ class _BarState extends State<Bar> with TickerProviderStateMixin {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           SvgPicture.asset(
-                              'assets/images/logos/monsklab_logo_on_red_circle.svg',),
-                          if (!widget.isPhoneOrTablet)
-                            const LocationLinksRowOrColumn(),
+                            'assets/images/logos/monsklab_logo_on_red_circle.svg',
+                          ),
+                          if (!widget.isPhoneOrTablet) const LocationLinksRowOrColumn(),
+                          const LanguageSwitcherDropDown(),
                         ],
                       ),
                     ),
