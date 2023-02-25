@@ -8,7 +8,7 @@ part 'language_switcher_state.dart';
 class LanguageSwitcherBloc extends Bloc<LanguageSwitcherEvent, LanguageSwitcherState> {
   LanguageSwitcherBloc() : super(LanguageSwitcherState.inicial()) {
     on<LanguageSwitcherSwitchAction>((event, emit) {
-      emit(state..copyWith(currentLanguage: event.switchTo));
+      emit(state.copyWith(currentLanguage: event.switchTo));
     });
   }
 }
