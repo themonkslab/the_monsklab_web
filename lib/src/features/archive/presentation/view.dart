@@ -15,7 +15,7 @@ class ArchivePage extends StatelessWidget {
     return BlocProvider<ArchiveCubit>(
       create: (context) => ArchiveCubit(
         context.read<CoursesRepository>(),
-      )..fetchLearningPath(AppEnvironment.flutterLearningPathId),
+      )..fetchCourses(AppEnvironment.flutterLearningPathId),
       child: const ArchiveView(),
     );
   }
@@ -28,8 +28,7 @@ class ArchiveView extends StatelessWidget {
   Widget build(BuildContext context) {
     //TODO -LOW/MEDIUM- create AppLayoutBuilder
     final screenType = context.getScreenType();
-    final isPhoneOrTablet =
-        screenType == ScreenType.phone || screenType == ScreenType.tablet;
+    final isPhoneOrTablet = screenType == ScreenType.phone || screenType == ScreenType.tablet;
 
     return BlocBuilder<ArchiveCubit, ArchiveState>(
       builder: (context, state) {

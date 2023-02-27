@@ -1,12 +1,10 @@
 import 'package:beamer/beamer.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:the_monkslab_web/src/constants/_index.dart';
+import 'package:the_monkslab_web/generated/locale_keys.g.dart';
 import 'package:the_monkslab_web/src/core/routing/routing.dart';
-import 'package:the_monkslab_web/src/features/language_switcher/bloc/language_switcher_bloc.dart';
+import 'package:the_monkslab_web/src/features/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
-import 'package:the_monkslab_web/src/utils/_index.dart';
 
 //! PageView
 class AppPage extends StatelessWidget {
@@ -16,25 +14,29 @@ class AppPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<LanguageSwitcherBloc, LanguageSwitcherState>(
-      builder: (context, state) {
-        return AppView(
-          language: state.currentLanguage,
-        );
-      },
-    );
+    return const AppView();
   }
 }
 
 class AppView extends StatelessWidget {
   const AppView({
     super.key,
-    required this.language,
   });
-  final Language language;
 
   @override
   Widget build(BuildContext context) {
+    MaterialApp(
+      theme: AppTheme.light,
+      darkTheme: AppTheme.dark,
+      themeMode: ThemeMode.light,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      restorationScopeId: 'app',
+      onGenerateTitle: (_) => LocaleKeys.theMonsklabWeb.tr(),
+      debugShowCheckedModeBanner: false,
+      home: const HomePage(),
+    );
     return MaterialApp.router(
       routeInformationParser: BeamerParser(),
       routerDelegate: routerDelegate(),
@@ -42,12 +44,11 @@ class AppView extends StatelessWidget {
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: ThemeMode.light,
-      localizationsDelegates: AppLocalizations.localizationsDelegates,
-      supportedLocales: <Locale>[
-        Locale(language.name),
-      ],
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
       restorationScopeId: 'app',
-      onGenerateTitle: (BuildContext context) => localize(context).theMonsklabWeb,
+      locale: context.locale,
+      title: 'The Monkslab',
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:the_monkslab_web/src/features/_index.dart';
@@ -88,7 +89,7 @@ class _BarState extends State<Bar> with TickerProviderStateMixin {
                             'assets/images/logos/monsklab_logo_on_red_circle.svg',
                           ),
                           if (!widget.isPhoneOrTablet) const LocationLinksRowOrColumn(),
-                          const LanguageSwitcherDropDown(),
+                          LanguageSwitcherDropDown(locale: context.locale),
                         ],
                       ),
                     ),

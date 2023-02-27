@@ -1,5 +1,7 @@
 import 'package:beamer/beamer.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:the_monkslab_web/generated/locale_keys.g.dart';
 import 'package:the_monkslab_web/src/constants/_index.dart';
 import 'package:the_monkslab_web/src/core/routing/routing.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
@@ -18,19 +20,16 @@ class LocationLinksRowOrColumn extends StatelessWidget {
         ? Row(
             children: [
               LocationLink(
-                text: localize(context).jobs,
-                onPressed: () async =>
-                    await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
+                text: LocaleKeys.jobs.tr(),
+                onPressed: () async => await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
               ),
               LocationLink(
-                text: localize(context).courses,
-                onPressed: () =>
-                    context.beamToNamed('/${AppRoutes.archive.name}'),
+                text: LocaleKeys.courses.tr(),
+                onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),
               ),
               LocationLink(
-                text: localize(context).community,
-                onPressed: () async =>
-                    await UrlHelper.launchUrl(AppUrls.torcsDiscord),
+                text: LocaleKeys.community.tr(),
+                onPressed: () async => await UrlHelper.launchUrl(AppUrls.torcsDiscord),
               ),
             ],
           )
@@ -39,19 +38,16 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               LocationLink(
-                text: localize(context).jobs,
-                onPressed: () async =>
-                    await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
+                text: LocaleKeys.jobs.tr(),
+                onPressed: () async => await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
               ),
               LocationLink(
-                text: localize(context).courses,
-                onPressed: () =>
-                    context.beamToNamed('/${AppRoutes.archive.name}'),
+                text: LocaleKeys.courses.tr(),
+                onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),
               ),
               LocationLink(
-                text: localize(context).community,
-                onPressed: () async =>
-                    await UrlHelper.launchUrl(AppUrls.torcsDiscord),
+                text: LocaleKeys.community.tr(),
+                onPressed: () async => await UrlHelper.launchUrl(AppUrls.torcsDiscord),
               ),
             ],
           );
@@ -70,8 +66,7 @@ class LocationLink extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenType = context.getScreenType();
-    final isPhoneOrTablet =
-        screenType == ScreenType.phone || screenType == ScreenType.tablet;
+    final isPhoneOrTablet = screenType == ScreenType.phone || screenType == ScreenType.tablet;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),

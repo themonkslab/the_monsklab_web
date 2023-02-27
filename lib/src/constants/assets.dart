@@ -5,8 +5,7 @@ class AppAssets {
   static const instagramLogo = 'assets/images/logos/instagram_logo_minimal.svg';
   static const linkedinLogo = 'assets/images/logos/linkedin_logo_minimal.svg';
   static const twitterLogo = 'assets/images/logos/twitter_logo_minimal.svg';
-  static const monkslabNoBackground =
-      'assets/images/logos/monkslab_logo_no_background.png';
+  static const monkslabNoBackground = 'assets/images/logos/monkslab_logo_no_background.png';
 
   // * // authors
   static const mauPicture = 'assets/images/mau_photo.jpg';

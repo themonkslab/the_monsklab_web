@@ -6,13 +6,13 @@ import 'package:mocktail/mocktail.dart';
 import 'package:the_monkslab_web/src/apis/courses/courses_api.dart';
 import 'package:the_monkslab_web/src/apis/courses/impl/firestore_api.dart';
 import 'package:the_monkslab_web/src/constants/assets.dart';
+import 'package:the_monkslab_web/src/constants/enums.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/repositories/courses_repository/courses_repository.dart';
 
 //TODO -MEDIUM/MEDIUM- create abstract class
 class FirebaseCoursesRepository extends CoursesRepository {
-  FirebaseCoursesRepository({CoursesApi? coursesApi})
-      : _coursesApi = coursesApi ?? FirestoreApi();
+  FirebaseCoursesRepository({CoursesApi? coursesApi}) : _coursesApi = coursesApi ?? FirestoreApi();
 
   final CoursesApi _coursesApi;
 
@@ -29,10 +29,10 @@ class FirebaseCoursesRepository extends CoursesRepository {
 
   Future<void> createCoursesIndexes(Courses learningPath) async {
     await createCourseIndexFromResource(
-      AppAssets.dartCourse, 
-      '4q3OBzCmxhQye1DU0mla', 
-      'Dart y TDD', 
-      'Aprender a programar desde cero desde fin a principio, aprendiendo a testear a cada paso'
+      AppAssets.dartCourse,
+      '4q3OBzCmxhQye1DU0mla',
+      'Dart y TDD',
+      'Aprender a programar desde cero desde fin a principio, aprendiendo a testear a cada paso',
     );
 
     await createCourseIndexFromResource(
@@ -47,29 +47,28 @@ class FirebaseCoursesRepository extends CoursesRepository {
 
   //TODO -HIGH- write in firebase from json
   Future<void> createCourseIndexFromResource(
-      String resource, 
-      String docId, 
-      String title, 
-      String description,
-    ) async {
-      try {
-        var courseJson = await rootBundle
-          .loadString(resource);
-        await _addCourse(
-          docId: docId, 
-          title: title, 
-          description: description, 
-          course: jsonDecode(courseJson),
-        );
-      } on Exception {
-        debugPrint('file not found');
-      }
+    String resource,
+    String docId,
+    String title,
+    String description,
+  ) async {
+    try {
+      var courseJson = await rootBundle.loadString(resource);
+      await _addCourse(
+        docId: docId,
+        title: title,
+        description: description,
+        course: jsonDecode(courseJson),
+      );
+    } on Exception {
+      debugPrint('file not found');
     }
+  }
 
   Future<void> _addCourse({
-    required String docId, 
-    required String title, 
-    required String description, 
+    required String docId,
+    required String title,
+    required String description,
     required List<dynamic> course,
   }) async {
     try {
@@ -82,7 +81,7 @@ class FirebaseCoursesRepository extends CoursesRepository {
         final articles = firebaseCourse.articles;
         if (sectionPath != null && articles != null) {
           FirestoreSection firestoreSection = FirestoreSection(
-            path: sectionPath, 
+            path: sectionPath,
             title: firebaseCourse.title,
           );
           sectionsList.add(firestoreSection);
@@ -102,7 +101,7 @@ class FirebaseCoursesRepository extends CoursesRepository {
               await _coursesApi.setArticle(articlePath, article.toJson());
             }
           }
-        }        
+        }
       }
       await _coursesApi.setCourse(docId, title, description, sectionsList);
     } catch (e) {
@@ -112,9 +111,9 @@ class FirebaseCoursesRepository extends CoursesRepository {
   }
 
   // Future<void> _addCourse2({
-  //   required String docId, 
-  //   required String title, 
-  //   required String description, 
+  //   required String docId,
+  //   required String title,
+  //   required String description,
   //   required dynamic course,
   // }) async {
   //   try {
@@ -172,18 +171,17 @@ class FirebaseCoursesRepository extends CoursesRepository {
   Future<Article> getArticle(String path) async {
     return await _coursesApi.getArticle(path);
   }
+
+  @override
+  Future<void> fetchCoursesFromLanguage(Language language) {
+    throw UnimplementedError();
+  }
 }
 
 class MockCoursesRepository extends Mock implements FirebaseCoursesRepository {}
 
 class FirestoreCourse {
-  String? path;
-  String? title;
-  String? description;
-  List<Articles>? articles;
-
   FirestoreCourse({this.path, this.title, this.description, this.articles});
-
   FirestoreCourse.fromJson(Map<String, dynamic> json) {
     path = json['path'];
     title = json['title'];
@@ -195,6 +193,10 @@ class FirestoreCourse {
       });
     }
   }
+  String? path;
+  String? title;
+  String? description;
+  List<Articles>? articles;
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
@@ -209,21 +211,7 @@ class FirestoreCourse {
 }
 
 class Articles {
-  String? path;
-  String? title;
-  String? description;
-  String? contentUrl;
-  String? author;
-  String? published;
-
-  Articles(
-      {this.path,
-      this.title,
-      this.description,
-      this.contentUrl,
-      this.author,
-      this.published});
-
+  Articles({this.path, this.title, this.description, this.contentUrl, this.author, this.published});
   Articles.fromJson(Map<String, dynamic> json) {
     path = json['path'];
     title = json['title'];
@@ -232,6 +220,12 @@ class Articles {
     author = json['author'];
     published = json['published'];
   }
+  String? path;
+  String? title;
+  String? description;
+  String? contentUrl;
+  String? author;
+  String? published;
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
@@ -246,15 +240,13 @@ class Articles {
 }
 
 class FirestoreSection {
-  String? path;
-  String? title;
-
   FirestoreSection({this.path, this.title});
-
   FirestoreSection.fromJson(Map<String, dynamic> json) {
     path = json['path'];
     title = json['title'];
   }
+  String? path;
+  String? title;
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};

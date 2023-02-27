@@ -2,7 +2,7 @@ run:
 	flutter run -t lib/main.dart
 
 loc: 
-	flutter gen-l10n
+	flutter pub run easy_localization:generate --source-dir "assets/translations" && flutter pub run easy_localization:generate -f keys -o locale_keys.g.dart -S "assets/translations"
 
 format:
 	dart format --line-length=80 .
