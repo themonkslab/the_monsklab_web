@@ -34,6 +34,7 @@ class AppView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      title: 'The MonksLab',
       routeInformationParser: BeamerParser(),
       routerDelegate: routerDelegate(),
       debugShowCheckedModeBanner: false,

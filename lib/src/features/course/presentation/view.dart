@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/features/_index.dart';
-import 'package:the_monkslab_web/src/features/section/_index.dart';
+import 'package:the_monkslab_web/src/features/course/presentation/course_populated.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 
@@ -34,32 +34,9 @@ class CourseView extends StatelessWidget {
           case CourseStatus.failure:
             return const AppFailure();
           case CourseStatus.success:
-            return AppResponsiveScaffold(
-                child: Padding(
-              padding: AppPaddings.padBottom40,
-              child: Column(
-                children: <Widget>[
-                  AppGaps.gapH48,
-                  Padding(
-                    padding: AppPaddings.padH24,
-                    child: Text(
-                      state.course!.title.toUpperCase(),
-                      style: AppTextStyles.h1,
-                    ),
-                  ),
-                  Padding(
-                    padding: AppPaddings.padH24,
-                    child: Text(
-                      state.course!.description,
-                      style: AppTextStyles.p,
-                    ),
-                  ),
-                  AppGaps.gapH24,
-                  for (var section in state.course!.sections)
-                    SectionPage(path: section.path)
-                ],
-              ),
-            ),);
+            return CoursePopulated(
+              course: state.course!,
+            );
           default:
             return const AppFailure();
         }

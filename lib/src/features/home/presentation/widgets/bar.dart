@@ -88,7 +88,8 @@ class _BarState extends State<Bar> with TickerProviderStateMixin {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           SvgPicture.asset(
-                              'assets/images/logos/monsklab_logo_on_red_circle.svg',),
+                            'assets/images/logos/monsklab_logo_on_red_circle.svg',
+                          ),
                           if (!widget.isPhoneOrTablet)
                             const LocationLinksRowOrColumn(),
                         ],
