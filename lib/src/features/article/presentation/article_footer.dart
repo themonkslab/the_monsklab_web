@@ -29,7 +29,7 @@ class ArticleFooter extends StatelessWidget {
               AppHypertext(
                 text: 'Discord',
                 style: AppTextStyles.p.copyWith(color: AppColors.white),
-                onPressed: () => UrlHelper.launchUrl(AppUrls.torcsDiscord),
+                onTap: () => UrlHelper.launchUrl(AppUrls.torcsDiscord),
               )
             ],
           ),
