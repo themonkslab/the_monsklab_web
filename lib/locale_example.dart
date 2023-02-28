@@ -35,6 +35,14 @@ class MyApp extends StatelessWidget {
         // Return either Widgets or BeamPages if more customization is needed
         '/': (context, state, data) => const HomePage(),
         '/archive': (_, __, ___) => const ArchivePage(),
+        '/course/:path': (_, state, __) {
+          final path = state.pathParameters['path']!;
+          return CoursePage(path);
+        },
+        '/article/:path': ((_, state, __) {
+          final path = (state.pathParameters['path']!);
+          return ArticlePage(path: path);
+        }),
         '/switch': (context, state, data) => const LanguageSwitchScreen(),
       },
     ),
