@@ -1,10 +1,9 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:the_monkslab_web/generated/locale_keys.g.dart';
 import 'package:the_monkslab_web/src/constants/urls.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
+import 'package:the_monkslab_web/src/utils/locale.dart';
 
 class Contratanos extends StatelessWidget {
   const Contratanos({
@@ -37,7 +36,7 @@ class Contratanos extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    LocaleKeys.doesYourBusinessNeedHighLevelFlutterDevelopment.tr().toUpperCase(),
+                    localize(context).doesYourBusinessNeedHighLevelFlutterDevelopment.toUpperCase(),
                     textAlign: TextAlign.start,
                     style: AppTextStyles.h1.copyWith(
                       fontSize: 20,
@@ -46,13 +45,13 @@ class Contratanos extends StatelessWidget {
                   ),
                   AppGaps.gapH20,
                   Text(
-                    LocaleKeys.weTrainTopLevelDevelopers.tr(),
+                    localize(context).weTrainTopLevelDevelopers,
                     textAlign: TextAlign.start,
                     style: AppTextStyles.p,
                   ),
                   AppGaps.gapH24,
                   AppFilledButton(
-                    text: LocaleKeys.hireUs.tr(),
+                    text: localize(context).hireUs,
                     onTap: () async => await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
                   ),
                 ],

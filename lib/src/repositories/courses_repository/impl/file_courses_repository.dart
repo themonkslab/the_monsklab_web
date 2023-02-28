@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:ui';
 
 import 'package:the_monkslab_web/src/apis/_index.dart';
 import 'package:the_monkslab_web/src/constants/_index.dart';
@@ -11,6 +12,7 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
   FileCoursesRepositoryImpl();
 
   List<FileCoursesGroup> fileCourses = [];
+  Locale locale = const Locale('en');
 
   @override
   Future<Article?> getArticle(String path) async {
@@ -67,13 +69,14 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
 
   @override
   Future<List<Courses>?> getCourses(String courseGroup) async {
+    if (fileCourses.isEmpty) {
+      await fetchCoursesFromLanguage(locale);
+    }
     List<Courses> list = [];
     for (var courses in fileCourses) {
-      if (courses.courses != null && courses.courseGroup == courseGroup) {
-        List<CourseReference> coursesRef =
-            courses.courses!.map((e) => CourseReference(path: e.path ?? '', title: e.title ?? '')).toList();
-        list.add(Courses(id: '', title: courses.courseGroup ?? '', shouldUpdate: false, courses: coursesRef));
-      }
+      List<CourseReference> coursesRef =
+          courses.courses!.map((e) => CourseReference(path: e.path ?? '', title: e.title ?? '')).toList();
+      list.add(Courses(id: '', title: courses.courseGroup ?? '', shouldUpdate: false, courses: coursesRef));
     }
     return list;
   }
@@ -107,20 +110,20 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
     return null;
   }
 
-  @override
-  Future<void> fetchCoursesFromLanguage(Language language) async {
-    String coursesUrl;
-    switch (language) {
-      case Language.en:
+  Future<void> fetchCoursesFromLanguage(Locale locale) async {
+    String coursesUrl = AppUrls.dreamTeamersCoureseEn;
+    switch (locale.toString()) {
+      case 'en':
         coursesUrl = AppUrls.dreamTeamersCoureseEn;
         break;
-      case Language.es:
+      case 'es':
         coursesUrl = AppUrls.dreamTeamersCoureseEs;
         break;
     }
 
     final jsonFile = (await HttpApi().getRequest(coursesUrl)).toString();
-    fileCourses = coursesFromJson(jsonFile);
+    fileCourses.clear();
+    fileCourses.addAll(coursesFromJson(jsonFile));
   }
 }
 

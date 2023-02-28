@@ -1,8 +1,8 @@
 import 'package:beamer/beamer.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:the_monkslab_web/generated/locale_keys.g.dart';
-import 'package:the_monkslab_web/src/core/routing/routing.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+import 'package:the_monkslab_web/locale_example.dart';
 import 'package:the_monkslab_web/src/features/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 
@@ -14,14 +14,22 @@ class AppPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const AppView();
+    return Consumer<LocaleProvider>(
+      builder: (context, provider, snapshot) {
+        return AppView(
+          locale: provider.locale ?? const Locale('es'),
+        );
+      },
+    );
   }
 }
 
 class AppView extends StatelessWidget {
   const AppView({
+    required this.locale,
     super.key,
   });
+  final Locale locale;
 
   @override
   Widget build(BuildContext context) {
@@ -29,25 +37,31 @@ class AppView extends StatelessWidget {
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: ThemeMode.light,
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      //locale: provider.locale,
       restorationScopeId: 'app',
-      onGenerateTitle: (_) => LocaleKeys.theMonsklabWeb.tr(),
+      //onGenerateTitle: (_) => LocaleKeys.theMonsklabWeb.tr(),
       debugShowCheckedModeBanner: false,
       home: const HomePage(),
     );
     return MaterialApp.router(
       routeInformationParser: BeamerParser(),
-      routerDelegate: routerDelegate(),
+      routerDelegate: BeamerDelegate(
+        locationBuilder: RoutesLocationBuilder(
+          routes: {
+            '/': (_, __, ___) => const HomePage(),
+          },
+        ),
+      ),
       debugShowCheckedModeBanner: false,
       theme: AppTheme.light,
       darkTheme: AppTheme.dark,
       themeMode: ThemeMode.light,
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: locale,
       restorationScopeId: 'app',
-      locale: context.locale,
       title: 'The Monkslab',
     );
   }

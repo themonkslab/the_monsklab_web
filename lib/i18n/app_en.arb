@@ -1,4 +1,22 @@
 {
     "welcome_text": "This text is in english",
-    "switch_language": "Switch Language"
+    "switch_language": "Switch Language",
+    "theMonsklabWeb": "The Monsklab Web",
+    "learnToProgramAsWeHadDreamed": "Learn to code as we had dreamed",
+    "aPathOfStudyAndATrainigCommunity": "A path of study and a training community to train in the craft of development. A place for which no previous knowledge is needed and that expects to give you everything you need to become a high level professional in this industry.",
+    "sumWithoutAnyCost": "Sum yourself without any cost!\nOnly 10 spots available each month",
+    "whatAreYouWaitingFor": "What are you waiting for? Apply now!",
+    "learnToLearn": "We learn to learn, to think from the back to the front, testing every line of code. We learn to organize and be organized, to understand the business and to focus on the value we can bring.",
+    "doesYourBusinessNeedHighLevelFlutterDevelopment": "Does your business need a high level Flutter Development?",
+    "weTrainTopLevelDevelopers": "We train top level developers with team play, passion applied to every line of code and detail mindset",
+    "hireUs": "Hire Us!",
+    "termsAndConditions": "Terms and Conditions",
+    "privacyPolicy": "Privacy Policy",
+    "aGroupOfFriendWhoEnjoyImproveThemself": "A group of friends who enjoy to improve themselfs, transmitting the learnings, give chances and do this world better with every piece of code at the same time",
+    "jobs": "Jobs",
+    "courses": "Courses",
+    "community": "Community",
+    "archiveViewTitle": "Archive",
+    "archiveViewDescription": "Welcome to the archive. Here you will find thousands of pages related to software development but don't be confused: these are not isolated articles but a careful learning path where anyone with discipline and good will can become an expert developer. \n\nDon't forget to join our community on Discord to find many more exercises, mock job interviews, essays from foreign companies and much more.\n\nEnjoy! 😄",
+    "reachOutOn": "If you have questions or suggestions don't heasitate to reach out on"
 }

@@ -1,7 +1,5 @@
 import 'package:beamer/beamer.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:the_monkslab_web/generated/locale_keys.g.dart';
 import 'package:the_monkslab_web/src/constants/_index.dart';
 import 'package:the_monkslab_web/src/core/routing/routing.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
@@ -20,15 +18,15 @@ class LocationLinksRowOrColumn extends StatelessWidget {
         ? Row(
             children: [
               LocationLink(
-                text: LocaleKeys.jobs.tr(),
+                text: localize(context).jobs,
                 onPressed: () async => await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
               ),
               LocationLink(
-                text: LocaleKeys.courses.tr(),
+                text: localize(context).courses,
                 onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),
               ),
               LocationLink(
-                text: LocaleKeys.community.tr(),
+                text: localize(context).community,
                 onPressed: () async => await UrlHelper.launchUrl(AppUrls.torcsDiscord),
               ),
             ],
@@ -38,15 +36,15 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               LocationLink(
-                text: LocaleKeys.jobs.tr(),
+                text: localize(context).jobs,
                 onPressed: () async => await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
               ),
               LocationLink(
-                text: LocaleKeys.courses.tr(),
+                text: localize(context).courses,
                 onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),
               ),
               LocationLink(
-                text: LocaleKeys.community.tr(),
+                text: localize(context).community,
                 onPressed: () async => await UrlHelper.launchUrl(AppUrls.torcsDiscord),
               ),
             ],

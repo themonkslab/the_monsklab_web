@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:the_monkslab_web/src/features/home/presentation/widgets/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
@@ -19,7 +18,6 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final locale = context.locale;
     final screenType = context.getScreenType();
     final isPhoneOrTablet = screenType == ScreenType.phone || screenType == ScreenType.tablet;
     return Scaffold(

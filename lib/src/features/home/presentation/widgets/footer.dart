@@ -1,7 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:the_monkslab_web/generated/locale_keys.g.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
+import 'package:the_monkslab_web/src/utils/locale.dart';
 
 class Footer extends StatelessWidget {
   const Footer({
@@ -119,14 +118,14 @@ class TermsAndConditions extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          LocaleKeys.termsAndConditions,
+          localize(context).termsAndConditions,
           style: AppTextStyles.caption.copyWith(
             color: AppColors.white,
             fontSize: 12,
           ),
         ),
         Text(
-          LocaleKeys.privacyPolicy,
+          localize(context).privacyPolicy,
           style: AppTextStyles.caption.copyWith(
             color: AppColors.white,
             fontSize: 12,
@@ -157,7 +156,7 @@ class MonkslabDescription extends StatelessWidget {
         ),
         AppGaps.gapH16,
         Text(
-          LocaleKeys.aGroupOfFriendWhoEnjoyImproveThemself.tr(),
+          localize(context).aGroupOfFriendWhoEnjoyImproveThemself,
           style: AppTextStyles.p.copyWith(
             color: AppColors.white,
             fontSize: 14,

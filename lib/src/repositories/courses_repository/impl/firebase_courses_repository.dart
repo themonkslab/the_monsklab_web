@@ -17,9 +17,9 @@ class FirebaseCoursesRepository extends CoursesRepository {
   final CoursesApi _coursesApi;
 
   @override
-  Future<List<Courses>?> getCourses(String id) async {
+  Future<List<Courses>?> getCourses(String courseGroup) async {
     List<Courses>? list = [];
-    Courses learningPath = await _coursesApi.getCourses(id);
+    Courses learningPath = await _coursesApi.getCourses(courseGroup);
     list.add(learningPath);
     if (learningPath.shouldUpdate) {
       await createCoursesIndexes(learningPath);

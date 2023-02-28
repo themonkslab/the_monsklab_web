@@ -1,10 +1,9 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:the_monkslab_web/generated/locale_keys.g.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
+import 'package:the_monkslab_web/src/utils/locale.dart';
 
 class Header extends StatelessWidget {
   const Header({
@@ -30,7 +29,7 @@ class Header extends StatelessWidget {
               SizedBox(
                 width: 1200,
                 child: AutoSizeText(
-                  LocaleKeys.learnToProgramAsWeHadDreamed.tr(),
+                  localize(context).learnToProgramAsWeHadDreamed,
                   style: AppTextStyles.h1.copyWith(
                     color: AppColors.white,
                     fontSize: isPhoneOrTablet ? 60 : 100,
@@ -46,7 +45,7 @@ class Header extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      LocaleKeys.aPathOfStudyAndATrainigCommunity.tr(),
+                      localize(context).aPathOfStudyAndATrainigCommunity,
                       style: AppTextStyles.p.copyWith(
                         color: AppColors.white,
                       ),
@@ -56,7 +55,7 @@ class Header extends StatelessWidget {
                     const Divider(color: AppColors.grey),
                     AppGaps.gapH48,
                     Text(
-                      LocaleKeys.sumWithoutAnyCost.toUpperCase(),
+                      localize(context).sumWithoutAnyCost.toUpperCase(),
                       style: AppTextStyles.h1.copyWith(
                         color: AppColors.white,
                         fontSize: 20,
@@ -65,7 +64,7 @@ class Header extends StatelessWidget {
                     ),
                     AppGaps.gapH32,
                     AppFilledButton(
-                      text: LocaleKeys.whatAreYouWaitingFor.tr(),
+                      text: localize(context).whatAreYouWaitingFor,
                       onTap: () async {
                         try {
                           Helpers.launchDiscord();
@@ -79,7 +78,7 @@ class Header extends StatelessWidget {
                     const Divider(color: AppColors.grey),
                     AppGaps.gapH24,
                     Text(
-                      LocaleKeys.learnToLearn,
+                      localize(context).learnToLearn,
                       style: AppTextStyles.p.copyWith(
                         color: AppColors.white,
                       ),
