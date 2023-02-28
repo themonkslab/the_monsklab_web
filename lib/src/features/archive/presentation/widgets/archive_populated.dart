@@ -1,9 +1,9 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:the_monkslab_web/generated/locale_keys.g.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
+import 'package:the_monkslab_web/src/utils/_index.dart';
 
 class ArchivePopulated extends StatelessWidget {
   const ArchivePopulated({
@@ -25,12 +25,12 @@ class ArchivePopulated extends StatelessWidget {
           children: [
             AppGaps.gapH48,
             Text(
-              LocaleKeys.archiveViewTitle,
+              localize(context).archiveViewTitle,
               style: isPhoneOrTablet ? AppTextStyles.h1HeaderPhone : AppTextStyles.h1Header,
             ),
             AppGaps.gapH20,
             Text(
-              LocaleKeys.archiveViewDescription,
+              localize(context).archiveViewDescription,
               style: AppTextStyles.p,
             ),
             AppGaps.gapH64,

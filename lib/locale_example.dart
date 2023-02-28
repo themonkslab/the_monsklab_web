@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
-import 'package:the_monkslab_web/src/features/home/_index.dart';
+import 'package:the_monkslab_web/src/features/_index.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
 import 'package:the_monkslab_web/web_observer.dart';
 
@@ -34,6 +34,7 @@ class MyApp extends StatelessWidget {
       routes: {
         // Return either Widgets or BeamPages if more customization is needed
         '/': (context, state, data) => const HomePage(),
+        '/archive': (_, __, ___) => const ArchivePage(),
         '/switch': (context, state, data) => const LanguageSwitchScreen(),
       },
     ),
