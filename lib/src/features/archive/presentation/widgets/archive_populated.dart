@@ -55,7 +55,7 @@ class ArchivePopulated extends StatelessWidget {
                           padding: const EdgeInsets.only(bottom: 8.0),
                           child: AppHypertext(
                             text: course.title,
-                            onPressed: () =>
+                            onTap: () =>
                                 context.beamToNamed('/course/${course.path}'),
                             style: isPhoneOrTablet
                                 ? AppTextStyles.h3Phone
