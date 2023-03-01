@@ -49,7 +49,7 @@ class _AppHypertextState extends State<AppHypertext> {
       cursor: isEnabled ? SystemMouseCursors.click : SystemMouseCursors.basic,
       child: GestureDetector(
         onTap: widget.onTap,
-        onTertiaryTapUp: (details) => widget.onTertiaryTapUp?.call(),
+        onTertiaryTapUp: (_) => widget.onTertiaryTapUp?.call(),
         child: AnimatedDefaultTextStyle(
           style: widget.onTap != null
               ? isHovered
