@@ -26,8 +26,8 @@ class ArticlePage extends StatelessWidget {
 
 class ArticleView extends StatefulWidget {
   const ArticleView({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<ArticleView> createState() => _ArticleViewState();

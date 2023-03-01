@@ -3,13 +3,13 @@ import 'package:the_monkslab_web/src/ui/_index.dart';
 
 class AppHypertext extends StatefulWidget {
   const AppHypertext({
-    Key? key,
     required this.text,
     this.onPressed,
     this.style,
     this.textAlign,
     this.enabledDisabledColors,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String text;
   final VoidCallback? onPressed;
@@ -60,13 +60,15 @@ class _AppHypertextState extends State<AppHypertext> {
           child: Text(
             widget.text,
             style: widget.style?.copyWith(
-                    color: isEnabled
-                        ? finalEnabledDisabledColors[0]
-                        : finalEnabledDisabledColors[1],) ??
+                  color: isEnabled
+                      ? finalEnabledDisabledColors[0]
+                      : finalEnabledDisabledColors[1],
+                ) ??
                 AppTextStyles.hypertext.copyWith(
-                    color: isEnabled
-                        ? finalEnabledDisabledColors[0]
-                        : finalEnabledDisabledColors[1],),
+                  color: isEnabled
+                      ? finalEnabledDisabledColors[0]
+                      : finalEnabledDisabledColors[1],
+                ),
           ),
         ),
       ),

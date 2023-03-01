@@ -8,11 +8,11 @@ import 'package:the_monkslab_web/src/utils/_index.dart';
 
 class ArticlePopulated extends StatelessWidget {
   const ArticlePopulated({
-    Key? key,
     required this.isHeaderOnScreen,
     required this.scrollController,
     required this.article,
-  }) : super(key: key);
+    super.key,
+  });
 
   final bool isHeaderOnScreen;
   final ScrollController scrollController;

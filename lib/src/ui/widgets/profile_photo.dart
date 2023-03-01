@@ -5,8 +5,8 @@ import 'package:the_monkslab_web/src/ui/_index.dart';
 class AppProfilePhoto extends StatelessWidget {
   const AppProfilePhoto({
     required this.author,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final Author author;
   @override
   Widget build(BuildContext context) {
