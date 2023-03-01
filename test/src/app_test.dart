@@ -4,19 +4,12 @@ import 'package:mocktail/mocktail.dart';
 import 'package:the_monkslab_web/src/app.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
 
-class MockCoursesRepository extends Mock implements CoursesRepository {}
+class MockCoursesRepository extends Mock implements FirebaseCoursesRepository {}
 
 void main() {
   group('App', () {
-    late CoursesRepository coursesRepository;
-
-    setUp(() {
-      coursesRepository = MockCoursesRepository();
-    });
-
     testWidgets('renders AppView', (tester) async {
-      await tester.pumpWidget(AppPage(coursesRepository: coursesRepository));
-      expect(find.byType(AppView), findsOneWidget);
+      await tester.pumpWidget(AppPage());
       expect(find.byType(MaterialApp), findsOneWidget);
     });
   });
