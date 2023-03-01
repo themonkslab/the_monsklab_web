@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
+import 'package:the_monkslab_web/src/utils/locale.dart';
 
 class Header extends StatelessWidget {
   const Header({

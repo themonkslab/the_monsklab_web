@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
-import 'package:the_monkslab_web/src/utils/_index.dart';
+import 'package:the_monkslab_web/src/utils/locale.dart';
 
 class Footer extends StatelessWidget {
   const Footer({
@@ -58,13 +58,14 @@ class Footer extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Expanded(
-                                child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                vertical: 24.0,
-                                horizontal: 34.0,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 24.0,
+                                  horizontal: 34.0,
+                                ),
+                                child: LocationLinksRowOrColumn(isRow: false),
                               ),
-                              child: LocationLinksRowOrColumn(isRow: false),
-                            ),),
+                            ),
                             Expanded(
                               child: Container(
                                 decoration: const BoxDecoration(
@@ -77,10 +78,10 @@ class Footer extends StatelessWidget {
                                 child: Center(
                                   child: Padding(
                                     padding: const EdgeInsets.symmetric(
-                                        horizontal: 48.0,),
+                                      horizontal: 48.0,
+                                    ),
                                     child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: const [
                                         TermsAndConditions(),
                                         AppSocials(
@@ -143,24 +144,25 @@ class MonkslabDescription extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'The Monkslab'.toUpperCase(),
-            style: AppTextStyles.h1.copyWith(
-              fontSize: 20,
-              color: AppColors.white,
-            ),
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'The Monkslab'.toUpperCase(),
+          style: AppTextStyles.h1.copyWith(
+            fontSize: 20,
+            color: AppColors.white,
           ),
-          AppGaps.gapH16,
-          Text(
-            localize(context).aGroupOfFriendWhoEnjoyImproveThemself,
-            style: AppTextStyles.p.copyWith(
-              color: AppColors.white,
-              fontSize: 14,
-            ),
-          )
-        ],);
+        ),
+        AppGaps.gapH16,
+        Text(
+          localize(context).aGroupOfFriendWhoEnjoyImproveThemself,
+          style: AppTextStyles.p.copyWith(
+            color: AppColors.white,
+            fontSize: 14,
+          ),
+        )
+      ],
+    );
   }
 }

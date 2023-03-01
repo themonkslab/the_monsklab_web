@@ -19,18 +19,15 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             children: [
               LocationLink(
                 text: localize(context).jobs,
-                onPressed: () async =>
-                    await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
+                onPressed: () async => await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
               ),
               LocationLink(
                 text: localize(context).courses,
-                onPressed: () =>
-                    context.beamToNamed('/${AppRoutes.archive.name}'),
+                onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),
               ),
               LocationLink(
                 text: localize(context).community,
-                onPressed: () async =>
-                    await UrlHelper.launchUrl(AppUrls.torcsDiscord),
+                onPressed: () async => await UrlHelper.launchUrl(AppUrls.torcsDiscord),
               ),
             ],
           )
@@ -40,18 +37,15 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             children: [
               LocationLink(
                 text: localize(context).jobs,
-                onPressed: () async =>
-                    await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
+                onPressed: () async => await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
               ),
               LocationLink(
                 text: localize(context).courses,
-                onPressed: () =>
-                    context.beamToNamed('/${AppRoutes.archive.name}'),
+                onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),
               ),
               LocationLink(
                 text: localize(context).community,
-                onPressed: () async =>
-                    await UrlHelper.launchUrl(AppUrls.torcsDiscord),
+                onPressed: () async => await UrlHelper.launchUrl(AppUrls.torcsDiscord),
               ),
             ],
           );
@@ -70,8 +64,7 @@ class LocationLink extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenType = context.getScreenType();
-    final isPhoneOrTablet =
-        screenType == ScreenType.phone || screenType == ScreenType.tablet;
+    final isPhoneOrTablet = screenType == ScreenType.phone || screenType == ScreenType.tablet;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),

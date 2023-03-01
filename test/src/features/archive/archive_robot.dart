@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:the_monkslab_web/src/core/routing/routing.dart';
 import 'package:the_monkslab_web/src/features/archive/presentation/bloc/archive_cubit.dart';
-import 'package:the_monkslab_web/src/repositories/courses_repository.dart';
+import 'package:the_monkslab_web/src/repositories/_index.dart';
 
 class ArchiveRobot {
   const ArchiveRobot(this.tester);
