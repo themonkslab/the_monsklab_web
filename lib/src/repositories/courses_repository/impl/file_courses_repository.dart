@@ -70,7 +70,7 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
   @override
   Future<List<Courses>?> getCourses(String courseGroup) async {
     if (fileCourses.isEmpty) {
-      await fetchCoursesFromLanguage(locale);
+      await fetchCoursesFromLocale(locale);
     }
     List<Courses> list = [];
     for (var courses in fileCourses) {
@@ -110,7 +110,7 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
     return null;
   }
 
-  Future<void> fetchCoursesFromLanguage(Locale locale) async {
+  Future<void> fetchCoursesFromLocale(Locale locale) async {
     String coursesUrl = AppUrls.dreamTeamersCoureseEn;
     switch (locale.toString()) {
       case 'en':

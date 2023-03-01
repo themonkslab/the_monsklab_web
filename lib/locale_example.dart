@@ -43,7 +43,6 @@ class MyApp extends StatelessWidget {
           final path = (state.pathParameters['path']!);
           return ArticlePage(path: path);
         }),
-        '/switch': (context, state, data) => const LanguageSwitchScreen(),
       },
     ),
   );
@@ -82,26 +81,6 @@ class HomeScreen extends StatelessWidget {
                   child: Text(AppLocalizations.of(context)!.switch_language),
                 ),
               ],
-            ),
-          ),
-        );
-      },
-    );
-  }
-}
-
-class LanguageSwitchScreen extends StatelessWidget {
-  const LanguageSwitchScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Consumer<LocaleProvider>(
-      builder: (context, provider, snapshot) {
-        return Scaffold(
-          body: Center(
-            child: LanguageSwitcherDropDown(
-              locale: provider.locale ?? const Locale('en'),
-              onChange: (locale) => provider.setLocale(locale ?? const Locale('en')),
             ),
           ),
         );

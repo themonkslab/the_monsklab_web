@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:the_monkslab_web/locale_example.dart';
+import 'package:the_monkslab_web/src/repositories/_index.dart';
 
 class LanguageSwitcherDropDown extends StatelessWidget {
   const LanguageSwitcherDropDown({
@@ -23,7 +24,11 @@ class LanguageSwitcherDropDown extends StatelessWidget {
               child: Text('Español'),
             ),
           ],
-          onChanged: (value) => provider.setLocale(value ?? const Locale('en')),
+          onChanged: (value) async {
+            final locale = value ?? const Locale('en');
+            provider.setLocale(locale);
+            await context.read<CoursesRepository>().fetchCoursesFromLocale(locale);
+          },
         );
       },
     );

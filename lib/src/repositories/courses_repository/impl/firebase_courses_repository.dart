@@ -6,7 +6,6 @@ import 'package:mocktail/mocktail.dart';
 import 'package:the_monkslab_web/src/apis/courses/courses_api.dart';
 import 'package:the_monkslab_web/src/apis/courses/impl/firestore_api.dart';
 import 'package:the_monkslab_web/src/constants/assets.dart';
-import 'package:the_monkslab_web/src/constants/enums.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/repositories/courses_repository/courses_repository.dart';
 
@@ -173,7 +172,7 @@ class FirebaseCoursesRepository extends CoursesRepository {
   }
 
   @override
-  Future<void> fetchCoursesFromLanguage(Language language) {
+  Future fetchCoursesFromLocale(Locale locale) {
     throw UnimplementedError();
   }
 }
