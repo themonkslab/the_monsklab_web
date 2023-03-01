@@ -42,7 +42,7 @@ class AppPage extends StatelessWidget {
 }
 
 class LocaleProvider with ChangeNotifier {
-  Locale? _locale;
+  Locale? _locale = const Locale('en');
   Locale? get locale => _locale;
 
   void setLocale(Locale locale) {

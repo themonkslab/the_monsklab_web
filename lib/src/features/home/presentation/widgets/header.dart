@@ -2,8 +2,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
+import 'package:the_monkslab_web/src/ui/widgets/language_switcher_widget.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
-import 'package:the_monkslab_web/src/utils/locale.dart';
 
 class Header extends StatelessWidget {
   const Header({
@@ -21,10 +21,17 @@ class Header extends StatelessWidget {
         Container(
           color: AppColors.black,
           width: double.infinity,
-          padding: AppPaddings.padAll32,
+          padding: AppPaddings.padAll32.copyWith(top: 0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              if (isPhoneOrTablet)
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    LanguageSwitcherDropDown(),
+                  ],
+                ),
               AppGaps.gapH48,
               SizedBox(
                 width: 1200,
