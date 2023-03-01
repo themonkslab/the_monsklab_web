@@ -18,16 +18,14 @@ void main() {
 
     testWidgets('is rendered as the root page', (tester) async {
       final r = HomeRobot(tester);
-      await r.pumpWidget(const AppPage());
+      await r.pumpWidget(AppPage());
       await r.expectOneOfType(HomePage);
     });
 
-    testWidgets('navigates to the archive when hypertext is tapped',
-        (tester) async {
+    testWidgets('navigates to the archive when hypertext is tapped', (tester) async {
       final r = HomeRobot(tester);
-      await r.pumpWidget(const AppPage());
-      when(() => coursesRepository.getCourses(any()))
-          .thenAnswer((_) async => emptyCoursesList);
+      await r.pumpWidget(AppPage());
+      when(() => coursesRepository.getCourses(any())).thenAnswer((_) async => emptyCoursesList);
       await r.tap(AppHypertext);
       await tester.pumpAndSettle();
       await r.expectOneOfType(ArchivePage);

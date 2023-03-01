@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:the_monkslab_web/locale_example.dart';
+import 'package:the_monkslab_web/src/app.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
 
 class LanguageSwitcherDropDown extends StatelessWidget {

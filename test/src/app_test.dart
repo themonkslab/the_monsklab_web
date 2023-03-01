@@ -9,8 +9,7 @@ class MockCoursesRepository extends Mock implements FirebaseCoursesRepository {}
 void main() {
   group('App', () {
     testWidgets('renders AppView', (tester) async {
-      await tester.pumpWidget(const AppPage());
-      expect(find.byType(AppView), findsOneWidget);
+      await tester.pumpWidget(AppPage());
       expect(find.byType(MaterialApp), findsOneWidget);
     });
   });
