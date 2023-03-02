@@ -1,63 +1,82 @@
+import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:equatable/equatable.dart';
 import 'package:the_monkslab_web/src/models/course_reference.dart';
 
-part 'learning_path.freezed.dart';
-part 'learning_path.g.dart';
+class Courses extends Equatable {
 
-@freezed
-class LearningPath with _$LearningPath {
-  const factory LearningPath({
-    required String id,
-    required String title,
-    required List<CourseReference> courses,
-  }) = _LearningPath;
-
-  factory LearningPath.fromJson(Map<String, Object?> json) =>
-      _$LearningPathFromJson(json);
-
-  factory LearningPath.fromDocumentSnapshot(
-      DocumentSnapshot<Map<String, dynamic>> doc,) {
+  factory Courses.fromDocumentSnapshot(
+      DocumentSnapshot<Map<String, dynamic>> doc) {
     final courses = (doc.data()!['courses'] as List)
         .map((e) => CourseReference.fromJson(e))
         .toList();
-
-    return LearningPath(
+      
+    return Courses(
       id: doc.id,
       title: doc.data()!['title'],
       courses: courses,
+      shouldUpdate: doc.data()!['shouldUpdate']);
+  }
+
+  factory Courses.fromJson(String source) => Courses.fromMap(json.decode(source));
+
+  factory Courses.fromMap(Map<String, dynamic> map) {
+    return Courses(
+      id: map['id'] ?? '',
+      title: map['title'] ?? '',
+      shouldUpdate: map['shouldUpdate'] ?? false,
+      courses: List<CourseReference>.from(map['courses']?.map((x) => CourseReference.fromMap(x))),
     );
   }
 
-  //? answered - Why a static const and not a named constructor? Less verbose?
-  // A named constructor will not be created when the class is created so would be a better option to save memory.
+  factory Courses.initial() {
+    return const Courses(id: '', title: 'title', shouldUpdate: false, courses: []);
+  }
+    
+  const Courses({
+    required this.id,
+    required this.title,
+    required this.shouldUpdate,
+    required this.courses,
+  });
+  final String id;
+  final String title;
+  final bool shouldUpdate;
+  final List<CourseReference> courses;
+  
+  @override
+  List<Object?> get props => [id, title, shouldUpdate, courses];
 
-  // TODO -MEDIUM/EASY-: pass this to named constructor
-  // factory LearningPath.emptyWithNamedConstructor() {
-  //   return const LearningPath(id: 'id', title: 'title', courses: []);
-  // }
+  Courses copyWith({
+    String? id,
+    String? title,
+    bool? shouldUpdate,
+    List<CourseReference>? courses,
+  }) {
+    return Courses(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      shouldUpdate: shouldUpdate ?? this.shouldUpdate,
+      courses: courses ?? this.courses,
+    );
+  }
 
-  static const empty = LearningPath(
-    id: '',
-    title: '',
-    courses: [],
-  );
+  @override
+  String toString() {
+    return 'Courses(id: $id, title: $title, shouldUpdate: $shouldUpdate, courses: $courses)';
+  }
 
-  //? answered - Having those here is a good idea?
-  // It's not a good idea because we adding code to the app that will not be used
-  // TODO -LOW/EASY- move to test folder
-  static const sample = LearningPath(
-    id: '1',
-    title: 'Title',
-    courses: [
-      CourseReference(
-        path: 'path1',
-        title: 'Course title1',
-      ),
-      CourseReference(
-        path: 'path2',
-        title: 'Course title2',
-      ),
-    ],
-  );
+  Map<String, dynamic> toMap() {
+    final result = <String, dynamic>{};
+  
+    result.addAll({'id': id});
+    result.addAll({'title': title});
+    result.addAll({'shouldUpdate': shouldUpdate});
+    result.addAll({'courses': courses.map((x) => x.toMap()).toList()});
+  
+    return result;
+  }
+
+  String toJson() => json.encode(toMap());
 }

@@ -1,30 +1,23 @@
+import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/models/learning_path.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
 
-part 'archive_cubit.freezed.dart';
-
 class ArchiveCubit extends Cubit<ArchiveState> {
-  ArchiveCubit(this._coursesRepository) : super(const ArchiveState());
+  ArchiveCubit(this._coursesRepository) : super(ArchiveState.initial());
 
   final CoursesRepository _coursesRepository;
 
-  Future<void> fetchLearningPath(String path) async {
+  Future<void> fetchCourses(String courseGroup) async {
     emit(state.copyWith(status: ArchiveStatus.loading));
-    // try {
-    //   await _coursesRepository.createDartCourseIndexes();
-    // } catch (e) {
-    //   print(e);
-    // }
     try {
-      final learningPath = await _coursesRepository.getLearningPath(path);
+      final coursesList = await _coursesRepository.getCourses(courseGroup);
 
       emit(
         state.copyWith(
           status: ArchiveStatus.success,
-          learningPath: learningPath,
+          coursesList: coursesList,
         ),
       );
     } on Exception {
@@ -40,10 +33,31 @@ enum ArchiveStatus { initial, loading, success, failure }
 // - Less time in Github, is less money
 // - Equatable has a team and a company that mantains the package thus is more reliable.
 // TODO -MEDIUM/EASY- migrate to Equatable
-@freezed
-class ArchiveState with _$ArchiveState {
-  const factory ArchiveState({
-    @Default(ArchiveStatus.initial) ArchiveStatus status,
-    LearningPath? learningPath,
-  }) = _ArchiveState;
+
+class ArchiveState extends Equatable {
+  const ArchiveState({
+    required this.status,
+    this.coursesList,
+  });
+  factory ArchiveState.initial() {
+    return const ArchiveState(status: ArchiveStatus.initial);
+  }
+  final ArchiveStatus status;
+  final List<Courses>? coursesList;
+
+  @override
+  List<Object?> get props => [status, coursesList];
+
+  ArchiveState copyWith({
+    ArchiveStatus? status,
+    List<Courses>? coursesList,
+  }) {
+    return ArchiveState(
+      status: status ?? this.status,
+      coursesList: coursesList ?? coursesList,
+    );
+  }
+
+  @override
+  String toString() => 'ArchiveState(status: $status, learningPath: $coursesList)';
 }

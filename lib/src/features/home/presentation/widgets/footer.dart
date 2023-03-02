@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
-import 'package:the_monkslab_web/src/utils/_index.dart';
+import 'package:the_monkslab_web/src/utils/locale.dart';
 
 class Footer extends StatelessWidget {
   const Footer({
@@ -81,8 +81,7 @@ class Footer extends StatelessWidget {
                                       horizontal: 48.0,
                                     ),
                                     child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                       children: const [
                                         TermsAndConditions(),
                                         AppSocials(

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/features/article/article_populated.dart';
 import 'package:the_monkslab_web/src/features/article/presentation/bloc/article_cubit.dart';
-import 'package:the_monkslab_web/src/repositories/courses_repository.dart';
+import 'package:the_monkslab_web/src/repositories/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 
 class ArticlePage extends StatelessWidget {

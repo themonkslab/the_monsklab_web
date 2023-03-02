@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:the_monkslab_web/generated/locale_keys.g.dart';
 import 'package:the_monkslab_web/src/constants/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
@@ -23,13 +24,13 @@ class ArticleFooter extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                '${localize(context).reachOutOn} ',
+                '${LocaleKeys.reachOutOn} ',
                 style: AppTextStyles.p.copyWith(color: AppColors.white),
               ),
               AppHypertext(
                 text: 'Discord',
                 style: AppTextStyles.p.copyWith(color: AppColors.white),
-                onPressed: () => UrlHelper.launchUrl(AppUrls.torcsDiscord),
+                onTap: () => UrlHelper.launchUrl(AppUrls.torcsDiscord),
               )
             ],
           ),

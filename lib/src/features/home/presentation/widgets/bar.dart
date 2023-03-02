@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:the_monkslab_web/src/features/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 
 class Bar extends StatefulWidget {
@@ -92,6 +93,8 @@ class _BarState extends State<Bar> with TickerProviderStateMixin {
                           ),
                           if (!widget.isPhoneOrTablet)
                             const LocationLinksRowOrColumn(),
+                          if (!widget.isPhoneOrTablet)
+                            const LanguageSwitcherDropDown(),
                         ],
                       ),
                     ),
