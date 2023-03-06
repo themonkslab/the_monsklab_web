@@ -9,8 +9,8 @@ class AppBorderedContainer extends Container {
     this.newPadding,
     this.newWidth,
     this.newHeight,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   final Widget newChild;
   final Color? newColor;

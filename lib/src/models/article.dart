@@ -2,14 +2,8 @@ import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
+
 class Article extends Equatable {
-  final String id;
-  final String title;
-  final String description;
-  final String content;
-  final Author author;
-  final String published;
-  final String? readingTime;
   const Article({
     required this.id,
     required this.title,
@@ -21,11 +15,41 @@ class Article extends Equatable {
   });
 
   factory Article.initial() {
-    return const Article(id: '', title: '', description: 'description', content: '', author: Author(name: '', picture: ''), published: '');
+    return const Article(
+      id: '',
+      title: '',
+      description: 'description',
+      content: '',
+      author: Author(name: '', picture: ''),
+      published: '',
+    );
   }
 
+  factory Article.fromMap(Map<String, dynamic> map) {
+    return Article(
+      id: map['id'] ?? '',
+      title: map['title'] ?? '',
+      description: map['description'] ?? '',
+      content: map['content'] ?? '',
+      author: Author.fromMap(map['author']),
+      published: map['published'] ?? '',
+      readingTime: map['readingTime'],
+    );
+  }
+
+  factory Article.fromJson(String source) =>
+      Article.fromMap(json.decode(source));
+  final String id;
+  final String title;
+  final String description;
+  final String content;
+  final Author author;
+  final String published;
+  final String? readingTime;
+
   @override
-  List<Object?> get props => [id, title, description, content, author, published, readingTime];
+  List<Object?> get props =>
+      [id, title, description, content, author, published, readingTime];
 
   Article copyWith({
     String? id,
@@ -53,34 +77,19 @@ class Article extends Equatable {
   }
 
   Map<String, dynamic> toMap() {
-    final result = <String, dynamic>{};
-  
-    result.addAll({'id': id});
-    result.addAll({'title': title});
-    result.addAll({'description': description});
-    result.addAll({'content': content});
-    result.addAll({'author': author.toMap()});
-    result.addAll({'published': published});
-    if(readingTime != null){
+    final result = <String, dynamic>{}
+      ..addAll({'id': id})
+      ..addAll({'title': title})
+      ..addAll({'description': description})
+      ..addAll({'content': content})
+      ..addAll({'author': author.toMap()})
+      ..addAll({'published': published});
+    if (readingTime != null) {
       result.addAll({'readingTime': readingTime});
     }
-  
+
     return result;
   }
 
-  factory Article.fromMap(Map<String, dynamic> map) {
-    return Article(
-      id: map['id'] ?? '',
-      title: map['title'] ?? '',
-      description: map['description'] ?? '',
-      content: map['content'] ?? '',
-      author: Author.fromMap(map['author']),
-      published: map['published'] ?? '',
-      readingTime: map['readingTime'],
-    );
-  }
-
   String toJson() => json.encode(toMap());
-
-  factory Article.fromJson(String source) => Article.fromMap(json.decode(source));
 }

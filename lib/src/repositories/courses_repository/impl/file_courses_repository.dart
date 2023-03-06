@@ -16,6 +16,9 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
 
   @override
   Future<Article?> getArticle(String path) async {
+    if (fileCourses.isEmpty) {
+      await fetchCoursesFromLocale(locale);
+    }
     for (var fileCourses in fileCourses) {
       if (fileCourses.courses != null) {
         for (var fileCourse in fileCourses.courses!) {
@@ -24,16 +27,23 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
               if (fileSection.articles != null) {
                 for (var article in fileSection.articles!) {
                   if (article.path == path && article.contentUrl != null) {
-                    final articleContent = (await HttpApi().getRequest(article.contentUrl!)).toString();
+                    final articleContent =
+                        (await HttpApi().getRequest(article.contentUrl!))
+                            .toString();
                     final articleNameUrl = article.contentUrl!.split('/').last;
-                    final folderUrl = article.contentUrl!.replaceAll(articleNameUrl, '');
-                    final formattedContent = formatGitHubImagesUrls(articleContent, folderUrl);
+                    final folderUrl =
+                        article.contentUrl!.replaceAll(articleNameUrl, '');
+                    final formattedContent =
+                        formatGitHubImagesUrls(articleContent, folderUrl);
                     return Article(
                       id: path,
                       title: article.title ?? '',
                       description: article.description ?? '',
                       content: formattedContent,
-                      author: const author.Author(name: 'The Monkslab', picture: 'picture'),
+                      author: const author.Author(
+                        name: 'The Monkslab',
+                        picture: 'picture',
+                      ),
                       published: article.published.toString(),
                     );
                   }
@@ -49,6 +59,9 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
 
   @override
   Future<Course?> getCourse(String path) async {
+    if (fileCourses.isEmpty) {
+      await fetchCoursesFromLocale(locale);
+    }
     for (var fileCourses in fileCourses) {
       if (fileCourses.courses != null) {
         for (var fileCourse in fileCourses.courses!) {
@@ -56,10 +69,18 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
             final sections = fileCourse.sections ?? [];
             List<SectionReference> sectionsRef = sections
                 .map(
-                  (e) => SectionReference(title: e.title ?? '', path: e.path ?? ''),
+                  (e) => SectionReference(
+                    title: e.title ?? '',
+                    path: e.path ?? '',
+                  ),
                 )
                 .toList();
-            return Course(id: path, title: fileCourse.title ?? '', description: '', sections: sectionsRef);
+            return Course(
+              id: path,
+              title: fileCourse.title ?? '',
+              description: '',
+              sections: sectionsRef,
+            );
           }
         }
       }
@@ -74,15 +95,26 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
     }
     List<Courses> list = [];
     for (var courses in fileCourses) {
-      List<CourseReference> coursesRef =
-          courses.courses!.map((e) => CourseReference(path: e.path ?? '', title: e.title ?? '')).toList();
-      list.add(Courses(id: '', title: courses.courseGroup ?? '', shouldUpdate: false, courses: coursesRef));
+      List<CourseReference> coursesRef = courses.courses!
+          .map((e) => CourseReference(path: e.path ?? '', title: e.title ?? ''))
+          .toList();
+      list.add(
+        Courses(
+          id: '',
+          title: courses.courseGroup ?? '',
+          shouldUpdate: false,
+          courses: coursesRef,
+        ),
+      );
     }
     return list;
   }
 
   @override
   Future<Section?> getSection(String path) async {
+    if (fileCourses.isEmpty) {
+      await fetchCoursesFromLocale(locale);
+    }
     for (var fileCourses in fileCourses) {
       if (fileCourses.courses != null) {
         for (var fileCourse in fileCourses.courses!) {
@@ -92,7 +124,10 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
                 final articles = fileSection.articles ?? [];
                 List<ArticleReference> articlesRef = articles
                     .map(
-                      (e) => ArticleReference(path: e.path ?? '', title: e.title ?? ''),
+                      (e) => ArticleReference(
+                        path: e.path ?? '',
+                        title: e.title ?? '',
+                      ),
                     )
                     .toList();
                 return Section(
@@ -110,6 +145,7 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
     return null;
   }
 
+  @override
   Future<void> fetchCoursesFromLocale(Locale locale) async {
     String coursesUrl = AppUrls.dreamTeamersCoureseEn;
     switch (locale.toString()) {
@@ -122,15 +158,19 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
     }
 
     final jsonFile = (await HttpApi().getRequest(coursesUrl)).toString();
-    fileCourses.clear();
-    fileCourses.addAll(coursesFromJson(jsonFile));
+    fileCourses
+      ..clear()
+      ..addAll(coursesFromJson(jsonFile));
   }
 }
 
 List<FileCoursesGroup> coursesFromJson(String str) =>
-    List<FileCoursesGroup>.from(json.decode(str).map((x) => FileCoursesGroup.fromJson(x)));
+    List<FileCoursesGroup>.from(
+      json.decode(str).map((x) => FileCoursesGroup.fromJson(x)),
+    );
 
-String coursesToJson(List<FileCoursesGroup> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String coursesToJson(List<FileCoursesGroup> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class FileCoursesGroup {
   FileCoursesGroup({
@@ -138,10 +178,14 @@ class FileCoursesGroup {
     this.courses,
   });
 
-  factory FileCoursesGroup.fromJson(Map<String, dynamic> json) => FileCoursesGroup(
+  factory FileCoursesGroup.fromJson(Map<String, dynamic> json) =>
+      FileCoursesGroup(
         courseGroup: json["course_group"],
-        courses:
-            json["courses"] == null ? [] : List<FileCourse>.from(json["courses"]!.map((x) => FileCourse.fromJson(x))),
+        courses: json["courses"] == null
+            ? []
+            : List<FileCourse>.from(
+                json["courses"]!.map((x) => FileCourse.fromJson(x)),
+              ),
       );
 
   final String? courseGroup;
@@ -158,7 +202,9 @@ class FileCoursesGroup {
 
   Map<String, dynamic> toJson() => {
         "course_group": courseGroup,
-        "courses": courses == null ? [] : List<dynamic>.from(courses!.map((x) => x.toJson())),
+        "courses": courses == null
+            ? []
+            : List<dynamic>.from(courses!.map((x) => x.toJson())),
       };
 }
 
@@ -174,7 +220,9 @@ class FileCourse {
         path: json["path"],
         sections: json["sections"] == null
             ? []
-            : List<FileSection>.from(json["sections"]!.map((x) => FileSection.fromJson(x))),
+            : List<FileSection>.from(
+                json["sections"]!.map((x) => FileSection.fromJson(x)),
+              ),
       );
 
   final String? title;
@@ -195,7 +243,9 @@ class FileCourse {
   Map<String, dynamic> toJson() => {
         "title": title,
         "path": path,
-        "sections": sections == null ? [] : List<dynamic>.from(sections!.map((x) => x.toJson())),
+        "sections": sections == null
+            ? []
+            : List<dynamic>.from(sections!.map((x) => x.toJson())),
       };
 }
 
@@ -213,7 +263,9 @@ class FileSection {
         description: json["description"],
         articles: json["articles"] == null
             ? []
-            : List<FileArticle>.from(json["articles"]!.map((x) => FileArticle.fromJson(x))),
+            : List<FileArticle>.from(
+                json["articles"]!.map((x) => FileArticle.fromJson(x)),
+              ),
       );
 
   final String? path;
@@ -238,7 +290,9 @@ class FileSection {
         "path": path,
         "title": title,
         "description": description,
-        "articles": articles == null ? [] : List<dynamic>.from(articles!.map((x) => x.toJson())),
+        "articles": articles == null
+            ? []
+            : List<dynamic>.from(articles!.map((x) => x.toJson())),
       };
 }
 
@@ -258,7 +312,9 @@ class FileArticle {
         description: json["description"],
         contentUrl: json["contentUrl"],
         author: authorValues.map[json["author"]]!,
-        published: json["published"] == null ? null : DateTime.parse(json["published"]),
+        published: json["published"] == null
+            ? null
+            : DateTime.parse(json["published"]),
       );
 
   final String? path;
@@ -295,9 +351,9 @@ class FileArticle {
       };
 }
 
-enum Author { THE_MONKSLAB }
+enum Author { theMonkslab }
 
-final authorValues = EnumValues({"The Monkslab": Author.THE_MONKSLAB});
+final authorValues = EnumValues({"The Monkslab": Author.theMonkslab});
 
 class EnumValues<T> {
   EnumValues(this.map);

@@ -1,5 +1,7 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:the_monkslab_web/src/constants/_index.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
@@ -17,6 +19,13 @@ class ArchivePopulated extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setApplicationSwitcherDescription(
+      ApplicationSwitcherDescription(
+        label: localize(context).archiveViewTitle,
+        primaryColor: Theme.of(context).primaryColor.value,
+      ),
+    );
+
     return AppResponsiveScaffold(
       child: Padding(
         padding: isPhoneOrTablet ? AppPaddings.padH8 : AppPaddings.padH24,
@@ -57,6 +66,9 @@ class ArchivePopulated extends StatelessWidget {
                             text: course.title,
                             onTap: () =>
                                 context.beamToNamed('/course/${course.path}'),
+                            onTertiaryTapUp: () => UrlHelper.launchUrl(
+                              "${AppUrls.monkslabWeb}course/${course.path}",
+                            ),
                             style: isPhoneOrTablet
                                 ? AppTextStyles.h3Phone
                                 : AppTextStyles.h3,

@@ -108,8 +108,8 @@ class Footer extends StatelessWidget {
 
 class TermsAndConditions extends StatelessWidget {
   const TermsAndConditions({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -138,8 +138,8 @@ class TermsAndConditions extends StatelessWidget {
 
 class MonkslabDescription extends StatelessWidget {
   const MonkslabDescription({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

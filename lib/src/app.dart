@@ -30,6 +30,7 @@ class AppPage extends StatelessWidget {
     return Consumer<LocaleProvider>(
       builder: (context, provider, snapshot) {
         return MaterialApp.router(
+          title: 'The MonksLab',
           routeInformationParser: BeamerParser(),
           routerDelegate: routerDelegate,
           localizationsDelegates: AppLocalizations.localizationsDelegates,

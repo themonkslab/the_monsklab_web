@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
 
-
 class ArticleCubit extends Cubit<ArticleState> {
   ArticleCubit({
     required CoursesRepository coursesRepository,
@@ -33,8 +32,6 @@ class ArticleCubit extends Cubit<ArticleState> {
 enum ArticleStatus { initial, loading, success, failure }
 
 class ArticleState extends Equatable {
-  final ArticleStatus status;
-  final Article? article;
   const ArticleState({
     required this.status,
     this.article,
@@ -42,23 +39,6 @@ class ArticleState extends Equatable {
 
   factory ArticleState.initial() {
     return const ArticleState(status: ArticleStatus.initial);
-  }
-  
-  @override
-  List<Object?> get props => [article, status];
-
-  @override
-  String toString() => 'ArticleState(status: $status, article: $article)';
-
-  Map<String, dynamic> toMap() {
-    final result = <String, dynamic>{};
-  
-    result.addAll({'status': status});
-    if(article != null){
-      result.addAll({'article': article!.toMap()});
-    }
-  
-    return result;
   }
 
   factory ArticleState.fromMap(Map<String, dynamic> map) {
@@ -68,9 +48,27 @@ class ArticleState extends Equatable {
     );
   }
 
-  String toJson() => json.encode(toMap());
+  factory ArticleState.fromJson(String source) =>
+      ArticleState.fromMap(json.decode(source));
+  final ArticleStatus status;
+  final Article? article;
 
-  factory ArticleState.fromJson(String source) => ArticleState.fromMap(json.decode(source));
+  @override
+  List<Object?> get props => [article, status];
+
+  @override
+  String toString() => 'ArticleState(status: $status, article: $article)';
+
+  Map<String, dynamic> toMap() {
+    final result = <String, dynamic>{}..addAll({'status': status});
+    if (article != null) {
+      result.addAll({'article': article!.toMap()});
+    }
+
+    return result;
+  }
+
+  String toJson() => json.encode(toMap());
 
   ArticleState copyWith({
     ArticleStatus? status,

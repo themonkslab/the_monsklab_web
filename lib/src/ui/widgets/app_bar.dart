@@ -5,7 +5,6 @@ import 'package:the_monkslab_web/src/ui/widgets/_index.dart';
 
 class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
   const AppAppBar({
-    Key? key,
     this.title,
     this.actions,
     this.backgroundColor,
@@ -13,7 +12,8 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.elevation,
     this.titleColor = AppColors.black,
     this.showSocials = false,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String? title;
   final List<Widget>? actions;

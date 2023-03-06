@@ -3,14 +3,14 @@ import 'package:the_monkslab_web/src/constants/_index.dart';
 
 class AppHypertext extends StatefulWidget {
   const AppHypertext({
-    Key? key,
     required this.text,
     this.onTap,
     this.style,
     this.textAlign,
     this.enabledDisabledColors,
     this.onTertiaryTapUp,
-  }) : super(key: key);
+    super.key,
+  });
 
   final String text;
   final VoidCallback? onTap;

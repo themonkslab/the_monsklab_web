@@ -15,7 +15,10 @@ CustomRenderMatcher liMatcher() =>
     (context) => context.tree.element?.localName == 'li';
 
 class ArticleBody extends StatelessWidget {
-  const ArticleBody({Key? key, required this.data}) : super(key: key);
+  const ArticleBody({
+    required this.data,
+    super.key,
+  });
 
   final String data;
   @override

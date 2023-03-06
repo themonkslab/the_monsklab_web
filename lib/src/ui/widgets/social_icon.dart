@@ -5,7 +5,6 @@ import 'package:the_monkslab_web/src/models/_index.dart';
 
 class AppSocialIcon extends StatelessWidget {
   const AppSocialIcon({
-    Key? key,
     required this.socialsName,
     required this.onTap,
     this.color,
@@ -13,7 +12,8 @@ class AppSocialIcon extends StatelessWidget {
     this.padding,
     this.width,
     this.height,
-  }) : super(key: key);
+    super.key,
+  });
 
   final SocialsType socialsName;
   final void Function()? onTap;
