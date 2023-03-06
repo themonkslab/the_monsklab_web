@@ -45,7 +45,7 @@ linter:
     # - avoid_field_initializers_in_const_classes
     # - avoid_final_parameters
     # - avoid_function_literals_in_foreach_calls
-    # - avoid_init_to_null
+    - avoid_init_to_null
     # - avoid_js_rounded_ints
     # - avoid_multiple_declarations_per_line
     # - avoid_null_checks_in_equality_operators
@@ -70,9 +70,9 @@ linter:
     # - avoid_web_libraries_in_flutter
     # - await_only_futures
     # - camel_case_extensions
-    # - camel_case_types
+    - camel_case_types
     # - cancel_subscriptions
-    # - cascade_invocations
+    - cascade_invocations
     # - cast_nullable_to_non_nullable
     # - collection_methods_unrelated_type
     # - combinators_ordering

@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:the_monkslab_web/src/constants/urls.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
-import 'package:the_monkslab_web/src/utils/locale.dart';
 
 class Contratanos extends StatelessWidget {
   const Contratanos({
