@@ -1,6 +1,7 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:the_monkslab_web/src/constants/urls.dart';
 import 'package:the_monkslab_web/src/core/routing/routing.dart';
 import 'package:the_monkslab_web/src/features/section/_index.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
@@ -65,29 +66,34 @@ class SectionView extends StatelessWidget {
                             ? SizedBox(
                                 width: double.infinity,
                                 child: OutlinedButton(
-                                    style: ButtonStyle(
-                                      shape: MaterialStateProperty.all<
-                                          ContinuousRectangleBorder>(
-                                        const ContinuousRectangleBorder(),
-                                      ),
+                                  style: ButtonStyle(
+                                    shape: MaterialStateProperty.all<
+                                        ContinuousRectangleBorder>(
+                                      const ContinuousRectangleBorder(),
                                     ),
-                                    onPressed: () => context.beamToNamed(
-                                          '/${AppRoutes.article.name}/${article.path}',
-                                        ),
-                                    child: Padding(
-                                      padding: AppPaddings.padAll16,
-                                      child: Row(
-                                        children: [
-                                          Text(article.title),
-                                        ],
-                                      ),
-                                    ),),)
+                                  ),
+                                  onPressed: () => context.beamToNamed(
+                                    '/${AppRoutes.article.name}/${article.path}',
+                                  ),
+                                  child: Padding(
+                                    padding: AppPaddings.padAll16,
+                                    child: Row(
+                                      children: [
+                                        Text(article.title),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              )
                             : Padding(
                                 padding: AppPaddings.padV4,
                                 child: AppHypertext(
                                   text: article.title,
-                                  onPressed: () => context.beamToNamed(
+                                  onTap: () => context.beamToNamed(
                                     '/${AppRoutes.article.name}/${article.path}',
+                                  ),
+                                  onTertiaryTapUp: () => UrlHelper.launchUrl(
+                                    "${AppUrls.monkslabWeb}${AppRoutes.article.name}/${article.path}",
                                   ),
                                   style: AppTextStyles.h3,
                                 ),

@@ -19,15 +19,17 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             children: [
               LocationLink(
                 text: localize(context).jobs,
-                onPressed: () async => await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
+                onTap: () async =>
+                    await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
               ),
               LocationLink(
                 text: localize(context).courses,
-                onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),
+                onTap: () => context.beamToNamed('/${AppRoutes.archive.name}'),
               ),
               LocationLink(
                 text: localize(context).community,
-                onPressed: () async => await UrlHelper.launchUrl(AppUrls.torcsDiscord),
+                onTap: () async =>
+                    await UrlHelper.launchUrl(AppUrls.torcsDiscord),
               ),
             ],
           )
@@ -37,15 +39,17 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             children: [
               LocationLink(
                 text: localize(context).jobs,
-                onPressed: () async => await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
+                onTap: () async =>
+                    await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
               ),
               LocationLink(
                 text: localize(context).courses,
-                onPressed: () => context.beamToNamed('/${AppRoutes.archive.name}'),
+                onTap: () => context.beamToNamed('/${AppRoutes.archive.name}'),
               ),
               LocationLink(
                 text: localize(context).community,
-                onPressed: () async => await UrlHelper.launchUrl(AppUrls.torcsDiscord),
+                onTap: () async =>
+                    await UrlHelper.launchUrl(AppUrls.torcsDiscord),
               ),
             ],
           );
@@ -55,16 +59,17 @@ class LocationLinksRowOrColumn extends StatelessWidget {
 class LocationLink extends StatelessWidget {
   const LocationLink({
     required this.text,
-    this.onPressed,
+    this.onTap,
     super.key,
   });
   final String text;
-  final void Function()? onPressed;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     final screenType = context.getScreenType();
-    final isPhoneOrTablet = screenType == ScreenType.phone || screenType == ScreenType.tablet;
+    final isPhoneOrTablet =
+        screenType == ScreenType.phone || screenType == ScreenType.tablet;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -86,7 +91,7 @@ class LocationLink extends StatelessWidget {
           AppColors.white,
           AppColors.grey,
         ],
-        onPressed: onPressed,
+        onTap: onTap,
       ),
     );
   }
