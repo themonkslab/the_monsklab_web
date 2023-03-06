@@ -6,8 +6,8 @@ import 'package:the_monkslab_web/src/ui/_index.dart';
 
 class LanguageSwitcherDropDown extends StatefulWidget {
   const LanguageSwitcherDropDown({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<LanguageSwitcherDropDown> createState() =>
@@ -20,7 +20,7 @@ class _LanguageSwitcherDropDownState extends State<LanguageSwitcherDropDown> {
   Widget build(BuildContext context) {
     return Consumer<LocaleProvider>(
       builder: (context, provider, snapshot) {
-        return Container(
+        return DecoratedBox(
           decoration: BoxDecoration(
             color: Colors.transparent,
             borderRadius: BorderRadius.circular(25),

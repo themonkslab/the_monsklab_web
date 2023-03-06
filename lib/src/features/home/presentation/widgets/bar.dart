@@ -35,7 +35,7 @@ class _BarState extends State<Bar> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return DecoratedBox(
       decoration: const BoxDecoration(
         border: Border(
           bottom: BorderSide(color: AppColors.darkerGrey),
