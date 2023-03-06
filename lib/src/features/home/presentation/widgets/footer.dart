@@ -46,7 +46,7 @@ class Footer extends StatelessWidget {
                     ),
                     //* Footer right
                     Expanded(
-                      child: Container(
+                      child: DecoratedBox(
                         decoration: const BoxDecoration(
                           border: Border(
                             left: BorderSide(
@@ -67,7 +67,7 @@ class Footer extends StatelessWidget {
                               ),
                             ),
                             Expanded(
-                              child: Container(
+                              child: DecoratedBox(
                                 decoration: const BoxDecoration(
                                   border: Border(
                                     top: BorderSide(
@@ -81,7 +81,8 @@ class Footer extends StatelessWidget {
                                       horizontal: 48.0,
                                     ),
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: const [
                                         TermsAndConditions(),
                                         AppSocials(
