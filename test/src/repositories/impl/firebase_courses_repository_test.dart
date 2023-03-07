@@ -1,16 +1,12 @@
-
 import 'package:flutter_test/flutter_test.dart';
-import 'package:the_monkslab_web/src/apis/courses/impl/fake_courses_api.dart';
-import 'package:the_monkslab_web/src/repositories/courses_repository/impl/firebase_courses_repository.dart';
 
 void main() {
-  late FirebaseCoursesRepository coursesRepository;
-  late FakeCoursesApi fakeCoursesApi;
+  // late FirebaseCoursesRepository coursesRepository;
+  // late FakeCoursesApi fakeCoursesApi;
 
   setUpAll(() {
-    fakeCoursesApi = FakeCoursesApi();
-    coursesRepository = FirebaseCoursesRepository(coursesApi: fakeCoursesApi);
-
+    // fakeCoursesApi = FakeCoursesApi();
+    // coursesRepository = FirebaseCoursesRepository(coursesApi: fakeCoursesApi);
   });
 
   group('Courses Repository', () {
