@@ -6,13 +6,13 @@ part of 'section_reference.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_SectionReference _$$_SectionReferenceFromJson(Map<String, dynamic> json) =>
-    _$_SectionReference(
+SectionReference _$SectionReferenceFromJson(Map<String, dynamic> json) =>
+    SectionReference(
       title: json['title'] as String,
       path: json['path'] as String,
     );
 
-Map<String, dynamic> _$$_SectionReferenceToJson(_$_SectionReference instance) =>
+Map<String, dynamic> _$SectionReferenceToJson(SectionReference instance) =>
     <String, dynamic>{
       'title': instance.title,
       'path': instance.path,

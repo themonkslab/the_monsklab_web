@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/models/learning_path.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
+import 'package:the_monkslab_web/src/utils/_index.dart';
 
 class ArchiveCubit extends Cubit<ArchiveState> {
   ArchiveCubit(this._coursesRepository) : super(ArchiveState.initial());
@@ -59,5 +60,7 @@ class ArchiveState extends Equatable {
   }
 
   @override
-  String toString() => 'ArchiveState(status: $status, learningPath: $coursesList)';
+  String toString() =>
+      '''ArchiveState(${Colorizer.colorizeWithBrightMagenta(text: 'status:')} $status,
+  learningPath: $coursesList)''';
 }
