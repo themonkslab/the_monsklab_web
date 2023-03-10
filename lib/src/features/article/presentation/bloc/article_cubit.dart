@@ -4,6 +4,7 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
+import 'package:the_monkslab_web/src/utils/_index.dart';
 
 class ArticleCubit extends Cubit<ArticleState> {
   ArticleCubit({
@@ -57,7 +58,9 @@ class ArticleState extends Equatable {
   List<Object?> get props => [article, status];
 
   @override
-  String toString() => 'ArticleState(status: $status, article: $article)';
+  String toString() =>
+      '''ArticleState(${Colorizer.colorizeWithBrightMagenta(text: 'status:')} $status,
+      article: ${article?.title})''';
 
   Map<String, dynamic> toMap() {
     final result = <String, dynamic>{}..addAll({'status': status});

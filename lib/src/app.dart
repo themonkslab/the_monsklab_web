@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:the_monkslab_web/src/features/_index.dart';
+import 'package:the_monkslab_web/src/observers/_index.dart';
 
 class AppPage extends StatelessWidget {
   AppPage({super.key});
@@ -23,6 +24,9 @@ class AppPage extends StatelessWidget {
         }),
       },
     ),
+    navigatorObservers: [
+      LoggerRouteObserver(),
+    ],
   );
 
   @override
