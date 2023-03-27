@@ -1,7 +1,9 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/constants/_index.dart';
+import 'package:the_monkslab_web/src/core/_index.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
@@ -35,9 +37,7 @@ class ArchivePopulated extends StatelessWidget {
             AppGaps.gapH48,
             Text(
               localize(context).archiveViewTitle,
-              style: isPhoneOrTablet
-                  ? AppTextStyles.h1HeaderPhone
-                  : AppTextStyles.h1Header,
+              style: isPhoneOrTablet ? AppTextStyles.h1HeaderPhone : AppTextStyles.h1Header,
             ),
             AppGaps.gapH20,
             Text(
@@ -54,9 +54,7 @@ class ArchivePopulated extends StatelessWidget {
                     children: [
                       Text(
                         courses.title,
-                        style: isPhoneOrTablet
-                            ? AppTextStyles.h2Phone
-                            : AppTextStyles.h2,
+                        style: isPhoneOrTablet ? AppTextStyles.h2Phone : AppTextStyles.h2,
                       ),
                       AppGaps.gapH12,
                       for (var course in courses.courses)
@@ -64,14 +62,13 @@ class ArchivePopulated extends StatelessWidget {
                           padding: const EdgeInsets.only(bottom: 8.0),
                           child: AppHypertext(
                             text: course.title,
-                            onTap: () =>
-                                context.beamToNamed('/course/${course.path}'),
+                            onTap: () => context.beamToNamed(
+                              '/${context.read<LocaleCubit>().state.locale.toString()}/course/${course.path}',
+                            ),
                             onTertiaryTapUp: () => UrlHelper.launchUrl(
                               "${AppUrls.monkslabWeb}course/${course.path}",
                             ),
-                            style: isPhoneOrTablet
-                                ? AppTextStyles.h3Phone
-                                : AppTextStyles.h3,
+                            style: isPhoneOrTablet ? AppTextStyles.h3Phone : AppTextStyles.h3,
                           ),
                         )
                     ],

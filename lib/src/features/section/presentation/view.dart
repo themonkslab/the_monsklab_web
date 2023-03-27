@@ -2,7 +2,7 @@ import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/constants/urls.dart';
-import 'package:the_monkslab_web/src/core/routing/routing.dart';
+import 'package:the_monkslab_web/src/core/_index.dart';
 import 'package:the_monkslab_web/src/features/section/_index.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
@@ -67,8 +67,7 @@ class SectionView extends StatelessWidget {
                                 width: double.infinity,
                                 child: OutlinedButton(
                                   style: ButtonStyle(
-                                    shape: MaterialStateProperty.all<
-                                        ContinuousRectangleBorder>(
+                                    shape: MaterialStateProperty.all<ContinuousRectangleBorder>(
                                       const ContinuousRectangleBorder(),
                                     ),
                                   ),
@@ -90,7 +89,7 @@ class SectionView extends StatelessWidget {
                                 child: AppHypertext(
                                   text: article.title,
                                   onTap: () => context.beamToNamed(
-                                    '/${AppRoutes.article.name}/${article.path}',
+                                    '/${context.read<LocaleCubit>().state.locale.toString()}/${AppRoutes.article.name}/${article.path}',
                                   ),
                                   onTertiaryTapUp: () => UrlHelper.launchUrl(
                                     "${AppUrls.monkslabWeb}${AppRoutes.article.name}/${article.path}",
