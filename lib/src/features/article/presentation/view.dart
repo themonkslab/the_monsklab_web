@@ -35,8 +35,8 @@ class ArticleView extends StatefulWidget {
 
 class _ArticleViewState extends State<ArticleView> {
   final scrollController = ScrollController();
-  late bool isHeaderOnScreen;
-  late double screenHeight;
+  bool isHeaderOnScreen = true;
+  double screenHeight = 1.0;
 
   @override
   void initState() {

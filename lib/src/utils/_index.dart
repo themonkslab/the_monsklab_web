@@ -1,3 +1,4 @@
+export 'colorizer.dart';
 export 'extensions.dart';
 export 'formatters.dart';
 export 'helpers.dart';

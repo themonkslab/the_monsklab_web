@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'package:the_monkslab_web/src/models/course_reference.dart';
+import 'package:the_monkslab_web/src/utils/_index.dart';
 
 class Courses extends Equatable {
   const Courses({
@@ -73,7 +74,10 @@ class Courses extends Equatable {
 
   @override
   String toString() {
-    return 'Courses(id: $id, title: $title, shouldUpdate: $shouldUpdate, courses: $courses)';
+    return '''Courses(${Colorizer.colorizeWithBrightMagenta(text: 'id:')} $id,
+    title: $title,
+    shouldUpdate: $shouldUpdate,
+    courses: $courses)''';
   }
 
   Map<String, dynamic> toMap() {
