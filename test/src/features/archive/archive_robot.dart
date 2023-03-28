@@ -11,14 +11,17 @@ class ArchiveRobot {
   final WidgetTester tester;
 
   Future<void> pumpWidgetWithRepository(
-      CoursesRepository coursesRepository,) async {
-    await tester.pumpWidget(RepositoryProvider.value(
-      value: coursesRepository,
-      child: MaterialApp.router(
-        routeInformationParser: BeamerParser(),
-        routerDelegate: routerDelegate(initialPath: '/archive'),
+    CoursesRepository coursesRepository,
+  ) async {
+    await tester.pumpWidget(
+      RepositoryProvider.value(
+        value: coursesRepository,
+        child: MaterialApp.router(
+          routeInformationParser: BeamerParser(),
+          routerDelegate: routerDelegate,
+        ),
       ),
-    ),);
+    );
   }
 
   Future<void> pumpWidgetWithProvider({
