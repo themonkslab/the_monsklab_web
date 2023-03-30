@@ -11,14 +11,15 @@ import 'package:the_monkslab_web/src/repositories/courses_repository/courses_rep
 
 //TODO -MEDIUM/MEDIUM- create abstract class
 class FirebaseCoursesRepository extends CoursesRepository {
-  FirebaseCoursesRepository({CoursesApi? coursesApi}) : _coursesApi = coursesApi ?? FirestoreApi();
+  FirebaseCoursesRepository({CoursesApi? coursesApi})
+      : _coursesApi = coursesApi ?? FirestoreApi();
 
   final CoursesApi _coursesApi;
 
   @override
   Future<List<Courses>?> getCourses(String courseGroup) async {
-    List<Courses>? list = [];
-    Courses learningPath = await _coursesApi.getCourses(courseGroup);
+    final List<Courses> list = [];
+    final Courses learningPath = await _coursesApi.getCourses(courseGroup);
     list.add(learningPath);
     if (learningPath.shouldUpdate) {
       await createCoursesIndexes(learningPath);
@@ -41,7 +42,10 @@ class FirebaseCoursesRepository extends CoursesRepository {
       'Aprender a utilizar GitHub como herramienta de CICD para proyectos Flutter',
     );
 
-    await _coursesApi.updateLearningPath(learningPath.id, learningPath.copyWith(shouldUpdate: false).toMap());
+    await _coursesApi.updateLearningPath(
+      learningPath.id,
+      learningPath.copyWith(shouldUpdate: false).toMap(),
+    );
   }
 
   //TODO -HIGH- write in firebase from json
@@ -52,7 +56,7 @@ class FirebaseCoursesRepository extends CoursesRepository {
     String description,
   ) async {
     try {
-      var courseJson = await rootBundle.loadString(resource);
+      final courseJson = await rootBundle.loadString(resource);
       await _addCourse(
         docId: docId,
         title: title,
@@ -71,15 +75,16 @@ class FirebaseCoursesRepository extends CoursesRepository {
     required List<dynamic> course,
   }) async {
     try {
-      List<FirestoreCourse> list = course.map((e) => FirestoreCourse.fromJson(e)).toList();
-      List<FirestoreSection> sectionsList = <FirestoreSection>[];
+      final List<FirestoreCourse> list =
+          course.map((e) => FirestoreCourse.fromJson(e)).toList();
+      final List<FirestoreSection> sectionsList = <FirestoreSection>[];
       // sections
       for (var i = 0; i < list.length; i++) {
         final firebaseCourse = list[i];
         final sectionPath = firebaseCourse.path;
         final articles = firebaseCourse.articles;
         if (sectionPath != null && articles != null) {
-          FirestoreSection firestoreSection = FirestoreSection(
+          final FirestoreSection firestoreSection = FirestoreSection(
             path: sectionPath,
             title: firebaseCourse.title,
           );
@@ -158,17 +163,17 @@ class FirebaseCoursesRepository extends CoursesRepository {
 
   @override
   Future<Course> getCourse(String path) async {
-    return await _coursesApi.getCourse(path);
+    return _coursesApi.getCourse(path);
   }
 
   @override
   Future<Section> getSection(String path) async {
-    return await _coursesApi.getSection(path);
+    return _coursesApi.getSection(path);
   }
 
   @override
   Future<Article> getArticle(String path) async {
-    return await _coursesApi.getArticle(path);
+    return _coursesApi.getArticle(path);
   }
 
   @override
@@ -210,7 +215,14 @@ class FirestoreCourse {
 }
 
 class Articles {
-  Articles({this.path, this.title, this.description, this.contentUrl, this.author, this.published});
+  Articles({
+    this.path,
+    this.title,
+    this.description,
+    this.contentUrl,
+    this.author,
+    this.published,
+  });
   Articles.fromJson(Map<String, dynamic> json) {
     path = json['path'];
     title = json['title'];

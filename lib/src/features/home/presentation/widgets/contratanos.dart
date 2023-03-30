@@ -29,13 +29,15 @@ class Contratanos extends StatelessWidget {
             height: 400,
             width: 400,
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 48.0),
+              padding: const EdgeInsets.symmetric(vertical: 48),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    localize(context).doesYourBusinessNeedHighLevelFlutterDevelopment.toUpperCase(),
+                    localize(context)
+                        .doesYourBusinessNeedHighLevelFlutterDevelopment
+                        .toUpperCase(),
                     textAlign: TextAlign.start,
                     style: AppTextStyles.h1.copyWith(
                       fontSize: 20,
@@ -51,7 +53,8 @@ class Contratanos extends StatelessWidget {
                   AppGaps.gapH24,
                   AppFilledButton(
                     text: localize(context).hireUs,
-                    onTap: () async => await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
+                    onTap: () async =>
+                        UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
                   ),
                 ],
               ),

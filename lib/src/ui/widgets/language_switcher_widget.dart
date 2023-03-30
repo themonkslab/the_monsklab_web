@@ -17,7 +17,7 @@ class LanguageSwitcherDropDown extends StatelessWidget {
             borderRadius: BorderRadius.circular(25),
           ),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
               children: [
                 Text(
@@ -32,7 +32,7 @@ class LanguageSwitcherDropDown extends StatelessWidget {
                   onChanged: (value) {
                     final locale = value ? const Locale('en') : const Locale('es');
                     Beamer.of(context).beamToNamed(
-                      "/${locale.languageCode}",
+                      '/${locale.languageCode}',
                       transitionDelegate: const NoAnimationTransitionDelegate(),
                     );
                   },

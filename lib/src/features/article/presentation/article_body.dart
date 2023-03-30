@@ -35,7 +35,7 @@ class ArticleBody extends StatelessWidget {
             }
             throw Exception("canLaunchUrl didn't work");
           } else {
-            throw Exception("url is null");
+            throw Exception('url is null');
           }
         },
         data: htmlData,
@@ -52,7 +52,7 @@ class ArticleBody extends StatelessWidget {
           //   },
           // ),
           codeMatcher(): CustomRender.widget(
-            widget: ((context, _) {
+            widget: (context, _) {
               final dataText = context.tree.element!.innerHtml
                   .replaceAll('&lt;', '<')
                   .replaceAll('&gt;', '>');
@@ -97,7 +97,7 @@ class ArticleBody extends StatelessWidget {
                   ),
                 ],
               );
-            }),
+            },
           ),
         },
         style: {

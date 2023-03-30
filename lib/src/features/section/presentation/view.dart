@@ -37,7 +37,7 @@ class SectionView extends StatelessWidget {
     final isPhone = screenType == ScreenType.phone;
 
     return BlocBuilder<SectionCubit, SectionState>(
-      builder: ((context, state) {
+      builder: (context, state) {
         switch (state.status) {
           case SectionStatus.loading:
             //TODO -MEDIUM- coordinate loading in relation with parent
@@ -67,7 +67,8 @@ class SectionView extends StatelessWidget {
                                 width: double.infinity,
                                 child: OutlinedButton(
                                   style: ButtonStyle(
-                                    shape: MaterialStateProperty.all<ContinuousRectangleBorder>(
+                                    shape: MaterialStateProperty.all<
+                                        ContinuousRectangleBorder>(
                                       const ContinuousRectangleBorder(),
                                     ),
                                   ),
@@ -92,7 +93,7 @@ class SectionView extends StatelessWidget {
                                     '/${context.read<LocaleCubit>().state.locale.toString()}/${AppRoutes.article.name}/${article.path}',
                                   ),
                                   onTertiaryTapUp: () => UrlHelper.launchUrl(
-                                    "${AppUrls.monkslabWeb}${AppRoutes.article.name}/${article.path}",
+                                    '${AppUrls.monkslabWeb}${AppRoutes.article.name}/${article.path}',
                                   ),
                                   style: AppTextStyles.h3,
                                 ),
@@ -105,7 +106,7 @@ class SectionView extends StatelessWidget {
           default:
             return const AppFailure();
         }
-      }),
+      },
     );
   }
 }

@@ -19,13 +19,13 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
     if (fileCourses.isEmpty) {
       await fetchCoursesFromLocale(locale);
     }
-    for (var fileCourses in fileCourses) {
+    for (final fileCourses in fileCourses) {
       if (fileCourses.courses != null) {
-        for (var fileCourse in fileCourses.courses!) {
+        for (final fileCourse in fileCourses.courses!) {
           if (fileCourse.sections != null) {
-            for (var fileSection in fileCourse.sections!) {
+            for (final fileSection in fileCourse.sections!) {
               if (fileSection.articles != null) {
-                for (var article in fileSection.articles!) {
+                for (final article in fileSection.articles!) {
                   if (article.path == path && article.contentUrl != null) {
                     final articleContent =
                         (await HttpApi().getRequest(article.contentUrl!))
@@ -62,12 +62,12 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
     if (fileCourses.isEmpty) {
       await fetchCoursesFromLocale(locale);
     }
-    for (var fileCourses in fileCourses) {
+    for (final fileCourses in fileCourses) {
       if (fileCourses.courses != null) {
-        for (var fileCourse in fileCourses.courses!) {
+        for (final fileCourse in fileCourses.courses!) {
           if (fileCourse.path == path) {
             final sections = fileCourse.sections ?? [];
-            List<SectionReference> sectionsRef = sections
+            final List<SectionReference> sectionsRef = sections
                 .map(
                   (e) => SectionReference(
                     title: e.title ?? '',
@@ -93,9 +93,9 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
     if (fileCourses.isEmpty) {
       await fetchCoursesFromLocale(locale);
     }
-    List<Courses> list = [];
-    for (var courses in fileCourses) {
-      List<CourseReference> coursesRef = courses.courses!
+    final List<Courses> list = [];
+    for (final courses in fileCourses) {
+      final List<CourseReference> coursesRef = courses.courses!
           .map((e) => CourseReference(path: e.path ?? '', title: e.title ?? ''))
           .toList();
       list.add(
@@ -115,14 +115,14 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
     if (fileCourses.isEmpty) {
       await fetchCoursesFromLocale(locale);
     }
-    for (var fileCourses in fileCourses) {
+    for (final fileCourses in fileCourses) {
       if (fileCourses.courses != null) {
-        for (var fileCourse in fileCourses.courses!) {
+        for (final fileCourse in fileCourses.courses!) {
           if (fileCourse.sections != null) {
-            for (var fileSection in fileCourse.sections!) {
+            for (final fileSection in fileCourse.sections!) {
               if (fileSection.path == path) {
                 final articles = fileSection.articles ?? [];
-                List<ArticleReference> articlesRef = articles
+                final List<ArticleReference> articlesRef = articles
                     .map(
                       (e) => ArticleReference(
                         path: e.path ?? '',
@@ -180,11 +180,11 @@ class FileCoursesGroup {
 
   factory FileCoursesGroup.fromJson(Map<String, dynamic> json) =>
       FileCoursesGroup(
-        courseGroup: json["course_group"],
-        courses: json["courses"] == null
+        courseGroup: json['course_group'],
+        courses: json['courses'] == null
             ? []
             : List<FileCourse>.from(
-                json["courses"]!.map((x) => FileCourse.fromJson(x)),
+                json['courses']!.map((x) => FileCourse.fromJson(x)),
               ),
       );
 
@@ -201,8 +201,8 @@ class FileCoursesGroup {
       );
 
   Map<String, dynamic> toJson() => {
-        "course_group": courseGroup,
-        "courses": courses == null
+        'course_group': courseGroup,
+        'courses': courses == null
             ? []
             : List<dynamic>.from(courses!.map((x) => x.toJson())),
       };
@@ -216,12 +216,12 @@ class FileCourse {
   });
 
   factory FileCourse.fromJson(Map<String, dynamic> json) => FileCourse(
-        title: json["title"],
-        path: json["path"],
-        sections: json["sections"] == null
+        title: json['title'],
+        path: json['path'],
+        sections: json['sections'] == null
             ? []
             : List<FileSection>.from(
-                json["sections"]!.map((x) => FileSection.fromJson(x)),
+                json['sections']!.map((x) => FileSection.fromJson(x)),
               ),
       );
 
@@ -241,9 +241,9 @@ class FileCourse {
       );
 
   Map<String, dynamic> toJson() => {
-        "title": title,
-        "path": path,
-        "sections": sections == null
+        'title': title,
+        'path': path,
+        'sections': sections == null
             ? []
             : List<dynamic>.from(sections!.map((x) => x.toJson())),
       };
@@ -258,13 +258,13 @@ class FileSection {
   });
 
   factory FileSection.fromJson(Map<String, dynamic> json) => FileSection(
-        path: json["path"],
-        title: json["title"],
-        description: json["description"],
-        articles: json["articles"] == null
+        path: json['path'],
+        title: json['title'],
+        description: json['description'],
+        articles: json['articles'] == null
             ? []
             : List<FileArticle>.from(
-                json["articles"]!.map((x) => FileArticle.fromJson(x)),
+                json['articles']!.map((x) => FileArticle.fromJson(x)),
               ),
       );
 
@@ -287,10 +287,10 @@ class FileSection {
       );
 
   Map<String, dynamic> toJson() => {
-        "path": path,
-        "title": title,
-        "description": description,
-        "articles": articles == null
+        'path': path,
+        'title': title,
+        'description': description,
+        'articles': articles == null
             ? []
             : List<dynamic>.from(articles!.map((x) => x.toJson())),
       };
@@ -307,14 +307,14 @@ class FileArticle {
   });
 
   factory FileArticle.fromJson(Map<String, dynamic> json) => FileArticle(
-        path: json["path"],
-        title: json["title"],
-        description: json["description"],
-        contentUrl: json["contentUrl"],
-        author: authorValues.map[json["author"]]!,
-        published: json["published"] == null
+        path: json['path'],
+        title: json['title'],
+        description: json['description'],
+        contentUrl: json['contentUrl'],
+        author: authorValues.map[json['author']],
+        published: json['published'] == null
             ? null
-            : DateTime.parse(json["published"]),
+            : DateTime.parse(json['published']),
       );
 
   final String? path;
@@ -342,18 +342,18 @@ class FileArticle {
       );
 
   Map<String, dynamic> toJson() => {
-        "path": path,
-        "title": title,
-        "description": description,
-        "contentUrl": contentUrl,
-        "author": authorValues.reverse[author],
-        "published": published?.toIso8601String(),
+        'path': path,
+        'title': title,
+        'description': description,
+        'contentUrl': contentUrl,
+        'author': authorValues.reverse[author],
+        'published': published?.toIso8601String(),
       };
 }
 
 enum Author { theMonkslab }
 
-final authorValues = EnumValues({"The Monkslab": Author.theMonkslab});
+final authorValues = EnumValues({'The Monkslab': Author.theMonkslab});
 
 class EnumValues<T> {
   EnumValues(this.map);

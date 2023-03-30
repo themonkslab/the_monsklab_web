@@ -8,7 +8,7 @@ class HttpApi {
 
   Future<dynamic> getRequest(String requestUrl) async {
     try {
-      var response = await _httpClient.get(requestUrl);
+      final response = await _httpClient.get(requestUrl);
       return response.data;
     } catch (e) {
       throw RequestFailure();

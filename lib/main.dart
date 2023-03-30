@@ -10,7 +10,7 @@ Future main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
   Beamer.setPathUrlStrategy();
   Bloc.observer = AppBlocObserver();
-  CoursesRepository coursesRepository = FileCoursesRepositoryImpl();
+  final CoursesRepository coursesRepository = FileCoursesRepositoryImpl();
   runApp(
     MultiRepositoryProvider(
       providers: [
