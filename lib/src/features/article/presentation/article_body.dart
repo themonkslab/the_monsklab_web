@@ -125,6 +125,8 @@ class ArticleBody extends StatelessWidget {
           ),
           'li': Style.fromTextStyle(AppTextStyles.li)
               .copyWith(margin: Margins.only(bottom: 8)),
+          'code': Style.fromTextStyle(AppTextStyles.inlineCode)
+              .copyWith(margin: Margins.only(bottom: 8)),
         },
       ),
     );
