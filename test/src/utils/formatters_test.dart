@@ -7,7 +7,7 @@ void main() {
     debugPrint('test');
   });
   test('Format GitHub Images Urls test', () {
-    String content = '''
+    const String content = '''
 # Acciones Externas 
 
 Así como podemos crear nuetros propios trabajos, es posible también utilizar acciones de otros desarrolladores hosteadas en _GitHub_, lo cual nos facilita mucho más el trabajo de integración. A continuación vamos a crear un nuevo __Workflow__ invocando a una acción externa y pasandole parámetros.
@@ -48,8 +48,15 @@ El resultado del Workflow se muestra en la siguiente imagen:
 
 Como es posible ver en el paso __Hello world Dart__, se imprimió en consola "Hello Mauro" y en el paso __Log output__ se imprimió la fecha de la variable ```time```.
 ''';
-    String formattedContent = formatGitHubImagesUrls(content, 'https://baseUrl.com/');
-    assert(formattedContent.contains('https://baseUrl.com/3.2_external_action_result.png'));
-    assert(formattedContent.contains('https://baseUrl.com/3.3_external_action_result.png'));
+    final String formattedContent =
+        formatGitHubImagesUrls(content, 'https://baseUrl.com/');
+    assert(
+      formattedContent
+          .contains('https://baseUrl.com/3.2_external_action_result.png'),
+    );
+    assert(
+      formattedContent
+          .contains('https://baseUrl.com/3.3_external_action_result.png'),
+    );
   });
 }

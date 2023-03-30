@@ -3,15 +3,15 @@ String formatGitHubImagesUrls(String content, String baseUrl) {
   // will get (3.2_external_action_result.png)
   // https://regexr.com/
   //! don't use + in RegExp String
-  RegExp imageUrlExp = RegExp(r'!\[(.*)\]\((.*)\)', multiLine: true,);
-  Iterable<RegExpMatch> matches = imageUrlExp.allMatches(content);
+  final RegExp imageUrlExp = RegExp(r'!\[(.*)\]\((.*)\)', multiLine: true,);
+  final Iterable<RegExpMatch> matches = imageUrlExp.allMatches(content);
   String output = content;
-  for (var match in matches) {
-    String imageFilename = match.group(2).toString()
+  for (final match in matches) {
+    final String imageFilename = match.group(2).toString()
       .replaceAll('(', '')
       .replaceAll(')', '');
       if (!imageFilename.contains('https://')) {
-        String urlBasedImageFilename = baseUrl + imageFilename;
+        final String urlBasedImageFilename = baseUrl + imageFilename;
         output = output.replaceAll(imageFilename, urlBasedImageFilename);
       }
   }

@@ -60,8 +60,8 @@ class Footer extends StatelessWidget {
                             const Expanded(
                               child: Padding(
                                 padding: EdgeInsets.symmetric(
-                                  vertical: 24.0,
-                                  horizontal: 34.0,
+                                  vertical: 24,
+                                  horizontal: 34,
                                 ),
                                 child: LocationLinksRowOrColumn(isRow: false),
                               ),
@@ -78,7 +78,7 @@ class Footer extends StatelessWidget {
                                 child: Center(
                                   child: Padding(
                                     padding: const EdgeInsets.symmetric(
-                                      horizontal: 48.0,
+                                      horizontal: 48,
                                     ),
                                     child: Row(
                                       mainAxisAlignment:

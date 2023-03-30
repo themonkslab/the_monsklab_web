@@ -18,14 +18,14 @@ final routerDelegate = BeamerDelegate(
     routes: {
       // Return either Widgets or BeamPages if more customization is needed
       '/:locale': (_, state, ___) {
-        final languageCode = (state.pathParameters['locale']!);
+        final languageCode = state.pathParameters['locale']!;
         return LocaleWrapper(
           languageCode: languageCode,
           child: const HomePage(),
         );
       },
       '/:locale/archive': (_, state, ___) {
-        final languageCode = (state.pathParameters['locale']!);
+        final languageCode = state.pathParameters['locale']!;
         return LocaleWrapper(
           languageCode: languageCode,
           child: const ArchivePage(),
@@ -33,7 +33,7 @@ final routerDelegate = BeamerDelegate(
       },
       '/:locale/course/:path': (_, state, __) {
         final path = state.pathParameters['path']!;
-        final languageCode = (state.pathParameters['locale']!);
+        final languageCode = state.pathParameters['locale']!;
         return LocaleWrapper(
           languageCode: languageCode,
           child: CoursePage(path),
@@ -41,7 +41,7 @@ final routerDelegate = BeamerDelegate(
       },
       '/:locale/article/:path': (_, state, __) {
         final path = state.pathParameters['path']!;
-        final languageCode = (state.pathParameters['locale']!);
+        final languageCode = state.pathParameters['locale']!;
         return LocaleWrapper(
           languageCode: languageCode,
           child: ArticlePage(path: path),

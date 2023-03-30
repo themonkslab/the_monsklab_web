@@ -36,7 +36,7 @@ class ArticleView extends StatefulWidget {
 class _ArticleViewState extends State<ArticleView> {
   final scrollController = ScrollController();
   bool isHeaderOnScreen = true;
-  double screenHeight = 1.0;
+  double screenHeight = 1;
 
   @override
   void initState() {
@@ -57,7 +57,7 @@ class _ArticleViewState extends State<ArticleView> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ArticleCubit, ArticleState>(
-      builder: ((context, state) {
+      builder: (context, state) {
         switch (state.status) {
           case ArticleStatus.initial:
           case ArticleStatus.loading:
@@ -71,7 +71,7 @@ class _ArticleViewState extends State<ArticleView> {
               article: state.article!,
             );
         }
-      }),
+      },
     );
   }
 }

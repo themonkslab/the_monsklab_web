@@ -11,7 +11,7 @@ class WidgetsRobot {
 
   final ptOnHoverKey = const Key('ptOnHoverKey');
   final Offset originalPosition = Offset.zero;
-  final Size subjectOriginalSize = const Size(100.0, 100.0);
+  final Size subjectOriginalSize = const Size(100, 100);
 
   late TestGesture gesture;
   late Offset targetPosition;

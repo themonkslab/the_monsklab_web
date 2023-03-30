@@ -20,16 +20,18 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             children: [
               LocationLink(
                 text: localize(context).jobs,
-                onTap: () async => await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
+                onTap: () async =>
+                    UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
               ),
               LocationLink(
                 text: localize(context).courses,
-                onTap: () => context
-                    .beamToNamed('/${context.read<LocaleCubit>().state.locale.toString()}/${AppRoutes.archive.name}'),
+                onTap: () => context.beamToNamed(
+                  '/${context.read<LocaleCubit>().state.locale.toString()}/${AppRoutes.archive.name}',
+                ),
               ),
               LocationLink(
                 text: localize(context).community,
-                onTap: () async => await UrlHelper.launchUrl(AppUrls.torcsDiscord),
+                onTap: () async => UrlHelper.launchUrl(AppUrls.torcsDiscord),
               ),
             ],
           )
@@ -39,7 +41,8 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             children: [
               LocationLink(
                 text: localize(context).jobs,
-                onTap: () async => await UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
+                onTap: () async =>
+                    UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
               ),
               LocationLink(
                 text: localize(context).courses,
@@ -47,7 +50,7 @@ class LocationLinksRowOrColumn extends StatelessWidget {
               ),
               LocationLink(
                 text: localize(context).community,
-                onTap: () async => await UrlHelper.launchUrl(AppUrls.torcsDiscord),
+                onTap: () async => UrlHelper.launchUrl(AppUrls.torcsDiscord),
               ),
             ],
           );
@@ -66,10 +69,11 @@ class LocationLink extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenType = context.getScreenType();
-    final isPhoneOrTablet = screenType == ScreenType.phone || screenType == ScreenType.tablet;
+    final isPhoneOrTablet =
+        screenType == ScreenType.phone || screenType == ScreenType.tablet;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: AppHypertext(
         text: text.toUpperCase(),
         textAlign: TextAlign.center,
