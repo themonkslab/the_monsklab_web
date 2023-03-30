@@ -1,15 +1,16 @@
+import 'dart:convert';
+
+import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
-
-part 'article_cubit.freezed.dart';
+import 'package:the_monkslab_web/src/utils/_index.dart';
 
 class ArticleCubit extends Cubit<ArticleState> {
   ArticleCubit({
     required CoursesRepository coursesRepository,
   })  : _coursesRepository = coursesRepository,
-        super(const ArticleState());
+        super(ArticleState.initial());
 
   final CoursesRepository _coursesRepository;
 
@@ -31,10 +32,54 @@ class ArticleCubit extends Cubit<ArticleState> {
 
 enum ArticleStatus { initial, loading, success, failure }
 
-@freezed
-class ArticleState with _$ArticleState {
-  const factory ArticleState({
-    @Default(ArticleStatus.initial) ArticleStatus status,
+class ArticleState extends Equatable {
+  const ArticleState({
+    required this.status,
+    this.article,
+  });
+
+  factory ArticleState.initial() {
+    return const ArticleState(status: ArticleStatus.initial);
+  }
+
+  factory ArticleState.fromMap(Map<String, dynamic> map) {
+    return ArticleState(
+      status: map['status'],
+      article: map['article'] != null ? Article.fromMap(map['article']) : null,
+    );
+  }
+
+  factory ArticleState.fromJson(String source) =>
+      ArticleState.fromMap(json.decode(source));
+  final ArticleStatus status;
+  final Article? article;
+
+  @override
+  List<Object?> get props => [article, status];
+
+  @override
+  String toString() =>
+      '''ArticleState(${Colorizer.colorizeWithBrightMagenta(text: 'status:')} $status,
+      article: ${article?.title})''';
+
+  Map<String, dynamic> toMap() {
+    final result = <String, dynamic>{}..addAll({'status': status});
+    if (article != null) {
+      result.addAll({'article': article!.toMap()});
+    }
+
+    return result;
+  }
+
+  String toJson() => json.encode(toMap());
+
+  ArticleState copyWith({
+    ArticleStatus? status,
     Article? article,
-  }) = _ArticleState;
+  }) {
+    return ArticleState(
+      status: status ?? this.status,
+      article: article ?? this.article,
+    );
+  }
 }

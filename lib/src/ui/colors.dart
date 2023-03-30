@@ -7,6 +7,7 @@ class AppColors {
   static const primaryDark = Color(0xFF0D99FF);
   static const primaryLight = Color(0xFF40C4FF);
   static const secondaryLight = Color(0xFFF16D6E);
+  static const secondaryLighter = Color.fromARGB(255, 228, 175, 175);
 
   static const confortableYellow = Color.fromARGB(255, 229, 143, 3);
   static const monkChick = Color.fromRGBO(255, 204, 188, 1);

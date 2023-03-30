@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:the_monkslab_web/src/features/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 
 class Bar extends StatefulWidget {
@@ -34,7 +35,7 @@ class _BarState extends State<Bar> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return DecoratedBox(
       decoration: const BoxDecoration(
         border: Border(
           bottom: BorderSide(color: AppColors.darkerGrey),
@@ -56,7 +57,6 @@ class _BarState extends State<Bar> with TickerProviderStateMixin {
                         mainAxisAlignment: _isMenuOpened
                             ? MainAxisAlignment.spaceBetween
                             : MainAxisAlignment.end,
-                        mainAxisSize: MainAxisSize.max,
                         children: [
                           if (_isMenuOpened)
                             const Center(child: LocationLinksRowOrColumn()),
@@ -89,9 +89,12 @@ class _BarState extends State<Bar> with TickerProviderStateMixin {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           SvgPicture.asset(
-                              'assets/images/logos/monsklab_logo_on_red_circle.svg'),
+                            'assets/images/logos/monsklab_logo_on_red_circle.svg',
+                          ),
                           if (!widget.isPhoneOrTablet)
                             const LocationLinksRowOrColumn(),
+                          if (!widget.isPhoneOrTablet)
+                            const LanguageSwitcherDropDown(),
                         ],
                       ),
                     ),

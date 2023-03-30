@@ -7,8 +7,8 @@ enum ScreenType {
   desktop(1024),
   large(1200);
 
-  final double width;
   const ScreenType(this.width);
+  final double width;
 }
 
 /// Easy access to UI common functions

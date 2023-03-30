@@ -4,7 +4,8 @@ import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  const HomePage({super.key, this.locale});
+  final Locale? locale;
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +19,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenType = context.getScreenType();
-    final isPhoneOrTablet =
-        screenType == ScreenType.phone || screenType == ScreenType.tablet;
+    final isPhoneOrTablet = screenType == ScreenType.phone || screenType == ScreenType.tablet;
     return Scaffold(
       backgroundColor: AppColors.black,
       body: SingleChildScrollView(
@@ -32,8 +32,6 @@ class HomeView extends StatelessWidget {
               AppGaps.gapH12,
               //* Hero
               Header(isPhoneOrTablet: isPhoneOrTablet),
-              //* Hola
-              Hola(isPhoneOrTablet: isPhoneOrTablet),
               //* Contratanos
               Contratanos(isPhoneOrTablet: isPhoneOrTablet),
               //* Footer

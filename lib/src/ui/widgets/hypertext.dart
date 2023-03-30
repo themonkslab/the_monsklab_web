@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:the_monkslab_web/src/ui/_index.dart';
+import 'package:the_monkslab_web/src/constants/_index.dart';
 
 class AppHypertext extends StatefulWidget {
   const AppHypertext({
-    Key? key,
     required this.text,
-    this.onPressed,
+    this.onTap,
     this.style,
     this.textAlign,
     this.enabledDisabledColors,
-  }) : super(key: key);
+    this.onTertiaryTapUp,
+    super.key,
+  });
 
   final String text;
-  final VoidCallback? onPressed;
+  final VoidCallback? onTap;
   final TextStyle? style;
   final TextAlign? textAlign;
   final List<Color>? enabledDisabledColors;
+  final VoidCallback? onTertiaryTapUp;
 
   @override
   State<AppHypertext> createState() => _AppHypertextState();
@@ -30,7 +32,7 @@ class _AppHypertextState extends State<AppHypertext> {
 
   @override
   void initState() {
-    isEnabled = widget.onPressed != null;
+    isEnabled = widget.onTap != null;
     finalEnabledDisabledColors = widget.enabledDisabledColors ??
         [
           AppColors.cyan,
@@ -46,9 +48,10 @@ class _AppHypertextState extends State<AppHypertext> {
       onExit: isEnabled ? (event) => onHover(false) : null,
       cursor: isEnabled ? SystemMouseCursors.click : SystemMouseCursors.basic,
       child: GestureDetector(
-        onTap: widget.onPressed,
+        onTap: widget.onTap,
+        onTertiaryTapUp: (_) => widget.onTertiaryTapUp?.call(),
         child: AnimatedDefaultTextStyle(
-          style: widget.onPressed != null
+          style: widget.onTap != null
               ? isHovered
                   ? const TextStyle(decoration: TextDecoration.underline)
                   : const TextStyle(decoration: TextDecoration.none)
@@ -60,13 +63,15 @@ class _AppHypertextState extends State<AppHypertext> {
           child: Text(
             widget.text,
             style: widget.style?.copyWith(
-                    color: isEnabled
-                        ? finalEnabledDisabledColors[0]
-                        : finalEnabledDisabledColors[1]) ??
+                  color: isEnabled
+                      ? finalEnabledDisabledColors[0]
+                      : finalEnabledDisabledColors[1],
+                ) ??
                 AppTextStyles.hypertext.copyWith(
-                    color: isEnabled
-                        ? finalEnabledDisabledColors[0]
-                        : finalEnabledDisabledColors[1]),
+                  color: isEnabled
+                      ? finalEnabledDisabledColors[0]
+                      : finalEnabledDisabledColors[1],
+                ),
           ),
         ),
       ),

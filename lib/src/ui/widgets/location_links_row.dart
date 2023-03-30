@@ -1,7 +1,8 @@
 import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:the_monkslab_web/src/core/routing/routing.dart';
-import 'package:the_monkslab_web/src/ui/_index.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:the_monkslab_web/src/constants/_index.dart';
+import 'package:the_monkslab_web/src/core/_index.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
 
@@ -10,7 +11,7 @@ class LocationLinksRowOrColumn extends StatelessWidget {
     super.key,
     this.isRow = true,
   });
-  final isRow;
+  final bool isRow;
 
   @override
   Widget build(BuildContext context) {
@@ -18,13 +19,20 @@ class LocationLinksRowOrColumn extends StatelessWidget {
         ? Row(
             children: [
               LocationLink(
-                  text: 'Jobs', location: '/${AppRoutes.archive.name}'),
+                text: localize(context).jobs,
+                onTap: () async =>
+                    UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
+              ),
               LocationLink(
-                  text: 'Cursos', location: '/${AppRoutes.archive.name}'),
+                text: localize(context).courses,
+                onTap: () => context.beamToNamed(
+                  '/${context.read<LocaleCubit>().state.locale.toString()}/${AppRoutes.archive.name}',
+                ),
+              ),
               LocationLink(
-                  text: 'Comunidad', location: '/${AppRoutes.archive.name}'),
-              LocationLink(
-                  text: 'Hola!', location: '/${AppRoutes.archive.name}'),
+                text: localize(context).community,
+                onTap: () async => UrlHelper.launchUrl(AppUrls.torcsDiscord),
+              ),
             ],
           )
         : Column(
@@ -32,13 +40,18 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               LocationLink(
-                  text: 'Jobs', location: '/${AppRoutes.archive.name}'),
+                text: localize(context).jobs,
+                onTap: () async =>
+                    UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
+              ),
               LocationLink(
-                  text: 'Cursos', location: '/${AppRoutes.archive.name}'),
+                text: localize(context).courses,
+                onTap: () => context.beamToNamed('/${AppRoutes.archive.name}'),
+              ),
               LocationLink(
-                  text: 'Comunidad', location: '/${AppRoutes.archive.name}'),
-              LocationLink(
-                  text: 'Hola!', location: '/${AppRoutes.archive.name}'),
+                text: localize(context).community,
+                onTap: () async => UrlHelper.launchUrl(AppUrls.torcsDiscord),
+              ),
             ],
           );
   }
@@ -47,11 +60,11 @@ class LocationLinksRowOrColumn extends StatelessWidget {
 class LocationLink extends StatelessWidget {
   const LocationLink({
     required this.text,
-    required this.location,
+    this.onTap,
     super.key,
   });
   final String text;
-  final String location;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +73,7 @@ class LocationLink extends StatelessWidget {
         screenType == ScreenType.phone || screenType == ScreenType.tablet;
 
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: AppHypertext(
         text: text.toUpperCase(),
         textAlign: TextAlign.center,
@@ -79,7 +92,7 @@ class LocationLink extends StatelessWidget {
           AppColors.white,
           AppColors.grey,
         ],
-        onPressed: () => context.beamToNamed(location),
+        onTap: onTap,
       ),
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
+import 'package:the_monkslab_web/src/utils/locale.dart';
 
 class Footer extends StatelessWidget {
   const Footer({
@@ -45,7 +46,7 @@ class Footer extends StatelessWidget {
                     ),
                     //* Footer right
                     Expanded(
-                      child: Container(
+                      child: DecoratedBox(
                         decoration: const BoxDecoration(
                           border: Border(
                             left: BorderSide(
@@ -57,15 +58,16 @@ class Footer extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Expanded(
-                                child: Padding(
-                              padding: EdgeInsets.symmetric(
-                                vertical: 24.0,
-                                horizontal: 34.0,
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 24,
+                                  horizontal: 34,
+                                ),
+                                child: LocationLinksRowOrColumn(isRow: false),
                               ),
-                              child: LocationLinksRowOrColumn(isRow: false),
-                            )),
+                            ),
                             Expanded(
-                              child: Container(
+                              child: DecoratedBox(
                                 decoration: const BoxDecoration(
                                   border: Border(
                                     top: BorderSide(
@@ -76,7 +78,8 @@ class Footer extends StatelessWidget {
                                 child: Center(
                                   child: Padding(
                                     padding: const EdgeInsets.symmetric(
-                                        horizontal: 48.0),
+                                      horizontal: 48,
+                                    ),
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
@@ -106,8 +109,8 @@ class Footer extends StatelessWidget {
 
 class TermsAndConditions extends StatelessWidget {
   const TermsAndConditions({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -116,14 +119,14 @@ class TermsAndConditions extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Terms and Conditions',
+          localize(context).termsAndConditions,
           style: AppTextStyles.caption.copyWith(
             color: AppColors.white,
             fontSize: 12,
           ),
         ),
         Text(
-          'Privacy Policy',
+          localize(context).privacyPolicy,
           style: AppTextStyles.caption.copyWith(
             color: AppColors.white,
             fontSize: 12,
@@ -136,30 +139,31 @@ class TermsAndConditions extends StatelessWidget {
 
 class MonkslabDescription extends StatelessWidget {
   const MonkslabDescription({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'The Monkslab'.toUpperCase(),
-            style: AppTextStyles.h1.copyWith(
-              fontSize: 20,
-              color: AppColors.white,
-            ),
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'The Monkslab'.toUpperCase(),
+          style: AppTextStyles.h1.copyWith(
+            fontSize: 20,
+            color: AppColors.white,
           ),
-          AppGaps.gapH16,
-          Text(
-            'Un grupo de amigos que disfruta de hacer las cosas mejor cada vez pero que al mismo tiempo, quiere transmitir a otros todo lo aprendido, dar posibilidades y hacer de este mundo con cada granito de código, un mundo mejor.',
-            style: AppTextStyles.p.copyWith(
-              color: AppColors.white,
-              fontSize: 14,
-            ),
-          )
-        ]);
+        ),
+        AppGaps.gapH16,
+        Text(
+          localize(context).aGroupOfFriendWhoEnjoyImproveThemself,
+          style: AppTextStyles.p.copyWith(
+            color: AppColors.white,
+            fontSize: 14,
+          ),
+        )
+      ],
+    );
   }
 }

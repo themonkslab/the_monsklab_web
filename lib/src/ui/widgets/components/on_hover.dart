@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class AppOnHover extends StatefulWidget {
   const AppOnHover({
-    Key? key,
     required this.child,
     this.hoveredScalePercentage = 0.04,
-  }) : super(key: key);
+    super.key,
+  });
 
   final Widget child;
   final double hoveredScalePercentage;
@@ -19,9 +19,9 @@ class AppOnHoverState extends State<AppOnHover>
     with SingleTickerProviderStateMixin {
   late final AnimationController animationController;
   late Animation scaleAnimation = Tween<double>(
-          begin: 1 - widget.hoveredScalePercentage,
-          end: 1 + widget.hoveredScalePercentage)
-      .animate(animationController);
+    begin: 1 - widget.hoveredScalePercentage,
+    end: 1 + widget.hoveredScalePercentage,
+  ).animate(animationController);
   bool isHovered = false;
   bool isTapped = false;
 
@@ -29,7 +29,9 @@ class AppOnHoverState extends State<AppOnHover>
   void initState() {
     super.initState();
     animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 300));
+      vsync: this,
+      duration: const Duration(milliseconds: 300),
+    );
     animationController.value = 0.5;
   }
 
@@ -49,32 +51,37 @@ class AppOnHoverState extends State<AppOnHover>
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
-        animation: animationController,
-        builder: (context, Widget? child) {
-          return MouseRegion(
-            onEnter: (event) => onHover(true),
-            onExit: (event) => onHover(false),
-            cursor: SystemMouseCursors.click,
-            child: Transform(
-                alignment: FractionalOffset.center,
-                transform: Matrix4.identity()
-                  ..scale(scaleAnimation.value as double,
-                      scaleAnimation.value as double),
-                child: GestureDetector(
-                    onTapDown: (_) {
-                      isTapped = true;
-                      animationController.animateTo(0);
-                    },
-                    onTapCancel: () {
-                      isTapped = false;
-                      animationController.animateTo(0.5);
-                    },
-                    onTap: () {
-                      isTapped = false;
-                      animationController.animateTo(0.5);
-                    },
-                    child: widget.child)),
-          );
-        });
+      animation: animationController,
+      builder: (context, Widget? child) {
+        return MouseRegion(
+          onEnter: (event) => onHover(true),
+          onExit: (event) => onHover(false),
+          cursor: SystemMouseCursors.click,
+          child: Transform(
+            alignment: FractionalOffset.center,
+            transform: Matrix4.identity()
+              ..scale(
+                scaleAnimation.value as double,
+                scaleAnimation.value as double,
+              ),
+            child: GestureDetector(
+              onTapDown: (_) {
+                isTapped = true;
+                animationController.animateTo(0);
+              },
+              onTapCancel: () {
+                isTapped = false;
+                animationController.animateTo(0.5);
+              },
+              onTap: () {
+                isTapped = false;
+                animationController.animateTo(0.5);
+              },
+              child: widget.child,
+            ),
+          ),
+        );
+      },
+    );
   }
 }

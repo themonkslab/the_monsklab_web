@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:the_monkslab_web/src/constants/urls.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
+import 'package:the_monkslab_web/src/utils/_index.dart';
 
 class Contratanos extends StatelessWidget {
   const Contratanos({
@@ -27,13 +29,14 @@ class Contratanos extends StatelessWidget {
             height: 400,
             width: 400,
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 48.0),
+              padding: const EdgeInsets.symmetric(vertical: 48),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Tu empresa necesita desarrollo Flutter de alto nivel?'
+                    localize(context)
+                        .doesYourBusinessNeedHighLevelFlutterDevelopment
                         .toUpperCase(),
                     textAlign: TextAlign.start,
                     style: AppTextStyles.h1.copyWith(
@@ -43,14 +46,15 @@ class Contratanos extends StatelessWidget {
                   ),
                   AppGaps.gapH20,
                   Text(
-                    'Entrenamos desarrolladores de primer nivel, team players, con pasión por cada línea de código y atención al detalle.',
+                    localize(context).weTrainTopLevelDevelopers,
                     textAlign: TextAlign.start,
                     style: AppTextStyles.p,
                   ),
                   AppGaps.gapH24,
                   AppFilledButton(
-                    text: 'Contratanos!',
-                    onTap: () {},
+                    text: localize(context).hireUs,
+                    onTap: () async =>
+                        UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
                   ),
                 ],
               ),
