@@ -57,20 +57,23 @@ class ArchivePopulated extends StatelessWidget {
                         style: isPhoneOrTablet ? AppTextStyles.h2Phone : AppTextStyles.h2,
                       ),
                       AppGaps.gapH12,
-                      for (var course in courses.courses)
-                        Padding(
-                          padding: const EdgeInsets.only(bottom: 8),
-                          child: AppHypertext(
-                            text: course.title,
-                            onTap: () => context.beamToNamed(
-                              '/${context.read<LocaleCubit>().state.locale.toString()}/course/${course.path}',
+                      ...[
+                        for (var course in courses.courses)
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 8),
+                            child: AppHypertext(
+                              text: course.title,
+                              onTap: () => context.beamToNamed(
+                                '/${context.read<LocaleCubit>().state.locale.toString()}/course/${course.path}',
+                              ),
+                              onTertiaryTapUp: () => UrlHelper.launchUrl(
+                                '${AppUrls.monkslabWeb}course/${course.path}',
+                              ),
+                              style: isPhoneOrTablet ? AppTextStyles.h3Phone : AppTextStyles.h3,
                             ),
-                            onTertiaryTapUp: () => UrlHelper.launchUrl(
-                              '${AppUrls.monkslabWeb}course/${course.path}',
-                            ),
-                            style: isPhoneOrTablet ? AppTextStyles.h3Phone : AppTextStyles.h3,
-                          ),
-                        )
+                          )
+                      ],
+                      AppGaps.gapH24,
                     ],
                   )
               ],
