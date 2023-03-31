@@ -27,14 +27,10 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
               if (fileSection.articles != null) {
                 for (final article in fileSection.articles!) {
                   if (article.path == path && article.contentUrl != null) {
-                    final articleContent =
-                        (await HttpApi().getRequest(article.contentUrl!))
-                            .toString();
+                    final articleContent = (await HttpApi().getRequest(article.contentUrl!)).toString();
                     final articleNameUrl = article.contentUrl!.split('/').last;
-                    final folderUrl =
-                        article.contentUrl!.replaceAll(articleNameUrl, '');
-                    final formattedContent =
-                        formatGitHubImagesUrls(articleContent, folderUrl);
+                    final folderUrl = article.contentUrl!.replaceAll(articleNameUrl, '');
+                    final formattedContent = formatGitHubImagesUrls(articleContent, folderUrl);
                     return Article(
                       id: path,
                       title: article.title ?? '',
@@ -88,6 +84,7 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
     return null;
   }
 
+  //! courseGroup is not being used
   @override
   Future<List<Courses>?> getCourses(String courseGroup) async {
     if (fileCourses.isEmpty) {
@@ -95,13 +92,12 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
     }
     final List<Courses> list = [];
     for (final courses in fileCourses) {
-      final List<CourseReference> coursesRef = courses.courses!
-          .map((e) => CourseReference(path: e.path ?? '', title: e.title ?? ''))
-          .toList();
+      final List<CourseReference> coursesRef =
+          courses.courses!.map((e) => CourseReference(path: e.path ?? '', title: e.title ?? '')).toList();
       list.add(
         Courses(
           id: '',
-          title: courses.courseGroup ?? '',
+          title: courses.groupName ?? '',
           shouldUpdate: false,
           courses: coursesRef,
         ),
@@ -164,23 +160,20 @@ class FileCoursesRepositoryImpl extends CoursesRepository {
   }
 }
 
-List<FileCoursesGroup> coursesFromJson(String str) =>
-    List<FileCoursesGroup>.from(
+List<FileCoursesGroup> coursesFromJson(String str) => List<FileCoursesGroup>.from(
       json.decode(str).map((x) => FileCoursesGroup.fromJson(x)),
     );
 
-String coursesToJson(List<FileCoursesGroup> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String coursesToJson(List<FileCoursesGroup> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class FileCoursesGroup {
   FileCoursesGroup({
-    this.courseGroup,
+    this.groupName,
     this.courses,
   });
 
-  factory FileCoursesGroup.fromJson(Map<String, dynamic> json) =>
-      FileCoursesGroup(
-        courseGroup: json['course_group'],
+  factory FileCoursesGroup.fromJson(Map<String, dynamic> json) => FileCoursesGroup(
+        groupName: json['group_name'],
         courses: json['courses'] == null
             ? []
             : List<FileCourse>.from(
@@ -188,7 +181,7 @@ class FileCoursesGroup {
               ),
       );
 
-  final String? courseGroup;
+  final String? groupName;
   final List<FileCourse>? courses;
 
   FileCoursesGroup copyWith({
@@ -196,15 +189,13 @@ class FileCoursesGroup {
     List<FileCourse>? courses,
   }) =>
       FileCoursesGroup(
-        courseGroup: courseGroup ?? this.courseGroup,
+        groupName: groupName ?? groupName,
         courses: courses ?? this.courses,
       );
 
   Map<String, dynamic> toJson() => {
-        'course_group': courseGroup,
-        'courses': courses == null
-            ? []
-            : List<dynamic>.from(courses!.map((x) => x.toJson())),
+        'group_name': groupName,
+        'courses': courses == null ? [] : List<dynamic>.from(courses!.map((x) => x.toJson())),
       };
 }
 
@@ -243,9 +234,7 @@ class FileCourse {
   Map<String, dynamic> toJson() => {
         'title': title,
         'path': path,
-        'sections': sections == null
-            ? []
-            : List<dynamic>.from(sections!.map((x) => x.toJson())),
+        'sections': sections == null ? [] : List<dynamic>.from(sections!.map((x) => x.toJson())),
       };
 }
 
@@ -290,9 +279,7 @@ class FileSection {
         'path': path,
         'title': title,
         'description': description,
-        'articles': articles == null
-            ? []
-            : List<dynamic>.from(articles!.map((x) => x.toJson())),
+        'articles': articles == null ? [] : List<dynamic>.from(articles!.map((x) => x.toJson())),
       };
 }
 
@@ -312,9 +299,7 @@ class FileArticle {
         description: json['description'],
         contentUrl: json['contentUrl'],
         author: authorValues.map[json['author']],
-        published: json['published'] == null
-            ? null
-            : DateTime.parse(json['published']),
+        published: json['published'] == null ? null : DateTime.parse(json['published']),
       );
 
   final String? path;

@@ -2,6 +2,7 @@ import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/core/locale_cubit/locale_cubit.dart';
+import 'package:the_monkslab_web/src/repositories/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 
 class LanguageSwitcherDropDown extends StatelessWidget {
@@ -31,6 +32,7 @@ class LanguageSwitcherDropDown extends StatelessWidget {
                   value: state.locale == const Locale('en'),
                   onChanged: (value) {
                     final locale = value ? const Locale('en') : const Locale('es');
+                    context.read<CoursesRepository>().fetchCoursesFromLocale(locale);
                     Beamer.of(context).beamToNamed(
                       '/${locale.languageCode}',
                       transitionDelegate: const NoAnimationTransitionDelegate(),
