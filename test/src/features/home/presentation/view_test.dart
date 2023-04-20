@@ -5,8 +5,9 @@ import 'package:the_monkslab_web/src/features/_index.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
 
-import '../../../utils/common.dart';
 import '../home_robot.dart';
+
+class MockCoursesRepository extends Mock implements CoursesRepository {}
 
 void main() {
   group('HomeView', () {
@@ -25,7 +26,7 @@ void main() {
     testWidgets('navigates to the archive when hypertext is tapped', (tester) async {
       final r = HomeRobot(tester);
       await r.pumpWidget(const AppPage());
-      when(() => coursesRepository.getCourses(any())).thenAnswer((_) async => emptyCoursesList);
+      when(() => coursesRepository.fetchAll()).thenAnswer((_) async => []);
       await r.tap(AppHypertext);
       await tester.pumpAndSettle();
       await r.expectOneOfType(ArchivePage);

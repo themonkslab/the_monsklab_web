@@ -7,10 +7,12 @@ import 'package:the_monkslab_web/src/ui/_index.dart';
 class CoursePopulated extends StatelessWidget {
   const CoursePopulated({
     required this.course,
+    required this.groupName,
     super.key,
   });
 
   final Course course;
+  final String groupName;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +43,12 @@ class CoursePopulated extends StatelessWidget {
               ),
             ),
             AppGaps.gapH24,
-            for (var section in course.sections) SectionPage(path: section.path)
+            for (var section in course.sections)
+              SectionPage(
+                sectionPath: section.path,
+                coursePath: course.path,
+                groupName: groupName,
+              )
           ],
         ),
       ),

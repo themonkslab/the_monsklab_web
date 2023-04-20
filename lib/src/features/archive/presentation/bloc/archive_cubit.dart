@@ -1,9 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
-import 'package:the_monkslab_web/src/models/learning_path.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
-import 'package:the_monkslab_web/src/utils/_index.dart';
 
 class ArchiveCubit extends Cubit<ArchiveState> {
   ArchiveCubit(this._coursesRepository) : super(ArchiveState.initial());
@@ -13,12 +11,12 @@ class ArchiveCubit extends Cubit<ArchiveState> {
   Future<void> fetchCourses(String courseGroup) async {
     emit(state.copyWith(status: ArchiveStatus.loading));
     try {
-      final coursesList = await _coursesRepository.getCourses(courseGroup);
+      final coursesGroup = await _coursesRepository.fetchAll();
 
       emit(
         state.copyWith(
           status: ArchiveStatus.success,
-          coursesList: coursesList,
+          coursesGroupList: coursesGroup,
         ),
       );
     } on Exception {
@@ -38,29 +36,27 @@ enum ArchiveStatus { initial, loading, success, failure }
 class ArchiveState extends Equatable {
   const ArchiveState({
     required this.status,
-    this.coursesList,
+    this.coursesGroupList,
   });
   factory ArchiveState.initial() {
     return const ArchiveState(status: ArchiveStatus.initial);
   }
   final ArchiveStatus status;
-  final List<Courses>? coursesList;
+  final List<CourseGroup>? coursesGroupList;
 
   @override
-  List<Object?> get props => [status, coursesList];
+  List<Object?> get props => [status, coursesGroupList];
 
   ArchiveState copyWith({
     ArchiveStatus? status,
-    List<Courses>? coursesList,
+    List<CourseGroup>? coursesGroupList,
   }) {
     return ArchiveState(
       status: status ?? this.status,
-      coursesList: coursesList ?? coursesList,
+      coursesGroupList: coursesGroupList ?? this.coursesGroupList,
     );
   }
 
   @override
-  String toString() =>
-      '''ArchiveState(${Colorizer.colorizeWithBrightMagenta(text: 'status:')} $status,
-  learningPath: $coursesList)''';
+  String toString() => 'ArchiveState(status: $status, coursesGroupList: $coursesGroupList)';
 }

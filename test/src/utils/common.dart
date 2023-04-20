@@ -1,10 +1,8 @@
-import 'package:the_monkslab_web/src/models/_index.dart';
+import 'dart:convert';
+import 'dart:io';
 
-const emptyCoursesList = [
-  Courses(
-    id: '',
-    title: '',
-    courses: [],
-    shouldUpdate: false,
-  )
-];
+class TestHelper {
+  static getJsonFromTestResources(String filename) {
+    return jsonDecode(utf8.decode(File(filename).readAsBytesSync()));
+  }
+}

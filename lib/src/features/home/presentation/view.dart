@@ -33,7 +33,7 @@ class HomeView extends StatelessWidget {
               //* Hero
               Header(isPhoneOrTablet: isPhoneOrTablet),
               //* Contratanos
-              Contratanos(isPhoneOrTablet: isPhoneOrTablet),
+              HireUs(isPhoneOrTablet: isPhoneOrTablet),
               //* Footer
               Footer(isPhoneOrTablet: isPhoneOrTablet),
             ],
