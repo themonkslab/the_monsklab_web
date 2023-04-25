@@ -6,16 +6,17 @@ import 'package:the_monkslab_web/src/repositories/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 
 class CoursePage extends StatelessWidget {
-  const CoursePage(this.path, {super.key});
+  const CoursePage(this.coursePath, this.groupName, {super.key});
 
-  final String path;
+  final String coursePath;
+  final String groupName;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<CourseCubit>(
       create: (context) => CourseCubit(
         coursesRepository: context.read<CoursesRepository>(),
-      )..fetchCourse(path),
+      )..fetchCourse(coursePath, groupName),
       child: const CourseView(),
     );
   }
@@ -36,6 +37,7 @@ class CourseView extends StatelessWidget {
           case CourseStatus.success:
             return CoursePopulated(
               course: state.course!,
+              groupName: state.groupName!,
             );
           default:
             return const AppFailure();

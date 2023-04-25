@@ -12,12 +12,12 @@ import 'package:the_monkslab_web/src/utils/_index.dart';
 class ArchivePopulated extends StatelessWidget {
   const ArchivePopulated({
     required this.isPhoneOrTablet,
-    required this.coursesList,
+    required this.coursesGroupList,
     super.key,
   });
 
   final bool isPhoneOrTablet;
-  final List<Courses> coursesList;
+  final List<CourseGroup> coursesGroupList;
 
   @override
   Widget build(BuildContext context) {
@@ -48,30 +48,31 @@ class ArchivePopulated extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                for (var courses in coursesList)
+                for (var courseGroup in coursesGroupList)
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        courses.title,
+                        courseGroup.groupName ?? '',
                         style: isPhoneOrTablet ? AppTextStyles.h2Phone : AppTextStyles.h2,
                       ),
                       AppGaps.gapH12,
                       ...[
-                        for (var course in courses.courses)
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 8),
-                            child: AppHypertext(
-                              text: course.title,
-                              onTap: () => context.beamToNamed(
-                                '/${context.read<LocaleCubit>().state.locale.toString()}/course/${course.path}',
+                        if (courseGroup.courses != null)
+                          for (var course in courseGroup.courses!)
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 8),
+                              child: AppHypertext(
+                                text: course.title,
+                                onTap: () => context.beamToNamed(
+                                  '/${context.read<LocaleCubit>().state.locale.languageCode}/archive/${courseGroup.groupName}/${course.path}',
+                                ),
+                                onTertiaryTapUp: () => UrlHelper.launchUrl(
+                                  '${AppUrls.monkslabWeb}course/${course.path}',
+                                ),
+                                style: isPhoneOrTablet ? AppTextStyles.h3Phone : AppTextStyles.h3,
                               ),
-                              onTertiaryTapUp: () => UrlHelper.launchUrl(
-                                '${AppUrls.monkslabWeb}course/${course.path}',
-                              ),
-                              style: isPhoneOrTablet ? AppTextStyles.h3Phone : AppTextStyles.h3,
-                            ),
-                          )
+                            )
                       ],
                       AppGaps.gapH24,
                     ],

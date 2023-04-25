@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
@@ -14,10 +12,20 @@ class ArticleCubit extends Cubit<ArticleState> {
 
   final CoursesRepository _coursesRepository;
 
-  Future<void> fetchArticle(String path) async {
+  Future<void> fetchArticle(
+    String articlePath,
+    String sectionPath,
+    String coursePath,
+    String groupName,
+  ) async {
     emit(state.copyWith(status: ArticleStatus.loading));
     try {
-      final article = await _coursesRepository.getArticle(path);
+      final article = await _coursesRepository.fetchArticle(
+        articlePath,
+        sectionPath,
+        coursePath,
+        groupName,
+      );
       emit(
         state.copyWith(
           status: ArticleStatus.success,
@@ -42,15 +50,6 @@ class ArticleState extends Equatable {
     return const ArticleState(status: ArticleStatus.initial);
   }
 
-  factory ArticleState.fromMap(Map<String, dynamic> map) {
-    return ArticleState(
-      status: map['status'],
-      article: map['article'] != null ? Article.fromMap(map['article']) : null,
-    );
-  }
-
-  factory ArticleState.fromJson(String source) =>
-      ArticleState.fromMap(json.decode(source));
   final ArticleStatus status;
   final Article? article;
 
@@ -58,20 +57,8 @@ class ArticleState extends Equatable {
   List<Object?> get props => [article, status];
 
   @override
-  String toString() =>
-      '''ArticleState(${Colorizer.colorizeWithBrightMagenta(text: 'status:')} $status,
+  String toString() => '''ArticleState(${Colorizer.colorizeWithBrightMagenta(text: 'status:')} $status,
       article: ${article?.title})''';
-
-  Map<String, dynamic> toMap() {
-    final result = <String, dynamic>{}..addAll({'status': status});
-    if (article != null) {
-      result.addAll({'article': article!.toMap()});
-    }
-
-    return result;
-  }
-
-  String toJson() => json.encode(toMap());
 
   ArticleState copyWith({
     ArticleStatus? status,

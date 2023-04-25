@@ -20,5 +20,10 @@
         "commandCenter.border": "#e7e7e799"
     },
     "peacock.color": "303C54",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "cSpell.words": [
+        "Beamer",
+        "monkslab",
+        "Teamers"
+    ]
 }

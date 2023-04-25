@@ -32,11 +32,13 @@ class LanguageSwitcherDropDown extends StatelessWidget {
                   value: state.locale == const Locale('en'),
                   onChanged: (value) {
                     final locale = value ? const Locale('en') : const Locale('es');
-                    context.read<CoursesRepository>().fetchCoursesFromLocale(locale);
-                    Beamer.of(context).beamToNamed(
-                      '/${locale.languageCode}',
-                      transitionDelegate: const NoAnimationTransitionDelegate(),
-                    );
+                    context.read<CoursesRepository>().locale = locale;
+                    context.read<CoursesRepository>().fetchAll().then(
+                          (value) => Beamer.of(context).beamToNamed(
+                            '/${locale.languageCode}',
+                            transitionDelegate: const NoAnimationTransitionDelegate(),
+                          ),
+                        );
                   },
                   activeColor: AppColors.secondaryLight,
                   activeTrackColor: AppColors.secondaryLighter,

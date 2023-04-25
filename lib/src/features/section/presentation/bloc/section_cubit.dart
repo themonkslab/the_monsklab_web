@@ -1,11 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:json_annotation/json_annotation.dart';
 import 'package:the_monkslab_web/src/models/section.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
-
-part 'section_cubit.g.dart';
 
 class SectionCubit extends Cubit<SectionState> {
   SectionCubit({
@@ -15,10 +12,18 @@ class SectionCubit extends Cubit<SectionState> {
 
   final CoursesRepository _coursesRepository;
 
-  Future<void> fetchSection(String path) async {
+  Future<void> fetchSection(
+    String sectionPath,
+    String coursePath,
+    String groupName,
+  ) async {
     emit(state.copyWith(status: SectionStatus.loading));
     try {
-      final section = await _coursesRepository.getSection(path);
+      final section = await _coursesRepository.fetchSection(
+        sectionPath,
+        coursePath,
+        groupName,
+      );
 
       emit(
         state.copyWith(
@@ -38,19 +43,14 @@ class SectionCubit extends Cubit<SectionState> {
 
 enum SectionStatus { initial, loading, success, failure }
 
-@JsonSerializable()
 class SectionState extends Equatable {
   const SectionState({
     required this.status,
     this.section,
   });
-  factory SectionState.fromJson(Map<String, dynamic> json) =>
-      _$SectionStateFromJson(json);
 
   final SectionStatus status;
   final Section? section;
-
-  Map<String, dynamic> toJson() => _$SectionStateToJson(this);
 
   SectionState copyWith({
     SectionStatus? status,
@@ -66,7 +66,6 @@ class SectionState extends Equatable {
   List<Object?> get props => [status, section];
 
   @override
-  String toString() =>
-      '''SectionState(${Colorizer.colorizeWithBrightMagenta(text: 'status:')} $status,
+  String toString() => '''SectionState(${Colorizer.colorizeWithBrightMagenta(text: 'status:')} $status,
       section: ${section?.title})''';
 }
