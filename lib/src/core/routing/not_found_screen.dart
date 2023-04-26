@@ -18,8 +18,8 @@ class NotFoundScreen extends StatelessWidget {
             Text('404 - Page not found!'.hardcoded),
             AppGaps.gapH24,
             TextButton(
-              onPressed: () => Beamer.of(context)
-                  .beamToReplacementNamed('/${context.read<LocaleCubit>().state.locale.languageCode}'),
+              onPressed: () => Beamer.of(context).beamToReplacementNamed(
+                  '/${context.read<LocaleCubit>().state.locale.languageCode}'),
               child: const Text('Home'),
             )
           ],

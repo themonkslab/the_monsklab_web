@@ -148,10 +148,10 @@
 
 // ## TDD o nuestra forma particular de enseñarnos
 
-// Vieron lo que hicimos? 
+// Vieron lo que hicimos?
 
 // 1. Corrimos el programa sin haber escrito un _main method_.
-// 2. eso lo _rompió_ y 
+// 2. eso lo _rompió_ y
 // 3. lo _arreglamos_ escribiendo un código nuevo, el _main method_.
 
 // __Esto se llama _TDD_ o _Test Driven Design_, escribir código desde los tests.__
@@ -246,7 +246,6 @@
 
 // __Tratamos de que no solamente aprendan a escribir código de calidad sino también absorvan buenas prácticas__ para con ustedes y sus compañeros y compañeras y tengan la oportunidad de amar esta profesión como nosotros lo hacemos!
 
-
 // ''',
 //       ),
 //       Article(
@@ -272,7 +271,7 @@
 //     // Ya vimos qué utilizamos en el pasado para imprimir
 //     // pero no vimos... 🤨 ... este tipo de escritura en el código!
 //     // Estos son comentarios de código y pueden utilizarse
-//     // para hacer aclaraciones, guiar a otro programador u 
+//     // para hacer aclaraciones, guiar a otro programador u
 //     // hasta incluso, organizarlo.
 //     // Ya hablaremos más de ellos!
 
@@ -390,7 +389,7 @@
 // ```dart
 // void main() {
 //     String myFirstName = 'Mauro';
-//     String? mySecondName = 'Ariel'; // como la 🧜‍♀️ 
+//     String? mySecondName = 'Ariel'; // como la 🧜‍♀️
 //     print (myFirstName + mySecondName);
 // }
 // ```
@@ -400,7 +399,7 @@
 // ```dart
 // void main() {
 //     String myFirstName = 'Mauro';
-//     String? mySecondName = 'Ariel'; // como la 🧜‍♀️ 
+//     String? mySecondName = 'Ariel'; // como la 🧜‍♀️
 //     print (myFirstName + ' ' + mySecondName);
 // }
 // ```
@@ -414,7 +413,7 @@
 // ```dart
 // void main() {
 //     String myFirstName = 'Mauro';
-//     String? mySecondName = 'Ariel'; // como la 🧜‍♀️ 
+//     String? mySecondName = 'Ariel'; // como la 🧜‍♀️
 //     print ('\$myFirstName \$mySecondName');
 // }
 // ```
@@ -428,7 +427,7 @@
 // ```dart
 // void main() {
 //     String myFirstName = 'Mauro';
-//     String? mySecondName; // me sacaron el segundo! 
+//     String? mySecondName; // me sacaron el segundo!
 //     print ('\$myFirstName \$mySecondName'); // Imprimiría: Mauro null
 // }
 // ```
@@ -444,8 +443,6 @@
 //     print ('\$myFirstName \${mySecondName??''}');
 // }
 // ```
-
-
 
 // ''',
 //       ),

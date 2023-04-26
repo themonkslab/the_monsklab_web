@@ -15,7 +15,8 @@ class CourseCubit extends Cubit<CourseState> {
   Future<void> fetchCourse(String coursePath, String groupName) async {
     emit(state.copyWith(status: CourseStatus.loading));
     try {
-      final course = await _coursesRepository.fetchCourse(coursePath, groupName);
+      final course =
+          await _coursesRepository.fetchCourse(coursePath, groupName);
       emit(
         state.copyWith(
           status: CourseStatus.success,
@@ -52,7 +53,8 @@ class CourseState extends Equatable {
       ];
 
   @override
-  String toString() => '''CourseState(${Colorizer.colorizeWithBrightMagenta(text: 'status:')} $status,
+  String toString() =>
+      '''CourseState(${Colorizer.colorizeWithBrightMagenta(text: 'status:')} $status,
       course: $course), groupName $groupName''';
 
   CourseState copyWith({

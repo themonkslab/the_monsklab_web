@@ -58,5 +58,6 @@ class ArchiveState extends Equatable {
   }
 
   @override
-  String toString() => 'ArchiveState(status: $status, coursesGroupList: $coursesGroupList)';
+  String toString() =>
+      'ArchiveState(status: $status, coursesGroupList: $coursesGroupList)';
 }

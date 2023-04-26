@@ -23,7 +23,8 @@ void main() {
       await r.expectOneOfType(HomePage);
     });
 
-    testWidgets('navigates to the archive when hypertext is tapped', (tester) async {
+    testWidgets('navigates to the archive when hypertext is tapped',
+        (tester) async {
       final r = HomeRobot(tester);
       await r.pumpWidget(const AppPage());
       when(() => coursesRepository.fetchAll()).thenAnswer((_) async => []);

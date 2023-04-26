@@ -37,7 +37,9 @@ class ArchivePopulated extends StatelessWidget {
             AppGaps.gapH48,
             Text(
               localize(context).archiveViewTitle,
-              style: isPhoneOrTablet ? AppTextStyles.h1HeaderPhone : AppTextStyles.h1Header,
+              style: isPhoneOrTablet
+                  ? AppTextStyles.h1HeaderPhone
+                  : AppTextStyles.h1Header,
             ),
             AppGaps.gapH20,
             Text(
@@ -54,7 +56,9 @@ class ArchivePopulated extends StatelessWidget {
                     children: [
                       Text(
                         courseGroup.groupName ?? '',
-                        style: isPhoneOrTablet ? AppTextStyles.h2Phone : AppTextStyles.h2,
+                        style: isPhoneOrTablet
+                            ? AppTextStyles.h2Phone
+                            : AppTextStyles.h2,
                       ),
                       AppGaps.gapH12,
                       ...[
@@ -70,7 +74,9 @@ class ArchivePopulated extends StatelessWidget {
                                 onTertiaryTapUp: () => UrlHelper.launchUrl(
                                   '${AppUrls.monkslabWeb}course/${course.path}',
                                 ),
-                                style: isPhoneOrTablet ? AppTextStyles.h3Phone : AppTextStyles.h3,
+                                style: isPhoneOrTablet
+                                    ? AppTextStyles.h3Phone
+                                    : AppTextStyles.h3,
                               ),
                             )
                       ],

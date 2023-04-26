@@ -13,8 +13,10 @@ void main() {
     late List<CourseGroup> courseGroupList;
     setUpAll(
       () {
-        final List list = TestHelper.getJsonFromTestResources('test/resources/courses_es.json');
-        final fileCourseList = list.map((e) => FileCoursesGroup.fromMap(e)).toList();
+        final List list = TestHelper.getJsonFromTestResources(
+            'test/resources/courses_es.json');
+        final fileCourseList =
+            list.map((e) => FileCoursesGroup.fromMap(e)).toList();
         courseGroupList = fileCourseList.map((e) => e.toViewModel()).toList();
       },
     );
@@ -38,8 +40,10 @@ void main() {
     late List<CourseGroup> courseGroupList;
     setUpAll(
       () {
-        final String json = TestHelper.getJsonFromTestResources('test/resources/courses.json');
-        courseGroupList = coursesFromJson(json).map((e) => e.toViewModel()).toList();
+        final String json =
+            TestHelper.getJsonFromTestResources('test/resources/courses.json');
+        courseGroupList =
+            coursesFromJson(json).map((e) => e.toViewModel()).toList();
       },
     );
     testWidgets('renders AppResponsiveScaffold with padH24', (tester) async {

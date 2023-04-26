@@ -88,7 +88,8 @@ class SectionView extends StatelessWidget {
                                 width: double.infinity,
                                 child: OutlinedButton(
                                   style: ButtonStyle(
-                                    shape: MaterialStateProperty.all<ContinuousRectangleBorder>(
+                                    shape: MaterialStateProperty.all<
+                                        ContinuousRectangleBorder>(
                                       const ContinuousRectangleBorder(),
                                     ),
                                   ),

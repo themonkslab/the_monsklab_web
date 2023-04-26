@@ -28,7 +28,8 @@ class ArticlePopulated extends StatelessWidget {
     );
 
     final screenType = context.getScreenType();
-    final isDesktopOrLarge = screenType == ScreenType.desktop || screenType == ScreenType.large;
+    final isDesktopOrLarge =
+        screenType == ScreenType.desktop || screenType == ScreenType.large;
 
     return isDesktopOrLarge
         ? Scaffold(
@@ -48,7 +49,9 @@ class ArticlePopulated extends StatelessWidget {
                   AppGaps.gapH24,
                   Container(
                     color: Colors.white,
-                    width: isDesktopOrLarge ? AppSizes.largeContentContainer : AppSizes.desktopContentContainer,
+                    width: isDesktopOrLarge
+                        ? AppSizes.largeContentContainer
+                        : AppSizes.desktopContentContainer,
                     child: ArticleBody(data: article.content ?? ''),
                   ),
                   AppGaps.gapH48,

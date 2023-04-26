@@ -71,8 +71,6 @@
 
 // Te ayudaré a volverte ilimitado a tu manera, dentro del marco de las tres áreas: *mentalidad* (el qué - parte II del libro), *motivación* (el porqué - parte III del libro) y *método* (el cómo - parte IV del libro).
 
-
-
 // ''',
 //         ),
 //         Article(
@@ -118,7 +116,6 @@
 
 // Me encanta el lado luminoso de la tecnología pero como cualquier herramienta, no es buena ni mala: debemos controlar conscientemente cómo la utilizamos.
 
-
 // ''',
 //         ),
 //         Article(
@@ -161,7 +158,6 @@
 // Cuánto valor agregado puede ofrecer una mente ilimitada a ti y a los demás? Hemos entrado en una __economía__ experta en la que el __poder cerebral triunfa sobre la fuerza bruta__.
 
 // Todo lo que tenemos que hacer es __actualizar tu cerebro__ y __una de mis formas favoritas__ es la que ya estás haciendo: se llama __lectura__.
-
 
 // ''',
 //         ),
@@ -246,7 +242,6 @@
 
 // En lugar de leer pasivamente, considera estas preguntas a medida que asimiles los conocimientos de este libro.
 
-
 // ''',
 //         ),
 //       ],
@@ -277,8 +272,6 @@
 // En los próximos capítulos __descubrirás de dónde vienen estas mentiras__, cómo te apresan y qué puedes hacer al respecto. Y hazte esta pregunta: cuántas de mis limitaciones no son más que mentiras y tonterías?
 
 // > "No es lo que no sabes lo que te mete en problemas. Es lo que sabes con certeza que simplemente no es así." Mark Twain.
-
-
 
 // ''',
 //         ),
@@ -334,7 +327,7 @@
 
 // ## Las posibilidades se hacen ilimitadas
 
-// Si dejamos que las emociones negativas (como las creencias limitantes) nos controlen, operamos regularmente en modo de supervivencia. 
+// Si dejamos que las emociones negativas (como las creencias limitantes) nos controlen, operamos regularmente en modo de supervivencia.
 
 // Cuando experimentamos emociones positivas como alegría, satisfacción y amor, vemos más posibilidades en nuestras vidas. __La felicidad que promovió la exploración y creación de nuevas habilidades terminó hace mucho tiempo, per las habilidades en sí, perduran__.
 
@@ -343,7 +336,6 @@
 // - Piensa en un momento que viste a alguien lograr algo que te impresionó y qué inspiración puedes obtener de eso.
 // - Reimagina tu crítico y ridiculízalo.
 // - Enfrenta a una creencia limitante y demuéstrale que no tiene sentido.
-
 
 // ''',
 //         ),
@@ -417,8 +409,6 @@
 
 // __Verdad__: el genio deja pistas. Siempre hay un método detrás de lo que parece magia.
 // __Nueva creencia__: el genio no nace, se hace a travees de una práctica profunda.
-
-
 
 // ''',
 //         ),

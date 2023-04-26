@@ -24,19 +24,25 @@ class LanguageSwitcherDropDown extends StatelessWidget {
                 Text(
                   'español',
                   style: AppTextStyles.caption.copyWith(
-                    color: state.locale == const Locale('es') ? AppColors.cyan : Colors.white,
-                    fontWeight: state.locale == const Locale('es') ? FontWeight.bold : FontWeight.normal,
+                    color: state.locale == const Locale('es')
+                        ? AppColors.cyan
+                        : Colors.white,
+                    fontWeight: state.locale == const Locale('es')
+                        ? FontWeight.bold
+                        : FontWeight.normal,
                   ),
                 ),
                 Switch(
                   value: state.locale == const Locale('en'),
                   onChanged: (value) {
-                    final locale = value ? const Locale('en') : const Locale('es');
+                    final locale =
+                        value ? const Locale('en') : const Locale('es');
                     context.read<CoursesRepository>().locale = locale;
                     context.read<CoursesRepository>().fetchAll().then(
                           (value) => Beamer.of(context).beamToNamed(
                             '/${locale.languageCode}',
-                            transitionDelegate: const NoAnimationTransitionDelegate(),
+                            transitionDelegate:
+                                const NoAnimationTransitionDelegate(),
                           ),
                         );
                   },
@@ -48,8 +54,12 @@ class LanguageSwitcherDropDown extends StatelessWidget {
                 Text(
                   'english',
                   style: AppTextStyles.caption.copyWith(
-                    color: state.locale == const Locale('en') ? AppColors.secondaryLight : Colors.white,
-                    fontWeight: state.locale == const Locale('en!') ? FontWeight.bold : FontWeight.normal,
+                    color: state.locale == const Locale('en')
+                        ? AppColors.secondaryLight
+                        : Colors.white,
+                    fontWeight: state.locale == const Locale('en!')
+                        ? FontWeight.bold
+                        : FontWeight.normal,
                   ),
                 ),
               ],

@@ -57,7 +57,8 @@ class ArticleState extends Equatable {
   List<Object?> get props => [article, status];
 
   @override
-  String toString() => '''ArticleState(${Colorizer.colorizeWithBrightMagenta(text: 'status:')} $status,
+  String toString() =>
+      '''ArticleState(${Colorizer.colorizeWithBrightMagenta(text: 'status:')} $status,
       article: ${article?.title})''';
 
   ArticleState copyWith({

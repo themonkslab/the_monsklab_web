@@ -66,6 +66,7 @@ class SectionState extends Equatable {
   List<Object?> get props => [status, section];
 
   @override
-  String toString() => '''SectionState(${Colorizer.colorizeWithBrightMagenta(text: 'status:')} $status,
+  String toString() =>
+      '''SectionState(${Colorizer.colorizeWithBrightMagenta(text: 'status:')} $status,
       section: ${section?.title})''';
 }

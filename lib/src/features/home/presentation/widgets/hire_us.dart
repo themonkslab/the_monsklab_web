@@ -34,7 +34,9 @@ class HireUs extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    localize(context).doesYourBusinessNeedHighLevelFlutterDevelopment.toUpperCase(),
+                    localize(context)
+                        .doesYourBusinessNeedHighLevelFlutterDevelopment
+                        .toUpperCase(),
                     textAlign: TextAlign.start,
                     style: AppTextStyles.h1.copyWith(
                       fontSize: 20,
