@@ -11,25 +11,46 @@ import 'package:the_monkslab_web/src/utils/_index.dart';
 
 class SectionPage extends StatelessWidget {
   const SectionPage({
-    required this.path,
+    required this.sectionPath,
+    required this.coursePath,
+    required this.groupName,
     super.key,
   });
 
-  final String path;
+  final String sectionPath;
+  final String coursePath;
+  final String groupName;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<SectionCubit>(
       create: (context) => SectionCubit(
         coursesRepository: context.read<CoursesRepository>(),
-      )..fetchSection(path),
-      child: const SectionView(),
+      )..fetchSection(
+          sectionPath,
+          coursePath,
+          groupName,
+        ),
+      child: SectionView(
+        sectionPath: sectionPath,
+        coursePath: coursePath,
+        groupName: groupName,
+      ),
     );
   }
 }
 
 class SectionView extends StatelessWidget {
-  const SectionView({super.key});
+  const SectionView({
+    required this.sectionPath,
+    required this.coursePath,
+    required this.groupName,
+    super.key,
+  });
+
+  final String sectionPath;
+  final String coursePath;
+  final String groupName;
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +94,7 @@ class SectionView extends StatelessWidget {
                                     ),
                                   ),
                                   onPressed: () => context.beamToNamed(
-                                    '/${AppRoutes.article.name}/${article.path}',
+                                    '/${context.read<LocaleCubit>().state.locale.languageCode}/archive/$groupName/$coursePath/$sectionPath/${article.path}',
                                   ),
                                   child: Padding(
                                     padding: AppPaddings.padAll16,
@@ -90,7 +111,7 @@ class SectionView extends StatelessWidget {
                                 child: AppHypertext(
                                   text: article.title,
                                   onTap: () => context.beamToNamed(
-                                    '/${context.read<LocaleCubit>().state.locale.toString()}/${AppRoutes.article.name}/${article.path}',
+                                    '/${context.read<LocaleCubit>().state.locale.languageCode}/archive/$groupName/$coursePath/$sectionPath/${article.path}',
                                   ),
                                   onTertiaryTapUp: () => UrlHelper.launchUrl(
                                     '${AppUrls.monkslabWeb}${AppRoutes.article.name}/${article.path}',

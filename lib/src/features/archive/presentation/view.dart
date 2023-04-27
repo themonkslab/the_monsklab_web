@@ -28,7 +28,8 @@ class ArchiveView extends StatelessWidget {
   Widget build(BuildContext context) {
     //TODO -LOW/MEDIUM- create AppLayoutBuilder
     final screenType = context.getScreenType();
-    final isPhoneOrTablet = screenType == ScreenType.phone || screenType == ScreenType.tablet;
+    final isPhoneOrTablet =
+        screenType == ScreenType.phone || screenType == ScreenType.tablet;
 
     return BlocBuilder<ArchiveCubit, ArchiveState>(
       builder: (context, state) {
@@ -40,7 +41,7 @@ class ArchiveView extends StatelessWidget {
           case ArchiveStatus.success:
             return ArchivePopulated(
               isPhoneOrTablet: isPhoneOrTablet,
-              coursesList: state.coursesList!,
+              coursesGroupList: state.coursesGroupList!,
             );
           default:
             return const AppFailure();

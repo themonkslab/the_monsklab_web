@@ -52,7 +52,7 @@ class ArticlePopulated extends StatelessWidget {
                     width: isDesktopOrLarge
                         ? AppSizes.largeContentContainer
                         : AppSizes.desktopContentContainer,
-                    child: ArticleBody(data: article.content),
+                    child: ArticleBody(data: article.content ?? ''),
                   ),
                   AppGaps.gapH48,
                   const ArticleFooter(),
@@ -72,7 +72,7 @@ class ArticlePopulated extends StatelessWidget {
               children: <Widget>[
                 ArticleHeader(article: article),
                 AppGaps.gapH24,
-                ArticleBody(data: article.content),
+                ArticleBody(data: article.content ?? ''),
                 AppGaps.gapH48,
                 const ArticleFooter(),
               ],

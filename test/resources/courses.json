@@ -1,0 +1,134 @@
+[
+    {
+        "group_name": "Learning Path",
+        "courses": [
+            {
+                "title": "Dart y TDD",
+                "path": "dart_y_tdd_es",
+                "sections": [
+                    {
+                        "path": "1.Introducción",
+                        "title": "1.Introducción",
+                        "description": "",
+                        "articles": [
+                            {
+                                "path": "1.Introducción_1_Introducción",
+                                "title": "1.Introducción",
+                                "description": "",
+                                "contentUrl": "https://raw.githubusercontent.com/themonkslab/dream_teamers_courses/main/dart_sp/1.Introducción/1_Introducción.md",
+                                "author": "The Monkslab",
+                                "published": "2023-04-02T09:34:52.762832"
+                            },
+                            {
+                                "path": "1.Introducción_2_Qué_esperamos_nosotros",
+                                "title": "2.Qué esperamos nosotros",
+                                "description": "",
+                                "contentUrl": "https://raw.githubusercontent.com/themonkslab/dream_teamers_courses/main/dart_sp/1.Introducción/2_Qué_esperamos_nosotros.md",
+                                "author": "The Monkslab",
+                                "published": "2023-04-02T09:34:52.762753"
+                            },
+                            {
+                                "path": "1.Introducción_3_Introducción_a_Dart",
+                                "title": "3.Introducción a Dart",
+                                "description": "",
+                                "contentUrl": "https://raw.githubusercontent.com/themonkslab/dream_teamers_courses/main/dart_sp/1.Introducción/3_Introducción_a_Dart.md",
+                                "author": "The Monkslab",
+                                "published": "2023-04-02T09:34:52.762873"
+                            },
+                            {
+                                "path": "1.Introducción_4_Introducción_a_Dartpad",
+                                "title": "4.Introducción a Dartpad",
+                                "description": "",
+                                "contentUrl": "https://raw.githubusercontent.com/themonkslab/dream_teamers_courses/main/dart_sp/1.Introducción/4_Introducción_a_Dartpad.md",
+                                "author": "The Monkslab",
+                                "published": "2023-04-02T09:34:52.762913"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "2.Dart_básico",
+                        "title": "2.Dart básico",
+                        "description": "",
+                        "articles": [
+                            {
+                                "path": "2.Dart_básico_1_Introducción",
+                                "title": "1.Introducción",
+                                "description": "",
+                                "contentUrl": "https://raw.githubusercontent.com/themonkslab/dream_teamers_courses/main/dart_sp/2.Dart_básico/1_Introducción.md",
+                                "author": "The Monkslab",
+                                "published": "2023-04-02T09:34:52.759047"
+                            },
+                            {
+                                "path": "2.Dart_básico_2_Método_main",
+                                "title": "2.Método main",
+                                "description": "",
+                                "contentUrl": "https://raw.githubusercontent.com/themonkslab/dream_teamers_courses/main/dart_sp/2.Dart_básico/2_Método_main.md",
+                                "author": "The Monkslab",
+                                "published": "2023-04-02T09:34:52.760092"
+                            },
+                            {
+                                "path": "2.Dart_básico_3_Primer_programa",
+                                "title": "3.Primer programa",
+                                "description": "",
+                                "contentUrl": "https://raw.githubusercontent.com/themonkslab/dream_teamers_courses/main/dart_sp/2.Dart_básico/3_Primer_programa.md",
+                                "author": "The Monkslab",
+                                "published": "2023-04-02T09:34:52.758756"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "folder": "dart_sp"
+    },
+    {
+        "group_name": "Flutter Avanzado",
+        "courses": [
+            {
+                "title": "CICD con Github",
+                "path": "cicd_es",
+                "sections": [
+                    {
+                        "path": "1.Introducción",
+                        "title": "1.Introducción",
+                        "description": "",
+                        "articles": [
+                            {
+                                "path": "1.Introducción_1_Introducción",
+                                "title": "1.Introducción",
+                                "description": "",
+                                "contentUrl": "https://raw.githubusercontent.com/themonkslab/dream_teamers_courses/main/flutter/cicd_sp/1.Introducción/1_Introducción.md",
+                                "author": "The Monkslab",
+                                "published": "2023-04-02T09:34:52.768748"
+                            }
+                        ]
+                    },
+                    {
+                        "path": "2.Github_Actions",
+                        "title": "2.Github Actions",
+                        "description": "",
+                        "articles": [
+                            {
+                                "path": "2.Github_Actions_3_GitHub_Actions_Externas",
+                                "title": "3.GitHub Actions Externas",
+                                "description": "",
+                                "contentUrl": "https://raw.githubusercontent.com/themonkslab/dream_teamers_courses/main/flutter/cicd_sp/2.Github_Actions/3_GitHub_Actions_Externas.md",
+                                "author": "The Monkslab",
+                                "published": "2023-04-02T09:34:52.769266"
+                            },
+                            {
+                                "path": "2.Github_Actions_4_Primera_acción_con_flutter",
+                                "title": "4.Primera acción con flutter",
+                                "description": "",
+                                "contentUrl": "https://raw.githubusercontent.com/themonkslab/dream_teamers_courses/main/flutter/cicd_sp/2.Github_Actions/4_Primera_acción_con_flutter.md",
+                                "author": "The Monkslab",
+                                "published": "2023-04-02T09:34:52.769371"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "folder": "flutter/cicd_sp"
+    }
+]

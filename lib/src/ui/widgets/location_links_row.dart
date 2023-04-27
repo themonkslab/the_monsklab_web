@@ -20,18 +20,16 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             children: [
               LocationLink(
                 text: localize(context).jobs,
-                onTap: () async =>
-                    UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
               ),
               LocationLink(
                 text: localize(context).courses,
                 onTap: () => context.beamToNamed(
-                  '/${context.read<LocaleCubit>().state.locale.toString()}/${AppRoutes.archive.name}',
+                  '/${context.read<LocaleCubit>().state.locale.languageCode}/${AppRoutes.archive.name}',
                 ),
               ),
               LocationLink(
                 text: localize(context).community,
-                onTap: () async => UrlHelper.launchUrl(AppUrls.torcsDiscord),
+                onTap: () async => UrlHelper.launchUrl(AppUrls.discord),
               ),
             ],
           )
@@ -41,8 +39,6 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             children: [
               LocationLink(
                 text: localize(context).jobs,
-                onTap: () async =>
-                    UrlHelper.launchUrl(AppUrls.torcApplyForJobs),
               ),
               LocationLink(
                 text: localize(context).courses,
@@ -50,7 +46,7 @@ class LocationLinksRowOrColumn extends StatelessWidget {
               ),
               LocationLink(
                 text: localize(context).community,
-                onTap: () async => UrlHelper.launchUrl(AppUrls.torcsDiscord),
+                onTap: () async => UrlHelper.launchUrl(AppUrls.discord),
               ),
             ],
           );

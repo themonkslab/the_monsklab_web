@@ -6,23 +6,23 @@ import 'package:the_monkslab_web/src/features/archive/presentation/bloc/archive_
 import 'package:the_monkslab_web/src/repositories/_index.dart';
 import 'package:the_monkslab_web/src/ui/widgets/_index.dart';
 
-import '../../../utils/common.dart';
 import '../archive_robot.dart';
 
-class MockArchiveCubit extends MockCubit<ArchiveState> implements ArchiveCubit {
-}
+class MockArchiveCubit extends MockCubit<ArchiveState>
+    implements ArchiveCubit {}
+
+class MockCoursesRepository extends Mock implements CoursesRepository {}
 
 void main() {
   group('ArchivePage', () {
-    late FirebaseCoursesRepository coursesRepository;
+    late CoursesRepository coursesRepository;
     setUp(() {
       coursesRepository = MockCoursesRepository();
     });
 
     testWidgets('renders ArchiveView', (tester) async {
       final r = ArchiveRobot(tester);
-      when(() => coursesRepository.getCourses(any()))
-          .thenAnswer((_) async => emptyCoursesList);
+      when(() => coursesRepository.fetchAll()).thenAnswer((_) async => []);
       await r.pumpWidgetWithRepository(coursesRepository);
       await r.expectOneOfType(ArchiveView);
     });
@@ -60,10 +60,12 @@ void main() {
 
     testWidgets('renders AppSuccess for ArchiveStatus.success', (tester) async {
       final r = ArchiveRobot(tester);
-      when(() => archiveCubit.state).thenReturn(const ArchiveState(
-        status: ArchiveStatus.success,
-        coursesList: emptyCoursesList,
-      ),);
+      when(() => archiveCubit.state).thenReturn(
+        const ArchiveState(
+          status: ArchiveStatus.success,
+          coursesGroupList: [],
+        ),
+      );
 
       await r.pumpWidgetWithProvider(
         archiveCubit: archiveCubit,

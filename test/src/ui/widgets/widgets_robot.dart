@@ -23,11 +23,12 @@ class WidgetsRobot {
       MaterialApp(
         home: Scaffold(
           body: AppOnHover(
-              key: ptOnHoverKey,
-              child: SizedBox(
-                width: subjectOriginalSize.width,
-                height: subjectOriginalSize.height,
-              ),),
+            key: ptOnHoverKey,
+            child: SizedBox(
+              width: subjectOriginalSize.width,
+              height: subjectOriginalSize.height,
+            ),
+          ),
         ),
       ),
     );

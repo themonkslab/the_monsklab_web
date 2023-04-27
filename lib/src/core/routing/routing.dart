@@ -31,20 +31,32 @@ final routerDelegate = BeamerDelegate(
           child: const ArchivePage(),
         );
       },
-      '/:locale/course/:path': (_, state, __) {
-        final path = state.pathParameters['path']!;
+      '/:locale/archive/:group_name/:course': (_, state, __) {
+        final coursePath = state.pathParameters['course']!;
+        final groupName = state.pathParameters['group_name']!;
         final languageCode = state.pathParameters['locale']!;
         return LocaleWrapper(
           languageCode: languageCode,
-          child: CoursePage(path),
+          child: CoursePage(
+            coursePath,
+            groupName,
+          ),
         );
       },
-      '/:locale/article/:path': (_, state, __) {
-        final path = state.pathParameters['path']!;
+      '/:locale/archive/:group_name/:course/:section/:article': (_, state, __) {
+        final coursePath = state.pathParameters['course']!;
+        final groupName = state.pathParameters['group_name']!;
+        final sectionPath = state.pathParameters['section']!;
+        final articlePath = state.pathParameters['article']!;
         final languageCode = state.pathParameters['locale']!;
         return LocaleWrapper(
           languageCode: languageCode,
-          child: ArticlePage(path: path),
+          child: ArticlePage(
+            articlePath: articlePath,
+            sectionPath: sectionPath,
+            coursePath: coursePath,
+            groupName: groupName,
+          ),
         );
       },
     },

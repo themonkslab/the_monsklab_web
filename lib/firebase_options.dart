@@ -67,7 +67,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '837553242957',
     projectId: 'monsklab-courses',
     storageBucket: 'monsklab-courses.appspot.com',
-    iosClientId: '837553242957-rv87kul03luqnhbo1pgba236n15rb6aj.apps.googleusercontent.com',
+    iosClientId:
+        '837553242957-rv87kul03luqnhbo1pgba236n15rb6aj.apps.googleusercontent.com',
     iosBundleId: 'com.example.theMonkslabWeb',
   );
 
@@ -77,7 +78,8 @@ class DefaultFirebaseOptions {
     messagingSenderId: '837553242957',
     projectId: 'monsklab-courses',
     storageBucket: 'monsklab-courses.appspot.com',
-    iosClientId: '837553242957-rv87kul03luqnhbo1pgba236n15rb6aj.apps.googleusercontent.com',
+    iosClientId:
+        '837553242957-rv87kul03luqnhbo1pgba236n15rb6aj.apps.googleusercontent.com',
     iosBundleId: 'com.example.theMonkslabWeb',
   );
 }

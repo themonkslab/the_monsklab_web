@@ -7,18 +7,29 @@ import 'package:the_monkslab_web/src/ui/_index.dart';
 
 class ArticlePage extends StatelessWidget {
   const ArticlePage({
-    required this.path,
+    required this.articlePath,
+    required this.sectionPath,
+    required this.coursePath,
+    required this.groupName,
     super.key,
   });
 
-  final String path;
+  final String articlePath;
+  final String sectionPath;
+  final String coursePath;
+  final String groupName;
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider<ArticleCubit>(
       create: (context) => ArticleCubit(
         coursesRepository: context.read<CoursesRepository>(),
-      )..fetchArticle(path),
+      )..fetchArticle(
+          articlePath,
+          sectionPath,
+          coursePath,
+          groupName,
+        ),
       child: const ArticleView(),
     );
   }

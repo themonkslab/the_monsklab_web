@@ -17,7 +17,7 @@ class AppBlocObserver extends BlocObserver {
         textColor: ColorizerTextColor.yellow,
         emoji: '👉',
       );
-      print(event.toString());
+      print(event);
     }
   }
 
@@ -31,7 +31,7 @@ class AppBlocObserver extends BlocObserver {
         textColor: ColorizerTextColor.magenta,
         emoji: '🚥',
       );
-      print(change.toString());
+      print(change.currentState);
     }
   }
 
