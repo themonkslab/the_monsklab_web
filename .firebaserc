@@ -1,9 +1,5 @@
 {
   "projects": {
     "default": "monsklab-courses"
-  },
-  "hosting": {
-    "site": "the-monkslab",
-    "public": "public"
   }
 }
