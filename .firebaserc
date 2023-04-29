@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "monsklab-courses"
-  }
+  },
+  "targets": {
+    "monsklab-courses": {
+      "hosting": {
+        "the-monkslab-site": [
+          "build/web"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
