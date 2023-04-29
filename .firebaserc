@@ -5,8 +5,11 @@
   "targets": {
     "monsklab-courses": {
       "hosting": {
+        "monsklab-courses": [
+          "monsklab-courses"
+        ],
         "the-monkslab-site": [
-          "build/web"
+          "the-monkslab-site"
         ]
       }
     }
