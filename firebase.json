@@ -1,6 +1,7 @@
 {
   "hosting": [
     {
+      "target": "monsklab-courses",
       "public": "build/web",
       "ignore": [
         "firebase.json",
@@ -15,7 +16,7 @@
       ]
     },
     {
-      "target": "the-monkslab",
+      "target": "the-monkslab-site",
       "public": "build/web",
       "ignore": [
         "firebase.json",
