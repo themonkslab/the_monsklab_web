@@ -8,11 +8,16 @@ import 'package:the_monkslab_web/src/constants/_index.dart';
 import 'package:the_monkslab_web/src/ui/sizes.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-CustomRenderMatcher codeMatcher() => (context) =>
-    context.tree.element?.attributes['class']?.contains('language-dart') ??
-    false;
-CustomRenderMatcher liMatcher() =>
-    (context) => context.tree.element?.localName == 'li';
+CustomRenderMatcher codeMatcher() => (context) {
+      final classAttribute = context.tree.element?.attributes['class'];
+      if (classAttribute == null) {
+        return false;
+      }
+      return classAttribute.contains('language-dart') ||
+          classAttribute.contains('language-yml') ||
+          classAttribute.contains('language-bash');
+    };
+CustomRenderMatcher liMatcher() => (context) => context.tree.element?.localName == 'li';
 
 class ArticleBody extends StatelessWidget {
   const ArticleBody({
@@ -53,9 +58,8 @@ class ArticleBody extends StatelessWidget {
           // ),
           codeMatcher(): CustomRender.widget(
             widget: (context, _) {
-              final dataText = context.tree.element!.innerHtml
-                  .replaceAll('&lt;', '<')
-                  .replaceAll('&gt;', '>');
+              final dataText = context.tree.element!.innerHtml.replaceAll('&lt;', '<').replaceAll('&gt;', '>');
+              final languageCode = context.tree.element!.attributes['class'];
 
               return Stack(
                 children: [
@@ -76,7 +80,7 @@ class ArticleBody extends StatelessWidget {
                       borderRadius: BorderRadius.circular(25),
                       child: HighlightView(
                         dataText,
-                        language: 'dart',
+                        language: languageCode!.replaceAll('language-', ''),
                         theme: darculaTheme,
                         textStyle: AppTextStyles.code,
                         padding: AppPaddings.padAll40.copyWith(bottom: 24),
@@ -123,10 +127,8 @@ class ArticleBody extends StatelessWidget {
           'p': Style.fromTextStyle(AppTextStyles.p).copyWith(
             margin: Margins.only(bottom: 16),
           ),
-          'li': Style.fromTextStyle(AppTextStyles.li)
-              .copyWith(margin: Margins.only(bottom: 8)),
-          'code': Style.fromTextStyle(AppTextStyles.inlineCode)
-              .copyWith(margin: Margins.only(bottom: 8)),
+          'li': Style.fromTextStyle(AppTextStyles.li).copyWith(margin: Margins.only(bottom: 8)),
+          'code': Style.fromTextStyle(AppTextStyles.inlineCode).copyWith(margin: Margins.only(bottom: 8)),
         },
       ),
     );
