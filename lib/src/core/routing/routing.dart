@@ -5,6 +5,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:the_monkslab_web/src/core/locale_cubit/locale_cubit.dart';
 import 'package:the_monkslab_web/src/core/routing/not_found_screen.dart';
 import 'package:the_monkslab_web/src/features/_index.dart';
+import 'package:the_monkslab_web/src/repositories/_index.dart';
 
 enum AppRoutes {
   home,
@@ -78,6 +79,7 @@ class LocaleWrapper extends StatelessWidget {
     final locale = Locale(languageCode);
     if (AppLocalizations.supportedLocales.contains(locale)) {
       context.read<LocaleCubit>().setLocale(Locale(languageCode));
+      context.read<CoursesRepository>().locale = Locale(languageCode);
       return child;
     }
     return const NotFoundScreen();
