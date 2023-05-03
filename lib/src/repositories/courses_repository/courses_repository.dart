@@ -8,7 +8,14 @@ abstract class CoursesRepository {
   Future<CourseGroup?> fetchCourseGroup(String groupName);
   Future<Course?> fetchCourse(String coursePath, String groupName);
   Future<Section?> fetchSection(
-      String sectionPath, String coursePath, String groupName);
-  Future<Article?> fetchArticle(String articlePath, String sectionPath,
-      String coursePath, String groupName);
+    String sectionPath,
+    String coursePath,
+    String groupName,
+  );
+  Future<Article?> fetchArticle(
+    String articlePath,
+    String sectionPath,
+    String coursePath,
+    String groupName,
+  );
 }

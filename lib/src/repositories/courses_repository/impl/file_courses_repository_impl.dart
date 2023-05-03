@@ -23,8 +23,7 @@ class FileCoursesRepositoryImpl extends FileCoursesRepository {
 
   @override
   Future<String> getArticleContent(FileArticle fileArticle) async {
-    final articleContent =
-        (await HttpApi().getRequest(fileArticle.contentUrl!)).toString();
+    final articleContent = (await HttpApi().getRequest(fileArticle.contentUrl!)).toString();
     final articleNameUrl = fileArticle.contentUrl!.split('/').last;
     final folderUrl = fileArticle.contentUrl!.replaceAll(articleNameUrl, '');
     return formatGitHubImagesUrls(articleContent, folderUrl);
