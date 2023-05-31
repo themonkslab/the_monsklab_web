@@ -3,8 +3,8 @@ name: PR checks
 on:
   workflow_call:
   push:
-    branches-ignore:
-      - "develop" # Will match all branches except develop.
+    # branches-ignore:
+      # - "develop" # Will match all branches except develop.
         # all-*-deploy.yml will call this workflow via workflow_call.
 
 jobs:
