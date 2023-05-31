@@ -20,51 +20,51 @@ class HireUs extends StatelessWidget {
         color: AppColors.secondaryLight,
         border: Border.all(color: AppColors.black),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          SizedBox(
-            height: 400,
-            width: 400,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 48),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    localize(context)
-                        .doesYourBusinessNeedHighLevelFlutterDevelopment
-                        .toUpperCase(),
-                    textAlign: TextAlign.start,
-                    style: AppTextStyles.h1.copyWith(
-                      fontSize: 20,
-                      color: AppColors.white,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 48),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Flexible(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 48),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      localize(context).doesYourBusinessNeedHighLevelFlutterDevelopment.toUpperCase(),
+                      textAlign: TextAlign.start,
+                      style: AppTextStyles.h1.copyWith(
+                        fontSize: 20,
+                        color: AppColors.white,
+                        overflow: TextOverflow.clip,
+                      ),
                     ),
-                  ),
-                  AppGaps.gapH20,
-                  Text(
-                    localize(context).weTrainTopLevelDevelopers,
-                    textAlign: TextAlign.start,
-                    style: AppTextStyles.p,
-                  ),
-                  AppGaps.gapH24,
-                  AppFilledButton(
-                    text: localize(context).hireUs,
-                  ),
-                ],
+                    AppGaps.gapH20,
+                    Text(
+                      localize(context).weTrainTopLevelDevelopers,
+                      textAlign: TextAlign.start,
+                      style: AppTextStyles.p,
+                    ),
+                    AppGaps.gapH24,
+                    AppFilledButton(
+                      text: localize(context).hireUs,
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          if (!isPhoneOrTablet) AppGaps.gapW64,
-          if (!isPhoneOrTablet)
-            SvgPicture.asset(
-              'assets/images/logos/dart_logo.svg',
-              height: 480,
-              fit: BoxFit.cover,
-            )
-        ],
+            if (!isPhoneOrTablet) AppGaps.gapW64,
+            if (!isPhoneOrTablet)
+              SvgPicture.asset(
+                'assets/images/logos/dart_logo.svg',
+                height: 480,
+                fit: BoxFit.cover,
+              )
+          ],
+        ),
       ),
     );
   }

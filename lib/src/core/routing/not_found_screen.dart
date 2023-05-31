@@ -19,7 +19,8 @@ class NotFoundScreen extends StatelessWidget {
             AppGaps.gapH24,
             TextButton(
               onPressed: () => Beamer.of(context).beamToReplacementNamed(
-                  '/${context.read<LocaleCubit>().state.locale.languageCode}'),
+                '/${context.read<LocaleCubit>().state.locale.languageCode}',
+              ),
               child: const Text('Home'),
             )
           ],

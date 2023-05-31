@@ -34,7 +34,8 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
           AppOnHover(
             child: GestureDetector(
               onTap: () => context.beamToNamed(
-                  '/${context.read<LocaleCubit>().state.locale.languageCode}'),
+                '/${context.read<LocaleCubit>().state.locale.languageCode}',
+              ),
               child: const Image(
                 width: 16,
                 height: 16,

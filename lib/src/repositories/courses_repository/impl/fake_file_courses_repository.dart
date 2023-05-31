@@ -9,7 +9,8 @@ class FakeFileCoursesRepository extends FileCoursesRepository {
   @override
   Future<String> fetchCoursesIndexString() async {
     return jsonDecode(
-        utf8.decode(File('test/resources/courses.json').readAsBytesSync()));
+      utf8.decode(File('test/resources/courses.json').readAsBytesSync()),
+    );
   }
 
   @override

@@ -1,0 +1,36 @@
+name: PR checks
+
+on:
+  workflow_call:
+  push:
+    branches-ignore:
+      - "develop" # Will match all branches except develop.
+        # all-*-deploy.yml will call this workflow via workflow_call.
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.7.11"
+          channel: stable
+
+      - run: flutter --version
+
+      # Install dependencies
+      - run: flutter pub get
+
+      # check for issues with formatting
+      - run: dart format --line-length=80 --set-exit-if-changed .
+
+      # Run code generator
+      # - run: flutter pub run build_runner build
+
+      # check for issues through static analysis
+      - run: flutter analyze
+
+      # Run tests
+      - run: flutter test

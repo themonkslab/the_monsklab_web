@@ -54,8 +54,7 @@ class _AppFilledButtonState extends State<AppFilledButton> {
             child: Center(
               child: Text(
                 widget.text,
-                style: AppTextStyles.captionMini
-                    .copyWith(color: AppColors.white, fontSize: 16),
+                style: AppTextStyles.captionMini.copyWith(color: AppColors.white, fontSize: 16),
               ),
             ),
           ),

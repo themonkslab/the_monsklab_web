@@ -18,11 +18,11 @@ class Footer extends StatelessWidget {
         color: AppColors.black,
       ),
       child: isPhoneOrTablet
-          ? Padding(
+          ? const Padding(
               padding: AppPaddings.padAll24,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   MonkslabDescription(),
                   AppGaps.gapH32,
                   AppSocials(iconColor: AppColors.white),
@@ -30,13 +30,13 @@ class Footer extends StatelessWidget {
                 ],
               ),
             )
-          : Center(
+          : const Center(
               child: SizedBox(
                 width: 1340,
                 child: Row(
                   children: [
                     //* Footer left
-                    const Expanded(
+                    Expanded(
                       child: Center(
                         child: SizedBox(
                           width: 280,
@@ -47,7 +47,7 @@ class Footer extends StatelessWidget {
                     //* Footer right
                     Expanded(
                       child: DecoratedBox(
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           border: Border(
                             left: BorderSide(
                               color: AppColors.darkerGrey,
@@ -57,7 +57,7 @@ class Footer extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Expanded(
+                            Expanded(
                               child: Padding(
                                 padding: EdgeInsets.symmetric(
                                   vertical: 24,
@@ -68,7 +68,7 @@ class Footer extends StatelessWidget {
                             ),
                             Expanded(
                               child: DecoratedBox(
-                                decoration: const BoxDecoration(
+                                decoration: BoxDecoration(
                                   border: Border(
                                     top: BorderSide(
                                       color: AppColors.darkerGrey,
@@ -77,13 +77,12 @@ class Footer extends StatelessWidget {
                                 ),
                                 child: Center(
                                   child: Padding(
-                                    padding: const EdgeInsets.symmetric(
+                                    padding: EdgeInsets.symmetric(
                                       horizontal: 48,
                                     ),
                                     child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: const [
+                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      children: [
                                         TermsAndConditions(),
                                         AppSocials(
                                           iconColor: AppColors.white,
