@@ -47,3 +47,14 @@ flutter:
     - assets/images/logos/
     - assets/translations/
     - lib/i18n/
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: fonts/montserrat/montserrat_regular.ttf
+        - asset: fonts/montserrat/montserrat_italic.ttf
+          style: italic
+        - asset: fonts/montserrat/montserrat_bold.ttf
+          weight: 700
+        - asset: fonts/montserrat/montserrat_bold_italic.ttf
+          style: italic
+          weight: 700

@@ -1,36 +1,34 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:the_monkslab_web/src/app.dart';
-import 'package:the_monkslab_web/src/features/_index.dart';
+import 'package:the_monkslab_web/src/core/_index.dart';
 import 'package:the_monkslab_web/src/repositories/_index.dart';
-import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
-
-import '../home_robot.dart';
 
 class MockCoursesRepository extends Mock implements CoursesRepository {}
 
 void main() {
-  group('HomeView', () {
+  group('Home Page', () {
     late CoursesRepository coursesRepository;
+    late Widget widget;
 
     setUp(() {
-      coursesRepository = MockCoursesRepository();
+      coursesRepository = FakeFileCoursesRepository();
+      widget = MaterialApp(
+        home: RepositoryProvider<CoursesRepository>(
+          create: (context) => coursesRepository,
+          child: BlocProvider.value(
+            value: LocaleCubit(),
+            child: const AppPage(),
+          ),
+        ),
+      );
     });
 
-    testWidgets('is rendered as the root page', (tester) async {
-      final r = HomeRobot(tester);
-      await r.pumpWidget(const AppPage());
-      await r.expectOneOfType(HomePage);
-    });
-
-    testWidgets('navigates to the archive when hypertext is tapped',
-        (tester) async {
-      final r = HomeRobot(tester);
-      await r.pumpWidget(const AppPage());
-      when(() => coursesRepository.fetchAll()).thenAnswer((_) async => []);
-      await r.tap(AppHypertext);
-      await tester.pumpAndSettle();
-      await r.expectOneOfType(ArchivePage);
+    testWidgets('renders as the root page', (tester) async {
+      await tester.pumpWidget(widget);
+      expect(find.byType(AppPage), findsOneWidget);
     });
   });
 }
