@@ -26,9 +26,9 @@ class Header extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               if (isPhoneOrTablet)
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     LanguageSwitcherDropDown(),
                   ],
                 ),
