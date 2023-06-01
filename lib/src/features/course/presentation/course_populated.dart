@@ -30,14 +30,14 @@ class CoursePopulated extends StatelessWidget {
             AppGaps.gapH48,
             Padding(
               padding: AppPaddings.padH24,
-              child: Text(
+              child: AppText(
                 course.title.toUpperCase(),
                 style: AppTextStyles.h1,
               ),
             ),
             Padding(
               padding: AppPaddings.padH24,
-              child: Text(
+              child: AppText(
                 course.description,
                 style: AppTextStyles.p,
               ),

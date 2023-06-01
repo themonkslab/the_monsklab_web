@@ -51,7 +51,7 @@ class Header extends StatelessWidget {
                 width: AppSizes.centeredTextContainer,
                 child: Column(
                   children: [
-                    Text(
+                    AppText(
                       localize(context).aPathOfStudyAndATrainigCommunity,
                       style: AppTextStyles.p.copyWith(
                         color: AppColors.white,
@@ -61,7 +61,7 @@ class Header extends StatelessWidget {
                     AppGaps.gapH48,
                     const Divider(color: AppColors.grey),
                     AppGaps.gapH48,
-                    Text(
+                    AppText(
                       localize(context).sumWithoutAnyCost.toUpperCase(),
                       style: AppTextStyles.h1.copyWith(
                         color: AppColors.white,
@@ -84,7 +84,7 @@ class Header extends StatelessWidget {
                     AppGaps.gapH48,
                     const Divider(color: AppColors.grey),
                     AppGaps.gapH24,
-                    Text(
+                    AppText(
                       localize(context).learnToLearn,
                       style: AppTextStyles.p.copyWith(
                         color: AppColors.white,

@@ -22,7 +22,7 @@ class ArticleFooter extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              AppText(
                 '${localize(context).reachOutOn} ',
                 style: AppTextStyles.p.copyWith(color: AppColors.white),
               ),

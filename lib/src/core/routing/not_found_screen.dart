@@ -15,13 +15,13 @@ class NotFoundScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('404 - Page not found!'.hardcoded),
+            AppText('404 - Page not found!'.hardcoded),
             AppGaps.gapH24,
             TextButton(
               onPressed: () => Beamer.of(context).beamToReplacementNamed(
                 '/${context.read<LocaleCubit>().state.locale.languageCode}',
               ),
-              child: const Text('Home'),
+              child: const AppText('Home'),
             )
           ],
         ),

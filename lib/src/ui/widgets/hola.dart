@@ -20,7 +20,7 @@ class Hola extends StatelessWidget {
             children: [
               //* Hola
               AppGaps.gapH64,
-              Text(
+              AppText(
                 localize(context).weAre,
                 style: AppTextStyles.h1.copyWith(
                   color: AppColors.black,
@@ -33,7 +33,7 @@ class Hola extends StatelessWidget {
               Padding(
                 padding:
                     isPhoneOrTablet ? AppPaddings.padH24 : AppPaddings.padAll0,
-                child: Text(
+                child: AppText(
                   localize(context).whoWeAre,
                   textAlign: TextAlign.center,
                   style: AppTextStyles.pLarge,

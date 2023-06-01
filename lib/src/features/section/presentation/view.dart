@@ -74,7 +74,7 @@ class SectionView extends StatelessWidget {
                   Container(
                     padding: AppPaddings.padAll16,
                     width: double.infinity,
-                    child: Text(
+                    child: AppText(
                       state.section!.title.toUpperCase(),
                       style: AppTextStyles.h2.copyWith(color: AppColors.black),
                     ),
@@ -100,7 +100,7 @@ class SectionView extends StatelessWidget {
                                     padding: AppPaddings.padAll16,
                                     child: Row(
                                       children: [
-                                        Text(article.title),
+                                        AppText(article.title),
                                       ],
                                     ),
                                   ),

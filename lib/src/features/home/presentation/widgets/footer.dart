@@ -118,14 +118,14 @@ class TermsAndConditions extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        AppText(
           localize(context).termsAndConditions,
           style: AppTextStyles.caption.copyWith(
             color: AppColors.white,
             fontSize: 12,
           ),
         ),
-        Text(
+        AppText(
           localize(context).privacyPolicy,
           style: AppTextStyles.caption.copyWith(
             color: AppColors.white,
@@ -148,7 +148,7 @@ class MonkslabDescription extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
+        AppText(
           'The Monkslab'.toUpperCase(),
           style: AppTextStyles.h1.copyWith(
             fontSize: 20,
@@ -156,7 +156,7 @@ class MonkslabDescription extends StatelessWidget {
           ),
         ),
         AppGaps.gapH16,
-        Text(
+        AppText(
           localize(context).aGroupOfFriendWhoEnjoyImproveThemself,
           style: AppTextStyles.p.copyWith(
             color: AppColors.white,

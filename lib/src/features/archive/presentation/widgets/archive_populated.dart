@@ -35,14 +35,14 @@ class ArchivePopulated extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AppGaps.gapH48,
-            Text(
+            AppText(
               localize(context).archiveViewTitle,
               style: isPhoneOrTablet
                   ? AppTextStyles.h1HeaderPhone
                   : AppTextStyles.h1Header,
             ),
             AppGaps.gapH20,
-            Text(
+            AppText(
               localize(context).archiveViewDescription,
               style: AppTextStyles.p,
             ),
@@ -54,7 +54,7 @@ class ArchivePopulated extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      AppText(
                         courseGroup.groupName ?? '',
                         style: isPhoneOrTablet
                             ? AppTextStyles.h2Phone

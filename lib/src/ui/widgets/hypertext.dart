@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:the_monkslab_web/src/constants/_index.dart';
+import 'package:the_monkslab_web/src/ui/_index.dart';
 
 class AppHypertext extends StatefulWidget {
   const AppHypertext({
@@ -60,7 +60,7 @@ class _AppHypertextState extends State<AppHypertext> {
             milliseconds: 50,
           ),
           textAlign: widget.textAlign ?? TextAlign.left,
-          child: Text(
+          child: AppText(
             widget.text,
             style: widget.style?.copyWith(
                   color: isEnabled
