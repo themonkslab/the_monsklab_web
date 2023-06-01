@@ -1,8 +1,5 @@
-import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/constants/_index.dart';
-import 'package:the_monkslab_web/src/core/_index.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
 
@@ -18,38 +15,31 @@ class LocationLinksRowOrColumn extends StatelessWidget {
     return isRow
         ? Row(
             children: [
-              // LocationLink(
-              //   text: localize(context).jobs,
-              // ),
-              LocationLink(
-                text: localize(context).courses,
-                onTap: () => context.beamToNamed(
-                  '/${context.read<LocaleCubit>().state.locale.languageCode}/${AppRoutes.archive.name}',
-                ),
-              ),
-              LocationLink(
-                text: localize(context).community,
-                onTap: () async => UrlHelper.launchUrl(AppUrls.discord),
-              ),
+              _buildLinks(context),
             ],
           )
         : Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              // LocationLink(
-              //   text: localize(context).jobs,
-              // ),
-              LocationLink(
-                text: localize(context).courses,
-                onTap: () => context.beamToNamed('/${AppRoutes.archive.name}'),
-              ),
-              LocationLink(
-                text: localize(context).community,
-                onTap: () async => UrlHelper.launchUrl(AppUrls.discord),
-              ),
+              _buildLinks(context),
             ],
           );
+  }
+
+  Widget _buildLinks(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        LocationLink(
+          text: localize(context).courses,
+          onTap: () => UrlHelper.launchUrl(AppUrls.docusaurusCourses),
+        ),
+        LocationLink(
+          text: localize(context).community,
+          onTap: () async => UrlHelper.launchUrl(AppUrls.discord),
+        ),
+      ],
+    );
   }
 }
 

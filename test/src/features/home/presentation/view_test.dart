@@ -27,6 +27,7 @@ void main() {
     });
 
     testWidgets('renders as the root page', (tester) async {
+      await tester.binding.setSurfaceSize(const Size(800, 600));
       await tester.pumpWidget(widget);
       expect(find.byType(AppPage), findsOneWidget);
     });
