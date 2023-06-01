@@ -19,7 +19,8 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenType = context.getScreenType();
-    final isPhoneOrTablet = screenType == ScreenType.phone || screenType == ScreenType.tablet;
+    final isPhoneOrTablet =
+        screenType == ScreenType.phone || screenType == ScreenType.tablet;
     return Scaffold(
       backgroundColor: AppColors.black,
       body: SingleChildScrollView(

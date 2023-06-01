@@ -137,15 +137,18 @@ abstract class FileCoursesRepository extends CoursesRepository {
   }
 }
 
-List<FileCoursesGroup> coursesFromJson(String str) => List<FileCoursesGroup>.from(
+List<FileCoursesGroup> coursesFromJson(String str) =>
+    List<FileCoursesGroup>.from(
       json.decode(str).map((x) => FileCoursesGroup.fromJson(x)),
     );
 
-List<FileCoursesGroup> coursesFromMap(String str) => List<FileCoursesGroup>.from(
+List<FileCoursesGroup> coursesFromMap(String str) =>
+    List<FileCoursesGroup>.from(
       json.decode(str).map((x) => FileCoursesGroup.fromMap(x)),
     );
 
-String coursesToJson(List<FileCoursesGroup> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String coursesToJson(List<FileCoursesGroup> data) =>
+    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class FileCoursesGroup extends ViewModel<CourseGroup> {
   FileCoursesGroup({
@@ -153,7 +156,8 @@ class FileCoursesGroup extends ViewModel<CourseGroup> {
     this.courses = const [],
   });
 
-  factory FileCoursesGroup.fromJson(String source) => FileCoursesGroup.fromMap(json.decode(source));
+  factory FileCoursesGroup.fromJson(String source) =>
+      FileCoursesGroup.fromMap(json.decode(source));
 
   factory FileCoursesGroup.fromMap(Map<String, dynamic> map) {
     return FileCoursesGroup(
@@ -198,7 +202,8 @@ class FileCourse extends ViewModel<Course> {
     this.sections = const [],
   });
 
-  factory FileCourse.fromJson(String source) => FileCourse.fromMap(json.decode(source));
+  factory FileCourse.fromJson(String source) =>
+      FileCourse.fromMap(json.decode(source));
 
   factory FileCourse.fromMap(Map<String, dynamic> map) {
     return FileCourse(
@@ -252,7 +257,8 @@ class FileSection extends ViewModel<Section> {
     this.articles = const [],
   });
 
-  factory FileSection.fromJson(String source) => FileSection.fromMap(json.decode(source));
+  factory FileSection.fromJson(String source) =>
+      FileSection.fromMap(json.decode(source));
 
   factory FileSection.fromMap(Map<String, dynamic> map) {
     return FileSection(
@@ -311,7 +317,8 @@ class FileArticle extends ViewModel<Article> {
     this.published,
   });
 
-  factory FileArticle.fromJson(String source) => FileArticle.fromMap(json.decode(source));
+  factory FileArticle.fromJson(String source) =>
+      FileArticle.fromMap(json.decode(source));
 
   factory FileArticle.fromMap(Map<dynamic, dynamic> map) {
     return FileArticle(
@@ -320,7 +327,8 @@ class FileArticle extends ViewModel<Article> {
       description: map['description'],
       contentUrl: map['contentUrl'],
       author: map['author'] != null ? AuthorEnum.theMonkslab : null,
-      published: map['published'] != null ? DateTime.tryParse(map['published']) : null,
+      published:
+          map['published'] != null ? DateTime.tryParse(map['published']) : null,
     );
   }
 

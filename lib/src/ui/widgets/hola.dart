@@ -31,7 +31,8 @@ class Hola extends StatelessWidget {
               ),
               AppGaps.gapH32,
               Padding(
-                padding: isPhoneOrTablet ? AppPaddings.padH24 : AppPaddings.padAll0,
+                padding:
+                    isPhoneOrTablet ? AppPaddings.padH24 : AppPaddings.padAll0,
                 child: Text(
                   localize(context).whoWeAre,
                   textAlign: TextAlign.center,
