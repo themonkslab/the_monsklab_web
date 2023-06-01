@@ -29,35 +29,38 @@ class HireUs extends StatelessWidget {
             Flexible(
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 48),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      localize(context)
-                          .doesYourBusinessNeedHighLevelFlutterDevelopment
-                          .toUpperCase(),
-                      textAlign: TextAlign.start,
-                      style: AppTextStyles.h1.copyWith(
-                        fontSize: 20,
-                        color: AppColors.white,
-                        overflow: TextOverflow.clip,
+                child: SizedBox(
+                  width: MediaQuery.of(context).size.width > AppSizes.centeredTextContainer
+                      ? AppSizes.centeredTextContainer
+                      : MediaQuery.of(context).size.width,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        localize(context).doesYourBusinessNeedHighLevelFlutterDevelopment.toUpperCase(),
+                        textAlign: TextAlign.center,
+                        style: AppTextStyles.h1.copyWith(
+                          fontSize: 20,
+                          color: AppColors.white,
+                          overflow: TextOverflow.clip,
+                        ),
                       ),
-                    ),
-                    AppGaps.gapH20,
-                    Text(
-                      localize(context).weTrainTopLevelDevelopers,
-                      textAlign: TextAlign.start,
-                      style: AppTextStyles.p,
-                    ),
-                    AppGaps.gapH24,
-                    AppFilledButton(
-                      text: localize(context).hireUs,
-                      onTap: () => UrlHelper.launchUrl(
-                        'https://www.linkedin.com/in/the-monkslab-the-monkslab-0b61aa260/',
+                      AppGaps.gapH20,
+                      Text(
+                        localize(context).weTrainTopLevelDevelopers,
+                        textAlign: TextAlign.center,
+                        style: AppTextStyles.p,
                       ),
-                    ),
-                  ],
+                      AppGaps.gapH24,
+                      AppFilledButton(
+                        text: localize(context).hireUs,
+                        onTap: () => UrlHelper.launchUrl(
+                          'https://www.linkedin.com/in/the-monkslab-the-monkslab-0b61aa260/',
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
