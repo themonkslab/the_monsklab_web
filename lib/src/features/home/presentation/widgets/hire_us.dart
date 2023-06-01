@@ -34,9 +34,7 @@ class HireUs extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      localize(context)
-                          .doesYourBusinessNeedHighLevelFlutterDevelopment
-                          .toUpperCase(),
+                      localize(context).doesYourBusinessNeedHighLevelFlutterDevelopment.toUpperCase(),
                       textAlign: TextAlign.start,
                       style: AppTextStyles.h1.copyWith(
                         fontSize: 20,
@@ -54,7 +52,8 @@ class HireUs extends StatelessWidget {
                     AppFilledButton(
                       text: localize(context).hireUs,
                       onTap: () => UrlHelper.launchUrl(
-                          'https://www.linkedin.com/in/the-monkslab-the-monkslab-0b61aa260/'),
+                        'https://www.linkedin.com/in/the-monkslab-the-monkslab-0b61aa260/',
+                      ),
                     ),
                   ],
                 ),
