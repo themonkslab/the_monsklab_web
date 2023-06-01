@@ -14,32 +14,26 @@ class LocationLinksRowOrColumn extends StatelessWidget {
   Widget build(BuildContext context) {
     return isRow
         ? Row(
-            children: [
-              _buildLinks(context),
-            ],
+            children: _buildLinks(context),
           )
         : Column(
-            children: [
-              _buildLinks(context),
-            ],
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: _buildLinks(context),
           );
   }
 
-  Widget _buildLinks(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        LocationLink(
-          text: localize(context).courses,
-          onTap: () => UrlHelper.launchUrl(AppUrls.docusaurusCourses),
-        ),
-        LocationLink(
-          text: localize(context).community,
-          onTap: () async => UrlHelper.launchUrl(AppUrls.discord),
-        ),
-      ],
-    );
+  List<Widget> _buildLinks(BuildContext context) {
+    return <Widget>[
+      LocationLink(
+        text: localize(context).courses,
+        onTap: () => UrlHelper.launchUrl(AppUrls.docusaurusCourses),
+      ),
+      LocationLink(
+        text: localize(context).community,
+        onTap: () async => UrlHelper.launchUrl(AppUrls.discord),
+      ),
+    ];
   }
 }
 
@@ -55,8 +49,7 @@ class LocationLink extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenType = context.getScreenType();
-    final isPhoneOrTablet =
-        screenType == ScreenType.phone || screenType == ScreenType.tablet;
+    final isPhoneOrTablet = screenType == ScreenType.phone || screenType == ScreenType.tablet;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
