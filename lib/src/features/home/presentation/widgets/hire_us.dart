@@ -30,7 +30,8 @@ class HireUs extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 48),
                 child: SizedBox(
-                  width: MediaQuery.of(context).size.width > AppSizes.centeredTextContainer
+                  width: MediaQuery.of(context).size.width >
+                          AppSizes.centeredTextContainer
                       ? AppSizes.centeredTextContainer
                       : MediaQuery.of(context).size.width,
                   child: Column(
@@ -38,7 +39,9 @@ class HireUs extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        localize(context).doesYourBusinessNeedHighLevelFlutterDevelopment.toUpperCase(),
+                        localize(context)
+                            .doesYourBusinessNeedHighLevelFlutterDevelopment
+                            .toUpperCase(),
                         textAlign: TextAlign.center,
                         style: AppTextStyles.h1.copyWith(
                           fontSize: 20,
