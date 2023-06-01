@@ -18,9 +18,9 @@ class LocationLinksRowOrColumn extends StatelessWidget {
     return isRow
         ? Row(
             children: [
-              LocationLink(
-                text: localize(context).jobs,
-              ),
+              // LocationLink(
+              //   text: localize(context).jobs,
+              // ),
               LocationLink(
                 text: localize(context).courses,
                 onTap: () => context.beamToNamed(
@@ -37,9 +37,9 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              LocationLink(
-                text: localize(context).jobs,
-              ),
+              // LocationLink(
+              //   text: localize(context).jobs,
+              // ),
               LocationLink(
                 text: localize(context).courses,
                 onTap: () => context.beamToNamed('/${AppRoutes.archive.name}'),

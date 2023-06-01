@@ -17,7 +17,8 @@ CustomRenderMatcher codeMatcher() => (context) {
           classAttribute.contains('language-yml') ||
           classAttribute.contains('language-bash');
     };
-CustomRenderMatcher liMatcher() => (context) => context.tree.element?.localName == 'li';
+CustomRenderMatcher liMatcher() =>
+    (context) => context.tree.element?.localName == 'li';
 
 class ArticleBody extends StatelessWidget {
   const ArticleBody({
@@ -58,7 +59,9 @@ class ArticleBody extends StatelessWidget {
           // ),
           codeMatcher(): CustomRender.widget(
             widget: (context, _) {
-              final dataText = context.tree.element!.innerHtml.replaceAll('&lt;', '<').replaceAll('&gt;', '>');
+              final dataText = context.tree.element!.innerHtml
+                  .replaceAll('&lt;', '<')
+                  .replaceAll('&gt;', '>');
               final languageCode = context.tree.element!.attributes['class'];
 
               return Stack(
@@ -127,8 +130,10 @@ class ArticleBody extends StatelessWidget {
           'p': Style.fromTextStyle(AppTextStyles.p).copyWith(
             margin: Margins.only(bottom: 16),
           ),
-          'li': Style.fromTextStyle(AppTextStyles.li).copyWith(margin: Margins.only(bottom: 8)),
-          'code': Style.fromTextStyle(AppTextStyles.inlineCode).copyWith(margin: Margins.only(bottom: 8)),
+          'li': Style.fromTextStyle(AppTextStyles.li)
+              .copyWith(margin: Margins.only(bottom: 8)),
+          'code': Style.fromTextStyle(AppTextStyles.inlineCode)
+              .copyWith(margin: Margins.only(bottom: 8)),
         },
       ),
     );
