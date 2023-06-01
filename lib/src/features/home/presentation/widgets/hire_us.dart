@@ -14,7 +14,7 @@ class HireUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 400,
+      height: 410,
       width: double.infinity,
       decoration: BoxDecoration(
         color: AppColors.secondaryLight,
