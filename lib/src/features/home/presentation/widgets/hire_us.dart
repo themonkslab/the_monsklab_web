@@ -51,6 +51,8 @@ class HireUs extends StatelessWidget {
                     AppGaps.gapH24,
                     AppFilledButton(
                       text: localize(context).hireUs,
+                      onTap: () =>
+                          UrlHelper.launchUrl('https://www.linkedin.com/in/the-monkslab-the-monkslab-0b61aa260/'),
                     ),
                   ],
                 ),
