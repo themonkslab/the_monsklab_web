@@ -6,4 +6,5 @@ class AppUrls {
       'https://raw.githubusercontent.com/themonkslab/dream_teamers_courses/main/courses/courses_en.json';
   static const dreamTeamersCoursesEs =
       'https://raw.githubusercontent.com/themonkslab/dream_teamers_courses/main/courses/courses_es.json';
+  static const docusaurusCourses = 'https://courses.themonkslab.com';
 }

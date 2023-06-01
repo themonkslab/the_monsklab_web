@@ -1,8 +1,5 @@
-import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/constants/_index.dart';
-import 'package:the_monkslab_web/src/core/_index.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
 
@@ -23,9 +20,7 @@ class LocationLinksRowOrColumn extends StatelessWidget {
               // ),
               LocationLink(
                 text: localize(context).courses,
-                onTap: () => context.beamToNamed(
-                  '/${context.read<LocaleCubit>().state.locale.languageCode}/${AppRoutes.archive.name}',
-                ),
+                onTap: () => UrlHelper.launchUrl(AppUrls.docusaurusCourses),
               ),
               LocationLink(
                 text: localize(context).community,
@@ -42,7 +37,7 @@ class LocationLinksRowOrColumn extends StatelessWidget {
               // ),
               LocationLink(
                 text: localize(context).courses,
-                onTap: () => context.beamToNamed('/${AppRoutes.archive.name}'),
+                onTap: () => UrlHelper.launchUrl(AppUrls.docusaurusCourses),
               ),
               LocationLink(
                 text: localize(context).community,
@@ -65,8 +60,7 @@ class LocationLink extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenType = context.getScreenType();
-    final isPhoneOrTablet =
-        screenType == ScreenType.phone || screenType == ScreenType.tablet;
+    final isPhoneOrTablet = screenType == ScreenType.phone || screenType == ScreenType.tablet;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
