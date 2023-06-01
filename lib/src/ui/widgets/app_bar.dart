@@ -49,7 +49,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(
+                  AppText(
                     title!,
                     style: AppTextStyles.h2.copyWith(color: titleColor),
                   ),

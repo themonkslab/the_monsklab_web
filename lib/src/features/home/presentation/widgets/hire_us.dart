@@ -38,7 +38,7 @@ class HireUs extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
+                      AppText(
                         localize(context)
                             .doesYourBusinessNeedHighLevelFlutterDevelopment
                             .toUpperCase(),
@@ -50,7 +50,7 @@ class HireUs extends StatelessWidget {
                         ),
                       ),
                       AppGaps.gapH20,
-                      Text(
+                      AppText(
                         localize(context).weTrainTopLevelDevelopers,
                         textAlign: TextAlign.center,
                         style: AppTextStyles.p,

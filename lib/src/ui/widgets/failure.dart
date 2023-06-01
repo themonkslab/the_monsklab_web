@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:the_monkslab_web/src/ui/_index.dart';
 
 class AppFailure extends StatelessWidget {
   const AppFailure({
@@ -12,7 +13,7 @@ class AppFailure extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: Center(
-        child: Text(error ?? 'Ooops! Something happened! Sorry!'),
+        child: AppText(error ?? 'Ooops! Something happened! Sorry!'),
       ),
     );
   }

@@ -31,27 +31,27 @@ class ArticleHeader extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                AppText(
                   article.title,
                   style: AppTextStyles.h1HeaderPhone
                       .copyWith(color: AppColors.white),
                 ),
                 if (article.description != '') AppGaps.gapH20,
                 if (article.description != '')
-                  Text(
+                  AppText(
                     article.description,
                     style: AppTextStyles.descriptionHeaderPhone
                         .copyWith(color: AppColors.white),
                   ),
                 AppGaps.gapH20,
-                // Text(
+                // AppText(
                 //   article.published,
                 //   style: AppTextStyles.caption.copyWith(
                 //     color: AppColors.white,
                 //   ),
                 // ),
                 if (article.readingTime != null)
-                  Text(
+                  AppText(
                     article.readingTime!,
                     style: AppTextStyles.captionMini.copyWith(
                       color: AppColors.white,
@@ -75,27 +75,27 @@ class ArticleHeader extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                AppText(
                   article.title,
                   style:
                       AppTextStyles.h1Header.copyWith(color: AppColors.white),
                 ),
                 if (article.description != '') AppGaps.gapH20,
                 if (article.description != '')
-                  Text(
+                  AppText(
                     article.description,
                     style: AppTextStyles.descriptionHeader
                         .copyWith(color: AppColors.white),
                   ),
                 AppGaps.gapH20,
-                // Text(
+                // AppText(
                 //   article.published,
                 //   style: AppTextStyles.caption.copyWith(
                 //     color: AppColors.white,
                 //   ),
                 // ),
                 if (article.readingTime != null)
-                  Text(
+                  AppText(
                     article.readingTime!,
                     style: AppTextStyles.captionMini.copyWith(
                       color: AppColors.white,

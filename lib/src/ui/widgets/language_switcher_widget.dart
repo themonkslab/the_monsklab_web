@@ -21,7 +21,7 @@ class LanguageSwitcherDropDown extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
               children: [
-                Text(
+                AppText(
                   'español',
                   style: AppTextStyles.caption.copyWith(
                     color: state.locale == const Locale('es')
@@ -51,7 +51,7 @@ class LanguageSwitcherDropDown extends StatelessWidget {
                   inactiveThumbColor: Colors.cyan,
                   inactiveTrackColor: Colors.cyan[100],
                 ),
-                Text(
+                AppText(
                   'english',
                   style: AppTextStyles.caption.copyWith(
                     color: state.locale == const Locale('en')

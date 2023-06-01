@@ -26,7 +26,7 @@ class AppSaveButton extends StatelessWidget {
               color: AppColors.grey,
             ),
             AppGaps.gapW8,
-            Text(
+            AppText(
               'Save',
               style: textTheme.bodySmall,
             ),
