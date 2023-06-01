@@ -18,9 +18,9 @@ class LocationLinksRowOrColumn extends StatelessWidget {
     return isRow
         ? Row(
             children: [
-              LocationLink(
-                text: localize(context).jobs,
-              ),
+              // LocationLink(
+              //   text: localize(context).jobs,
+              // ),
               LocationLink(
                 text: localize(context).courses,
                 onTap: () => context.beamToNamed(
@@ -37,9 +37,9 @@ class LocationLinksRowOrColumn extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              LocationLink(
-                text: localize(context).jobs,
-              ),
+              // LocationLink(
+              //   text: localize(context).jobs,
+              // ),
               LocationLink(
                 text: localize(context).courses,
                 onTap: () => context.beamToNamed('/${AppRoutes.archive.name}'),
@@ -65,8 +65,7 @@ class LocationLink extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenType = context.getScreenType();
-    final isPhoneOrTablet =
-        screenType == ScreenType.phone || screenType == ScreenType.tablet;
+    final isPhoneOrTablet = screenType == ScreenType.phone || screenType == ScreenType.tablet;
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
