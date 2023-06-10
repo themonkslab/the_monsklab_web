@@ -5,11 +5,15 @@ class AppFilledButton extends StatefulWidget {
   const AppFilledButton({
     required this.text,
     this.onTap,
+    this.defaultColor = AppColors.primaryDark,
+    this.hoverColor = AppColors.secondaryLight,
     super.key,
   });
 
   final String text;
   final VoidCallback? onTap;
+  final Color hoverColor;
+  final Color defaultColor;
 
   @override
   State<AppFilledButton> createState() => _AppFilledButtonState();
@@ -39,8 +43,8 @@ class _AppFilledButtonState extends State<AppFilledButton> {
               borderRadius: BorderRadius.circular(25),
               color: widget.onTap != null
                   ? isHovered
-                      ? AppColors.secondaryLight
-                      : AppColors.primaryDark
+                      ? widget.hoverColor
+                      : widget.defaultColor
                   : AppColors.grey,
               boxShadow: [
                 BoxShadow(

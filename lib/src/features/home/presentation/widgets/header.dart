@@ -2,6 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
+import 'package:the_monkslab_web/src/ui/widgets/bounce_in_out_hover_animation.dart';
 import 'package:the_monkslab_web/src/ui/widgets/language_switcher_widget.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
 
@@ -70,16 +71,18 @@ class Header extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                     AppGaps.gapH32,
-                    AppFilledButton(
-                      text: localize(context).whatAreYouWaitingFor,
-                      onTap: () async {
-                        try {
-                          Helpers.launchDiscord();
-                        } catch (e) {
-                          //TODO -HIGH- manage error
-                          throw Exception('Could not launch url');
-                        }
-                      },
+                    BounceInOutHoverAnimation(
+                      child: AppFilledButton(
+                        text: localize(context).whatAreYouWaitingFor,
+                        onTap: () async {
+                          try {
+                            Helpers.launchDiscord();
+                          } catch (e) {
+                            //TODO -HIGH- manage error
+                            throw Exception('Could not launch url');
+                          }
+                        },
+                      ),
                     ),
                     AppGaps.gapH48,
                     const Divider(color: AppColors.grey),

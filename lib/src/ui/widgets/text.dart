@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:seo_renderer/renderers/text_renderer/text_renderer_vm.dart';
+import 'package:seo/seo.dart';
 
 class AppText extends StatelessWidget {
   const AppText(
@@ -36,7 +36,8 @@ class AppText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextRenderer(
+    return Seo.text(
+      text: text,
       child: Text(
         text,
         style: style,

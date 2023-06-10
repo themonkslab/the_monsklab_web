@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
+import 'package:the_monkslab_web/src/ui/widgets/bounce_in_out_hover_animation.dart';
 import 'package:the_monkslab_web/src/utils/_index.dart';
 
 class HireUs extends StatelessWidget {
@@ -56,12 +57,15 @@ class HireUs extends StatelessWidget {
                         style: AppTextStyles.p,
                       ),
                       AppGaps.gapH24,
-                      AppFilledButton(
-                        text: localize(context).hireUs,
-                        onTap: () => UrlHelper.launchUrl(
-                          'https://www.linkedin.com/in/the-monkslab-the-monkslab-0b61aa260/',
+                      BounceInOutHoverAnimation(
+                        child: AppFilledButton(
+                          text: localize(context).hireUs,
+                          hoverColor: AppColors.black,
+                          onTap: () => UrlHelper.launchUrl(
+                            'https://www.linkedin.com/in/the-monkslab-the-monkslab-0b61aa260/',
+                          ),
                         ),
-                      ),
+                      )
                     ],
                   ),
                 ),

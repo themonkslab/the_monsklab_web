@@ -1,7 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:seo_renderer/seo_renderer.dart';
 import 'package:the_monkslab_web/src/ui/widgets/components/_index.dart';
 
 class WidgetsRobot {
@@ -21,15 +20,13 @@ class WidgetsRobot {
 
   Future<void> pumpWidget() async {
     await tester.pumpWidget(
-      RobotDetector(
-        child: MaterialApp(
-          home: Scaffold(
-            body: AppOnHover(
-              key: ptOnHoverKey,
-              child: SizedBox(
-                width: subjectOriginalSize.width,
-                height: subjectOriginalSize.height,
-              ),
+      MaterialApp(
+        home: Scaffold(
+          body: AppOnHover(
+            key: ptOnHoverKey,
+            child: SizedBox(
+              width: subjectOriginalSize.width,
+              height: subjectOriginalSize.height,
             ),
           ),
         ),
