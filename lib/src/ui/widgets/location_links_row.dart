@@ -37,7 +37,7 @@ class LocationLinksRowOrColumn extends StatelessWidget {
   }
 }
 
-class LocationLink extends StatelessWidget {
+class LocationLink extends StatefulWidget {
   const LocationLink({
     required this.text,
     this.onTap,
@@ -47,33 +47,93 @@ class LocationLink extends StatelessWidget {
   final void Function()? onTap;
 
   @override
+  State<LocationLink> createState() => _LocationLinkState();
+}
+
+class _LocationLinkState extends State<LocationLink>
+    with TickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _shadowAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 200),
+    )..addListener(() {
+        setState(() {});
+      });
+
+    _shadowAnimation = Tween<double>(
+      begin: 0,
+      end: 12,
+    ).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Curves.easeOut,
+      ),
+    );
+  }
+
+  _onHover(bool isHovered) {
+    if (isHovered) {
+      _controller.forward();
+    } else {
+      _controller.reverse();
+    }
+  }
+
+  @override
   Widget build(BuildContext context) {
     final screenType = context.getScreenType();
     final isPhoneOrTablet =
         screenType == ScreenType.phone || screenType == ScreenType.tablet;
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
-      child: AppHypertext(
-        text: text.toUpperCase(),
-        textAlign: TextAlign.center,
-        style: isPhoneOrTablet
-            ? AppTextStyles.barLocationLink.copyWith(
-                color: AppColors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              )
-            : AppTextStyles.barLocationLink.copyWith(
-                color: AppColors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w500,
-              ),
-        enabledDisabledColors: const [
-          AppColors.white,
-          AppColors.grey,
-        ],
-        onTap: onTap,
+    return MouseRegion(
+      onEnter: (_) => _onHover(true),
+      onExit: (_) => _onHover(false),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: AppHypertext(
+          text: widget.text.toUpperCase(),
+          textAlign: TextAlign.center,
+          style: isPhoneOrTablet
+              ? AppTextStyles.barLocationLink.copyWith(
+                  color: AppColors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  shadows: [
+                    Shadow(
+                      color: AppColors.white,
+                      blurRadius: _shadowAnimation.value,
+                    ),
+                  ],
+                )
+              : AppTextStyles.barLocationLink.copyWith(
+                  color: AppColors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                  shadows: [
+                    Shadow(
+                      color: AppColors.white,
+                      blurRadius: _shadowAnimation.value,
+                    ),
+                  ],
+                ),
+          enabledDisabledColors: const [
+            AppColors.white,
+            AppColors.grey,
+          ],
+          onTap: widget.onTap,
+        ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }
