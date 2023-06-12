@@ -1,4 +1,3 @@
-import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -14,8 +13,7 @@ class AppPage extends StatelessWidget {
       tree: WidgetTree(context: context),
       child: MaterialApp.router(
         title: 'The MonksLab',
-        routeInformationParser: BeamerParser(),
-        routerDelegate: routerDelegate,
+        routerConfig: routerConfig,
         localizationsDelegates: AppLocalizations.localizationsDelegates,
         supportedLocales: AppLocalizations.supportedLocales,
         locale: context.watch<LocaleCubit>().state.locale,

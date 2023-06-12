@@ -1,8 +1,5 @@
-import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/constants/_index.dart';
-import 'package:the_monkslab_web/src/core/_index.dart';
 import 'package:the_monkslab_web/src/ui/widgets/_index.dart';
 
 class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -33,9 +30,7 @@ class AppAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: leading ??
           AppOnHover(
             child: GestureDetector(
-              onTap: () => context.beamToNamed(
-                '/${context.read<LocaleCubit>().state.locale.languageCode}',
-              ),
+              onTap: () {},
               child: const Image(
                 width: 16,
                 height: 16,

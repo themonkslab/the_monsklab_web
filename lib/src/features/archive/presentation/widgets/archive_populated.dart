@@ -1,9 +1,6 @@
-import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/constants/_index.dart';
-import 'package:the_monkslab_web/src/core/_index.dart';
 import 'package:the_monkslab_web/src/models/_index.dart';
 import 'package:the_monkslab_web/src/ui/_index.dart';
 import 'package:the_monkslab_web/src/ui/widgets/hypertext.dart';
@@ -68,9 +65,7 @@ class ArchivePopulated extends StatelessWidget {
                               padding: const EdgeInsets.only(bottom: 8),
                               child: AppHypertext(
                                 text: course.title,
-                                onTap: () => context.beamToNamed(
-                                  '/${context.read<LocaleCubit>().state.locale.languageCode}/archive/${courseGroup.groupName}/${course.path}',
-                                ),
+                                onTap: () => {},
                                 onTertiaryTapUp: () => UrlHelper.launchUrl(
                                   '${AppUrls.monkslabWeb}course/${course.path}',
                                 ),

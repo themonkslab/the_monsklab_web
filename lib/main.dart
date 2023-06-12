@@ -1,4 +1,3 @@
-import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/app.dart';
@@ -8,7 +7,6 @@ import 'package:the_monkslab_web/src/repositories/_index.dart';
 
 Future main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
-  Beamer.setPathUrlStrategy();
   Bloc.observer = AppBlocObserver();
   final CoursesRepository coursesRepository = FileCoursesRepositoryImpl();
   runApp(

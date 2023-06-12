@@ -1,4 +1,3 @@
-import 'package:beamer/beamer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:the_monkslab_web/src/constants/urls.dart';
@@ -93,9 +92,7 @@ class SectionView extends StatelessWidget {
                                       const ContinuousRectangleBorder(),
                                     ),
                                   ),
-                                  onPressed: () => context.beamToNamed(
-                                    '/${context.read<LocaleCubit>().state.locale.languageCode}/archive/$groupName/$coursePath/$sectionPath/${article.path}',
-                                  ),
+                                  onPressed: () {},
                                   child: Padding(
                                     padding: AppPaddings.padAll16,
                                     child: Row(
@@ -110,9 +107,7 @@ class SectionView extends StatelessWidget {
                                 padding: AppPaddings.padV4,
                                 child: AppHypertext(
                                   text: article.title,
-                                  onTap: () => context.beamToNamed(
-                                    '/${context.read<LocaleCubit>().state.locale.languageCode}/archive/$groupName/$coursePath/$sectionPath/${article.path}',
-                                  ),
+                                  onTap: () {},
                                   onTertiaryTapUp: () => UrlHelper.launchUrl(
                                     '${AppUrls.monkslabWeb}${AppRoutes.article.name}/${article.path}',
                                   ),

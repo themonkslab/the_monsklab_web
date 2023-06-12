@@ -1,11 +1,14 @@
-import 'package:beamer/beamer.dart';
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:go_router/go_router.dart';
 import 'package:the_monkslab_web/src/core/locale_cubit/locale_cubit.dart';
 import 'package:the_monkslab_web/src/core/routing/not_found_screen.dart';
 import 'package:the_monkslab_web/src/features/_index.dart';
-import 'package:the_monkslab_web/src/repositories/_index.dart';
+import 'package:the_monkslab_web/src/observers/_index.dart';
+
+part 'routing.g.dart';
 
 enum AppRoutes {
   home,
@@ -14,74 +17,40 @@ enum AppRoutes {
   course,
 }
 
-final routerDelegate = BeamerDelegate(
-  locationBuilder: RoutesLocationBuilder(
-    routes: {
-      // Return either Widgets or BeamPages if more customization is needed
-      '/:locale': (_, state, ___) {
-        final languageCode = state.pathParameters['locale']!;
-        return LocaleWrapper(
-          languageCode: languageCode,
-          child: const HomePage(),
-        );
-      },
-      '/:locale/archive': (_, state, ___) {
-        final languageCode = state.pathParameters['locale']!;
-        return LocaleWrapper(
-          languageCode: languageCode,
-          child: const ArchivePage(),
-        );
-      },
-      '/:locale/archive/:group_name/:course': (_, state, __) {
-        final coursePath = state.pathParameters['course']!;
-        final groupName = state.pathParameters['group_name']!;
-        final languageCode = state.pathParameters['locale']!;
-        return LocaleWrapper(
-          languageCode: languageCode,
-          child: CoursePage(
-            coursePath,
-            groupName,
-          ),
-        );
-      },
-      '/:locale/archive/:group_name/:course/:section/:article': (_, state, __) {
-        final coursePath = state.pathParameters['course']!;
-        final groupName = state.pathParameters['group_name']!;
-        final sectionPath = state.pathParameters['section']!;
-        final articlePath = state.pathParameters['article']!;
-        final languageCode = state.pathParameters['locale']!;
-        return LocaleWrapper(
-          languageCode: languageCode,
-          child: ArticlePage(
-            articlePath: articlePath,
-            sectionPath: sectionPath,
-            coursePath: coursePath,
-            groupName: groupName,
-          ),
-        );
-      },
-    },
-  ),
-  initialPath: '/en',
+final GlobalKey<NavigatorState> rootNavigatorKey = GlobalKey<NavigatorState>();
+
+final GoRouter routerConfig = GoRouter(
+  routes: $appRoutes,
+  initialLocation: '/',
+  navigatorKey: rootNavigatorKey,
+  errorBuilder: (context, state) => const NotFoundScreen(),
+  observers: [LoggerRouteObserver()],
 );
 
-class LocaleWrapper extends StatelessWidget {
-  const LocaleWrapper({
-    super.key,
-    required this.languageCode,
-    required this.child,
-  });
-  final String languageCode;
-  final Widget child;
+@TypedGoRoute<LocalizedRoute>(
+  path: '/:locale',
+)
+class LocalizedRoute extends GoRouteData {
+  const LocalizedRoute({required this.locale});
+
+  final String locale;
 
   @override
-  Widget build(BuildContext context) {
-    final locale = Locale(languageCode);
-    if (AppLocalizations.supportedLocales.contains(locale)) {
-      context.read<LocaleCubit>().setLocale(Locale(languageCode));
-      context.read<CoursesRepository>().locale = Locale(languageCode);
-      return child;
-    }
-    return const NotFoundScreen();
+  Widget build(BuildContext context, GoRouterState state) {
+    context.read<LocaleCubit>().setLocale(Locale(locale));
+    return const HomePage();
+  }
+}
+
+@TypedGoRoute<HomeRoute>(
+  path: '/',
+)
+class HomeRoute extends GoRouteData {
+  const HomeRoute();
+
+  @override
+  FutureOr<String?> redirect(BuildContext context, GoRouterState state) {
+    final locale = context.read<LocaleCubit>().state.locale;
+    return '/${locale.languageCode}';
   }
 }
